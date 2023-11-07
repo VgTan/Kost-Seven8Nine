@@ -24,7 +24,7 @@
                 <a class="" href="#">Contacts</a>
             </div>
             <div class="header-button">
-                <a class="sign-button" href="#">
+                <a class="sign-button" href="/login">
                     <p class="">Sign In</p>
                     <img src="./images/contact.png" alt="">
                 </a>
