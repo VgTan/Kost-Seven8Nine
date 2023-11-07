@@ -13,6 +13,10 @@ body {
 .header-container {
     display: flex;
     justify-content: center;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
 }
 
 .header {
@@ -21,15 +25,17 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: fixed;
-    z-index: 100;
+    overflow: hidden;
 }
 
 .header .name {
-    font-size: 2rem;
-    text-decoration: none;
-    color: white;
-    width: 50%;
+    font-size: 2.5rem;
+    width: 40%;
+    overflow: hidden;
+}
+
+.header .logo img {
+    width: 150px;
 }
 
 .header-content {
@@ -42,13 +48,31 @@ body {
 
 .header-content a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-size: 16px;
 }
 
+.header .content-box {
+    padding: 30px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.header .content-box:hover {
+    border-bottom: 2px solid #2E4C59;
+    transition-duration: 500ms;
+}
+
+.header .active {
+    border-bottom: 2px solid #2E4C59;
+    height: 100%;
+}
+
+
 .header-select {
     background-color: transparent;
-    color: white;
+    color: black;
     border: none
 }
 
@@ -56,7 +80,8 @@ body {
     display: flex;
     justify-content: end;
     height: auto;
-    width: 20%;
+    width: auto;
+    padding-bottom: 10px;
 }
 
 .sign-button {
@@ -65,7 +90,7 @@ body {
     align-items: center;
     width: 130px;
     height: 40px;
-    background-color: rgb(31, 31, 31);
+    background-color: #2E4C59;
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -81,22 +106,34 @@ body {
     height: auto;
 }
 
+.carousel {
+    padding-top: 100px;
+}
+
 .carousel-img {
     width: 100%;
     object-fit: contain;
 }
 
 .carousel-inner {
-    height: 950px;
+    height: 700px;
     transition-duration: 200;
+    border-radius: 20px;
 }
 
-
+.text-title {
+    position: absolute;
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: white;
+    top: 25%;
+    left: 8%;
+}
 
 .container-abs {
     width: 70%;
     position: absolute;
-    top: 80%;
+    bottom: -7%;
     left: 15%;
     right: 15%;
 }
@@ -142,6 +179,11 @@ body {
     width: 100%;
 }
 
+.buy .book-content {
+    display: flex;
+    gap: 100px;
+}
+
 .buy .search-button {
     display: flex;
     justify-content: space-between;
@@ -169,12 +211,16 @@ body {
 .margin {
     display: flex;
     justify-content: center;
-    margin-top: 90px;
 }
 
 .main-container {
-    width: 80%;
+    width: 93%;
 }
+
+.detail-container {
+    margin-top: 70px;
+}
+
 .places span, 
 .today-news span, 
 .services span {
@@ -192,6 +238,29 @@ body {
     font-weight: lighter;
 }
 
+.slider-container {
+    position: relative;
+    overflow-x: hidden;
+    height: 600px;
+}
+
+.slider-width {
+    position: absolute;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    left: 0;
+    top: 0;
+    transition: 0.4s ease-in-out;
+}
+
+.card{
+    margin: 0 .5em;
+    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+    border: none;
+    height: auto;
+}
+
 .card-container {
     display: flex;
     justify-content: center;
@@ -201,8 +270,4 @@ body {
     display: flex;
     justify-content: space-between;
     width: 75%;
-}
-
-.card {
-    padding: 10px;
 }
