@@ -27,8 +27,10 @@ class UserController extends Controller
             return redirect('/');
         }
         $user = new User();
-        $user->full_name = $request->name;
-        $user->username = $request->name;
+        if(!$request->img) {
+            $user->img = 'contact.png';
+        }
+        $user->name = $request->name;
         $user->email = $request->email;
         $user->password = bcrypt($request->password);
         $user->save();
@@ -60,4 +62,6 @@ class UserController extends Controller
         
         return redirect()->intended('/');
     }
+
+    
 }
