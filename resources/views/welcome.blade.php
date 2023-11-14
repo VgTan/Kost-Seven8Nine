@@ -29,7 +29,7 @@
                 </div>
                 <div class="content-box">
                     <select name="" id="" class="header-select">
-                        <option value="">Find Kost</option>
+                        <option value="">Find Music Place</option>
                     </select>
                 </div>
                 <div class="content-box">
@@ -86,7 +86,7 @@
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="book-tab" data-bs-toggle="tab"
                                     data-bs-target="#book" type="button" role="tab" aria-controls="book"
-                                    aria-selected="true">BOOK KOST</button>
+                                    aria-selected="true">BOOK MUSIC PLACE</button>
                             </li>
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link" id="search-tab" data-bs-toggle="tab" data-bs-target="#search"
@@ -216,7 +216,7 @@
                             <p>Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves
                                 in the world of melody.</p>
                         </div>
-                        <div class="read-more">Read More</div>
+                        <a class="read-more" href="/room/bassura">Read More</a>
                     </div>
                     <div class="branch-card">
                         <div class="branch-img"><img src="../images/aeon.jpg">
@@ -226,7 +226,7 @@
                             <p>Explore the musical wonders at Aeon Mall JGC, where a vibrant music academy invites
                                 enthusiasts to discover the joy of playing musical instruments.</p>
                         </div>
-                        <div class="read-more">Read More</div>
+                        <a class="read-more" href="/room/aeon">Read More</a>
                     </div>
                     <div class="branch-card">
                         <div class="branch-img"><img src="../images/lippo.jpg">
@@ -236,7 +236,7 @@
                             <p>Unleash your musical potential at MaxxBox Lippo Village, where a dedicated music center
                                 offers a dynamic environment for learning and mastering various instruments.</p>
                         </div>
-                        <div class="read-more">Read More</div>
+                        <a class="read-more" href="/room/maxxbox">Read More</a>
                     </div>
                 </div>
             </div>
@@ -286,7 +286,7 @@
             <div class="contact-us">
                 <div class="contact-content">
                     <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top kosts</p>
+                    <p class="subs">Subscribe & <br /> get news and top music places</p>
                     <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
                         will receive news
                         and valuable information

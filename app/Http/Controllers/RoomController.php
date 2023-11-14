@@ -14,16 +14,16 @@ class RoomController extends Controller
         // dd($id_loc);
         $rooms = Ruangan::where('id_loc', $loc->id)->get();
         // dd($rooms);
-        return view("booking.book", compact("rooms", "loc"));
+        return view("booking.room", compact("rooms", "loc"));
     }
 
     public function room_details($site, $room){
         $loc = Cabang::where('site', $site)->first();
         // dd($loc);
-        $rooms = Ruangan::where('id_loc', $loc->id)->where('room', $room)->get();
-        dd($rooms);
-        $schedule = Jadwal::where('id_loc', $loc->id)->where('id_room', $rooms->id_room)->first();
-        dd($schedule);
-        return view('booking.room', compact('rooms','loc'));
+        $rooms = Ruangan::where('id_loc', $loc->id)->where('room', $room)->first();
+        // dd($rooms);
+        $schedule = Jadwal::where('id_loc', $loc->id)->where('id_room', $rooms->id)->get();
+        // dd($schedule);
+        return view('booking.book', compact('rooms','loc','schedule'));
     }
 }

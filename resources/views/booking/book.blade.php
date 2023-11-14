@@ -9,11 +9,21 @@
 </head>
 
 <body>
-    @foreach($rooms as $room)
-    <a class="" href="/{{$loc->site}}/{{$room->room}}">
-        <p>{{ $room->room }}</p>
-    </a>
-    @endforeach
+    <p>{{ $rooms->room }}</p>
+    @if($schedule)
+    <select name="" id="">
+        @foreach($schedule as $sche)
+        <option class="" value="{{ $sche->time }}">{{ $sche->time }}</option>
+        @endforeach
+    </select>
+    @else
+    <div class="">
+        <p>No Schedule</p>
+    </div>
+    @endif
+    <div class="">
+        
+    </div>
 </body>
 
 </html>

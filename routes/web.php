@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
@@ -49,6 +50,11 @@ Route::controller(RoomController::class)->group(function () {
     Route::get('/room/{site}','room')->name('room');
     Route::get('/{site}/{room}','room_details')->name('');
 });
+
+Route::controller(AdminController::class)->group(function () {
+    Route::get('/addschedule','add_schedule')->name('add');
+    Route::get('/addscheds','process_schedule')->name('');
+}); 
 // Route::get('/footer', function () {
 //     return view('footer');
 // });
