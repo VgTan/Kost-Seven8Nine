@@ -1,4 +1,111 @@
+p {
+    margin: 0;
+}
 
+a:hover, a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    /* border-bottom: 5px solid #4688C3; */
+}
+
+.header {
+    height: 110px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.header .name {
+    font-size: 2.5rem;
+    width: 40%;
+    overflow: hidden;
+}
+
+.header .logo img {
+    width: 150px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 30%;
+}
+
+.header-content a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.header .content-box {
+    padding: 30px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.header .content-box:hover {
+    border-bottom: 2px solid #2E4C59;
+    transition-duration: 500ms;
+}
+
+.header .active {
+    border-bottom: 2px solid #2E4C59;
+    height: 100%;
+}
+
+
+.header-select {
+    background-color: transparent;
+    color: black;
+    border: none
+}
+
+.header-button {
+    display: flex;
+    justify-content: end;
+    height: auto;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.sign-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: #268AC9;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sign-button p {
+    margin: auto;
+    color: white;
+}
+
+.sign-button img {
+    width: 30px;
+    height: auto;
+}
 
 .carousel {
     padding-top: 100px;
@@ -82,7 +189,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #E6AD76;
     border-radius: 8px;
     color: white;
     width: 130px;
@@ -205,11 +312,11 @@
 }
 
 .contact-us {
-    margin-top: 5rem;
+    margin-top: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #D9D9D9;
+    border: 2px solid #E6AD76;
     border-radius: 15px;
     height: auto;
     padding: 50px;
@@ -261,8 +368,345 @@
     border-bottom-right-radius: 100px;
     overflow: hidden;
     margin: 0;
-    background-color: black;
+    background-color: #E6AD76;
     color: white;
     box-shadow: gray 3px 3px 3px;
 }
 
+/* ABOUT US LP CSS */
+.about-lp {
+    display: flex;
+    margin-top: 100px;
+}
+
+.aboutus-row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.aboutus-img {
+    margin: 20px;
+}
+
+.aboutus-img img {
+    width: 700px;
+    object-fit: cover;
+}
+
+.aboutus-row-desc {
+    margin: 20px;
+    line-height: 30px;
+}
+
+.aboutus-desc-title h5 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.aboutus-desc-title h1 {
+    margin-top: 25px;
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #268AC9;
+}
+
+.aboutus-desc-title h1 span{
+    color: #E6AD76;
+}
+
+.aboutus-desc-title p{
+    font-size: 20px;
+    font-family: 'Lora', serif;
+}
+
+.aboutus-icons {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 20px;
+}
+
+.aboutus-icon-desc {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .about-lp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutus-img,
+    .aboutus-row-desc {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* BRANCH CSS */
+.branch-title {
+    text-align: center;
+}
+
+.branch-title h1 {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.branch-title h3 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #268AC9;
+}
+
+.branch-img h1{
+    position: absolute;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    font-size:32px;
+    bottom: 15px;
+    width: 100%;
+    color: #fff;
+    text-shadow: 10px 10px 10 #000,
+}
+
+.branch-wrapper{
+    padding:15px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.branch-card{
+    max-width: 400px;
+    margin: 15px;
+    background:#fff;
+    border: 1px solid #E6AD76;
+    text-align: center;
+    cursor: pointer;
+}
+
+.branch-img{
+    position: relative;
+    text-align: center;
+    background:#E6AD76;
+}
+
+.branch-img img{
+    width: 400px;
+    height: 250px;
+}
+
+.branch-text{
+    padding: 30px 15px;
+    font-size: 15px;
+    line-height: 22px;
+}
+      
+.read-more{
+    display:inline-block;
+    width:auto;
+    text-align:center;
+    text-transform:uppercase;
+    background:#E6AD76;
+    color:#fff;
+    padding:15px;
+    margin-bottom:30px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* PRICE PLAN CSS */
+.priceplan {
+    margin-top: 70px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.priceplan-title {
+    text-align: center;
+}
+
+.priceplan-title h1 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.priceplan-title h3 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #E6AD76;
+    margin-bottom: 70px;
+}
+
+.price-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #fff;
+    color: hsl(233, 13%, 49%);
+    border-radius: 0.8rem;
+  }
+  
+.price-cards .card.active {
+    background: linear-gradient(
+      135deg,
+      #4da4da 0%,
+      #268AC9 100%
+    );
+    color: #fff;
+    display: flex;
+    align-items: center;
+    transform: scale(1.1);
+    z-index: 1;
+}
+  
+.price-ul {
+    margin: 2.6rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+  
+.price-ul li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1rem 0;
+}
+  
+.price-ul li.price {
+    font-size: 3rem;
+    color: hsl(232, 13%, 33%);
+    padding-bottom: 2rem;
+}
+  
+.shadow {
+    box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
+}
+  
+.card.active .price {
+    color: #fff;
+}
+  
+.price-btn {
+    margin-top: 1rem;
+    height: 2.6rem;
+    width: 13.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background: linear-gradient(
+      135deg,
+      #eec299 0%,
+      #E6AD76 100%
+    );
+    color: #fff;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+}
+
+.active-btn {
+    background: #fff;
+    color: #E6AD76;
+}
+  
+.bottom-bar {
+    border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
+}
+  
+.card.active .bottom-bar {
+    border-bottom: 2px solid hsla(240, 8%, 85%, 0.253);
+}
+  
+.pack {
+    font-size: 35px;
+    font-weight: bold;
+}
+  
+@media (max-width: 280px) {
+    ul {
+      margin: 1rem;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+    
+    .price-cards {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .card {
+      transform: scale(0.8);
+      margin-bottom: 1rem;
+    }
+
+    .price-cards .card.active {
+      transform: scale(0.8);
+    }
+}
+  
+@media (min-width: 280px) and (max-width: 320px) {
+    ul {
+      margin: 20px;
+    }
+
+    .price-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    .price-cards .card.active {
+      transform: scale(1);
+    }
+}
+  
+@media (min-width: 320px) and (max-width: 414px) {
+    .price-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    .price-cards .card.active {
+      transform: scale(1);
+    }
+}
+  
+@media (min-width: 414px) and (max-width: 768px) {
+    .card {
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+}  
