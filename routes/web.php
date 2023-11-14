@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +26,18 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
-Route::get('/footer', function () {
-    return view('footer');
+// Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/signup', 'signupPage');
+    Route::get('/newuser', 'signup')->name('signup')->middleware('isLoggedIn');
+
+    Route::get('/login','loginPage');
+    Route::get('/loginn','login')->name('login')->middleware('isLoggedIn');;
+    Route::get('/logout','logout')->name('logout');
 });
+
+
+// Route::get('/footer', function () {
+//     return view('footer');
+// });

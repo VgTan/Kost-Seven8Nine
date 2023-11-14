@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Seven8Nine</title>
+    <title>Rhapsodie.co</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -33,12 +33,22 @@
                     <a class="" href="#">Contacts</a>
                 </div>
             </div>
+            @guest
             <div class="header-button">
                 <a class="sign-button" href="/login">
-                    <p class="">Sign In</p>
+                    <p class="">Log In</p>
                     <img src="./images/contact.png" alt="">
                 </a>
             </div>
+            @endguest
+            @auth
+            <div class="header-button">
+                <a class="sign-button" href="/logout">
+                    <p class="">Log Out</p>
+                    <!-- <img src="./images/contact.png" alt=""> -->
+                </a>
+            </div>
+            @endauth
         </div>
     </div>
     <div class="margin">
@@ -57,7 +67,7 @@
                 </div>
 
                 <div class="text-title">
-                    <p>The Ease of Booking<br /> a Kost</p>
+                    <p>Finding the Best Music Teachers &<br />Schools For You</p>
                 </div>
                 <div class="container-abs">
                     <div class="">
@@ -113,19 +123,20 @@
                         <div class="slider-width">
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
                                             card's content.</p>
-                                
-                                            <a href="#" class="btn btn-primary">Show More</a>
+
+                                        <a href="#" class="btn btn-primary">Show More</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -136,7 +147,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -147,7 +158,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -158,7 +169,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -169,7 +180,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -180,7 +191,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -191,7 +202,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -202,7 +213,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -213,7 +224,7 @@
                             </div>
                             <div class="item">
                                 <div class="card">
-                                    <img src="./images/logo.png" class="d-block w-100" alt="...">
+                                    <img src="./images/logo.png" class="card-img d-block w-100" alt="...">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make
                                             up the bulk of the
@@ -229,8 +240,8 @@
                 </div>
                 <div class="today-news">
                     <span class="list">| </span>
-                    <span class="new">Today</span>
-                    <span>News</span>
+                    <span class="new">Facilities</span>
+                    <span>Seven8Nine</span>
                 </div>
                 <div class="services">
                     <span class="list">| </span>
@@ -238,24 +249,54 @@
                     <span>Services</span>
                     <div class="card-container">
                         <div class="card-margin">
-                            <div class="card">
-                                <img src="" alt="">
-                                <p>Selling Hotels</p>
+                            <div class="card-service">
+                                <div class="card-content">
+                                    <img class="" src="./images/HOTELS.png" alt="">
+                                    <!-- <p class="far fa-building" style="font-size: 5rem; margin-bottom: 60px"></p> -->
+                                    <p class="card-title">Kost Finding</p>
+                                    <p class="card-desc">With Funhouse you can rent a kost, placing the information
+                                        requested, quickly and safely...</p>
+                                </div>
                             </div>
-                            <div class="card">
-                                <img src="" alt="">
-                                <p>Hotel Investments</p>
+                            <div class="card-service">
+                                <div class="card-content">
+                                    <img class="" src="./images/HOTELS.png" alt="">
+                                    <!-- <p class="far fa-building" style="font-size: 5rem; margin-bottom: 60px"></p> -->
+                                    <p class="card-title">Kost Booking</p>
+                                    <p class="card-desc">With Funhouse you can rent a kost, placing the information
+                                        requested, quickly and safely...</p>
+                                </div>
                             </div>
-                            <div class="card">
-                                <img src="" alt="">
-                                <p>Management Services</p>
+                            <div class="card-service">
+                                <div class="card-content">
+                                    <img class="" src="./images/contact-management.png" alt="">
+                                    <!-- <p class="far fa-building" style="font-size: 5rem; margin-bottom: 60px"></p> -->
+                                    <p class="card-title">Management Contact</p>
+                                    <p class="card-desc">With Funhouse you can rent a kost, placing the information
+                                        requested, quickly and safely...</p>
+                                </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div class="contact-us">
+                    <div class="contact-content">
+                            <img class="logo-sub" src="./images/logo.png" alt="">
+                        <p class="subs">Subscribe & <br /> get news and top kosts</p>
+                        <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
+                            will receive news
+                            and valuable information
+                        </p>
+                        <form class="sub-form" action="">
+                            <input type="text" placeholder="Enter your email">
+                            <button class="btn-sub">Subscription</button>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    @include('footer');
     <script>
     var count = 0;
     var inc = 0;

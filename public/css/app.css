@@ -17,10 +17,11 @@ body {
     width: 100%;
     position: fixed;
     z-index: 100;
+    /* border-bottom: 5px solid #4688C3; */
 }
 
 .header {
-    height: 90px;
+    height: 110px;
     width: 90%;
     display: flex;
     align-items: center;
@@ -90,7 +91,7 @@ body {
     align-items: center;
     width: 130px;
     height: 40px;
-    background-color: #2E4C59;
+    background-color: #4688C3;
     border-radius: 5px;
     padding-left: 15px;
     padding-right: 15px;
@@ -261,7 +262,14 @@ body {
     height: auto;
 }
 
+.card-img {
+    width: 100px;
+    height: 400px;
+    object-fit: contain;
+}
+
 .card-container {
+    margin-top: 50px;
     display: flex;
     justify-content: center;
 }
@@ -269,5 +277,99 @@ body {
 .card-margin {
     display: flex;
     justify-content: space-between;
-    width: 75%;
+    width: 85%;
 }
+
+.card-service {
+    height: 320px;
+    width: 450px;
+    background-color: #FAFAFA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    border: 1px solid #D9D9D9;
+    /* box-shadow: #000000 1px 1px 1px; */
+}
+
+.card-content {
+    width: 80%;
+    height: 80%;
+}
+
+.card-content img {
+    margin-bottom: 20px;
+}
+
+.card-content .card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-content .card-desc {
+    font-size: 1rem;
+    /* font-weight: bold; */
+}
+
+.contact-us {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    height: auto;
+    padding: 50px;
+}
+
+.contact-content {
+    text-align: center;
+    height: 100%;
+}
+
+.subs {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.logo-sub {
+    height: 130px;
+    scale: 1.5;
+}
+
+.sub-form {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-form input{
+    height: 60px;
+    width: 50%;
+    border: 0;
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    overflow: hidden;
+    padding-left: 20px;
+    box-shadow: gray 3px 3px 3px;
+}
+
+.desc-sub {
+    font-size: larger;
+}
+
+.btn-sub {
+    height: 60px;
+    text-align: center;
+    width: 130px;
+    border: 0;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    overflow: hidden;
+    margin: 0;
+    background-color: black;
+    color: white;
+    box-shadow: gray 3px 3px 3px;
+}
+

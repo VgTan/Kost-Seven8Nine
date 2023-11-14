@@ -6,7 +6,9 @@
     text-decoration: none;
 }
 
-body{
+.footer{
+    margin-top: 250px;
+    padding-top: 20px;
     font-family: 'Poppins', sans-serif;
     color: white;
     background-color: rgb(29, 27, 27);
@@ -50,7 +52,7 @@ section{
     gap: 3em;
 }
 
-form{
+.footer form{
     width: 100%;
     margin-top: 3em;
 }
