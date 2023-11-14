@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -43,6 +44,11 @@ Route::controller(ProfileController::class)->group(function () {
     Route::get('/editprofile','editProfile')->name('edit_profile');
     Route::post('/profile-update','updateProfile')->name('update_profile');
     });
+
+Route::controller(RoomController::class)->group(function () {
+    Route::get('/room/{site}','room')->name('room');
+    Route::get('/{site}/{room}','room_details')->name('');
+});
 // Route::get('/footer', function () {
 //     return view('footer');
 // });

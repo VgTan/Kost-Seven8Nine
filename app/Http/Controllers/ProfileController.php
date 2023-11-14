@@ -17,11 +17,17 @@ class ProfileController extends Controller
     }
 
     public function editProfile(Request $request) {
+        if(!Auth::check()) {
+            return redirect('/');
+        }
         $edit = TRUE;
         $user = User::find(Auth::user()->id);
         return view('profile', compact('user', 'edit'));
     }
     public function updateProfile(Request $request) {
+        if(!Auth::check()) {
+            return redirect('/');
+        }
         $user = User::find(Auth::user()->id);
         if($request->name) {
             $user->name = $request->name;

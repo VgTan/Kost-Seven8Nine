@@ -51,7 +51,7 @@
                     <div class="name-email">
                         <div class="name">
                             <label for="name">Full Name</label><br />
-                            <input class="user-profile-edit" name="username" type="text" value="{{ $user->name }}">
+                            <input class="user-profile-edit" name="name" type="text" value="{{ $user->name }}">
                         </div>
                         <div class="email">
                             <label for="name">Email</label><br />
