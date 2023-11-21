@@ -30,7 +30,7 @@
                      </div>
                      <div class="login-wrapper my-auto">
                          <h1 class="login-title">Welcome Back!</h1>
-                         <form action="{{ route('login')}}">
+                         <form action="{{ route('login')}}" method="get">
                              <div class="form-group">
                                  <label for="email">Email/Username</label>
                                  <input type="email" name="email" id="email" class="form-control"

@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/login', function () {
     return view('login');
@@ -35,7 +35,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/signup', 'signupPage');
     Route::get('/newuser', 'signup')->name('signup');
 
-    Route::get('/login','loginPage');
+    Route::post('/login','loginPage');
     Route::get('/loginn','login')->name('login');
     Route::get('/logout','logout')->name('logout');
 });
@@ -47,11 +47,25 @@ Route::controller(ProfileController::class)->group(function () {
     });
 
 Route::controller(RoomController::class)->group(function () {
+    Route::get('/', 'home');
     Route::get('/room/{site}','room')->name('room');
     Route::get('/{site}/{room}','room_details')->name('');
 });
 
+Route::get('/addbranches', function () {
+    return view('admin.add_cabang');
+});
+
+
 Route::controller(AdminController::class)->group(function () {
+    Route::get('/dashboard','dashboard')->name('');
+
+    Route::post('/processbranch','add_cabang')->name('');
+
+    Route::get('/addroom','rooms')->name('');
+    Route::post('/processroom','add_room')->name('');
+
+    
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/addscheds','process_schedule')->name('');
 }); 

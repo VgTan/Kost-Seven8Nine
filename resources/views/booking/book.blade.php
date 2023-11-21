@@ -9,8 +9,9 @@
 </head>
 
 <body>
-    <p>{{ $rooms->room }}</p>
-    @if($schedule)
+    <p>{{ $loc->name }}</p>
+    <p>{{ $roomname }}</p>
+    @if($schedule->isNotEmpty())
     <select name="" id="">
         @foreach($schedule as $sche)
         <option class="" value="{{ $sche->time }}">{{ $sche->time }}</option>
@@ -22,7 +23,7 @@
     </div>
     @endif
     <div class="">
-        
+        <a href="/room/{{ $loc->site }}">Back</a>
     </div>
 </body>
 

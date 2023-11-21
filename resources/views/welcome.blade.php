@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Rhapsodie.co</title>
+    <title>Rhapsodie</title>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,45 +18,7 @@
 </head>
 
 <body>
-    <div class="header-container">
-        <div class="header">
-            <div class="name">
-                <a href="#" class="logo"><img src="./images/logo.png" alt=""></a>
-            </div>
-            <div class="header-content">
-                <div class="content-box active">
-                    <a class="" active href="#">Home</a>
-                </div>
-                <div class="content-box">
-                    <select name="" id="" class="header-select">
-                        <option value="">Find Music Place</option>
-                    </select>
-                </div>
-                <div class="content-box">
-                    <a class="" href="#">Facilities</a>
-                </div>
-                <div class="content-box">
-                    <a class="" href="#">Contacts</a>
-                </div>
-            </div>
-            @guest
-            <div class="header-button">
-                <a class="sign-button" href="/login">
-                    <p class="">Log In</p>
-                    <img src="./images/contact.png" alt="">
-                </a>
-            </div>
-            @endguest
-            @auth
-            <div class="header-button">
-                <a class="sign-button" href="/logout">
-                    <p class="">Log Out</p>
-                    <!-- <img src="./images/contact.png" alt=""> -->
-                </a>
-            </div>
-            @endauth
-        </div>
-    </div>
+    @include('header')
 
     <div class="margin">
         <div class="main-container">
@@ -207,7 +169,20 @@
                     <h3>Book Your Lesson Now</h3>
                 </div>
                 <div class="branch-wrapper">
+                    @foreach ($room as $branch)
                     <div class="branch-card">
+                        <div class="branch-img">
+                            <img src="../images/cabang/{{ $branch->img }}">
+                            <h1>{{ $branch->name }}</h1>
+                        </div>
+                        <div class="branch-text">
+                            <p>Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves
+                                in the world of melody.</p>
+                        </div>
+                        <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
+                    </div>
+                    @endforeach
+                    <!-- <div class="branch-card">
                         <div class="branch-img">
                             <img src="../images/basura.jpg">
                             <h1>Mall Bassura</h1>
@@ -238,7 +213,7 @@
                         </div>
                         <a class="read-more" href="/room/maxxbox">Read More</a>
                     </div>
-                </div>
+                </div> -->
             </div>
             <!-- BRANCH END -->
 

@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('jadwals', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->string('id_loc');
-            $table->string('id_room');
-            $table->string('time');
+            $table->string('name')->unique();
             $table->timestamps();
         });
     }
@@ -23,8 +21,8 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
-    {
-        Schema::dropIfExists('jadwals');
-    }
+    // public function down(): void
+    // {
+    //     Schema::dropIfExists('rooms');
+    // }
 };

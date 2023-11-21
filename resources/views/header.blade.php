@@ -23,7 +23,7 @@
         @guest
         <div class="header-button">
             <a class="sign-button" href="/login">
-                <p class="">Log In</p>
+                <p class="">Login</p>
                 <img src="./images/contact.png" alt="">
             </a>
         </div>

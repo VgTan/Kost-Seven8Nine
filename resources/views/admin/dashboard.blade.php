@@ -6,6 +6,8 @@
     <title>Rhapsodie</title>
 </head>
 <body>
-    
+    <a href="/addbranches">add branch</a>
+    <a href="/addroom">add room</a>
+    <a href="/addschedule">add schedule</a>
 </body>
 </html>
