@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="text-title">
-                    <p>Finding the Best Music Teachers &<br />Schools For You</p>
+                    <p>Need a place to learn<br />Or place to teach?</p>
                 </div>
 
                 <!-- SEARCH ABSOLUTE START -->
@@ -155,6 +155,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <a class="aboutus-button" href="#"><p>See More</p></a>
                         </div>
                     </div>
                 </div>
@@ -182,38 +183,6 @@
                         <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
                     </div>
                     @endforeach
-                    <!-- <div class="branch-card">
-                        <div class="branch-img">
-                            <img src="../images/basura.jpg">
-                            <h1>Mall Bassura</h1>
-                        </div>
-                        <div class="branch-text">
-                            <p>Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves
-                                in the world of melody.</p>
-                        </div>
-                        <a class="read-more" href="/room/bassura">Read More</a>
-                    </div>
-                    <div class="branch-card">
-                        <div class="branch-img"><img src="../images/aeon.jpg">
-                            <h1>Aeon Mall JGC</h1>
-                        </div>
-                        <div class="branch-text">
-                            <p>Explore the musical wonders at Aeon Mall JGC, where a vibrant music academy invites
-                                enthusiasts to discover the joy of playing musical instruments.</p>
-                        </div>
-                        <a class="read-more" href="/room/aeon">Read More</a>
-                    </div>
-                    <div class="branch-card">
-                        <div class="branch-img"><img src="../images/lippo.jpg">
-                            <h1>MaxxBox Lippo Village</h1>
-                        </div>
-                        <div class="branch-text">
-                            <p>Unleash your musical potential at MaxxBox Lippo Village, where a dedicated music center
-                                offers a dynamic environment for learning and mastering various instruments.</p>
-                        </div>
-                        <a class="read-more" href="/room/maxxbox">Read More</a>
-                    </div>
-                </div> -->
             </div>
             <!-- BRANCH END -->
 
@@ -306,31 +275,6 @@
         item[i].style.width = (screen.width / itemDisplay) - margin + "px";
     }
 
-    function next() {
-        if (inc !== itemSlide + itemleft) {
-            if (inc === itemSlide) {
-                inc = inc + itemleft;
-                count = count - (screen.width / itemDisplay) * itemleft;
-            } else {
-                inc++;
-                count = count - screen.width;
-            }
-        }
-        slider.style.left = count + "px";
-    }
-
-    function prev() {
-        if (inc !== 0) {
-            if (inc === itemleft) {
-                inc = inc - itemleft;
-                count = count + (screen.width / itemDisplay) * itemleft;
-            } else {
-                inc--;
-                count = count + screen.width;
-            }
-        }
-        slider.style.left = count + "px"
-    }
     </script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"

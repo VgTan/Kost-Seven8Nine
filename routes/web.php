@@ -33,6 +33,10 @@ Route::get('/roomdetail', function () {
     return view('roomdetail');
 });
 
+Route::get('/room', function () {
+    return view('room');
+});
+
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {

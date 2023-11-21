@@ -9,6 +9,7 @@ a:hover, a {
 
 body {
     margin: 0;
+    padding: 0;
 }
 
 .header-container {
@@ -152,6 +153,7 @@ body {
 #home-tab {
     border-top-left-radius: 10px;
 }
+
 #contact-tab {
     border-top-right-radius: 10px;
 }
@@ -382,7 +384,7 @@ body {
 
 .aboutus-row {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly;  
 }
 
 .aboutus-img {
@@ -391,6 +393,7 @@ body {
 
 .aboutus-img img {
     width: 700px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -431,6 +434,33 @@ body {
 
 .aboutus-icon-desc {
     text-align: center;
+}
+
+.aboutus-button {
+    background-color: #3498db; /* Example color for the button */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.aboutus-button p{
+    color: white;
+}
+
+.aboutus-button:hover {
+    background-color: #1e73ac;
+    transition: ease-in;
 }
 
 @media (max-width: 768px) {

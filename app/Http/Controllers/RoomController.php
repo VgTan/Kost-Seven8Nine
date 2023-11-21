@@ -14,20 +14,23 @@ class RoomController extends Controller
         $room = Branch::all();
         return view('welcome', compact('room'));
     }
+    
     public function room($site){
-        $loc = Branch::where('site', $site)->first();
+        $branch = Branch::where('site', $site)->get();
         // dd($loc);
-        
+        $loc = Branch::where('site', $site)->first();
+
         $rooms = BranchRoom::where('branch_id', $loc->id)->get();
         // dd($rooms);
         $roomnames = Room::all();
         // $roomnames = RoomName::where('id', $rooms->pluck('id_room'))->get();
-        return view("booking.room", compact("rooms", "loc", "roomnames"));
+        return view("booking.room", compact("rooms", "branch", "loc", "roomnames"));
     }
 
     public function room_details($site, $room){
         $loc = Branch::where('site', $site)->first();
         // dd($loc);
+
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;
         // dd($rooms);
