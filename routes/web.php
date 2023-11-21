@@ -29,6 +29,10 @@ Route::get('/signup', function () {
     return view('signup');
 });
 
+Route::get('/roomdetail', function () {
+    return view('roomdetail');
+});
+
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {

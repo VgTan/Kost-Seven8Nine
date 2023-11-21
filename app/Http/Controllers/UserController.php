@@ -63,5 +63,10 @@ class UserController extends Controller
         return redirect()->intended('/');
     }
 
-    
+    public function roomsdirect(Request $request) {
+        if(Auth::check()) {
+            return redirect('/');
+        }
+        return view('roomdetail');;
+    }
 }
