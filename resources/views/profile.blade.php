@@ -97,7 +97,7 @@
         </div>
     </form> -->
     @endif
-    @include('footer')
+
 </body>
 
 </html>
