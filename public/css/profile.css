@@ -1,5 +1,9 @@
 body{
+    overflow: hidden;
     background-color: #FAFAFA;
+    padding: 0;
+    margin: 0;
+    height: auto;
 }
 
 .container{
@@ -86,6 +90,13 @@ body{
 }
 
 .email .user-profile {
+    width: 100%;
+    border: 0;
+    font-size: 1.2rem;
+    color: #6C6C6C;
+}
+
+.address .user-profile {
     width: 100%;
     border: 0;
     font-size: 1.2rem;

@@ -35,6 +35,9 @@ class ProfileController extends Controller
         if($request->gender) {
             $user->gender = $request->gender;
         }
+        if($request->address) {
+            $user->address = $request->address;
+        }
         if ($request->img) {
             $file = $request->file('img');
         
