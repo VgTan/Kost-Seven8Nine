@@ -14,7 +14,7 @@
                 </select>
             </div>
             <div class="content-box">
-                <a class="" href="#">Facilities</a>
+                <a class="" href="/roomdetail">Facilities</a>
             </div>
             <div class="content-box">
                 <a class="" href="#">Contacts</a>
