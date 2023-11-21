@@ -19,10 +19,8 @@
 
 <body>
     @include('header')
-
     <div class="margin">
         <div class="main-container">
-
             <!-- CAROUSEL HEADING START -->
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -187,96 +185,67 @@
             <!-- BRANCH END -->
 
 
-            <!-- PRICE PLAN START -->
-            <div class="priceplan">
-                <div class="priceplan-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
+                <!-- PRICE PLAN START -->
+                <div class="priceplan">
+                    <div class="priceplan-title">
+                        <h1>OUR PRICE LIST</h1>
+                        <h3>Make Time and Learn</h3>
+                    </div>
+                    <div class="price-cards">
+                        <div class="card shadow">
+                            <ul class="price-ul">
+                                <li class="pack">BASIC 2</li>
+                                <li class="price bottom-bar">IDR 150.000</li>
+                                <li class="bottom-bar">60 Mins</li>
+                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                                <li><button class="price-btn">Learn More</button></li>
+                            </ul>
+                        </div>
+                        <div class="card active">
+                            <ul class="price-ul">
+                                <li class="pack">BASIC 1</li>
+                                <li class="price bottom-bar">IDR 75.000</li>
+                                <li class="bottom-bar">30 Mins</li>
+                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                                <li><button class="price-btn active-btn">Learn More</button></li>
+                            </ul>
+                        </div>
+                        <div class="card shadow">
+                            <ul class="price-ul">
+                                <li class="pack">BASIC 3</li>
+                                <li class="price bottom-bar">IDR 450.000</li>
+                                <li class="bottom-bar">180 Mins</li>
+                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                                <li><button class="price-btn">Learn More</button></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="price-cards">
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 2</li>
-                            <li class="price bottom-bar">IDR 150.000</li>
-                            <li class="bottom-bar">60 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn">Learn More</button></li>
-                        </ul>
-                    </div>
-                    <div class="card active">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 1</li>
-                            <li class="price bottom-bar">IDR 75.000</li>
-                            <li class="bottom-bar">30 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn active-btn">Learn More</button></li>
-                        </ul>
-                    </div>
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 3</li>
-                            <li class="price bottom-bar">IDR 450.000</li>
-                            <li class="bottom-bar">180 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn">Learn More</button></li>
-                        </ul>
+                <!-- PRICE PLAN END -->
+
+
+                <!-- INSTAGRAM START -->
+                <div class="contact-us">
+                    <div class="contact-content">
+                        <img class="logo-sub" src="./images/logo.png" alt="">
+                        <p class="subs">Subscribe & <br /> get news and top music places</p>
+                        <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
+                            will receive news
+                            and valuable information
+                        </p>
+                        <form class="sub-form" action="">
+                            <input type="text" placeholder="Enter your email">
+                            <button class="btn-sub">Subscription</button>
+                        </form>
                     </div>
                 </div>
+                <!-- INSTAGRAM END -->
+
+
             </div>
-            <!-- PRICE PLAN END -->
-
-
-            <!-- INSTAGRAM START -->
-            <div class="contact-us">
-                <div class="contact-content">
-                    <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top music places</p>
-                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                        will receive news
-                        and valuable information
-                    </p>
-                    <form class="sub-form" action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button class="btn-sub">Subscription</button>
-                    </form>
-                </div>
-            </div>
-            <!-- INSTAGRAM END -->
-
-
         </div>
     </div>
-    </div>
     @include('footer');
-
-    <script>
-    var count = 0;
-    var inc = 0;
-    var margin = 0;
-    var slider = document.getElementsByClassName("slider-width")[0];
-    var itemDisplay = 0;
-    if (screen.width > 990) {
-        itemDisplay = document.getElementsByClassName("slider-container")[0].getAttribute("item-display-d");
-        margin = itemDisplay * 13.5;
-    }
-    if (screen.width > 700 && screen.width < 990) {
-        itemDisplay = document.getElementsByClassName("slider-container")[0].getAttribute("item-display-t");
-        margin = itemDisplay * 10.3;
-    }
-    if (screen.width > 280 && screen.width < 700) {
-        itemDisplay = document.getElementsByClassName("slider-container")[0].getAttribute("item-display-m");
-        margin = itemDisplay * 20;
-    }
-
-    var item = document.getElementsByClassName("item");
-    var itemleft = item.length % itemDisplay;
-    var itemSlide = Math.floor(item.length / itemDisplay) - 1;
-    for (let i = 0; i < item.length; i++) {
-        item[i].style.width = (screen.width / itemDisplay) - margin + "px";
-    }
-
-    </script>
-
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

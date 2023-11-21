@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('branchroom_id');
             $table->string('time');
+            $table->string('status')->default('Ready');
             $table->timestamps();
         });
     }
