@@ -153,7 +153,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="aboutus-button" href="#"><p>See More</p></a>
+                            <a class="aboutus-button" href="/aboutus"><p>See More</p></a>
                         </div>
                     </div>
                 </div>

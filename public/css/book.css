@@ -1,0 +1,15 @@
+.schedule {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.mon, .tues, .wed, .thur, .fri {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.day {
+    display: none;
+}

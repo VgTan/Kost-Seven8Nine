@@ -13,7 +13,7 @@ class ProfileController extends Controller
         }
         $user = User::find(Auth::user()->id);
         $edit = FALSE;
-        return view('profile', compact('user', 'edit'));
+        return view('page.profile', compact('user', 'edit'));
     }
 
     public function editProfile(Request $request) {
@@ -22,7 +22,7 @@ class ProfileController extends Controller
         }
         $edit = TRUE;
         $user = User::find(Auth::user()->id);
-        return view('profile', compact('user', 'edit'));
+        return view('page.profile', compact('user', 'edit'));
     }
     public function updateProfile(Request $request) {
         if(!Auth::check()) {

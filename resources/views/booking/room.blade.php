@@ -20,13 +20,12 @@
 
 <body>
     @include('header')
-
     <div class="room-margin">
         <div class="room-container">
             <div class="branch-room">
-                <img src="../images/aeon.jpg" alt="">
+                <img src="/images/{{ $loc->img }}" alt="">
                 <div class="text-title">
-                    <p>Aeon Mall JGC</p>
+                    <p>{{ $loc->name }}</p>
                 </div>
             </div>
 
@@ -41,7 +40,7 @@
                 <div class="room-type">
                     <div class="room-image">
                         <a class="" href="/{{$loc->site}}/{{$room->room_id}}">
-                            <img src="../images/{{$room->img}}" alt="Room Image">
+                            <img src="/images/{{$room->img}}" alt="Room Image">
                         </a>
                     </div>
                     <div class="room-details">

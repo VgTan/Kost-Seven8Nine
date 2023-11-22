@@ -21,7 +21,7 @@ class BranchRoomSeeder extends Seeder
             'room_size' => ' ',
             'room_equipment' => ' ',
             'room_desc' => ' ',
-            'img' => ' '
+            'img' => 'inside2.jpg'
         ]);
 
         BranchRoom::create([
@@ -32,7 +32,7 @@ class BranchRoomSeeder extends Seeder
             'room_size' => ' ',
             'room_equipment' => ' ',
             'room_desc' => ' ',
-            'img' => ' '
+            'img' => 'inside1.jpg'
         ]);
 
         BranchRoom::create([

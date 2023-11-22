@@ -2,7 +2,7 @@
 <div class="header-container">
     <div class="header">
         <div class="name">
-            <a href="#" class="logo"><img src="../images/logo.png" alt=""></a>
+            <a href="#" class="logo"><img src="/images/logo.png" alt=""></a>
         </div>
         <div class="header-content">
             <div class="content-box active">
@@ -24,7 +24,7 @@
         <div class="header-button">
             <a class="sign-button" href="/login">
                 <p class="">Login</p>
-                <img src="./images/contact.png" alt="">
+                <img src="/images/contact.png" alt="">
             </a>
         </div>
         @endguest
@@ -32,7 +32,7 @@
         <div class="header-button">
             <a class="sign-button" href="/profile">
                 <p class="">Profile</p>
-                <img src="./images/contact.png" alt="">
+                <img src="/images/contact.png" alt="">
             </a>
         </div>
         @endauth

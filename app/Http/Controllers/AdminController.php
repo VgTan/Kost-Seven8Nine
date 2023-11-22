@@ -98,6 +98,8 @@ class AdminController extends Controller
                 $schedule = new Schedule();
                 $schedule->branchroom_id = $roomset;
                 $schedule->time = $selectedTime;
+                $schedule->day = $request->day;
+                $schedule->date = $request->date;
                 $schedule->save();
             }
         }

@@ -17,21 +17,21 @@ class BranchSeeder extends Seeder
             'name' => 'Mall Bassura',
             'location' => '-',
             'site' => 'bassura',
-            'img' => 'logo.jpg'
+            'img' => 'basura.jpg'
         ]);
 
         Branch::create([
             'name' => 'Aeon JGC',
             'location' => '-',
             'site' => 'aeon',
-            'img' => 'logo.jpg'
+            'img' => 'aeon.jpg'
         ]);
 
         Branch::create([
             'name' => 'Maxxbox',
             'location' => '-',
             'site' => 'maxxbox',
-            'img' => 'logo.jpg'
+            'img' => 'lippo.jpg'
         ]);
     }
 }

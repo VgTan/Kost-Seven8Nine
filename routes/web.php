@@ -22,11 +22,11 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/login', function () {
-    return view('login');
+    return view('page.login');
 });
 
 Route::get('/signup', function () {
-    return view('signup');
+    return view('page.signup');
 });
 
 Route::get('/roomdetail', function () {
@@ -35,6 +35,10 @@ Route::get('/roomdetail', function () {
 
 Route::get('/room', function () {
     return view('room');
+});
+
+Route::get('/aboutus', function () {
+    return view('page.aboutus');
 });
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');

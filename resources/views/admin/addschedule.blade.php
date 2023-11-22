@@ -22,14 +22,26 @@
         <br />
         <label for="rooms">Room:</label>
         <select name="room" id="">
-        <option value="">Choose</option>
+            <option value="">Choose</option>
             @foreach($room as $room)
             <!-- <input type="checkbox" name="rooms" id="roomsCheckbox">{{ $room->room }} -->
             <option value="{{ $room->id }}"> {{ $room->name }}
-            @endforeach
+                @endforeach
         </select>
         <br />
         <label for="time">Time</label>
+        <br />
+        <select name="day" id="">
+            <option value="">Choose</option>
+            <!-- <input type="checkbox" name="rooms" id="roomsCheckbox">{{ $room->room }} -->
+            <option value="mon"> Monday
+            <option value="tues"> Tuesday
+            <option value="wed"> Wednesday
+            <option value="thur"> Thursday
+            <option value="fri"> Friday
+        </select>
+        <br/>
+        <input type="date" name="date">
         <br />
         <input type="checkbox" name="time[]" id="" value="9.00 - 9.30">9.00 - 9.30
         <input type="checkbox" name="time[]" id="" value="9.30 - 10.00">9.30 - 10.00
