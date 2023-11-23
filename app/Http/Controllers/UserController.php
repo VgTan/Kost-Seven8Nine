@@ -13,14 +13,14 @@ class UserController extends Controller
             return redirect('/');
         }
         else {
-            return view('signup');
+            return view('page.signup');
         }
     }
     public function loginPage(Request $request) {
         if(Auth::check()) {
             return redirect('/');
         }
-        return view('login');;
+        return view('page.login');;
     }
     public function signup(Request $request) {
         if(Auth::check()) {

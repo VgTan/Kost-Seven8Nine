@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('gender')->default('None');
             $table->string('address')->nullable();
             $table->integer('token')->default(0);
+            $table->string('status')->default('user');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

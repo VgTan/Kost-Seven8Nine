@@ -6,11 +6,17 @@ use App\Models\Branch;
 use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoomController extends Controller
 {
     public function home() {
+        if(Auth::check()){
+            $user = User::find(Auth::user()->id);
+            if($user->status == 'admin') return redirect()->route('dashboard');   
+        }
         $room = Branch::all();
         return view('welcome', compact('room'));
     }

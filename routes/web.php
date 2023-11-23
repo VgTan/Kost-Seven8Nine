@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
@@ -70,7 +71,7 @@ Route::get('/addbranches', function () {
 
 
 Route::controller(AdminController::class)->group(function () {
-    Route::get('/dashboard','dashboard')->name('');
+    Route::get('/dashboard','user')->name('dashboard');
 
     Route::post('/processbranch','add_cabang')->name('');
 
@@ -81,6 +82,10 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/addscheds','process_schedule')->name('');
 }); 
+
+Route::controller(BookController::class)->group(function () {
+    Route::post('/book', 'book')->name('booking');
+});
 // Route::get('/footer', function () {
 //     return view('footer');
 // });
