@@ -17,8 +17,9 @@ class RoomController extends Controller
     
     public function room($site){
         $branch = Branch::where('site', $site)->get();
-        // dd($loc);
+        
         $loc = Branch::where('site', $site)->first();
+        // dd($loc);
 
         $rooms = BranchRoom::where('branch_id', $loc->id)->get();
         // dd($rooms);
@@ -33,6 +34,8 @@ class RoomController extends Controller
 
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;
+        $branchloc = Branch::where('site', $site)->first();
+
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
@@ -41,6 +44,6 @@ class RoomController extends Controller
         $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         // dd($schedule);
-        return view('booking.book', compact('rooms','loc','schedule', 'roomname', 'mon', 'tues', 'wed', 'thur', 'fri'));
+        return view('booking.roomdetail', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri'));
     }
 }

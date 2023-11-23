@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Comforter+Brush&family=Dancing+Script:wght@700&family=Jost:wght@300&family=Roboto:wght@300&family=Young+Serif&display=swap');
 
-* {
+body {
    font-family: 'Poppins', sans-serif;
    margin: 0;
    padding: 0;
@@ -8,6 +8,10 @@
    outline: none;
    border: none;
    text-decoration: none;
+}
+
+.about-container {
+   padding-top: 90px;
 }
 
 .heading-about {
@@ -22,7 +26,7 @@
    align-items: center;
    text-align: center;
    flex-flow: column;
-   gap: 1 rem;
+   gap: 1rem;
    margin-bottom: 70px;
 }
 
@@ -52,13 +56,17 @@
    font-style: italic;
 }
 
+.comprof h3 {
+   margin-right: 80px;
+}
+
 .titleprofile {
    display: flex;
 }
 
 .company-profile img {
    width: 40%;
-   margin-left: Y0px;
+   margin-left: 0px;
    margin-top: 70px;
    border-radius: 20px;
    height: 40%;
@@ -146,46 +154,46 @@
 
 .we-do-item {
    position: relative;
- padding: 37px 20px;
+   padding: 37px 20px;
 }
 
 .we-do-item .we-icon{
-position: relative;
- margin: 0;
-float:left;
-width: 78px;
-height:78px;
-line-height:78px;
-transition: all .3s ease;
-vertical-align: bottom;
-transition: all .3s ease;
- text-align: center;
+   position: relative;
+   margin: 0;
+   float:left;
+   width: 78px;
+   height:78px;
+   line-height:78px;
+   transition: all .3s ease;
+   vertical-align: bottom;
+   transition: all .3s ease;
+   text-align: center;
 }
 
 .we-do-item:hover {
- background-color: #f8f8f8;
+   background-color: #f8f8f8;
 }
 
 .we-do-item .we-icon:before {
- content: '';
- display: block;
- position: absolute;
-font-family: "Font Awesome\ 5 Free";
- left: 35px;
- width: 6px;
-top: -9px;
-background: #389ddb;
- height: 0;
- transition: all .3s ease;
+   content: '';
+   display: block;
+   position: absolute;
+   font-family: "Font Awesome\ 5 Free";
+   left: 35px;
+   width: 6px;
+   top: -9px;
+   background: #389ddb;
+   height: 0;
+   transition: all .3s ease;
 }
 
 .we-do-item:hover .we-icon:before {
- height: 15px;
- transition: all .3s ease;
+   height: 15px;
+   transition: all .3s ease;
 }
 .we-do-item:hover .we-icon:after {
- height: 15px;
- transition: all .3s ease;
+   height: 15px;
+   transition: all .3s ease;
 }
 
 .we-do-item .we-icon i {
@@ -214,33 +222,35 @@ margin:5px 0px 0px 0px;
 }
 
 .we-do-item .we-icon:after{
- content: '';
- display: block;
- position: absolute;
- left: 35px;
-transform-origin:top;
- width: 6px;
-bottom:-6px;
- background: #389ddb;
- height: 0;
- transition: all .3s ease;
+   content: '';
+   display: block;
+   position: absolute;
+   left: 35px;
+   transform-origin:top;
+   width: 6px;
+   bottom:-6px;
+   background: #389ddb;
+   height: 0;
+   transition: all .3s ease;
 }
-
 
 .we-desc .we-title{
- font-size: 17px;
-color: #000;
-font-style: normal;
- letter-spacing: -.5px;
- word-spacing: 0px;
- font-weight: 700;
+   font-size: 17px;
+   color: #000;
+   font-style: normal;
+   letter-spacing: 0.5px;
+   word-spacing: 0px;
+   font-weight: 700;
+   margin-left: 20px;
 }
 
-.we-desc  p {
- font-size: 13px;
-font-family: Open Sans,Arial;
-    font-weight: 400;
- font-style: normal;
- line-height: 18px;
-    color: #777;
+.we-desc p {
+   font-size: 13px;
+   font-family: Open Sans, Arial;
+   font-weight: 400;
+   font-style: normal;
+   line-height: 18px;
+   color: #777;
+   margin-right: 10px;
+   margin-left: 20px;
 }

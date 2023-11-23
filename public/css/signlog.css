@@ -1,26 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fff;
+.container-fluid{
+    height: 100vh;
 }
 
 .header-container {
     display: flex;
     justify-content: center;
     background-color: white;
-    width: 100%;
     position: fixed;
     z-index: 100;
 }
 
 .header {
-    height: 90px;
-    width: 90%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
 }
 
 .header .name {
@@ -103,6 +99,7 @@ body {
 
 .row {
     max-width: 100%;
+    height: 100%;
 }
 
 .brand-wrapper .logo {

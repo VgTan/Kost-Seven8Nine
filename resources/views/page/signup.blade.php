@@ -14,14 +14,15 @@
 <body>
     <main>
         @include('header')
+
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 px-0 d-none d-sm-block">
-                    <img src="../images/loginimg.jpg" alt="login image" class="login-img">
+                    <img src="../images/lippo.jpg" alt="login image" class="login-img">
                     <div class="imgtextoverlay">
-                        <h1>Creating Kost Booking Easier</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore</p>
+                        <h1>Need a place to learn?</h1>
+                        <p>Rhapsodie.co Music Space is a brand new concept in Indonesian music industry, makes music
+                            activity inclusively to everyone. </p>
                     </div>
                 </div>
                 <div class="col-sm-6 login-section-wrapper">

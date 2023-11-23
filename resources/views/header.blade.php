@@ -10,14 +10,14 @@
             </div>
             <div class="content-box">
                 <select name="" id="" class="header-select">
-                    <option value="">Find Kost</option>
+                    <option value="">Find Room</option>
                 </select>
             </div>
             <div class="content-box">
-                <a class="" href="/roomdetail">Facilities</a>
+                <a class="" href="/aboutus">About Us</a>
             </div>
             <div class="content-box">
-                <a class="" href="#">Contacts</a>
+                <a class="" href="#">Contact Us</a>
             </div>
         </div>
         @guest

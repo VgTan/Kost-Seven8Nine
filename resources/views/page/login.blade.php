@@ -17,11 +17,11 @@
          <div class="container-fluid">
              <div class="row">
                  <div class="col-sm-6 px-0 d-none d-sm-block">
-                     <img src="../images/loginimg.jpg" alt="login image" class="login-img">
+                     <img src="../images/basura.jpg" alt="login image" class="login-img">
                      <div class="imgtextoverlay">
-                         <h1>Creating Kost Booking Easier</h1>
-                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                             labore</p>
+                         <h1>Rhapsodie.co Music Space</h1>
+                         <p>a place where everyone can learn music in public area and turns music activity inclusively to
+                             everyone.</p>
                      </div>
                  </div>
                  <div class="col-sm-6 login-section-wrapper">
@@ -41,7 +41,8 @@
                                  <input type="password" name="password" id="password" class="form-control"
                                      placeholder="Enter your passsword">
                              </div>
-                             <button name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login">Login</button>
+                             <button name="login" id="login" class="btn btn-block login-btn" type="submit"
+                                 value="Login">Login</button>
                          </form>
                          <a href="#!" class="forgot-password-link">Forgot password?</a>
                          <p class="login-wrapper-footer-text">Don't have an account?
@@ -52,6 +53,7 @@
              </div>
          </div>
      </main>
+
      <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

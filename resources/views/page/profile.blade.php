@@ -108,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <div class=" logout-button">
+        <div class="logout-button">
             <a href="/logout">Log Out</a>
         </div>
     </div>

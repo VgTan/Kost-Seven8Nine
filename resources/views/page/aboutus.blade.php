@@ -30,13 +30,15 @@
 
 <body>
     @include('header')
-    <div class="heading-about">
-        <h1>Now Everyone Can Learn Music</h1>
-        <p>Embarking on a musical journey not only unveils the intricacies of melodic </br>
-            craftsmanship but also enriches one's soul with the sublime resonance of artistic cadence.</p>
-        @guest
-        <a href="/signup" class="btn btn-light" style="font-weight: bold;">Create Account</a>
-        @endguest
+
+    <div class="about-container">
+        <div class="heading-about">
+            <h1>Now Everyone Can Learn Music</h1>
+            <p>Embarking on a musical journey not only unveils the intricacies of melodic </br>
+                craftsmanship but also enriches one's soul with the sublime resonance of artistic cadence.</p>
+            @guest
+            <a href="/signup" class="btn btn-light" style="font-weight: bold;">Create Account</a>
+            @endguest
     </div>
 
     <div class="company-profile">
@@ -163,7 +165,10 @@
             </div>
         </div>
     </div>
+    </div>
 
+    @include('footer')
+    
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <script>

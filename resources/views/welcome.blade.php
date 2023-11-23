@@ -94,7 +94,7 @@
                 <div class="aboutus-lp">
                     <div class="aboutus-row">
                         <div class="aboutus-img">
-                            <img src="../images/basura.jpg">
+                            <img src="../images/aeon.jpg">
                         </div>
                         <div class="aboutus-row-desc">
                             <div class="aboutus-desc-title">
@@ -103,11 +103,10 @@
                                     <span>Music Space</span>
                                 </h1>
                             </div>
-                            <p>Rhapsodie.co Music Space is a brand new concept inIndonesian music industry.
-                                It is a place where everyone canlearn music in public area (in this occasion is Mall)
-                                and turnsmusic activity inclusively to everyone. This activity is apushing forward to
-                                develop
-                                children's growth with music byproviding a place to learn individually or with
+                            <p>Rhapsodie.co Music Space is a brand new concept in Indonesian music industry. It is a
+                                place where everyone can learn music in public area (in this occasion is Mall) and turns
+                                music activity inclusively to everyone. This activity is apushing forward to develop
+                                children's growth with music by providing a place to learn individually or with
                                 professional.</p>
                             <p>Rhapsodie.co Music Space helps the venue to get moretraffic of daily visitors because
                                 it's placed in Mall as thequarter of hangout activities for family and kids market.</p>
@@ -153,7 +152,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <a class="aboutus-button" href="/aboutus"><p>See More</p></a>
+                            <a class="aboutus-button" href="/aboutus">
+                                <p>See More</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +166,7 @@
             <div class="branch">
                 <div class="branch-title">
                     <h1>OUR LOCATION</h1>
-                    <h3>Book Your Lesson Now</h3>
+                    <h3>Book Your Room Now</h3>
                 </div>
                 <div class="branch-wrapper">
                     @foreach ($room as $branch)
@@ -175,14 +176,13 @@
                             <h1>{{ $branch->name }}</h1>
                         </div>
                         <div class="branch-text">
-                            <p>Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves
-                                in the world of melody.</p>
+                            <p>{{ $branch->branch_desc }}</p>
                         </div>
                         <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
                     </div>
                     @endforeach
-            </div>
-            <!-- BRANCH END -->
+                </div>
+                <!-- BRANCH END -->
 
 
                 <!-- PRICE PLAN START -->
@@ -245,7 +245,9 @@
             </div>
         </div>
     </div>
-    @include('footer');
+
+    @include('footer')
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
