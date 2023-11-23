@@ -17,7 +17,7 @@
             <p>Monday</p>
 
             @foreach($mon as $mon)
-            
+            {{ DATe($mon->date) }}
             <input class="day" type="text" disabled value="{{ $mon->day }}">
             <input type="checkbox" class="" name="time" value="{{ $mon->time }}">{{ $mon->time }}
             @endforeach
