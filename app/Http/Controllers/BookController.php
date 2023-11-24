@@ -32,7 +32,7 @@ class BookController extends Controller
             
             // $date = $request->date;
             // dd($date);
-
+            $currentDay = date('d');
             foreach($request->time as $time) {
                 $book = new BookList();
                 $book->branch = $request->branch;
