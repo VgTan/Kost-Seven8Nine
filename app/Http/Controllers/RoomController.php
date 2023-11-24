@@ -35,7 +35,7 @@ class RoomController extends Controller
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;
         $branchloc = Branch::where('site', $site)->first();
-
+        
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
