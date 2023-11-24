@@ -13,7 +13,7 @@ class RoomSeeder extends Seeder
      */
     public function run(): void
     {
-        Room::create([
+        Room:Room::create([
             'name' => 'Piano Room',
         ]);
 

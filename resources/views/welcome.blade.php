@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    
     @include('header')
     <div class="margin">
         <div class="main-container">

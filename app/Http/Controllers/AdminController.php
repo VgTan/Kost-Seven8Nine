@@ -6,14 +6,19 @@ use App\Models\Branch;
 use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
-    public function dashboard() {
-        if(!Auth::check()) return redirect('/');
-        return view("admin.dashboard");
+    public function user() {
+        $user = User::find(Auth::user()->id);
+    if(!Auth::check() ||$user->status != 'admin' ) return redirect('/');
+        $user = User::all();
+        $branch = Branch::all();
+        $branchroom = BranchRoom::all();
+        return view("admin.user", compact('user', 'branch', 'branchroom'));
     }
     public function add_cabang(Request $request) {
         $cabang = new Branch();

@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('schedules', function (Blueprint $table) {
+        Schema::create('book_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('branchroom_id');
-            $table->string('day');
+            $table->string('branch');
+            $table->string('room');
+            $table->string('user_id');
+            $table->string('name');
             $table->string('date');
             $table->string('time');
-            $table->string('status')->default('ready');
+            $table->string('status')->default('in progress');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('schedules');
+        Schema::dropIfExists('book_lists');
     }
 };
