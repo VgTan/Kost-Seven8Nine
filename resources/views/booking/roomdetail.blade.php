@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    @include('header')
+    <!-- @include('header') -->
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
             <div class="roomdetail-header">
