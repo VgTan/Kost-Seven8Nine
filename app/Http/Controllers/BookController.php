@@ -5,11 +5,33 @@ namespace App\Http\Controllers;
 use App\Models\BookList;
 use App\Models\BranchRoom;
 use App\Models\User;
+use App\Models\Branch;
+use App\Models\Room;
+use App\Models\Schedule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
+    public function page($site, $room){
+        $loc = Branch::where('site', $site)->first();
+        // dd($loc);
+
+        $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
+        $roomname = Room::where('id', $room)->first()->name;
+        $branchloc = Branch::where('site', $site)->first();
+        
+        // dd($rooms);
+        $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
+        $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
+        $tues = Schedule::where('branchroom_id', $rooms->id)->where('day', 'tues')->get();
+        $wed = Schedule::where('branchroom_id', $rooms->id)->where('day', 'wed')->get();
+        $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
+        $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
+        
+        return view('booking.book', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri'));
+    }
+
     public function book(Request $request) {
         if(!Auth::check()) return back();
         $book = new BookList();

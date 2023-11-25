@@ -1,20 +1,30 @@
-.timetable {
-    width: 100%;
-    border-collapse: collapse;
+.day {
+    display: none;
+    margin-bottom: 10px;
+}
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mon, .tue, .wed, .thur, .fri {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.mon p, .tue p, .wed p, .thur p, .fri p {
+    font-weight: bold;
+}
+
+.time-slot {
+
+}
+
+button {
     margin-top: 20px;
 }
 
-.timetable th, .timetable td {
-    border: 1px solid #ddd;
-    padding: 8px;
-    text-align: center;
-}
-
-.timetable th {
-    background-color: #f2f2f2;
-}
-
-.timetable td {
-    height: 50px;
-}
 
