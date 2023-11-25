@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.container-fluid{
+    height: 100vh;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    z-index: 100;
+}
+
+.header {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .name {
+    font-size: 2.5rem;
+    width: 40%;
+    overflow: hidden;
+}
+
+.header .logo img {
+    width: 150px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 30%;
+}
+
+.header-content a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+}
+
+.header .content-box {
+    padding: 30px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.header .content-box:hover {
+    border-bottom: 2px solid #2E4C59;
+    transition-duration: 500ms;
+}
+
+.header .active {
+    border-bottom: 2px solid #2E4C59;
+    height: 100%;
+}
+
+
+.header-select {
+    background-color: transparent;
+    color: black;
+    border: none
+}
+
+.header-button {
+    display: flex;
+    justify-content: end;
+    height: auto;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.sign-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: #2E4C59;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sign-button p {
+    margin: auto;
+    color: white;
+}
+
+.sign-button img {
+    width: 30px;
+    height: auto;
+}
+
+.row {
+    max-width: 100%;
+    height: 100%;
+}
+
+.brand-wrapper .logo {
+    height: 100px; 
+}
+  
+.login-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 82px 100px;
+    background-color: #fff; 
+}
+
+.login-wrapper {
+    max-width: 100%;
+    padding-top: 24px;
+    padding-bottom: 24px; 
+}
+
+.login-wrapper label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b0adad; 
+}
+
+.login-wrapper .form-control {
+    border: none;
+    border-bottom: 3px solid #000;
+    border-radius: 0;
+    padding: 9px 5px;
+    min-height: 40px;
+    font-size: 18px;
+    font-weight: normal; 
+}
+
+.login-wrapper .login-btn {
+    padding: 13px 20px;
+    background-color: #2E4C59;
+    border-radius: 0;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 14px; 
+}
+      
+.login-wrapper .login-btn:hover {
+    border: 1px solid #2E4C59;
+    background-color: #fff;
+    color: #2E4C59; 
+}
+    
+.login-wrapper a.forgot-password-link {
+      color: #080808;
+      font-size: 14px;
+      text-decoration: underline;
+      display: inline-block;
+      margin-bottom: 30px; 
+}
+
+.login-wrapper-footer-text {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 0; 
+}
+
+.login-wrapper-footer-text .regishere{
+    color: #2E4C59;
+    font-weight: bold;
+}
+  
+.login-title {
+    font-size: 30px;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+  
+.login-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: left; 
+}
+
+.imgtextoverlay{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    width: 80%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 50px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.imgtextoverlay h1{
+    font-weight: bolder;
+}
+
+.imgtextoverlay p{
+    font-size: 15px;
+    font-weight: lighter;
+    margin-top: 10px;
+}
+
+@media (max-width: 991px) {
+    .login-section-wrapper {
+        padding-left: 50px;
+        padding-right: 50px; 
+    } 
+}
+
+@media (max-width: 575px) {
+    .login-wrapper {
+        width: 100%; 
+    } 
+
+    .login-wrapper a.forgot-password-link {
+          margin-bottom: 16px; 
+    } 
+
+    .login-section-wrapper {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        min-height: 100vh; 
+    } 
+}
+  
