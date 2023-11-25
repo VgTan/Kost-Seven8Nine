@@ -46,6 +46,7 @@ Route::get('/book', function () {
     return view('book');
 });
 
+
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {
