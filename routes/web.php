@@ -42,6 +42,11 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
+Route::get('/book', function () {
+    return view('book');
+});
+
+
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {
@@ -89,6 +94,7 @@ Route::controller(AdminController::class)->group(function () {
 
 Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
+    Route::get('{site}/{room}/book', 'page');
     Route::get('/token', 'token');
     Route::post('/token', 'buytoken')->name('buytoken');
 });
