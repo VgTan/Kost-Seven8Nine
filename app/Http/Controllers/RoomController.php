@@ -37,6 +37,7 @@ class RoomController extends Controller
     public function room_details($site, $room){
         $loc = Branch::where('site', $site)->first();
         // dd($loc);
+        if(!$loc) return back();
 
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;

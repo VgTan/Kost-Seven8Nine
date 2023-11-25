@@ -56,8 +56,8 @@
                     </div>
                     <ul class="menu_items submenu">
                         <a href="/dashboard" class="nav_link sublink">User</a>
+                        <a href="/checktransaction" class="nav_link sublink">Transaction</a>
                         <a href="#" class="nav_link sublink">Book</a>
-                        <a href="#" class="nav_link sublink">Nav Sub Link</a>
                         <a href="#" class="nav_link sublink">Nav Sub Link</a>
                     </ul>
                 </li>
@@ -139,7 +139,7 @@
             <!-- Sidebar Open / Close -->
             <div class="bottom_content">
                 <div class="bottom expand_sidebar">
-                    <span> Expand</span>
+                    <span><a href="/logout">Logout</a></span>
                     <i class='bx bx-log-in'></i>
                 </div>
                 <div class="bottom collapse_sidebar">

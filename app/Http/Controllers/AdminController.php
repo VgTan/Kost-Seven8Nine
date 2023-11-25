@@ -6,6 +6,7 @@ use App\Models\Branch;
 use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,8 +14,9 @@ use Illuminate\Support\Facades\Auth;
 class AdminController extends Controller
 {
     public function user() {
+    if(!Auth::check()) return redirect('/');
         $user = User::find(Auth::user()->id);
-    if(!Auth::check() ||$user->status != 'admin' ) return redirect('/');
+    if($user->status != 'admin' ) return redirect('/');
         $user = User::all();
         $branch = Branch::all();
         $branchroom = BranchRoom::all();
@@ -109,6 +111,35 @@ class AdminController extends Controller
             }
         }
         return back();
-        
+    }
+
+    public function check_trans() {
+        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+            $user = User::all();
+            $token = Token::all();
+            return view("admin.check", compact('user', 'token'));
+    }
+
+    public function remove(Request $request) {
+        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+            $token = Token::where('id', $request->id);
+            $token->status = "no";
+            $token->save();
+            return back();
+    }
+
+    public function accept(Request $request) {
+        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+            $token = Token::where('id', $request->id)->first();
+            // dd($request->id);
+            $token->status = "yes";
+            $token->save();
+            return back();
     }
 }

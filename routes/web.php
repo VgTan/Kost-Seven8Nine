@@ -62,7 +62,7 @@ Route::controller(ProfileController::class)->group(function () {
 Route::controller(RoomController::class)->group(function () {
     Route::get('/', 'home');
     Route::get('/room/{site}','room')->name('room');
-    Route::get('/{site}/{room}','room_details')->name('');
+    Route::get('/{site}/{room}/details','room_details')->name('');
 });
 
 Route::get('/addbranches', function () {
@@ -72,6 +72,10 @@ Route::get('/addbranches', function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/dashboard','user')->name('dashboard');
+    
+    Route::get('/checktransaction', 'check_trans');
+    Route::get('/unaccept', 'remove')->name('remove');
+    Route::get('/accept', 'accept')->name('acc');
 
     Route::post('/processbranch','add_cabang')->name('');
 
