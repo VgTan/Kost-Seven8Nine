@@ -15,6 +15,7 @@
     @endphp
     <form class="schedule" action="{{ route('booking') }}" method="post">
 
+    
         @csrf
         <input class="day" name="branch" type="text" value="{{ $loc->name }}">
         <input class="day" name="room" type="text" value="{{ $roomname }}">
