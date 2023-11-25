@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BookList;
 use App\Models\BranchRoom;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -50,5 +51,38 @@ class BookController extends Controller
             ->where('room_type', $request->room);
             return back();
         }
+    }
+    public function token() {
+        if(Auth::check()) {
+        $user = User::find(Auth::user()->id);
+
+        return view('booking.token', compact('user'));
+        }
+       else {
+        return back();
+       }
+    }
+
+    public function buytoken(Request $request) {
+        if(Auth::check()) {
+            $user = User::find(Auth::user()->id);
+            $token = new Token();
+            $token->user_id = $user->id;
+            $token->name = $user->name;
+            $token->bundle = $request->bundle;
+            $file = $request->file('img');
+            if (!file_exists('images/proof/')) {
+                mkdir('images/proof/', 0777, true);
+            }
+            $fileName = $file->getClientOriginalName();
+            $file->move('images/proof/', $fileName);
+
+            // Simpan nama file ke dalam database atau di tempat yang sesuai
+            $token->proof = $fileName;
+            $token->save();
+            return back();
+        }
+        else
+        return back();
     }
 }

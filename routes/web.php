@@ -85,6 +85,8 @@ Route::controller(AdminController::class)->group(function () {
 
 Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
+    Route::get('/token', 'token');
+    Route::post('/token', 'buytoken')->name('buytoken');
 });
 // Route::get('/footer', function () {
 //     return view('footer');
