@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap');
+
+.roomdetail-margin{
+    display: flex;
+    justify-content: center;
+}
+
+.roomdetail-container{
+    width: 93%;
+}
+
+.roomdetail-header {
+    overflow: hidden;
+    width: 100%;
+    max-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roomdetail-header img{
+    width: 100%;
+    height: auto;
+}
+
+.roomdetail-imginfo img{
+    width: 300px;
+}
+
+.schedule {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.mon, .tues, .wed, .thur, .fri {
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+
+.day {
+    display: none;
+}

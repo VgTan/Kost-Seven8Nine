@@ -1,0 +1,79 @@
+* {
+    padding: 0;
+    margin: 0;
+    height: auto;
+}
+
+p {
+    margin: 0;
+}
+
+a:hover, a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+}
+.header-container {
+    margin-bottom: 50px;
+}
+.navbar {
+    background-color: white;
+    z-index: 100;
+}
+
+.navbar-nav .nav-link {
+    color: black;
+}
+
+.navbar-nav .nav-item.active .nav-link {
+    border-bottom: 2px solid #2E4C59;
+}
+
+.navbar-brand img {
+    width: 200px;
+}
+
+.header .active {
+    border-bottom: 2px solid #2E4C59;
+    height: 100%;
+}
+
+
+.header-select {
+    background-color: transparent;
+    border: none;
+    margin-top: 0.75vw;
+    margin-left: 0.5vw;
+}
+
+.header-button {
+    display: flex;
+    justify-content: end;
+    height: auto;
+    width: auto;
+    padding-bottom: 10px;
+}
+
+.sign-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    background-color: #4688C3;
+    border-radius: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sign-button p {
+    margin: auto;
+    color: white;
+}
+
+.sign-button img {
+    width: 30px;
+    height: auto;
+}
