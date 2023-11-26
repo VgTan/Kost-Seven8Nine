@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    @include('header')
     <p> {{ $loc->name }} </p>
     <p> {{ $roomname }} </p>
     <form class="" action="{{ route('booking') }}" method="post" onsubmit="setDay()">

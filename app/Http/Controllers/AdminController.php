@@ -155,8 +155,36 @@ class AdminController extends Controller
 
     public function accept(Request $request) {
         if(!Auth::check()) return redirect('/');
+        
         $token = Token::where('id', $request->id)->first();
+        $user = User::where('id', $token->user_id)->first();
         // dd($request->id);
+        $user_token = $user->token;
+        switch($token->bundle) {
+            case 'basic1':
+                $user->token = $user_token + 1;
+                break;
+            case 'basic2':
+                $user->token = $user_token + 2;
+                break;
+            case 'basic3':
+                $user->token = $user_token + 6;
+                break;
+            case 'flexi1':
+                $user->token = $user_token + 4;
+                break;
+            case 'flexi2':
+                $user->token = $user_token + 20;
+                break;
+            case 'flexi3':
+                $user->token = $user_token + 40;
+                break;
+            case 'flexi4':
+                $user->token = $user_token + 100;
+                break;
+        }
+        $user->save();
+        
         $token->status = "yes";
         $token->save();
         return back();

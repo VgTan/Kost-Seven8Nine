@@ -81,10 +81,17 @@ class BookController extends Controller
             // dd($date);
             // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
             // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
-        
+        $token = count($request->time);
+        // dd($token);
+        if($user->token < $token)
+        {
+            return redirect('/token');
+        }
+        else {
+            $user->token = $user->token - $token; 
             foreach($request->time as $times) {
+                $user->save();
                 list($day, $date, $time) = explode(' ', $times, 3);
-
                 // dd($request->time);
                 $book = new BookList();
                 $book->branch = $request->branch;
@@ -106,12 +113,11 @@ class BookController extends Controller
                 $schedule->save();
             }
             // $book->time = $request->input('time', []);
+                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                ->where('room_type', $request->room);
             
-            
-            $branchroom = BranchRoom::where('branch_name', $request->branch_name)
-            ->where('room_type', $request->room);
-        
-            return back();
+                return back();
+            }
         }
     }
     public function token() {

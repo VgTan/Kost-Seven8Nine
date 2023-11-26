@@ -4,6 +4,10 @@
     height: auto;
 }
 
+body {
+    /* background-color: rgb(10, 10, 10)    ; */
+}
+
 p {
     margin: 0;
 }

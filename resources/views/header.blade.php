@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/header.css">
+<link rel="stylesheet" href="/css/header.css">
 <div class="header-container">
     <div class="header">
         <div class="name">

@@ -51,6 +51,6 @@ class RoomController extends Controller
         $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         // dd($schedule);
-        return view('booking.roomdetail', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri'));
+        return view('booking.roomdetail', compact('room', 'rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri'));
     }
 }
