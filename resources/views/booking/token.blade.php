@@ -80,30 +80,31 @@
                         </span>
                     </label>
                 </div>
-                <h2>Billing Info</h2>
                 <div class="buyer">
                     <div class="buyer-info">
-                        <table>
-                            <tr>
-                                <td>Name:</td>
-                                <td><input type="text" class="" value="{{ $user->name }}" disabled></td>
-                            </tr>
-                            <tr>
-                                <td>Email:</td>
-                                <td><input type="text" class="" value="{{ $user->email }}" disabled></td>
-                            </tr>
-                            <tr>
-                                <td>Address:</td>
-                                <td><input type="text" class="" value="{{ $user->address }}" disabled></td>
-                            </tr>
-                        </table>
-                    </div>
-                    <div class="buy-proof">
-                        <img class="qrcode" src="" alt="">
-                        <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
-                            value="" multiple />
-                        <label for="images" class="upload-label">Choose File</label>
-                        <button type="submit">Buy</button>
+                        <div class="buyerinfo-container">
+                            <div class="buyerinfo-info">
+                                <label for="namebuyer">Full Name</label>
+                                <input type="text" id="namebuyer" class="infobuyer" value="{{ $user->name }}" disabled>
+                            </div>
+                            <div class="buyerinfo-info">
+                                <label for="emailbuyer">Email Address</label>
+                                <input type="text" id="emailbuyer" class="infobuyer" value="{{ $user->email }}"
+                                    disabled>
+                            </div>
+                            <div class="buyerinfo-info">
+                                <label for="addbuyer">Address</label>
+                                <input type="text" id="addbuyer" class="infobuyer" value="{{ $user->address }}"
+                                    disabled>
+                            </div>
+                        </div>
+                        <div class="buy-proof">
+                            <img class="qrcode" src="" alt="">
+                            <input required id="images" class="file-input" type="file" name="img"
+                                accept=".jpg, .jpeg, .png" value="" multiple />
+                            <label for="images" class="upload-label">Choose File</label>
+                            <button type="submit">Buy</button>
+                        </div>
                     </div>
                 </div>
             </form>

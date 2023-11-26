@@ -14,7 +14,7 @@ class BranchSeeder extends Seeder
     public function run(): void
     {
         Branch::create([
-            'name' => 'Mall Bassura',
+            'name' => 'Mall @Bassura City Jakarta',
             'location' => 'Jl. Jend. Basuki Rachmat No.1A, Cipinang Besar Sel., Kecamatan Jatinegara, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13410',
             'site' => 'bassura',
             'img' => 'basura.jpg',

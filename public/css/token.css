@@ -112,62 +112,37 @@ input[type="radio"]{
 }
 
 .buyer-info {
-    width: 50%;
-}
-
-.buy-proof {
-    width: 50%;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-td {
-    padding: 8px;
-    border: 1px solid #ddd;
-}
-
-.buy-proof {
     display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-.qrcode {
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    margin-bottom: 10px;
+.buyerinfo-container {
+    width: 50%;
+    margin: 50px;
+    float: left;
+    width: 25%;
 }
 
-.file-input {
-    display: none;
+.buy-proof {
+    width: 50%;
+    margin: 50px;
 }
 
-.upload-label {
-    cursor: pointer;
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    text-align: center;
+.buyer-info {
+    padding-top: 24px;
+    padding-bottom: 24px;
 }
 
-.upload-label:hover {
-    background-color: #45a049;
+.buyer-info label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b0adad;
 }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #45a049;
+.buyer-info .infobuyer {
+    border: 2px solid #81CDEC;
+    border-radius: 8px;
+    padding: 0px 15px;
+    min-height: 40px;
+    font-size: 18px;
+    font-weight: normal;
 }

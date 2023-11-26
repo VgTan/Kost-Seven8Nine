@@ -137,6 +137,10 @@ body {
    display: none;
 }
 
+.service {
+   margin: 0;
+}
+
 .what-bg {
    position: relative;
    padding-top: 53px !important;
@@ -159,19 +163,14 @@ body {
 
 .we-do-item .we-icon{
    position: relative;
-   margin: 0;
    float:left;
-   width: 78px;
-   height:78px;
+   width: 50px;
+   height: 50px;
    line-height:78px;
    transition: all .3s ease;
    vertical-align: bottom;
    transition: all .3s ease;
    text-align: center;
-}
-
-.we-do-item:hover {
-   background-color: #f8f8f8;
 }
 
 .we-do-item .we-icon:before {
@@ -187,51 +186,13 @@ body {
    transition: all .3s ease;
 }
 
-.we-do-item:hover .we-icon:before {
-   height: 15px;
-   transition: all .3s ease;
-}
-.we-do-item:hover .we-icon:after {
-   height: 15px;
-   transition: all .3s ease;
-}
-
 .we-do-item .we-icon i {
- color: #333;
- font-size: 21px;
+   color: #333;
+   font-size: 10px;
 }
 
 .we-do-item .we-desc{
  display:table-cell;
-}
-
-.we-do-item .we-icon i:after {
- content: "";
- left: 9px;
- width: 58px;
- top: 7px;
- position: absolute;
- height: 58px;
-filter:hue-rotate(90deg);
- background: url(../img/hexagon.png);
- background-size: cover;
-}
-
-.we-do-item:hover .we-icon:after {
-margin:5px 0px 0px 0px;
-}
-
-.we-do-item .we-icon:after{
-   content: '';
-   display: block;
-   position: absolute;
-   left: 35px;
-   transform-origin:top;
-   width: 6px;
-   bottom:-6px;
-   background: #389ddb;
-   height: 0;
-   transition: all .3s ease;
 }
 
 .we-desc .we-title{
@@ -241,7 +202,7 @@ margin:5px 0px 0px 0px;
    letter-spacing: 0.5px;
    word-spacing: 0px;
    font-weight: 700;
-   margin-left: 20px;
+   margin-left: 40px;
 }
 
 .we-desc p {
@@ -252,5 +213,5 @@ margin:5px 0px 0px 0px;
    line-height: 18px;
    color: #777;
    margin-right: 10px;
-   margin-left: 20px;
+   margin-left: 40px;
 }
