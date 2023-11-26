@@ -199,7 +199,7 @@
                                 <li class="price bottom-bar">IDR 150.000</li>
                                 <li class="bottom-bar">60 Mins</li>
                                 <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><button class="price-btn">Learn More</button></li>
+                                <li><a href="/token" class="price-btn">Learn More</a></li>
                             </ul>
                         </div>
                         <div class="card active">
@@ -208,7 +208,7 @@
                                 <li class="price bottom-bar">IDR 75.000</li>
                                 <li class="bottom-bar">30 Mins</li>
                                 <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><button class="price-btn active-btn">Learn More</button></li>
+                                <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
                             </ul>
                         </div>
                         <div class="card shadow">
@@ -217,7 +217,7 @@
                                 <li class="price bottom-bar">IDR 450.000</li>
                                 <li class="bottom-bar">180 Mins</li>
                                 <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><button class="price-btn">Learn More</button></li>
+                                <li><a href="/token" class="price-btn">Learn More</a></li>
                             </ul>
                         </div>
                     </div>

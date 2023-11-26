@@ -121,7 +121,7 @@ class BookController extends Controller
         return view('booking.token', compact('user'));
         }
        else {
-        return back();
+        return redirect('/login');
        }
     }
 
