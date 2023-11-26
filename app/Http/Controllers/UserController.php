@@ -17,7 +17,7 @@ class UserController extends Controller
         }
     }
 
-    public function loginPage(Request $request) {
+    public function loginPage() {
         if(Auth::check()) {
             return redirect('/');
         }
@@ -48,7 +48,7 @@ class UserController extends Controller
         if(Auth::attempt($credentials)){
             // regenerate biar ga kena session fixation
             $request->session()->regenerate();
-
+            
             return redirect()->intended('/');
         }
 

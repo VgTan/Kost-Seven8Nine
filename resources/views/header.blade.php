@@ -20,14 +20,6 @@
                 <a class="" href="#">Contact Us</a>
             </div>
         </div>
-        @guest
-        <div class="header-button">
-            <a class="sign-button" href="/login">
-                <p class="">Login</p>
-                <img src="/images/contact.png" alt="">
-            </a>
-        </div>
-        @endguest
         @auth
         <div class="header-button">
             <a class="sign-button" href="/profile">
@@ -36,5 +28,13 @@
             </a>
         </div>
         @endauth
+        @guest
+        <div class="header-button">
+            <a class="sign-button" href="/login">
+                <p class="">Login</p>
+                <img src="/images/contact.png" alt="">
+            </a>
+        </div>
+        @endguest
     </div>
 </div>

@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Branch;
 use App\Models\Room;
 use App\Models\Schedule;
+use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -21,7 +22,25 @@ class BookController extends Controller
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;
         $branchloc = Branch::where('site', $site)->first();
-        
+        $currentDayNumber = date('N');
+
+        // Calculate the number of days to Monday (the beginning of the week)
+        $daysToMonday = (8 - $currentDayNumber) % 7;
+
+        // Get the current date
+        $currentDate = date('Y-m-d');
+
+        // Calculate the dates for the next 7 days (Monday to Sunday)
+        $dates = [
+        $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+        $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+        $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+        $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+        $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+        $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+        $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+        ];
+
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
@@ -29,12 +48,17 @@ class BookController extends Controller
         $wed = Schedule::where('branchroom_id', $rooms->id)->where('day', 'wed')->get();
         $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
-        
-        return view('booking.book', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri'));
+        $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
+        $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
+        return view('booking.book', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
+        'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
     }
 
     public function book(Request $request) {
-        if(!Auth::check()) return back();
+        if(!Auth::check()) return redirect('/login');
+
+        $currentDayNumber = date('N');
+        $currentDate = date('d');
         $book = new BookList();
         // dd($request);
         // $nau = BookList::where('branch', $request->branch_name)
@@ -55,22 +79,38 @@ class BookController extends Controller
             
             // $date = $request->date;
             // dd($date);
-            $currentDay = date('d');
-            foreach($request->time as $time) {
+            // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
+            // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
+        
+            foreach($request->time as $times) {
+                list($day, $date, $time) = explode(' ', $times, 3);
+
+                // dd($request->time);
                 $book = new BookList();
                 $book->branch = $request->branch;
                 $book->room = $request->room;
                 $book->user_id = $user->id;
                 $book->name = $user->name;
-                $book->date = $request->date;
+                $book->date = $date;
                 $book->time = $time;
                 $book->save();
+                
+                $branchroom = BranchRoom::where('branch_name', $request->branch)
+                ->where('room_type', $request->room)->first();
+                // dd($branchroom);
+                $schedule = Schedule::where('branchroom_id', $branchroom->id)
+                ->where('day', $day)
+                ->where('time', $time)
+                ->first();
+                $schedule->status = "booked";
+                $schedule->save();
             }
             // $book->time = $request->input('time', []);
             
-
+            
             $branchroom = BranchRoom::where('branch_name', $request->branch_name)
             ->where('room_type', $request->room);
+        
             return back();
         }
     }

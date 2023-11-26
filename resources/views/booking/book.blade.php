@@ -9,38 +9,50 @@
 </head>
 
 <body>
-
-    @php
-    $currentDay = date('d');
-    @endphp
-    <form class="" action="{{ route('booking') }}" method="post">
+    <p> {{ $loc->name }} </p>
+    <p> {{ $roomname }} </p>
+    <form class="" action="{{ route('booking') }}" method="post" onsubmit="setDay()">
         @csrf
         <div class="schedule">
             <input class="day" name="branch" type="text" value="{{ $loc->name }}">
             <input class="day" name="room" type="text" value="{{ $roomname }}">
 
+            @foreach(['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'] as $index => $day)
             <div class="">
-                <p class="day-name">Monday</p>
-                <div class="mon">
-                    <input class="day" name="date" type="text" value="{{ $currentDay }}">
-                    @foreach($mon as $mon)
-                    @if($mon->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $mon->day }}">
+                <p class="day-name">
+                    @if(in_array($day, ['mon', 'tues', 'fri', 'sun']))
+                    {{ ucfirst($day).'day' }}
+                    @elseif($day == 'wed')
+                    {{ ucfirst($day).'nesday' }}
+                    @elseif($day == 'thur')
+                    {{ ucfirst($day).'sday' }}
+                    @elseif($day == 'sat')
+                    {{ ucfirst($day).'urday' }}
+                    @endif
+                </p>
+                <p class="day-number">
+                    {{ date('d', strtotime($dates[$index])) }}
+                </p>
+                <div class="{{ strtolower($day) }}">
+                    @foreach(${$day} as $schedule)
+                    @if($schedule->status == 'ready')
                     <div class="checkbox-wrapper-16">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $mon->time }}" />
+                            <!-- Hidden input for day -->
+                            <!-- <input name="day[]" type="hidden" value="{{ $day }}"> -->
+                            <input name="time[]" type="checkbox" class="checkbox-input"
+                                value="{{ $day }} {{ $dates[$index] }} {{ $schedule->time }}" />
                             <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $mon->time }}</span>
+                                <span class="checkbox-label">{{ $schedule->time }}</span>
                             </span>
                         </label>
                     </div>
                     @else
-                    <input class="day" name="day" type="text" disabled value="{{ $mon->day }}">
-                    <div class="checkbox-wrapper-16">
+                    <div class="checkbox-wrapper-disabled">
                         <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $mon->time }}" disabled />
+                            <p class="checkbox-input disabled" value="{{ $schedule->time }}" disabled> </p>
                             <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $mon->time }}</span>
+                                <span class="checkbox-label">{{ $schedule->time }}</span>
                             </span>
                         </label>
                     </div>
@@ -48,124 +60,13 @@
                     @endforeach
                 </div>
             </div>
-            <div class="">
-                <p class="day-name">Tuesday</p>
-                <div class="tue">
-                    <input class="day" name="date" type="text" value="{{ $currentDay + 1 }}">
-                    @foreach($tues as $tues)
-                    @if($tues->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $tues->day }}">
-                    <input class="day" name="day" type="text" disabled value="{{ $mon->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $tues->time }}" />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $tues->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $tues->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $tues->time }}" disabled />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $tues->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-            <div class="">
-                <p class="day-name">Wednesday</p>
-                <div class="wed">
-                    <input class="day" name="date" type="text" value="{{ $currentDay + 2}}">
-                    @foreach($wed as $wed)
-                    @if($wed->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $wed->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $wed->time }}" />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $wed->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $wed->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $wed->time }}" disabled />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $wed->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-            <div class="">
-                <p class="day-name">Thursday</p>
-                <div class="thur">
-                    @foreach($thur as $thur)
-                    @if($thur->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $thur->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $thur->time }}" />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $thur->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $thur->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $thur->time }}" disabled />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $thur->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
-            <div class="">
-                <p class="day-name">Friday</p>
-                <div class="fri">
-                    @foreach($fri as $fri)
-                    @if($fri->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $fri->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $fri->time }}" />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $fri->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $fri->day }}">
-                    <div class="checkbox-wrapper-16">
-                        <label class="checkbox-wrapper">
-                            <input type="checkbox" class="checkbox-input" value="{{ $fri->time }}" disabled />
-                            <span class="checkbox-tile">
-                                <span class="checkbox-label">{{ $fri->time }}</span>
-                            </span>
-                        </label>
-                    </div>
-                    @endif
-                    @endforeach
-                </div>
-            </div>
+            @endforeach
         </div>
+
         <button type="submit">Book</button>
     </form>
+
+
 
 
 </body>
