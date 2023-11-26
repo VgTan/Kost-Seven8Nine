@@ -2,19 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookList;
 use App\Models\Branch;
 use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Session;
 class AdminController extends Controller
 {
     public function user() {
+    if(!Auth::check()) return redirect('/');
         $user = User::find(Auth::user()->id);
-    if(!Auth::check() ||$user->status != 'admin' ) return redirect('/');
+    if($user->status != 'admin' ) return redirect('/');
         $user = User::all();
         $branch = Branch::all();
         $branchroom = BranchRoom::all();
@@ -71,6 +74,7 @@ class AdminController extends Controller
             // $anu = BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first();
             // dd($anu);
             $branchname = Branch::where('id', $request->branch_id)->first();
+            $schedule = new Schedule();
             $room->branch_id = $request->branch_id;
             $room->room_id = $room_id;
             $room->room_type = $request->name;
@@ -78,8 +82,31 @@ class AdminController extends Controller
             $room->room_size = $request->size;
             $room->room_equipment = $request->equipment;
             $room->room_desc = $request->desc;
-            
             $room->save();
+            
+            $branchroom = BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first();
+            // dd($branchroom);
+            $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
+            '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
+            '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
+            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
+            '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
+            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
+            '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
+            '20.30 - 21.00'];
+            foreach ($day as $days) {
+                foreach ($time as $times) {
+                    $schedule = new Schedule();
+                    $schedule->branchroom_id = $branchroom->id;
+                    $schedule->day = $days;
+                    $schedule->date = '-';
+                    $schedule->time = $times;
+                    // dd($schedule);
+                    $schedule->save();
+                }
+            }
+            
         }
         return back();
     }
@@ -109,6 +136,45 @@ class AdminController extends Controller
             }
         }
         return back();
-        
+    }
+
+    public function check_trans() {
+        if(!Auth::check()) return redirect('/');
+        $user = User::all();
+        $token = Token::all();
+        return view("admin.transaction", compact('user', 'token'));
+    }
+
+    public function remove(Request $request) {
+        if(!Auth::check()) return redirect('/');
+        $token = Token::where('id', $request->id);
+        $token->status = "no";
+        $token->save();
+        return back();
+    }
+
+    public function accept(Request $request) {
+        if(!Auth::check()) return redirect('/');
+        $token = Token::where('id', $request->id)->first();
+        // dd($request->id);
+        $token->status = "yes";
+        $token->save();
+        return back();
+    }
+
+    public function book_list() {
+        if(!Auth::check()) return redirect('/');
+    
+        $user = User::all();
+        $book = BookList::all();
+        return view("admin.booklist", compact('user', 'book'));
+    }
+    public function done(Request $request) {
+        if(!Auth::check()) return redirect('/');
+        $booklist = BookList::where('id', $request->id)->first();
+        // dd($request->id);
+        $booklist->status = "done";
+        $booklist->save();
+        return back();
     }
 }

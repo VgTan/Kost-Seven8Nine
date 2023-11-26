@@ -49,7 +49,7 @@
             <div class="room-type-container">
                 <div class="room-type">
                     <div class="room-image">
-                        <a class="" href="/{{$loc->site}}/{{$room->room_id}}">
+                        <a class="" href="/{{$loc->site}}/{{$room->room_id}}/details">
                             <img src="/images/{{$room->img}}" alt="Room Image">
                         </a>
                     </div>
@@ -58,7 +58,7 @@
                         <div class="room-desc">
                             <p>{{ $room->room_desc }}</p>
                         </div>
-                        <a class="book-button" href="/{{$loc->site}}/{{$room->room_id}}">Book Now</a>
+                        <a class="book-button" href="/{{$loc->site}}/{{$room->room_id}}/details">Book Now</a>
                     </div>
                 </div>
             </div>

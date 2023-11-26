@@ -20,8 +20,8 @@
                     <span>User(s)</span>
                 </div>
                 <div class="room-count">
-                    <p>{{ COUNT($token) }}</p>
-                    <span>Transaction(s)</span>
+                    <p>{{ COUNT($book) }}</p>
+                    <span>Book List(s)</span>
                 </div>
             </div>
             <div class="user">
@@ -35,40 +35,54 @@
                         <a href="javascript:void(0)" id="clear-btn">Clear</a>
                     </div> -->
                 </form>
-                <form action="table-form">
+                <div class="table-form">
                     <table class="user-table">
                         <tr class="table-head">
-                            <th class="input-head">Time</th>
-                            <th>Name</th>
-                            <th>Transaction</th>
+                            <th class="input-head">User</th>
+                            <th>Branch</th>
+                            <th>Room</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
                             <th></th>
                             <th></th>
                         </tr>
-                        @foreach($token as $user)
-                        @if($user->status == 'pending')
+                        @foreach($book as $booklist)
+                        @if($booklist->status == 'in progress')
                         <tr class="table-content">
-                            <td class="input-content">
-                                {{ $user->created_at }}</td>
+                            <!-- <td class="input-content">
+                                {{ $booklist->created_at }}
+                            </td> -->
                             <td>
                                 <div class="user-name">
-                                    {{ $user->name }}
+                                    {{ $booklist->name }}
                                 </div>
                             </td>
-                            <td class="proof">
-                                <a target="_blank" href='/images/proof/{{ $user->proof }}'>
-                                    <img class="proof-img" src='/images/proof/{{ $user->proof }}' alt="">
-                                </a>
+                            <td class="">
+                                {{ $booklist->branch }}
                             </td>
-                            <form action="{{ route('remove') }}" method="get">
+                            <td class="">
+                                {{ $booklist->room }}
+                            </td>
+                            <td class="">
+                                {{ $booklist->date }}
+                            </td>
+                            <td class="">
+                                {{ $booklist->time }}
+                            </td>
+                            <td class="">
+                                {{ $booklist->status }}
+                            </td>
+                            <!-- <form action="{{ route('remove') }}" method="get">
                             @csrf
-                                <input class="hidden" name="id" type="text" value="{{ $user->id }}">
+                                <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
                                 <td>
                                     <button type="submit">Remove</button>
                                 </td>
-                            </form>
-                            <form action="{{ route('acc') }}" method="get">
-                            @csrf
-                                <input class="hidden" name="id" type="text" value="{{ $user->id }}">
+                            </form> -->
+                            <form action="{{ route('done') }}" method="get">
+                                @csrf
+                                <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
                                 <td>
                                     <button type="submit">Done</button>
                                 </td>
@@ -77,7 +91,7 @@
                         @endif
                         @endforeach
                     </table>
-                </form>
+                </div>
             </div>
         </div>
     </div>

@@ -1,9 +1,9 @@
 <?php
-
 namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Session;
 use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -16,7 +16,7 @@ class isLoggedIn
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check()){
+        if(Session::has('loginId')){
             return back();
         }
         else {

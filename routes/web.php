@@ -22,13 +22,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/login', function () {
-    return view('page.login');
-});
-
-Route::get('/signup', function () {
-    return view('page.signup');
-});
 
 Route::get('/roomdetail', function () {
     return view('roomdetail');
@@ -53,7 +46,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/signup', 'signupPage');
     Route::get('/newuser', 'signup')->name('signup');
 
-    Route::post('/login','loginPage');
+    Route::get('/login','loginPage');
     Route::get('/loginn','login')->name('login');
     Route::get('/logout','logout')->name('logout');
 });
@@ -67,7 +60,7 @@ Route::controller(ProfileController::class)->group(function () {
 Route::controller(RoomController::class)->group(function () {
     Route::get('/', 'home');
     Route::get('/room/{site}','room')->name('room');
-    Route::get('/{site}/{room}','room_details')->name('');
+    Route::get('/{site}/{room}/details','room_details')->name('');
 });
 
 Route::get('/addbranches', function () {
@@ -77,6 +70,13 @@ Route::get('/addbranches', function () {
 
 Route::controller(AdminController::class)->group(function () {
     Route::get('/dashboard','user')->name('dashboard');
+    
+    Route::get('/transaction', 'check_trans')->name('trans');
+    Route::get('/unaccept', 'remove')->name('remove');
+    Route::get('/accept', 'accept')->name('acc');
+
+    Route::get('/booklist', 'book_list')->name('booklist');
+    Route::get('/done', 'done')->name('done');
 
     Route::post('/processbranch','add_cabang')->name('');
 
