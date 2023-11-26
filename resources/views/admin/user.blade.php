@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/user.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
 <body>
@@ -72,7 +71,7 @@
                                 {{ $user->address }}
                             </td>
                             <td>
-                                <a href="">Edit</a>
+                                <a href="{{route('edit_profile')}}">Edit</a>
                             </td>
                             <td>
                                 <a href="">Remove</a>
@@ -84,6 +83,52 @@
             </div>
         </div>
     </div>
+    <script>
+        var sidebarClose = document.getElementById('sidebar-close');
+        var sidebarExpand = document.getElementById('sidebar-expand');
+
+        document.addEventListener('DOMContentLoaded', function() {
+            var checkboxHead = document.querySelector('.input-head input[type="checkbox"]');
+            checkboxHead.addEventListener('click', function() {
+                var checkboxContents = document.querySelectorAll('.input-content input[type="checkbox"]');
+                checkboxContents.forEach(function(checkbox) {
+                    checkbox.checked = checkboxHead.checked;
+                });
+            });
+        });
+        sidebarClose.addEventListener("click", () => {
+            sidebar.classList.add("close", "hoverable");
+            document.body.classList.add("sidebar-close");
+        });
+
+        sidebarExpand.addEventListener("click", () => {
+            sidebar.classList.remove("close", "hoverable");
+            document.body.classList.remove("sidebar-close");
+        });
+
+        sidebar.addEventListener("mouseenter", () => {
+            if (sidebar.classList.contains("hoverable")) {
+                sidebar.classList.remove("close");
+                document.body.classList.remove("sidebar-close");
+            }
+        });
+
+        sidebar.addEventListener("mouseleave", () => {
+            if (sidebar.classList.contains("hoverable")) {
+                sidebar.classList.add("close");
+                document.body.classList.add("sidebar-close");
+            }
+        });
+
+        if (window.innerWidth < 768) {
+            sidebar.classList.add("close");
+            document.body.classList.add("sidebar-close");
+        } else {
+            sidebar.classList.remove("close");
+            document.body.classList.remove("sidebar-close");
+        }
+    </script>
+
 </body>
 
 </html>

@@ -7,6 +7,7 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    background-color: #F5F5FF;
 }
 .container-size {
     width: 80%;
@@ -20,6 +21,7 @@
     padding: 50px;
     padding-left: 0;
     padding-right: 0;
+    background-color: white;
 }
 
 
@@ -46,6 +48,7 @@
     overflow: hidden;
     height: 100%;
     border-collapse: collapse;
+    background-color: white;
 }
 
 .user-table td, .user-table th {
