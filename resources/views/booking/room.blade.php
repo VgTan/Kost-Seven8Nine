@@ -25,7 +25,7 @@
     <div class="room-margin">
         <div class="room-container">
             <div class="branch-room">
-                <img src="/images/{{ $loc->img }}" alt="">
+                <img src="/images/cabang/{{ $loc->img }}" alt="">
                 <div class="text-title">
                     <p>{{ $loc->name }}</p>
                 </div>
@@ -50,7 +50,7 @@
                 <div class="room-type">
                     <div class="room-image">
                         <a class="" href="/{{$loc->site}}/{{$room->room_id}}/details">
-                            <img src="/images/{{$room->img}}" alt="Room Image">
+                            <img src="/images/rooms/{{$room->img}}" alt="Room Image">
                         </a>
                     </div>
                     <div class="room-details">
