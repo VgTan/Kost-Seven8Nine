@@ -67,7 +67,7 @@ class BookController extends Controller
         // ->where('time', $request->time)->first();
         // dd($nau);
         $user = User::find(Auth::user()->id);
-        if(BookList::where('branch', $request->branch_name)
+        if(BookList::where('branch', $request->branch)
         ->where('room', $request->room)
         ->where('date', $request->date)
         ->where('time', $request->time)
@@ -91,8 +91,8 @@ class BookController extends Controller
             foreach($request->time as $times) {
                 $user->save();
                 list($day, $date, $time) = explode(' ', $times, 3);
-                // dd($request->time);
                 $book = new BookList();
+                // $book->day = $request->day;
                 $book->branch = $request->branch;
                 $book->room = $request->room;
                 $book->user_id = $user->id;
@@ -118,6 +118,7 @@ class BookController extends Controller
             }
         }
     }
+
 
     public function book_details(Request $request) {
         if(!Auth::check()) return redirect('/login');
@@ -166,7 +167,8 @@ class BookController extends Controller
                 ->where('room_type', $roomname)->first();
                 $roomimg = $room->img;
                 $time = $request->time;
-                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg'));
+                $token = count($request->time);
+                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg', 'token'));
         }
     }
     public function token() {
