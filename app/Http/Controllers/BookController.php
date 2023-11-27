@@ -67,7 +67,7 @@ class BookController extends Controller
         // ->where('time', $request->time)->first();
         // dd($nau);
         $user = User::find(Auth::user()->id);
-        if(BookList::where('branch', $request->branch_name)
+        if(BookList::where('branch', $request->branch)
         ->where('room', $request->room)
         ->where('date', $request->date)
         ->where('time', $request->time)
@@ -91,8 +91,8 @@ class BookController extends Controller
             foreach($request->time as $times) {
                 $user->save();
                 list($day, $date, $time) = explode(' ', $times, 3);
-                // dd($request->time);
                 $book = new BookList();
+                // $book->day = $request->day;
                 $book->branch = $request->branch;
                 $book->room = $request->room;
                 $book->user_id = $user->id;
@@ -132,34 +132,8 @@ class BookController extends Controller
             return back();
         }
         else {
-            foreach($request->time as $times) {
-                $user->save();
-                list($day, $date, $time) = explode(' ', $times, 3);
-                // dd($request->time);
-                // $book = new BookList();
-                // $book->branch = $request->branch;
-                // $book->room = $request->room;
-                // $book->user_id = $user->id;
-                // $book->name = $user->name;
-                // $book->date = $date;
-                // $book->time = $time;
-                // $book->save();
-                
-                $branchroom = BranchRoom::where('branch_name', $request->branch)
-                ->where('room_type', $request->room)->first();
-                // dd($request->room);
-                $schedule = Schedule::where('branchroom_id', $branchroom->id)
-                ->where('day', $day)
-                ->where('time', $time)
-                ->first();
-                $schedule->status = "booked";
-                $schedule->save();
-            }
-            // $book->time = $request->input('time', []);
                 $branchroom = BranchRoom::where('branch_name', $request->branch_name)
                 ->where('room_type', $request->room);
-                
-
                 $branchname = $request->branch;
                 $roomname = $request->room;
                 $room = BranchRoom::where('branch_name', $branchname)

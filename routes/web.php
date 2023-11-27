@@ -35,9 +35,9 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
-Route::get('/book', function () {
-    return view('book');
-});
+// Route::get('/book', function () {
+//     return view('book');
+// });
 
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
