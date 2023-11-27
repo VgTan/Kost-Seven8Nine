@@ -10,14 +10,7 @@
 </head>
 
 <body>
-    <!-- @include('header') -->
-    <p> {{ $loc->name }} </p>
-    <p> {{ $roomname }} </p>
-    <form class="" action="{{ route('bookdetail') }}" method="get" onsubmit="setDay()">
-        @csrf
-        <div class="schedule">
-            <input class="day" name="branch" type="text" value="{{ $loc->name }}">
-            <input class="day" name="room" type="text" value="{{ $roomname }}">
+    @include('header')
 
     <div class="book-margin">
         <div class="book-margin-container">
@@ -33,7 +26,7 @@
                     <p> {{ $currentDateYM }} </p>
                     <p> <i class="fa fa-calendar-check-o" aria-hidden="true"> </i> Current Date </p>
                 </div>
-                <form class="" action="{{ route('booking') }}" method="post" onsubmit="setDay()">
+                <form class="" action="{{ route('bookdetail') }}" method="get" onsubmit="setDay()">
                     @csrf
                     <div class="schedule-container">
                         <div class="schedule">
@@ -87,11 +80,11 @@
                             @endforeach
                         </div>
                     </div>
+                    <div class="button-book">
+                        <a href="/{{$loc->site}}/{{$rooms->room_id}}/details" class="back-button">Back</a>
+                        <button type="submit" class="book-button">Book</button>
+                    </div>
                 </form>
-                <div class="button-book">
-                    <a href="/{{$loc->site}}/{{$rooms->room_id}}/details" class="back-button">Back</a>
-                    <button type="submit" class="book-button">Book</button>
-                </div>
             </div>
         </div>
         <div class="book-margin-info">

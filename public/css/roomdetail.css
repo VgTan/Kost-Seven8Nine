@@ -139,8 +139,9 @@
 
 .roomdetail-info h4{
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 40px;
     color: #013F6B;
+    margin-bottom: 40px;
 }
 
 .roomdetail-info iframe{
@@ -191,7 +192,6 @@
     text-align: center;
 }
 
-
 .box a:hover {
     background-color: rgb(185, 124, 66);
 }
@@ -215,40 +215,120 @@
     margin-right: 20px;
 }
 
-.schedule {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 20px;
+.button-back {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.mon, .tues, .wed, .thur, .fri {
-    display: grid;
-    justify-content: center;
+.button-back a{
+    background-color: #cecccc; 
+    padding: 10px 80px;
+    color: black;
+    font-weight: bold;
+    transition-duration: 0.4s;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
     text-align: center;
+    width: 15%;
 }
 
-.day {
-    display: none;
+.button-back a:hover{
+    color: white;
+    background-color: #707070;
 }
 
-table {
-    width: 70%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+/* CSS TIMETABLE */
+
+.schedule-container {
+    max-width: 700px;
 }
 
-th, td {
+.schedule {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    margin-top: 20px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
+    padding: 10px;
 }
 
-th {
-    background-color: #E6AD76;
+.day-schedule {
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.schedule-title-roomdetails {
+    background-color: #268AC9;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.schedule-title-roomdetails h5{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.time-slot {
+    padding: 10px;
+    height: 100%; /* Set the height to 100% to match the container height */
+    background-color: white; /* Set the initial background color */
+}
+
+.time-slots .time-slot:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+
+.time-slot.booked {
+    background-color: #e6e6e6;
     color: white;
 }
 
-.time-checkbox {
-    margin-right: 10px;
+.time-slot.disabled {
+    background-color: #E6AD76 !important;
+    cursor: not-allowed;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1; /* Set to the first column of the grid */
+    width: 100px;
+}
+
+.leftcolumn-time {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.left-column .day-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Responsive styles */
+@media (max-width: 600px) {
+    .schedule {
+        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
+    }
 }
