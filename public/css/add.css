@@ -1,13 +1,164 @@
-.container {
-    padding: 100px;
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+
+:root {
+  --bg: url('https://images.wallpaperscraft.com/image/single/minimalism_sky_rocks_161343_3840x2400.jpg');
+  --form-bg: aliceblue;
+  --form-shadow: lightseagreen;
+  --form-primary-highlight: #95a4ff;
+  --form-secondary-highlight: #ffc8ff;
+  --font-size: 14pt;
+  --font-face: 'Pontano Sans';
+  --font-color: #2A293E;
 }
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg) center center no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+#branch_id {
+  width: 100px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+#size {
+  margin-top: 20px;
+}
+
+.container {
+  background: var(--form-bg);
+  border-radius: 40px;
+  padding: 50px 100px;
+  border: 2px solid rgba(0, 0, 0, 1);
+  box-shadow: 15px 15px 1px var(--form-shadow), 15px 15px 1px 2px rgba(0, 0, 0, 1);
+  animation: slideInRightFade 1.0s ease-in-out;
+}
+
+@keyframes slideInRightFade {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
   }
 
-  form {
-    color: black;
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
+}
+
+.input-container {
+  position: relative;
+}
+
+.placeholder {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) * 2);
+  font-family: var(--font-face);
+  color: rgba(0, 0, 0, 0.7);
+  pointer-events: none;
+  transition: 0.2s ease-in-out;
+}
+
+input:focus+.placeholder,
+input:not(:placeholder-shown)+.placeholder {
+  transform: translateY(-100%);
+  font-size: calc(var(--font-size) * 0.8);
+  color: var(--form-shadow);
+}
+
+input {
+  display: block;
+  width: 100%;
+  font-size: var(--font-size);
+  line-height: calc(var(--font-size) * 2);
+  font-family: var(--font-face);
+  margin-bottom: calc(var(--font-size) * 2);
+  border: none;
+  border-bottom: 5px solid rgba(0, 0, 0, 1);
+  background: var(--form-bg);
+  min-width: 250px;
+  padding-left: 5px;
+  outline: none;
+  color: rgba(0, 0, 0, 1);
+}
+
+input:focus {
+  border-bottom: 5px solid var(--form-shadow);
+}
+
+button {
+  border-top-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  display: block;
+  margin: 0 auto;
+  line-height: calc(var(--font-size) * 2);
+  padding: 0 20px;
+  background-color: lightcyan;
+  letter-spacing: 2px;
+  transition: 0.2s all ease-in-out;
+  outline: none;
+  border: 1px solid rgba(0, 0, 0, 1);
+  box-shadow: 3px 3px 1px 1px var(--form-primary-highlight), 3px 3px 1px 2px rgba(0, 0, 0, 1);
+}
+
+button:hover {
+  background: rgba(0, 0, 0, 1);
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 1);
+}
+
+::selection {
+  background: var(--form-secondary-highlight);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border-bottom: 5px solid var(--form-primary-highlight);
+  -webkit-text-fill-color: var(--font-color);
+  -webkit-box-shadow: 0 0 0px 1000px var(--form-bg) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@media only screen and (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  .container {
+    padding: 20px;
+    margin-right: 15px;
+  }
+
+  input {
+    min-width: auto;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  #branch_id {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  #size {
+    margin-top: 10px;
+  }
+}

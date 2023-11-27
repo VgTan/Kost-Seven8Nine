@@ -160,8 +160,8 @@
                 <h3>Book Your Room Now</h3>
             </div>
             <div class="branch-wrapper">
-                @foreach ($room as $branch)
-                <div class="branch-card">
+                @foreach ($room as $index => $branch)
+                <div class="branch-card card-{{$index}}">
                     <div class="branch-img">
                         <img src="../images/cabang/{{ $branch->img }}">
                         <h1>{{ $branch->name }}</h1>
@@ -237,7 +237,34 @@
     </div>
 
     @include('footer')
+    <script>
+        function reveal() {
+            var reveals = document.querySelectorAll(".aboutus-img, .text, .aboutus-row-icons, .aboutus-button, .branch-card.card-0, .branch-card.card-1, .branch-card.card-2");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
 
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                } else {
+                    reveals[i].classList.remove("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const priceCards = document.querySelectorAll('.price-cards .card');
+
+            priceCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    priceCards.forEach(c => c.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
 

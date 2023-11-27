@@ -284,6 +284,9 @@ a {
 .aboutus-img {
     margin: 20px;
     overflow: hidden;
+    transform: translateX(-200px);
+    opacity: 0;
+    transition: 1s all ease;
 }
 
 .aboutus-img img {
@@ -291,9 +294,59 @@ a {
     object-fit: cover;
     border-radius: 10px;
 }
+
+.aboutus-img.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
 .text {
     flex-direction: column;
+    transform: translateX(200px);
+    opacity: 0;
+    transition: 2s all ease;
 }
+
+.text.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@keyframes imgAnimation {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes textAnimation {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.aboutus-row-icons {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1.5s all ease;
+}
+
+.aboutus-row-icons.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .aboutus-row-desc p {
     line-height: 30px;
     padding-right: 20%;
@@ -341,6 +394,13 @@ a {
     display: flex;
 }
 
+.aboutus-button {}
+
+.aboutus-button.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .aboutus-button {
     background-color: #3498db;
     margin-top: 5vh;
@@ -351,6 +411,9 @@ a {
     cursor: pointer;
     align-items: center;
     justify-content: center;
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1s all ease;
 }
 
 .aboutus-button p {
@@ -412,11 +475,45 @@ a {
     cursor: pointer;
 }
 
+.branch-card.card-0 {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.branch-card.card-0.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.branch-card.card-1 {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 1.5s all ease;
+}
+
+.branch-card.card-1.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.branch-card.card-2 {
+    transform: translateY(200px);
+    opacity: 0;
+    transition: 2s all ease;
+}
+
+.branch-card.card-2.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .branch-img {
     position: relative;
     height: 200px;
     text-align: center;
 }
+
 .branch-img::before {
     content: '';
     position: absolute;
@@ -427,6 +524,7 @@ a {
     background: rgba(0, 0, 0, 0.6);
     opacity: 0.75;
 }
+
 .branch-img img {
     width: 100%;
     height: 100%;
@@ -505,6 +603,29 @@ a {
     align-items: center;
     transform: scale(1.1);
     z-index: 1;
+    transition: transform 0.3s ease-out, background 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
+    opacity: 1;
+}
+
+.price-cards .card:hover {
+    cursor: pointer;
+    background: linear-gradient(135deg, #4da4da 0%, #268AC9 100%);
+    color: #fff;
+    opacity: 1;
+}
+
+.price-cards .card:hover:not(.active) {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-out;
+}
+
+.price-cards .card:not(:hover):not(.active):hover~.card.active {
+    background: #fff;
+    color: hsl(233, 13%, 49%);
+    display: flex;
+    align-items: center;
+    transform: scale(1);
+    z-index: 0;
 }
 
 .price-ul {
@@ -574,7 +695,8 @@ a {
 
 @media only screen and (max-width: 767px) {
     .carousel-inner {
-        height: 400px; /* Adjust height for mobile devices */
+        height: 400px;
+        /* Adjust height for mobile devices */
     }
 
     .text-title {
@@ -619,9 +741,11 @@ a {
         flex-direction: column;
         padding-right: 15%;
     }
+
     .aboutus-desc-title {
         text-align: center;
     }
+
     .aboutus-desc-title h5 {
         font-size: 30px;
     }
@@ -629,64 +753,80 @@ a {
     .aboutus-desc-title h1 {
         font-size: 20px;
     }
+
     .aboutus-row-desc {
         text-align: center;
     }
+
     .aboutus-row-icons {
         margin-bottom: 30px;
     }
+
     .aboutus-icons {
         flex-direction: column;
     }
+
     .branch-wrapper {
         flex-direction: column;
-        
+
     }
+
     .priceplan-title h1 {
         font-size: 30px;
     }
-    
+
     .priceplan-title h3 {
         font-size: 35px;
     }
+
     .contact-content img {
         width: 50%;
         height: auto;
     }
+
     .contact-ua {
         padding-left: 2.5%;
         padding-right: 2.5%;
     }
+
     .price-cards .card.active {
         transform: scale(1.0);
     }
+
     .priceplan {
         max-width: 100%;
     }
+
     .price-ul {
         margin: 1rem;
     }
+
     .price-ul li {
         list-style-type: none;
         width: 50%;
         padding: 1rem 0;
     }
+
     .price-ul li.price {
         font-size: 1rem;
     }
+
     .pack {
         font-size: 25px;
         font-weight: bold;
     }
+
     .contact-us {
         width: 80%;
         margin-left: 10%;
     }
+
     .subs {
         font-size: 1.5rem;
     }
+
     .text-title {
-        font-size:medium;
+        font-size: medium;
         margin-top: 20px;
     }
 }
