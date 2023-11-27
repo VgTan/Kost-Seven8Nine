@@ -93,6 +93,7 @@ Route::controller(BookController::class)->group(function () {
     Route::get('{site}/{room}/book', 'page');
     Route::get('/token', 'token');
     Route::post('/token', 'buytoken')->name('buytoken');
+    Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
 // Route::get('/footer', function () {
 //     return view('footer');

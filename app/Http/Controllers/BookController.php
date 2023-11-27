@@ -75,8 +75,7 @@ class BookController extends Controller
         {
             return back();
         }
-        else {
-            
+        else {        
             // $date = $request->date;
             // dd($date);
             // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
@@ -104,7 +103,7 @@ class BookController extends Controller
                 
                 $branchroom = BranchRoom::where('branch_name', $request->branch)
                 ->where('room_type', $request->room)->first();
-                // dd($branchroom);
+                // dd($request->room);
                 $schedule = Schedule::where('branchroom_id', $branchroom->id)
                 ->where('day', $day)
                 ->where('time', $time)
@@ -115,9 +114,59 @@ class BookController extends Controller
             // $book->time = $request->input('time', []);
                 $branchroom = BranchRoom::where('branch_name', $request->branch_name)
                 ->where('room_type', $request->room);
-            
                 return back();
             }
+        }
+    }
+
+    public function book_details(Request $request) {
+        if(!Auth::check()) return redirect('/login');
+        $book = new BookList();
+        $user = User::find(Auth::user()->id);
+        if(BookList::where('branch', $request->branch_name)
+        ->where('room', $request->room)
+        ->where('date', $request->date)
+        ->where('time', $request->time)
+        ->first() )
+        {
+            return back();
+        }
+        else {
+            foreach($request->time as $times) {
+                $user->save();
+                list($day, $date, $time) = explode(' ', $times, 3);
+                // dd($request->time);
+                // $book = new BookList();
+                // $book->branch = $request->branch;
+                // $book->room = $request->room;
+                // $book->user_id = $user->id;
+                // $book->name = $user->name;
+                // $book->date = $date;
+                // $book->time = $time;
+                // $book->save();
+                
+                $branchroom = BranchRoom::where('branch_name', $request->branch)
+                ->where('room_type', $request->room)->first();
+                // dd($request->room);
+                $schedule = Schedule::where('branchroom_id', $branchroom->id)
+                ->where('day', $day)
+                ->where('time', $time)
+                ->first();
+                $schedule->status = "booked";
+                $schedule->save();
+            }
+            // $book->time = $request->input('time', []);
+                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                ->where('room_type', $request->room);
+                
+
+                $branchname = $request->branch;
+                $roomname = $request->room;
+                $room = BranchRoom::where('branch_name', $branchname)
+                ->where('room_type', $roomname)->first();
+                $roomimg = $room->img;
+                $time = $request->time;
+                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg'));
         }
     }
     public function token() {

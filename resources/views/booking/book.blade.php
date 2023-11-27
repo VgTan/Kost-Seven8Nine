@@ -9,10 +9,10 @@
 </head>
 
 <body>
-    @include('header')
+    <!-- @include('header') -->
     <p> {{ $loc->name }} </p>
     <p> {{ $roomname }} </p>
-    <form class="" action="{{ route('booking') }}" method="post" onsubmit="setDay()">
+    <form class="" action="{{ route('bookdetail') }}" method="get" onsubmit="setDay()">
         @csrf
         <div class="schedule">
             <input class="day" name="branch" type="text" value="{{ $loc->name }}">

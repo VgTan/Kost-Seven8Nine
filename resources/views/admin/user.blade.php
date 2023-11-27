@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="user">
-                <form class="function" action="{{ route('search') }}">
+                <form class="function" action="">
                     <!-- <p>Filter</p> -->
                     <!-- <p>Search</p> -->
                     <div class="form">
