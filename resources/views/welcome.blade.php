@@ -154,92 +154,106 @@
 
 
         <!-- BRANCH START -->
-        <div class="branch">
-            <div class="branch-title">
-                <h1>OUR LOCATION</h1>
-                <h3>Book Your Room Now</h3>
-            </div>
-            <div class="branch-wrapper">
-                @foreach ($room as $index => $branch)
-                <div class="branch-card card-{{$index}}">
-                    <div class="branch-img">
-                        <img src="../images/cabang/{{ $branch->img }}">
-                        <h1>{{ $branch->name }}</h1>
+        <div class="branch-cards-container">
+            @foreach ($room as $index => $branch)
+            <div class="branch-card card-{{$index}}">
+                <img src="/images/cabang/{{ $branch->img }}" class="branch-background">
+                <div class="branch_card_content | flow">
+                    <div class="branch_card_content--container | flow">
+                        <h2 class="branch_title">{{ $branch->name }}</h2>
+                        <p class="branch_description">{{ $branch->branch_desc }}</p>
                     </div>
-                    <div class="branch-text">
-                        <p>{{ $branch->branch_desc }}</p>
-                    </div>
-                    <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
-                </div>
-                @endforeach
-            </div>
-            <!-- BRANCH END -->
-
-
-            <!-- PRICE PLAN START -->
-            <div class="priceplan">
-                <div class="priceplan-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
-                </div>
-                <div class="price-cards">
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 2</li>
-                            <li class="price bottom-bar">IDR 150.000</li>
-                            <li class="bottom-bar">60 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn">Learn More</button></li>
-                        </ul>
-                    </div>
-                    <div class="card active">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 1</li>
-                            <li class="price bottom-bar">IDR 75.000</li>
-                            <li class="bottom-bar">30 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn active-btn">Learn More</button></li>
-                        </ul>
-                    </div>
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 3</li>
-                            <li class="price bottom-bar">IDR 450.000</li>
-                            <li class="bottom-bar">180 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><button class="price-btn">Learn More</button></li>
-                        </ul>
-                    </div>
+                    <a class="branch_button" href="/room/{{ $branch->site }}">Read More</a>
                 </div>
             </div>
-            <!-- PRICE PLAN END -->
-
-
-            <!-- INSTAGRAM START -->
-            <div class="contact-us">
-                <div class="contact-content">
-                    <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top music places</p>
-                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                        will receive news
-                        and valuable information
-                    </p>
-                    <form class="sub-form" action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button class="btn-sub">Subscription</button>
-                    </form>
-                </div>
-            </div>
-            <!-- INSTAGRAM END -->
-
-
+            @endforeach
         </div>
+    </div>
+    <!-- BRANCH END -->
+
+
+    <!-- PRICE PLAN START -->
+    <div class="priceplan">
+        <div class="priceplan-title">
+            <h1>OUR PRICE LIST</h1>
+            <h3>Make Time and Learn</h3>
+        </div>
+        <div class="price-cards">
+            <div class="card shadow">
+                <ul class="price-ul">
+                    <li class="pack">BASIC 2</li>
+                    <li class="price bottom-bar">IDR 150.000</li>
+                    <li class="bottom-bar">60 Mins</li>
+                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                    <li><button class="price-btn">Learn More</button></li>
+                </ul>
+            </div>
+            <div class="card active">
+                <ul class="price-ul">
+                    <li class="pack">BASIC 1</li>
+                    <li class="price bottom-bar">IDR 75.000</li>
+                    <li class="bottom-bar">30 Mins</li>
+                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                    <li><button class="price-btn active-btn">Learn More</button></li>
+                </ul>
+            </div>
+            <div class="card shadow">
+                <ul class="price-ul">
+                    <li class="pack">BASIC 3</li>
+                    <li class="price bottom-bar">IDR 450.000</li>
+                    <li class="bottom-bar">180 Mins</li>
+                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                    <li><button class="price-btn">Learn More</button></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- PRICE PLAN END -->
+
+
+    <!-- INSTAGRAM START -->
+    <div class="contact-us">
+        <div class="contact-content">
+            <img class="logo-sub" src="./images/logo.png" alt="">
+            <p class="subs">Subscribe & <br /> get news and top music places</p>
+            <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
+                will receive news
+                and valuable information
+            </p>
+            <form class="sub-form" action="">
+                <input type="text" placeholder="Enter your email">
+                <button class="btn-sub">Subscription</button>
+            </form>
+        </div>
+    </div>
+    <!-- INSTAGRAM END -->
+
+    </div>
     </div>
 
     @include('footer')
     <script>
+        function revealCard() {
+        var reveals = document.querySelectorAll(".branch-card");
+        var windowHeight = window.innerHeight;
+        var elementVisible = 150;
+
+        reveals.forEach(function (element, index) {
+            var elementTop = element.getBoundingClientRect().top;
+            var animationDuration = (index + 1) * 0.5;
+            element.style.transition = animationDuration + 's all ease';
+            if (elementTop < windowHeight - elementVisible) {
+                element.classList.add("active");
+            } else {
+                element.classList.remove("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealCard);
+
         function reveal() {
-            var reveals = document.querySelectorAll(".aboutus-img, .text, .aboutus-row-icons, .aboutus-button, .branch-card.card-0, .branch-card.card-1, .branch-card.card-2");
+            var reveals = document.querySelectorAll(".aboutus-img, .text, .aboutus-row-icons, .aboutus-button");
             for (var i = 0; i < reveals.length; i++) {
                 var windowHeight = window.innerHeight;
                 var elementTop = reveals[i].getBoundingClientRect().top;
