@@ -169,21 +169,6 @@
                     <h1>OUR LOCATION</h1>
                     <h3>Book Your Room Now</h3>
                 </div>
-                <!-- <div class="branch-wrapper">
-                    @foreach ($room as $branch)
-                    <div class="branch-card">
-                        <div class="branch-img">
-                            <img src="../images/cabang/{{ $branch->img }}">
-                            <h1>{{ $branch->name }}</h1>
-                        </div>
-                        <div class="branch-text">
-                            <p>{{ $branch->branch_desc }}</p>
-                        </div>
-                        <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
-                    </div>
-                    @endforeach -->
-
-                <!-- BRANCH END -->
                 <div class="branch-cards-container">
                     @foreach ($room as $branch)
                     <div class="branch-card">

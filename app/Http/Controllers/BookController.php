@@ -29,6 +29,7 @@ class BookController extends Controller
 
         // Get the current date
         $currentDate = date('Y-m-d');
+        $currentDateYM = date('F Y');
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
         $dates = [
@@ -50,7 +51,7 @@ class BookController extends Controller
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
-        return view('booking.book', compact('rooms','loc','schedule', 'roomname', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
+        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
         'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
     }
 
