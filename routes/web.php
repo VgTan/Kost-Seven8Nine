@@ -89,13 +89,17 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/addscheds','process_schedule')->name('');
 }); 
 
+
 Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
     Route::get('{site}/{room}/book', 'page');
     Route::get('/token', 'token');
     Route::post('/token', 'buytoken')->name('buytoken');
+    Route::post('/checkout', 'checkout_token');
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
+
+
 // Route::get('/footer', function () {
 //     return view('footer');
 // });
