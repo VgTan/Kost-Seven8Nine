@@ -10,7 +10,14 @@
 </head>
 
 <body>
-    @include('header')
+    <!-- @include('header') -->
+    <p> {{ $loc->name }} </p>
+    <p> {{ $roomname }} </p>
+    <form class="" action="{{ route('bookdetail') }}" method="get" onsubmit="setDay()">
+        @csrf
+        <div class="schedule">
+            <input class="day" name="branch" type="text" value="{{ $loc->name }}">
+            <input class="day" name="room" type="text" value="{{ $roomname }}">
 
     <div class="book-margin">
         <div class="book-margin-container">

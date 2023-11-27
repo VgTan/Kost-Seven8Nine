@@ -172,7 +172,7 @@
                 <div class="branch-cards-container">
                     @foreach ($room as $branch)
                     <div class="branch-card">
-                        <img src="../images/cabang/{{ $branch->img }}" class="branch-background">
+                        <img src="/images/cabang/{{ $branch->img }}" class="branch-background">
                         <div class="branch_card_content | flow">
                             <div class="branch_card_content--container | flow">
                                 <h2 class="branch_title">{{ $branch->name }}</h2>

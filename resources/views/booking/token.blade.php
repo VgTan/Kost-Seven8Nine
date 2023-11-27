@@ -22,7 +22,7 @@
                     <input required type="radio" name="bundle" id="flexi-1" value="flexi1">
                     <input required type="radio" name="bundle" id="flexi-2" value="flexi2">
                     <input required type="radio" name="bundle" id="flexi-3" value="flexi3">
-                    <input required type="radio" name="bundle" id="flexi-4" value="flexi2">
+                    <input required type="radio" name="bundle" id="flexi-4" value="flexi4">
                     <label for="basic-1" class="option basic-1">
                         <div class="dot"></div>
                         <span>

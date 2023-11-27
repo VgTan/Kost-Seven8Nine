@@ -68,7 +68,7 @@ class BookController extends Controller
         // ->where('time', $request->time)->first();
         // dd($nau);
         $user = User::find(Auth::user()->id);
-        if(BookList::where('branch', $request->branch_name)
+        if(BookList::where('branch', $request->branch)
         ->where('room', $request->room)
         ->where('date', $request->date)
         ->where('time', $request->time)
@@ -76,18 +76,24 @@ class BookController extends Controller
         {
             return back();
         }
-        else {
-            
+        else {        
             // $date = $request->date;
             // dd($date);
             // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
             // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
-        
+        $token = count($request->time);
+        // dd($token);
+        if($user->token < $token)
+        {
+            return redirect('/token');
+        }
+        else {
+            $user->token = $user->token - $token; 
             foreach($request->time as $times) {
+                $user->save();
                 list($day, $date, $time) = explode(' ', $times, 3);
-
-                // dd($request->time);
                 $book = new BookList();
+                // $book->day = $request->day;
                 $book->branch = $request->branch;
                 $book->room = $request->room;
                 $book->user_id = $user->id;
@@ -98,7 +104,7 @@ class BookController extends Controller
                 
                 $branchroom = BranchRoom::where('branch_name', $request->branch)
                 ->where('room_type', $request->room)->first();
-                // dd($branchroom);
+                // dd($request->room);
                 $schedule = Schedule::where('branchroom_id', $branchroom->id)
                 ->where('day', $day)
                 ->where('time', $time)
@@ -107,12 +113,35 @@ class BookController extends Controller
                 $schedule->save();
             }
             // $book->time = $request->input('time', []);
-            
-            
-            $branchroom = BranchRoom::where('branch_name', $request->branch_name)
-            ->where('room_type', $request->room);
-        
+                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                ->where('room_type', $request->room);
+                return back();
+            }
+        }
+    }
+
+    public function book_details(Request $request) {
+        if(!Auth::check()) return redirect('/login');
+        $book = new BookList();
+        $user = User::find(Auth::user()->id);
+        if(BookList::where('branch', $request->branch_name)
+        ->where('room', $request->room)
+        ->where('date', $request->date)
+        ->where('time', $request->time)
+        ->first() )
+        {
             return back();
+        }
+        else {
+                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                ->where('room_type', $request->room);
+                $branchname = $request->branch;
+                $roomname = $request->room;
+                $room = BranchRoom::where('branch_name', $branchname)
+                ->where('room_type', $roomname)->first();
+                $roomimg = $room->img;
+                $time = $request->time;
+                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg'));
         }
     }
     public function token() {
@@ -129,10 +158,34 @@ class BookController extends Controller
     public function buytoken(Request $request) {
         if(Auth::check()) {
             $user = User::find(Auth::user()->id);
+            // $this->validate($request->all);
             $token = new Token();
             $token->user_id = $user->id;
             $token->name = $user->name;
             $token->bundle = $request->bundle;
+            switch($token->bundle) {
+                case 'basic1':
+                    $token->price = 75000;
+                    break;
+                case 'basic2':
+                    $token->price = 150000;
+                    break;
+                case 'basic3':
+                    $token->price = 450000;
+                    break;
+                case 'flexi1':
+                    $token->price = 280000;
+                    break;
+                case 'flexi2':
+                    $token->price = 1200000;
+                    break;
+                case 'flexi3':
+                    $token->price = 2000000;
+                    break;
+                case 'flexi4':
+                    $token->price = 4000000;
+                    break;
+            }
             $file = $request->file('img');
             if (!file_exists('images/proof/')) {
                 mkdir('images/proof/', 0777, true);
@@ -143,9 +196,74 @@ class BookController extends Controller
             // Simpan nama file ke dalam database atau di tempat yang sesuai
             $token->proof = $fileName;
             $token->save();
-            return back();
+          
+            //SAMPLE REQUEST START HERE
+
+            // Set your Merchant Server Key
+            \Midtrans\Config::$serverKey = config('midtrans.server_key'); // Corrected key name
+            \Midtrans\Config::$isProduction = false;
+            \Midtrans\Config::$isSanitized = true;
+            \Midtrans\Config::$is3ds = true;
+
+            $params = array(
+                'transaction_details' => array(
+                    'order_id' => $token->id,
+                    'gross_amount' => $token->price,
+                ),
+                'customer_details' => array(
+                    'user_id' => $token->user_id,
+                    'first_name' => $token->name,
+                    'last_name' => '',
+                    'email' => $user->email
+                ),
+            );
+
+            $snapToken = \Midtrans\Snap::getSnapToken($params);
+           
+
+            // dd($snapToken);
         }
-        else
-        return back();
+        return view('booking.checkout', compact('token', 'snapToken'));
+    }
+
+    public function checkout_token() {
+        return view('booking.checkout');
+    }
+
+    public function callback(Request $request) {
+        $serverKey = config('midtrans.server_key');
+        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
+        if($hashed == $request->signature_key) {
+            if($request->transaction_status == 'capture') {
+                $token = Token::find($request->order_id);
+                $user = User::where('id', $token->user_id)->first();
+                $token->update(['status' => 'Paid']);
+                $user_token = $user->token;
+                switch($token->bundle) {
+                case 'basic1':
+                    $user->token = $user_token + 1;
+                    break;
+                case 'basic2':
+                    $user->token = $user_token + 2;
+                    break;
+                case 'basic3':
+                    $user->token = $user_token + 6;
+                    break;
+                case 'flexi1':
+                    $user->token = $user_token + 4;
+                    break;
+                case 'flexi2':
+                    $user->token = $user_token + 20;
+                    break;
+                case 'flexi3':
+                    $user->token = $user_token + 40;
+                    break;
+                case 'flexi4':
+                    $user->token = $user_token + 100;
+                    break;
+                }
+                $user->save();
+            }
+        }
     }
 }

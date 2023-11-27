@@ -20,7 +20,7 @@
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
             <div class="roomdetail-header1">
-                <img src="/images/{{ $loc->img }}" alt="">
+                <img src="/images/cabang/{{ $loc->img }}" alt="">
 
                 <div class="text-title">
                     <h1>Need a place to learn<br />Or place to teach?</h1>
@@ -51,7 +51,7 @@
                             <h3>{{ $rooms->room_desc }}</h3>
                         </div>
                         <div class="roomdetail-image">
-                            <img src="/images/{{ $rooms->img }}" alt="">
+                            <img src="/images/rooms/{{ $rooms->img }}" alt="">
                         </div>
                     </div>
 

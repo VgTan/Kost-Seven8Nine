@@ -15,7 +15,7 @@ class BranchRoomSeeder extends Seeder
     {
         BranchRoom::create([
             'branch_id' => '1',
-            'branch_name' => 'Mall Bassura',
+            'branch_name' => 'Mall @Bassura City Jakarta',
             'room_id' => '1',
             'room_type' => 'Piano Room',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -26,7 +26,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '1',
-            'branch_name' => 'Mall Bassura',
+            'branch_name' => 'Mall @Bassura City Jakarta',
             'room_id' => '2',
             'room_type' => 'Vocal Room',
             'room_size' => '2,5 x 1,5 (m²)',

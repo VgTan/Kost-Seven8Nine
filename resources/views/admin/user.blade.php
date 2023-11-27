@@ -29,15 +29,16 @@
                 </div>
             </div>
             <div class="user">
-                <!-- <form class="function" action="">
-                    <p>Filter</p>
-                    <p>Search</p>
+                <form class="function" action="">
+                    <!-- <p>Filter</p> -->
+                    <!-- <p>Search</p> -->
                     <div class="form">
                         <input type="search" required>
-                        <i class="fa fa-search"></i>
-                        <a href="javascript:void(0)" id="clear-btn">Clear</a>
+                        <button type="submit"><i class="fa fa-search"></i></button> 
+                        <!-- <a href="javascript:void(0)" id="clear-btn">Clear</a> -->
                     </div>
-                </form> -->
+
+                </form>
                 <form action="table-form">
                     <table class="user-table">
                         <tr class="table-head">

@@ -23,7 +23,15 @@ class AdminController extends Controller
         $branchroom = BranchRoom::all();
         return view("admin.user", compact('user', 'branch', 'branchroom'));
     }
+
+    public function branch() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        return view('admin.add_cabang');
+    }
     public function add_cabang(Request $request) {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $cabang = new Branch();
         $cabang->name = $request->name;
         $cabang->site = $request->site;
@@ -45,11 +53,15 @@ class AdminController extends Controller
     }
 
     public function rooms() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $branch = Branch::all();
         return view('admin.add_room', compact('branch'));
     }
     public function add_room(Request $request) {
         // dd($request->name);
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $room_name = new Room();
         $room_name->name = $request->name;
         if(!Room::where('name', $request->name)->first()) {
@@ -64,10 +76,10 @@ class AdminController extends Controller
             $file = $request->file('img');
         
             if (!file_exists('images/cabang/')) {
-                mkdir('images/cabang/', 0777, true);
+                mkdir('images/rooms/', 0777, true);
             }
             $fileName = $file->getClientOriginalName();
-            $file->move('images/cabang/', $fileName);
+            $file->move('images/rooms/', $fileName);
             $room->img = $fileName;
         }
         if(!BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first()){
@@ -111,6 +123,8 @@ class AdminController extends Controller
         return back();
     }
     public function add_schedule(Request $request) {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $cabang = Branch::all();
         $room = Room::all();
         $schedule = Schedule::all();
@@ -119,6 +133,8 @@ class AdminController extends Controller
     }
 
     public function process_schedule(Request $request) {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $cabang_id = Branch::where('id', $request->cabang)->first()->id;
         $room_id = Room::where('id', $request->room)->first()->id;
         $roomset = BranchRoom::where('branch_id', $cabang_id)->where('room_id', $room_id)->first()->id;
@@ -139,14 +155,16 @@ class AdminController extends Controller
     }
 
     public function check_trans() {
-        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $user = User::all();
         $token = Token::all();
         return view("admin.transaction", compact('user', 'token'));
     }
 
     public function remove(Request $request) {
-        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $token = Token::where('id', $request->id);
         $token->status = "no";
         $token->save();
@@ -154,23 +172,54 @@ class AdminController extends Controller
     }
 
     public function accept(Request $request) {
-        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        
         $token = Token::where('id', $request->id)->first();
+        $user = User::where('id', $token->user_id)->first();
         // dd($request->id);
+        $user_token = $user->token;
+        switch($token->bundle) {
+            case 'basic1':
+                $user->token = $user_token + 1;
+                break;
+            case 'basic2':
+                $user->token = $user_token + 2;
+                break;
+            case 'basic3':
+                $user->token = $user_token + 6;
+                break;
+            case 'flexi1':
+                $user->token = $user_token + 4;
+                break;
+            case 'flexi2':
+                $user->token = $user_token + 20;
+                break;
+            case 'flexi3':
+                $user->token = $user_token + 40;
+                break;
+            case 'flexi4':
+                $user->token = $user_token + 100;
+                break;
+        }
+        $user->save();
+        
         $token->status = "yes";
         $token->save();
         return back();
     }
 
     public function book_list() {
-        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
     
         $user = User::all();
         $book = BookList::all();
         return view("admin.booklist", compact('user', 'book'));
     }
     public function done(Request $request) {
-        if(!Auth::check()) return redirect('/');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $booklist = BookList::where('id', $request->id)->first();
         // dd($request->id);
         $booklist->status = "done";
