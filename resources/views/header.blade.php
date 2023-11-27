@@ -2,7 +2,7 @@
 <div class="header-container">
     <div class="header">
         <div class="name">
-            <a href="#" class="logo"><img src="/images/logo.png" alt=""></a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt=""></a>
         </div>
         <div class="header-content">
             <div class="content-box active">
@@ -17,7 +17,7 @@
                 <a class="" href="/aboutus">About Us</a>
             </div>
             <div class="content-box">
-                <a class="" href="#">Contact Us</a>
+                <a class="" href="/contactus">Contact Us</a>
             </div>
         </div>
         @auth

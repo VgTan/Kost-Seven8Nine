@@ -35,6 +35,10 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
+Route::get('/contactus', function () {
+    return view('page.contactus');
+});
+
 Route::get('/book', function () {
     return view('book');
 });

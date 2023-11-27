@@ -27,7 +27,7 @@ a:hover, a {
     border-radius: 20px;
 }
 
-.text-title {
+.text-title h1{
     position: absolute;
     font-size: 3.5rem;
     font-weight: bold;
@@ -303,6 +303,7 @@ a:hover, a {
 .aboutus-row-desc {
     margin: 20px;
     line-height: 30px;
+    font-size: 15px;
 }
 
 .aboutus-desc-title h5 {
@@ -322,11 +323,6 @@ a:hover, a {
 
 .aboutus-desc-title h1 span{
     color: #E6AD76;
-}
-
-.aboutus-desc-title p{
-    font-size: 20px;
-    font-family: 'Lora', serif;
 }
 
 .aboutus-icons {

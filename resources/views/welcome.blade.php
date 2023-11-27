@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="text-title">
-                    <p>Need a place to learn<br />Or place to teach?</p>
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
 
                 <!-- SEARCH ABSOLUTE START -->

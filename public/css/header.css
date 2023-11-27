@@ -6,6 +6,7 @@
 
 p {
     margin: 0;
+    color: #232D42;
 }
 
 a:hover, a {
@@ -74,7 +75,6 @@ body {
     border-bottom: 2px solid #2E4C59;
     height: 100%;
 }
-
 
 .header-select {
     background-color: transparent;

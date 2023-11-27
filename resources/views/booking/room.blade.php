@@ -27,7 +27,7 @@
             <div class="branch-room">
                 <img src="/images/{{ $loc->img }}" alt="">
                 <div class="text-title">
-                    <p>{{ $loc->name }}</p>
+                    <h1>{{ $loc->name }}</h1>
                 </div>
             </div>
 

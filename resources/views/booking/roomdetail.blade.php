@@ -23,7 +23,7 @@
                 <img src="/images/{{ $loc->img }}" alt="">
 
                 <div class="text-title">
-                    <p>Need a place to learn<br />Or place to teach?</p>
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
             </div>
             <div class="roomdetail-header-margin">
@@ -60,7 +60,7 @@
                             <div class="box">
                                 <h1>Special Price</h1>
                                 <h2>Start from 75K/30mins</h2>
-                                <a href="/book" class="book-button">Book Now</a>
+                                <a href="/{{$loc->site}}/{{$rooms->room_id}}/book" class="book-button">Book Now</a>
                             </div>
                             <hr>
                             <h4>SCHEDULE</h4>

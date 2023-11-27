@@ -21,12 +21,12 @@
     object-fit: cover;
 }
 
-.text-title {
+.text-title h1{
     position: absolute;
     font-size: 3.5rem;
     font-weight: bold;
     color: white;
-    top: 25%;
+    top: 35%;
     left: 8%;
 }
 
