@@ -68,54 +68,70 @@ class BookController extends Controller
         // ->where('time', $request->time)->first();
         // dd($nau);
         $user = User::find(Auth::user()->id);
-        if(BookList::where('branch', $request->branch)
-        ->where('room', $request->room)
-        ->where('date', $request->date)
-        ->where('time', $request->time)
-        ->first() )
-        {
-            return back();
-        }
-        else {        
-            // $date = $request->date;
-            // dd($date);
-            // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
-            // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
-        $token = count($request->time);
-        // dd($token);
-        if($user->token < $token)
-        {
-            return redirect('/token');
-        }
-        else {
-            $user->token = $user->token - $token; 
-            foreach($request->time as $times) {
-                $user->save();
-                list($day, $date, $time) = explode(' ', $times, 3);
-                $book = new BookList();
-                // $book->day = $request->day;
-                $book->branch = $request->branch;
-                $book->room = $request->room;
-                $book->user_id = $user->id;
-                $book->name = $user->name;
-                $book->date = $date;
-                $book->time = $time;
-                $book->save();
-                
-                $branchroom = BranchRoom::where('branch_name', $request->branch)
-                ->where('room_type', $request->room)->first();
-                // dd($request->room);
-                $schedule = Schedule::where('branchroom_id', $branchroom->id)
-                ->where('day', $day)
-                ->where('time', $time)
-                ->first();
-                $schedule->status = "booked";
-                $schedule->save();
+        $i = 0;
+        foreach($request->time as $times) {
+            list($day, $date, $time) = explode(' ', $times, 3);
+            $isBooked[$i] = BookList::where('branch', $request->branch)
+            ->where('room', $request->room)
+            ->where('date', $date)
+            ->where('time', $time)
+            ->first();
+            // dd($isBooked);
+            // dd($request->all());
+            $i++;
+        };
+        foreach($isBooked as $isBooked) {
+            if($isBooked) 
+            {
+                $branch = Branch::where('name', $request->branch)->first();
+                // dd($branch->all());
+                $room = Room::where('name', $request->room)->first();
+                return redirect(url("{$branch->site}/{$room->id}/book"))
+                ->with('message', 'List Already Booked');
             }
-            // $book->time = $request->input('time', []);
-                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
-                ->where('room_type', $request->room);
-                return back();
+            else {        
+                // $date = $request->date;
+                // dd($date);
+                // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
+                // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
+                $token = count($request->time);
+                // dd($token);
+                if($user->token < $token)
+                {
+                    return redirect('/token');
+                }
+                else {
+                    if(!$isBooked) {
+                        $user->token = $user->token - $token; 
+                        foreach($request->time as $times) {
+                            $user->save();
+                            list($day, $date, $time) = explode(' ', $times, 3);
+                            $book = new BookList();
+                            // $book->day = $request->day;
+                            $book->branch = $request->branch;
+                            $book->room = $request->room;
+                            $book->user_id = $user->id;
+                            $book->name = $user->name;
+                            $book->date = $date;
+                            $book->time = $time;
+                            $book->save();
+                            
+                            $branchroom = BranchRoom::where('branch_name', $request->branch)
+                            ->where('room_type', $request->room)->first();
+                            // dd($request->room);
+                            $schedule = Schedule::where('branchroom_id', $branchroom->id)
+                            ->where('day', $day)
+                            ->where('time', $time)
+                            ->first();
+                            $schedule->status = "booked";
+                            $schedule->save();
+                        }
+                        // $book->time = $request->input('time', []);
+                            $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                            ->where('room_type', $request->room);
+                            return back()->with('message', 'hahahaha');
+                        }
+                }
             }
         }
     }
@@ -155,6 +171,7 @@ class BookController extends Controller
        }
     }
 
+    public $total_token;
     public function buytoken(Request $request) {
         if(Auth::check()) {
             $user = User::find(Auth::user()->id);
@@ -163,27 +180,35 @@ class BookController extends Controller
             $token->user_id = $user->id;
             $token->name = $user->name;
             $token->bundle = $request->bundle;
+            
             switch($token->bundle) {
                 case 'basic1':
                     $token->price = 75000;
+                    $total_token = 1;
                     break;
                 case 'basic2':
                     $token->price = 150000;
+                    $total_token = 2;
                     break;
                 case 'basic3':
                     $token->price = 450000;
+                    $total_token = 6;
                     break;
                 case 'flexi1':
                     $token->price = 280000;
+                    $total_token = 4;
                     break;
                 case 'flexi2':
                     $token->price = 1200000;
+                    $total_token = 20;
                     break;
                 case 'flexi3':
                     $token->price = 2000000;
+                    $total_token = 40;
                     break;
                 case 'flexi4':
                     $token->price = 4000000;
+                    $total_token = 100;
                     break;
             }
             $file = $request->file('img');
@@ -223,7 +248,7 @@ class BookController extends Controller
 
             // dd($snapToken);
         }
-        return view('booking.checkout', compact('token', 'snapToken'));
+        return view('booking.checkout', compact('token', 'snapToken', 'total_token'));
     }
 
     public function checkout_token() {
