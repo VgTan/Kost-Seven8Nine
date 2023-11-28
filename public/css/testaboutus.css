@@ -123,6 +123,10 @@ body {
    display: none;
 }
 
+.service {
+   margin: 0;
+}
+
 .what-bg {
    position: relative;
    padding-top: 53px !important;
@@ -154,10 +158,6 @@ body {
    vertical-align: bottom;
    transition: all .3s ease;
    text-align: center;
-}
-
-.we-do-item:hover {
-   background-color: #f8f8f8;
 }
 
 .we-do-item .we-icon:before {
@@ -228,7 +228,7 @@ body {
    letter-spacing: 0.5px;
    word-spacing: 0px;
    font-weight: 700;
-   margin-left: 20px;
+   margin-left: 40px;
 }
 
 .we-desc p {

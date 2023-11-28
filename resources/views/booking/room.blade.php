@@ -25,9 +25,9 @@
     <div class="room-margin">
         <div class="room-container">
             <div class="branch-room">
-                <img src="/images/{{ $loc->img }}" alt="">
+                <img src="/images/cabang/{{ $loc->img }}" alt="">
                 <div class="text-title">
-                    <p>{{ $loc->name }}</p>
+                    <h1>{{ $loc->name }}</h1>
                 </div>
             </div>
 
@@ -49,8 +49,8 @@
             <div class="room-type-container">
                 <div class="room-type">
                     <div class="room-image">
-                        <a class="" href="/{{$loc->site}}/{{$room->room_id}}">
-                            <img src="/images/{{$room->img}}" alt="Room Image">
+                        <a class="" href="/{{$loc->site}}/{{$room->room_id}}/details">
+                            <img src="/images/rooms/{{$room->img}}" alt="Room Image">
                         </a>
                     </div>
                     <div class="room-details">
@@ -58,7 +58,7 @@
                         <div class="room-desc">
                             <p>{{ $room->room_desc }}</p>
                         </div>
-                        <a class="book-button" href="/{{$loc->site}}/{{$room->room_id}}">Book Now</a>
+                        <a class="book-button" href="/{{$loc->site}}/{{$room->room_id}}/details">Book Now</a>
                     </div>
                 </div>
             </div>

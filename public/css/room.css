@@ -21,7 +21,7 @@
     height: auto;
 }
 
-.text-title {
+.text-title h1{
     font-family: 'Fira Sans Condensed', sans-serif;
     position: absolute;
     font-size: 3.5rem;

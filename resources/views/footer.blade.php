@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="../css/footer.css">
+<link rel="stylesheet" href="/css/footer.css">
 <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
 
 <body>

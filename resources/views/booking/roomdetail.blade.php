@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font & Style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/roomdetail.css">
@@ -13,123 +15,101 @@
 </head>
 
 <body>
+
     @include('header')
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
-            <div class="roomdetail-header">
-                <img src="/images/{{ $loc->img }}" alt="">
-            </div>
-            <!-- variable CurrentTime itu data sekarang, jadi ngikut real time -->
-            @php
-            $currentDay = date('d');
-            @endphp
-            <div class="roomdetail-info">
-                <div class="roomdetail-infodiv">
-                    <div class="roomdetail-textinfo">
-                        <h1>{{ $roomname }}, {{ $loc->name }}</h1>
-                        <p>{{ $branchloc->location }}</p>
-                        <p>
-                            <i class="fa fa-arrows-alt" style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
-                            {{ $rooms->room_size }}
-                        </p>
-                        <p>
-                            <i class="fa fa-check-square-o" style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
-                            {{ $rooms->room_equipment }}
-                        </p>
-                        <p>{{ $rooms->room_desc }}</p>
-                    </div>
-                    <div class="roomdetail-imginfo">
-                        <img src="/images/{{ $rooms->img }}" alt="">
-                    </div>
-                </div>
-                <iframe src="{{ $branchloc->location_map }}" frameborder="0"></iframe>
-            </div>
+            <div class="roomdetail-header1">
+                <img src="/images/cabang/{{ $loc->img }}" alt="">
 
-            @if($schedule->isNotEmpty())
-            <form class="schedule" action="{{ route('booking') }}" method="post">
-                @csrf
-                <input class="day" name="branch" type="text" value="{{ $loc->name }}">
-                <input class="day" name="room" type="text" value="{{ $roomname }}">
-                <div class="mon">
-                    <p>Monday</p>
-                    <input class="day" name="date" type="text" value="{{ $currentDay }}">
-                    @foreach($mon as $mon)
-                    @if($mon->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $mon->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $mon->time }}">{{ $mon->time }}
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $mon->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $mon->time }}" disabled>{{ $mon->time }}
-                    @endif
-                    @endforeach
+                <div class="text-title">
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
-                <div class="tue">
-                    <p>Tuesday</p>
-                    <input class="day" name="date" type="text" value="{{ $currentDay + 1 }}">
-                    @foreach($tues as $tues)
-                    @if($tues->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $tues->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $tues->time }}">{{ $tues->time }}
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $tues->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $tues->time }}" disabled>{{ $tues->time }}
-                    @endif
-                    @endforeach
-                </div>
-                <div class="wed">
-                    <p>Wednesday</p>
-                    <input class="day" name="date" type="text" value="{{ $currentDay + 2}}">
-                    @foreach($wed as $wed)
-                    @if($wed->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $wed->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $wed->time }}">{{ $wed->time }}
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $wed->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $wed->time }}" disabled>{{ $wed->time }}
-                    @endif
-                    @endforeach
-                </div>
-                <div class="thur">
-                    <p>Thursday</p>
-                    @foreach($thur as $thur)
-                    @if($thur->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $thur->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $thur->time }}">{{ $thur->time }}
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $thur->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $thur->time }}" disabled>{{ $thur->time }}
-                    @endif
-                    @endforeach
-                </div>
-                <div class="fri">
-                    <p>Friday</p>
-                    @foreach($fri as $fri)
-                    @if($fri->status == 'ready')
-                    <input class="day" name="day" type="text" disabled value="{{ $fri->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $fri->time }}">{{ $fri->time }}
-                    @else
-                    <input class="day" name="day" type="text" disabled value="{{ $fri->day }}">
-                    <input type="checkbox" class="" name="time[]" value="{{ $fri->time }}" disabled>{{ $fri->time }}
-                    @endif
-                    @endforeach
-                </div>
-                <button type="submit">Book</button>
-            </form>
-
-            @else
-            <p>{{ $loc->name }}</p>
-            <p>{{ $roomname }}</p>
-            <div class="">
-                <p>No Schedule</p>
             </div>
-            @endif
-            <div class="">
-                <a href="/room/{{ $loc->site }}">Back</a>
+            <div class="roomdetail-header-margin">
+                <div class="container-roomdetail-info">
+                    <div class="roomdetail-header">
+                        <div class="roomdetail-textinfo">
+                            <h1>{{ $roomname }}, {{ $loc->name }}</h1>
+                            <h2>{{ $branchloc->location }}</h2>
+
+                            <div class="info-item">
+                                <p>
+                                    <i class="fa fa-arrows-alt"
+                                        style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
+                                    {{ $rooms->room_size }}
+                                </p>
+                                <p>
+                                    <i class="fa fa-check-square-o"
+                                        style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
+                                    {{ $rooms->room_equipment }}
+                                </p>
+                            </div>
+                            <hr>
+                            <h4>ROOM'S DESCRIPTION</h4>
+
+                            <h3>{{ $rooms->room_desc }}</h3>
+                        </div>
+                        <div class="roomdetail-image">
+                            <img src="/images/rooms/{{ $rooms->img }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="roomdetail-info">
+                        <div class="roomdetail-infodiv">
+                            <div class="box">
+                                <h1>Special Price</h1>
+                                <h2>Start from 75K/30mins</h2>
+                                <a href="/{{$loc->site}}/{{$rooms->room_id}}/book" class="book-button">Book Now</a>
+                            </div>
+                            <hr>
+                            <h4>SCHEDULE</h4>
+                            <div class="schedule-container">
+                                <div class="schedule-title-roomdetails">
+                                <h5> Week of {{ $currentDateMD }}th </h5>
+                                </div>
+                                <div class="schedule">
+
+                                    <div class="left-column day-schedule">
+                                        <p class="day-name">Time</p>
+                                        @foreach($mon as $schedule)
+                                        <p class="leftcolumn-time">{{ $schedule->time }}</p>
+                                        @endforeach
+                                    </div>
+
+                                    @foreach(['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'] as $index => $day)
+                                    <div class="day-schedule">
+                                        <p class="day-name">{{ ucfirst($day) }}</p>
+                                        <div class="time-slots">
+                                            @foreach(${$day} as $schedule)
+                                            <div class="time-slot {{ $schedule->status == 'ready' ? 'booked' : 'disabled' }}"
+                                                data-day="{{ $day }}" data-date="{{ $dates[$index] }}"
+                                                data-time="{{ $schedule->time }}">
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+
+                            <div class="button-back">
+                                <a href="/room/{{ $loc->site }}">Back</a>
+                            </div>
+                        </div>
+                        <hr>
+                        <h4>LOCATION</h4>
+                        <iframe src="{{ $branchloc->location_map }}" frameborder="0"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     @include('footer')
+
 </body>
 
 </html>
+

@@ -20,7 +20,8 @@
                      <img src="../images/basura.jpg" alt="login image" class="login-img">
                      <div class="imgtextoverlay">
                          <h1>Rhapsodie.co Music Space</h1>
-                         <p>a place where everyone can learn music in public area and turns music activity inclusively to
+                         <p>a place where everyone can learn music in public area and turns music activity inclusively
+                             to
                              everyone.</p>
                      </div>
                  </div>
@@ -30,16 +31,28 @@
                      </div>
                      <div class="login-wrapper my-auto">
                          <h1 class="login-title">Welcome Back!</h1>
+                        @if(Session::has('failed'))
+                        <div class="alert alert-danger w-full">{{Session::get('failed')}}</div>
+                        @endif
+                        @if(Session::has('no'))
+                        <div class="alert alert-danger w-full">{{Session::get('no')}}</div>
+                        @endif
                          <form action="{{ route('login')}}" method="get">
                              <div class="form-group">
-                                 <label for="email">Email/Username</label>
+                                 <label for="email">Email</label>
                                  <input type="email" name="email" id="email" class="form-control"
-                                     placeholder="email@example.com">
+                                     placeholder="email@example.com" value="{{old('email')}}">
+                                 <p class="text-danger absolute text-sm">@error('email') {{$message}}
+                                     @enderror
+                                 </p>
                              </div>
                              <div class="form-group mb-4">
                                  <label for="password">Password</label>
                                  <input type="password" name="password" id="password" class="form-control"
                                      placeholder="Enter your passsword">
+                                     <p class="text-danger absolute text-sm">@error('password') {{$message}}
+                                     @enderror
+                                 </p>
                              </div>
                              <button name="login" id="login" class="btn btn-block login-btn" type="submit"
                                  value="Login">Login</button>

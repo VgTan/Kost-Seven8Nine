@@ -1,0 +1,148 @@
+.margin-token {
+    display: flex;
+    justify-content: center;
+}
+
+.token-container {
+    width: 95%;
+}
+
+.token-container form {
+    justify-content: center;
+}
+
+.wrapper-token{
+    display: inline-flex;
+    background: #fff;
+    height: 100px;
+    width: 90%;
+    align-items: center;
+    border-radius: 5px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+}
+  
+.wrapper-token .option{
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid lightgrey;
+    transition: all 0.3s ease;
+}
+
+.wrapper-token .option .dot{
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
+    position: relative;
+}
+
+.wrapper-token .option .dot::before{
+    position: absolute;
+    content: "";
+    top: 4px;
+    left: 4px;
+    width: 12px;
+    height: 12px;
+    background: #0069d9;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(1.5);
+    transition: all 0.3s ease;
+}
+  
+input[type="radio"]{
+    display: none;
+}
+
+#basic-1:checked:checked ~ .basic-1, #basic-2:checked:checked ~ .basic-2, 
+#basic-3:checked:checked ~ .basic-3, #flexi-1:checked:checked ~ .flexi-1, 
+#flexi-2:checked:checked ~ .flexi-2, #flexi-3:checked:checked ~ .flexi-3, #flexi-4:checked:checked ~ .flexi-4{
+    border-color: #0069d9;
+    background: #0069d9;
+}
+
+#basic-1:checked:checked ~ .basic-1 .dot, #basic-2:checked:checked ~ .basic-2 .dot, 
+#basic-3:checked:checked ~ .basic-3 .dot, #flexi-1:checked:checked ~ .flexi-1 .dot, 
+#flexi-2:checked:checked ~ .flexi-2 .dot, #flexi-3:checked:checked ~ .flexi-3 .dot, #flexi-4:checked:checked ~ .flexi-4 .dot{
+    background: #fff;
+}
+
+#basic-1:checked:checked ~ .basic-1 .dot::before,#basic-2:checked:checked ~ .basic-2 .dot::before, 
+#basic-3:checked:checked ~ .basic-3 .dot::before, #flexi-1:checked:checked ~ .flexi-1 .dot::before, 
+#flexi-2:checked:checked ~ .flexi-2 .dot::before, #flexi-3:checked:checked ~ .flexi-3 .dot::before, 
+#flexi-4:checked:checked ~ .flexi-4 .dot::before{
+    opacity: 1;
+    transform: scale(1);
+}
+
+.wrapper-token .option span{
+    font-size: 15px;
+    color: #808080;
+    line-height: 3px;
+}
+
+.wrapper-token .option span h1{
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+#basic-1:checked:checked ~ .basic-1 span, #basic-2:checked:checked ~ .basic-2 span, 
+#basic-3:checked:checked ~ .basic-3 span, #flexi-1:checked:checked ~ .flexi-1 span, 
+#flexi-2:checked:checked ~ .flexi-2 span, #flexi-3:checked:checked ~ .flexi-3 span, 
+#flexi-4:checked:checked ~ .flexi-4 span{
+    color: #fff;
+}
+
+.buyer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buyer-info {
+    display: flex;
+}
+
+.buyerinfo-container {
+    width: 50%;
+    margin: 50px;
+    float: left;
+    width: 25%;
+}
+
+.buy-proof {
+    width: 50%;
+    margin: 50px;
+}
+
+.buyer-info {
+    padding-top: 24px;
+    padding-bottom: 24px;
+}
+
+.buyer-info label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #b0adad;
+}
+
+.buyer-info .infobuyer {
+    border: 2px solid #81CDEC;
+    border-radius: 8px;
+    padding: 0px 15px;
+    min-height: 40px;
+    font-size: 18px;
+    font-weight: normal;
+}

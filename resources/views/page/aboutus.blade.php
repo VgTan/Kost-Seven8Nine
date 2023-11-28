@@ -24,7 +24,6 @@
     </script>
 
 </head>
-
 <body>
     @include('header')
 
@@ -36,6 +35,7 @@
             @guest
             <a href="/signup" class="btn btn-light" style="font-weight: bold;">Create Account</a>
             @endguest
+        </div>
         </div>
 
         <div class="company-profile-title">
@@ -130,35 +130,44 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-md-12">
                         <div class="vc_custom_heading no_stripe text-center  d-md-block counter-head
+        <div class="fun-facts">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col-md-12">
+                        <div class="vc_custom_heading no_stripe text-center  d-md-block counter-head
 	  text_align_left has_icon  mb-3">
-                            <h4 style="font-size:31px;color:black;line-height:37px;text-align:center;font-weight:bold" class="consulting-custom-title">Traffic Breakdown Annual Session</h4>
+                        <h4 style="font-size:31px;color:black;line-height:37px;text-align:center;font-weight:bold"
+                            class="consulting-custom-title">Traffic Breakdown Annual Session</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-6">
+                    <div class="fun-facts-card">
+                        <div class="content text-center">
+                            <span class="counter" data-val="8832">5800</span>
+                            <div class="counter-title">High-Traffic</div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-6">
-                        <div class="fun-facts-card">
-                            <div class="content text-center">
-                                <span class="counter" data-val="8832">5800</span>
-                                <div class="counter-title">High-Traffic</div>
-                            </div>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-6">
+                    <div class="fun-facts-card">
+                        <div class="content text-center">
+                            <span class="counter" data-val="7488">5800</span>
+                            <div class="counter-title">Medium-Traffic</div>
                         </div>
                     </div>
-                    <div class="col-lg-2  col-md-2 col-sm-4 col-6">
-                        <div class="fun-facts-card">
-                            <div class="content text-center">
-                                <span class="counter" data-val="7488">5800</span>
-                                <div class="counter-title">Medium-Traffic</div>
-                            </div>
+                </div>
+                <div class="col-lg-2  col-md-2 col-sm-4 col-6">
+                    <div class="fun-facts-card">
+                        <div class="content text-center">
+                            <span class="counter" data-val="6144">5800</span>
+                            <div class="counter-title">Low-Traffic</div>
                         </div>
                     </div>
-                    <div class="col-lg-2  col-md-2 col-sm-4 col-6">
-                        <div class="fun-facts-card">
-                            <div class="content text-center">
-                                <span class="counter" data-val="6144">5800</span>
-                                <div class="counter-title">Low-Traffic</div>
-                            </div>
-                        </div>
-                    </div>
+                </div>
 
+                </div>
+            </div>
+        </div>
                 </div>
             </div>
         </div>

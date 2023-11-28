@@ -1,13 +1,19 @@
 body {
     padding: 0;
     margin: 0;
-    scroll-behavior: smooth;
+    height: auto;
 }
 
-a:hover,
-a {
+p {
+    margin: 0;
+}
+
+a:hover, a {
     text-decoration: none;
     color: white;
+}
+.carousel {
+    padding-top: 100px;
 }
 
 .carousel-img {
@@ -18,9 +24,10 @@ a {
 .carousel-inner {
     height: 700px;
     transition-duration: 200;
+    border-radius: 20px;
 }
 
-.text-title {
+.text-title h1{
     position: absolute;
     font-size: 3.5rem;
     font-weight: bold;
@@ -54,8 +61,7 @@ a {
     border-top-right-radius: 10px;
 }
 
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active {
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
     color: #000000;
     background-color: #ffffff;
     border-color: black;
@@ -105,20 +111,25 @@ a {
     transition-duration: 300ms;
 }
 
-.buy .search-button img {
+.buy .search-button img{
     width: 13px;
 }
 
+.margin {
+    display: flex;
+    justify-content: center;
+}
+
 .main-container {
-    width: 100%;
+    width: 93%;
 }
 
 .detail-container {
     margin-top: 70px;
 }
 
-.places span,
-.today-news span,
+.places span, 
+.today-news span, 
 .services span {
     font-size: 2rem;
 }
@@ -127,9 +138,9 @@ a {
     font-weight: bold;
 }
 
-.places .list,
-.today-news .list,
-.services .list {
+.places .list, 
+.today-news .list, 
+.services .list  {
     font-size: 3rem;
     font-weight: lighter;
 }
@@ -150,7 +161,7 @@ a {
     transition: 0.4s ease-in-out;
 }
 
-.card {
+.card{
     margin: 0 .5em;
     box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
     border: none;
@@ -208,12 +219,13 @@ a {
 
 .contact-us {
     margin-top: 120px;
-    margin-left: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: 2px solid #E6AD76;
     border-radius: 15px;
+    height: auto;
     padding: 50px;
-    width: 50%;
-    margin-bottom: 50px;
 }
 
 .contact-content {
@@ -238,7 +250,7 @@ a {
     justify-content: center;
 }
 
-.sub-form input {
+.sub-form input{
     height: 60px;
     width: 50%;
     border: 0;
@@ -271,85 +283,27 @@ a {
 .about-lp {
     display: flex;
     margin-top: 100px;
-    padding-left: 15%;
 }
 
-.aboutus-lp {
+.aboutus-row {
     display: flex;
-    word-wrap: break-word;
-    max-width: 100%;
-    overflow: hidden;
+    justify-content: space-evenly;  
 }
 
 .aboutus-img {
     margin: 20px;
-    overflow: hidden;
-    transform: translateX(-200px);
-    opacity: 0;
-    transition: 1s all ease;
 }
 
 .aboutus-img img {
-    width: 100%;
+    width: 700px;
+    height: 100%;
     object-fit: cover;
-    border-radius: 10px;
 }
 
-.aboutus-img.active {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-.text {
-    flex-direction: column;
-    transform: translateX(200px);
-    opacity: 0;
-    transition: 2s all ease;
-}
-
-.text.active {
-    transform: translateX(0);
-    opacity: 1;
-}
-
-@keyframes imgAnimation {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-@keyframes textAnimation {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
-
-.aboutus-row-icons {
-    transform: translateY(200px);
-    opacity: 0;
-    transition: 1.5s all ease;
-}
-
-.aboutus-row-icons.active {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.aboutus-row-desc p {
+.aboutus-row-desc {
+    margin: 20px;
     line-height: 30px;
-    padding-right: 20%;
+    font-size: 15px;
 }
 
 .aboutus-desc-title h5 {
@@ -367,60 +321,40 @@ a {
     color: #268AC9;
 }
 
-.aboutus-desc-title h1 span {
+.aboutus-desc-title h1 span{
     color: #E6AD76;
 }
 
-.aboutus-desc-title p {
-    font-size: 20px;
-    font-family: 'Lora', serif;
-}
-
 .aboutus-icons {
-    margin-top: 100px;
     display: flex;
     justify-content: space-between;
-    padding-left: 15%;
-    padding-right: 15%;
+    margin: 40px 20px;
 }
 
 .aboutus-icon-desc {
     text-align: center;
 }
 
-.butt-position {
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-
-.aboutus-button {}
-
-.aboutus-button.active {
-    transform: translateY(0);
-    opacity: 1;
-}
-
 .aboutus-button {
-    background-color: #3498db;
-    margin-top: 5vh;
-    border-radius: 5px;
-    width: 180px;
-    height: 50px;
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    transform: translateY(200px);
-    opacity: 0;
-    transition: 1s all ease;
-}
-
-.aboutus-button p {
+    background-color: #3498db; /* Example color for the button */
     color: white;
     font-size: 20px;
     font-weight: bold;
-    padding: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 30px;
+    border-radius: 5px;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.aboutus-button p{
+    color: white;
 }
 
 .aboutus-button:hover {
@@ -428,7 +362,98 @@ a {
     transition: ease-in;
 }
 
+@media (max-width: 768px) {
+    .about-lp {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .aboutus-img,
+    .aboutus-row-desc {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
 /* BRANCH CSS */
+.branch-title {
+    text-align: center;
+}
+
+.branch-title h1 {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.branch-title h3 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #268AC9;
+}
+
+/* .branch-img h1{
+    position: absolute;
+    font-family: 'Heebo', sans-serif;
+    font-weight: bold;
+    margin: 0;
+    font-size:32px;
+    bottom: 15px;
+    width: 100%;
+    color: #fff;
+    text-shadow: 10px 10px 10 #000,
+}
+
+.branch-wrapper{
+    padding:15px;
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.branch-card{
+    max-width: 400px;
+    margin: 15px;
+    background:#fff;
+    border: 1px solid #E6AD76;
+    text-align: center;
+    cursor: pointer;
+}
+
+.branch-img{
+    position: relative;
+    text-align: center;
+    background:#E6AD76;
+}
+
+.branch-img img{
+    width: 400px;
+    height: 250px;
+}
+
+.branch-text{
+    padding: 30px 15px;
+    font-size: 15px;
+    line-height: 22px;
+}
+      
+.read-more{
+    display:inline-block;
+    width:auto;
+    text-align:center;
+    text-transform:uppercase;
+    background:#E6AD76;
+    color:#fff;
+    padding:15px;
+    margin-bottom:30px;
+    font-family: 'Oswald', sans-serif;
+} */
+
+/* TEST BRANCH CSS */
 .branch {
     display: flex;
     flex-direction: column;
@@ -602,60 +627,6 @@ a {
     }
   }
 
-  .branch-card {
-    transform: translateY(200px);
-    opacity: 0;
-    transition: 1s all ease;
-}
-
-.branch-card.active {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-.branch-img {
-    position: relative;
-    height: 200px;
-    text-align: center;
-}
-
-.branch-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    opacity: 0.75;
-}
-
-.branch-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -999;
-}
-
-.branch-text {
-    position: relative;
-    z-index: 100;
-    padding: 30px 15px;
-    font-size: 15px;
-    line-height: 22px;
-}
-
-.read-more {
-    display: inline-block;
-    width: auto;
-    text-align: center;
-    text-transform: uppercase;
-    background: #E6AD76;
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 30px;
-    font-family: 'Oswald', sans-serif;
-}
 
 /* PRICE PLAN CSS */
 .priceplan {
@@ -697,42 +668,21 @@ a {
     background: #fff;
     color: hsl(233, 13%, 49%);
     border-radius: 0.8rem;
-}
-
+  }
+  
 .price-cards .card.active {
-    background: linear-gradient(135deg,
-            #4da4da 0%,
-            #268AC9 100%);
+    background: linear-gradient(
+      135deg,
+      #4da4da 0%,
+      #268AC9 100%
+    );
     color: #fff;
     display: flex;
     align-items: center;
     transform: scale(1.1);
     z-index: 1;
-    transition: transform 0.3s ease-out, background 0.3s ease-out, color 0.3s ease-out, opacity 0.3s ease-out;
-    opacity: 1;
 }
-
-.price-cards .card:hover {
-    cursor: pointer;
-    background: linear-gradient(135deg, #4da4da 0%, #268AC9 100%);
-    color: #fff;
-    opacity: 1;
-}
-
-.price-cards .card:hover:not(.active) {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-out;
-}
-
-.price-cards .card:not(:hover):not(.active):hover~.card.active {
-    background: #fff;
-    color: hsl(233, 13%, 49%);
-    display: flex;
-    align-items: center;
-    transform: scale(1);
-    z-index: 0;
-}
-
+  
 .price-ul {
     margin: 2.6rem;
     display: flex;
@@ -740,7 +690,7 @@ a {
     align-items: center;
     justify-content: space-around;
 }
-
+  
 .price-ul li {
     list-style-type: none;
     display: flex;
@@ -748,21 +698,21 @@ a {
     width: 100%;
     padding: 1rem 0;
 }
-
+  
 .price-ul li.price {
     font-size: 3rem;
     color: hsl(232, 13%, 33%);
     padding-bottom: 2rem;
 }
-
+  
 .shadow {
     box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
 }
-
+  
 .card.active .price {
     color: #fff;
 }
-
+  
 .price-btn {
     margin-top: 1rem;
     height: 2.6rem;
@@ -771,9 +721,11 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    background: linear-gradient(135deg,
-            #eec299 0%,
-            #E6AD76 100%);
+    background: linear-gradient(
+      135deg,
+      #eec299 0%,
+      #E6AD76 100%
+    );
     color: #fff;
     outline: none;
     border: 0;
@@ -784,154 +736,179 @@ a {
     background: #fff;
     color: #E6AD76;
 }
-
+  
 .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
 }
-
+  
 .card.active .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.253);
 }
-
+  
 .pack {
     font-size: 35px;
     font-weight: bold;
 }
 
-@media only screen and (max-width: 767px) {
-    .carousel-inner {
-        height: 400px;
-        /* Adjust height for mobile devices */
-    }
+/* EVENT CSS */
 
-    .text-title {
-        font-size: 2rem;
-        top: 15%;
-        left: 5%;
-    }
-
-    .container-abs {
-        width: 90%;
-        left: 5%;
-        bottom: -5%;
-    }
-
-    .nav-tabs .nav-link {
-        width: 100%;
-    }
-
-    .buy {
-        flex-direction: column;
-    }
-
-    .buy .book-content {
-        gap: 20px;
-    }
+.eventlist {
+    margin-top: 70px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Tablet Styles */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .carousel-inner {
-        height: 500px;
-    }
-
-    .text-title {
-        font-size: 2.5rem;
-    }
-
+.eventlist-title{
+    text-align: center;
 }
 
-@media (max-width: 767px) {
-    .aboutus-lp {
-        flex-direction: column;
-        padding-right: 15%;
+.eventlist-title h1 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.eventlist-title h3 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #268AC9;
+    margin-bottom: 70px;
+}
+
+.event-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.ticket {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.bandname {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.tourname {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event, .price {
+    flex: 1;
+}
+
+.date {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.location {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.cost {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.rip {
+    background-image: linear-gradient(45deg, transparent 75%, #ccc 75%);
+    background-size: 20px 20px;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.buy-events {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+@media (max-width: 280px) {
+    ul {
+      margin: 1rem;
     }
 
-    .aboutus-desc-title {
-        text-align: center;
+    h1 {
+      font-size: 1.2rem;
     }
-
-    .aboutus-desc-title h5 {
-        font-size: 30px;
+    
+    .price-cards {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
     }
-
-    .aboutus-desc-title h1 {
-        font-size: 20px;
-    }
-
-    .aboutus-row-desc {
-        text-align: center;
-    }
-
-    .aboutus-row-icons {
-        margin-bottom: 30px;
-    }
-
-    .aboutus-icons {
-        flex-direction: column;
-    }
-
-    .branch-wrapper {
-        flex-direction: column;
-
-    }
-
-    .priceplan-title h1 {
-        font-size: 30px;
-    }
-
-    .priceplan-title h3 {
-        font-size: 35px;
-    }
-
-    .contact-content img {
-        width: 50%;
-        height: auto;
-    }
-
-    .contact-ua {
-        padding-left: 2.5%;
-        padding-right: 2.5%;
+  
+    .card {
+      transform: scale(0.8);
+      margin-bottom: 1rem;
     }
 
     .price-cards .card.active {
-        transform: scale(1.0);
-    }
-
-    .priceplan {
-        max-width: 100%;
-    }
-
-    .price-ul {
-        margin: 1rem;
-    }
-
-    .price-ul li {
-        list-style-type: none;
-        width: 50%;
-        padding: 1rem 0;
-    }
-
-    .price-ul li.price {
-        font-size: 1rem;
-    }
-
-    .pack {
-        font-size: 25px;
-        font-weight: bold;
-    }
-
-    .contact-us {
-        width: 80%;
-        margin-left: 10%;
-    }
-
-    .subs {
-        font-size: 1.5rem;
-    }
-
-    .text-title {
-        font-size: medium;
-        margin-top: 20px;
+      transform: scale(0.8);
     }
 }
+  
+@media (min-width: 280px) and (max-width: 320px) {
+    ul {
+      margin: 20px;
+    }
+
+    .price-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    .price-cards .card.active {
+      transform: scale(1);
+    }
+}
+  
+@media (min-width: 320px) and (max-width: 414px) {
+    .price-cards {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card {
+      margin-bottom: 1rem;
+    }
+
+    .price-cards .card.active {
+      transform: scale(1);
+    }
+}
+  
+@media (min-width: 414px) and (max-width: 768px) {
+    .card {
+      margin-bottom: 1rem;
+      margin-right: 1rem;
+    }
+}  

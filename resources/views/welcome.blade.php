@@ -12,9 +12,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap" rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="/css/_event.css">
 </head>
 
 <body>
+
 
     @include('header')
     <div class="main-container">
@@ -32,9 +34,9 @@
                 </div>
             </div>
 
-            <div class="text-title">
-                <p>Need a place to learn<br />Or place to teach?</p>
-            </div>
+                <div class="text-title">
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
+                </div>
 
             <!-- SEARCH ABSOLUTE START -->
             <div class="container-abs">
@@ -153,81 +155,115 @@
         <!-- ABOUT US LP END -->
 
 
-        <!-- BRANCH START -->
-        <div class="branch-cards-container">
-            @foreach ($room as $index => $branch)
-            <div class="branch-card card-{{$index}}">
-                <img src="/images/cabang/{{ $branch->img }}" class="branch-background">
-                <div class="branch_card_content | flow">
-                    <div class="branch_card_content--container | flow">
-                        <h2 class="branch_title">{{ $branch->name }}</h2>
-                        <p class="branch_description">{{ $branch->branch_desc }}</p>
+            <!-- BRANCH START -->
+            <div class="branch">
+                <div class="branch-title">
+                    <h1>OUR LOCATION</h1>
+                    <h3>Book Your Room Now</h3>
+                </div>
+                <div class="branch-cards-container">
+                    @foreach ($room as $branch)
+                    <div class="branch-card">
+                        <img src="/images/cabang/{{ $branch->img }}" class="branch-background">
+                        <div class="branch_card_content | flow">
+                            <div class="branch_card_content--container | flow">
+                                <h2 class="branch_title">{{ $branch->name }}</h2>
+                                <p class="branch_description">{{ $branch->branch_desc }}</p>
+                            </div>
+                            <a class="branch_button" href="/room/{{ $branch->site }}">Read More</a>
+                        </div>
                     </div>
-                    <a class="branch_button" href="/room/{{ $branch->site }}">Read More</a>
+                    @endforeach
                 </div>
             </div>
-            @endforeach
-        </div>
-    </div>
-    <!-- BRANCH END -->
 
-
-    <!-- PRICE PLAN START -->
-    <div class="priceplan">
-        <div class="priceplan-title">
-            <h1>OUR PRICE LIST</h1>
-            <h3>Make Time and Learn</h3>
-        </div>
-        <div class="price-cards">
-            <div class="card shadow">
-                <ul class="price-ul">
-                    <li class="pack">BASIC 2</li>
-                    <li class="price bottom-bar">IDR 150.000</li>
-                    <li class="bottom-bar">60 Mins</li>
-                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                    <li><button class="price-btn">Learn More</button></li>
-                </ul>
+            <!-- PRICE PLAN START -->
+            <div class="priceplan">
+                <div class="priceplan-title">
+                    <h1>OUR PRICE LIST</h1>
+                    <h3>Make Time and Learn</h3>
+                </div>
+                <div class="price-cards">
+                    <div class="card shadow">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 2</li>
+                            <li class="price bottom-bar">IDR 150.000</li>
+                            <li class="bottom-bar">60 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                        </ul>
+                    </div>
+                    <div class="card active">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 1</li>
+                            <li class="price bottom-bar">IDR 75.000</li>
+                            <li class="bottom-bar">30 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
+                        </ul>
+                    </div>
+                    <div class="card shadow">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 3</li>
+                            <li class="price bottom-bar">IDR 450.000</li>
+                            <li class="bottom-bar">180 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="card active">
-                <ul class="price-ul">
-                    <li class="pack">BASIC 1</li>
-                    <li class="price bottom-bar">IDR 75.000</li>
-                    <li class="bottom-bar">30 Mins</li>
-                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                    <li><button class="price-btn active-btn">Learn More</button></li>
-                </ul>
+            <!-- PRICE PLAN END -->
+
+            <!-- EVENT START -->
+            <div class="eventlist">
+                <div class="eventlist-title">
+                    <h1>OUR PRICE LIST</h1>
+                    <h3>Make Time and Learn</h3>
+                </div>
+                <div class="event-cards-container">
+                    @foreach($event as $listevent)
+                    <div class="ticket">
+                        <div class="bandname">{{ $listevent->name }}</div>
+                        <div class="tourname">{{ $listevent->desc }}</div>
+                        <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        <div class="deetz">
+                            <div class="event">
+                                <div class="date">{{ $listevent->date }}</div>
+                                <div class="location">{{ $listevent->location }}</div>
+                            </div>
+                            <!-- <div class="price">
+                                <div class="label">Price</div>
+                                <div class="cost">$30</div>
+                            </div> -->
+                        </div>
+                        <div class="rip"></div>
+                        <a class="buy-events" href="#">See More</a>
+                    </div>
+                    @endforeach
+                </div>
             </div>
-            <div class="card shadow">
-                <ul class="price-ul">
-                    <li class="pack">BASIC 3</li>
-                    <li class="price bottom-bar">IDR 450.000</li>
-                    <li class="bottom-bar">180 Mins</li>
-                    <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                    <li><button class="price-btn">Learn More</button></li>
-                </ul>
+
+
+            <!-- INSTAGRAM START -->
+            <div class="contact-us">
+                <div class="contact-content">
+                    <img class="logo-sub" src="./images/logo.png" alt="">
+                    <p class="subs">Subscribe & <br /> get news and top music places</p>
+                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
+                        will receive news
+                        and valuable information
+                    </p>
+                    <form class="sub-form" action="">
+                        <input type="text" placeholder="Enter your email">
+                        <button class="btn-sub">Subscription</button>
+                    </form>
+                </div>
             </div>
+            <!-- INSTAGRAM END -->
+
+
         </div>
-    </div>
-    <!-- PRICE PLAN END -->
-
-
-    <!-- INSTAGRAM START -->
-    <div class="contact-us">
-        <div class="contact-content">
-            <img class="logo-sub" src="./images/logo.png" alt="">
-            <p class="subs">Subscribe & <br /> get news and top music places</p>
-            <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                will receive news
-                and valuable information
-            </p>
-            <form class="sub-form" action="">
-                <input type="text" placeholder="Enter your email">
-                <button class="btn-sub">Subscription</button>
-            </form>
-        </div>
-    </div>
-    <!-- INSTAGRAM END -->
-
     </div>
     </div>
 
