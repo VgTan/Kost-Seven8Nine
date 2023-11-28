@@ -6,8 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/user.css" />
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    @livewireStyles
+=======
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">\
+    <script src="https://kit.fontawesome.com/aa7454d09f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN5P0t73vHcF5a5q2QST6uP05qFfFqEA" crossorigin="anonymous">
+>>>>>>> Stashed changes
 </head>
 
 <body>
@@ -29,15 +36,16 @@
                 </div>
             </div>
             <div class="user">
-                <!-- <form class="function" action="">
-                    <p>Filter</p>
-                    <p>Search</p>
-                    <div class="form">
-                        <input type="search" required>
-                        <i class="fa fa-search"></i>
-                        <a href="javascript:void(0)" id="clear-btn">Clear</a>
-                    </div>
-                </form> -->
+<<<<<<< Updated upstream
+                
+                    @livewire('user-table')
+                
+=======
+                <form class="function" action="">
+                    <i class="bx bx-search"></i>
+                    <input type="text" placeholder="Search...">
+                    <span class="tooltip">Search</span>
+                </form>
                 <form action="table-form">
                     <table class="user-table">
                         <tr class="table-head">
@@ -71,19 +79,21 @@
                             <td>
                                 {{ $user->address }}
                             </td>
-                            <td>
-                                <a href="">Edit</a>
+                            <td class="edit">
+                                <a href=""><i class="fa-solid fa-pen"></i></a>
                             </td>
-                            <td>
-                                <a href="">Remove</a>
+                            <td class="remove">
+                                <a href=""><i class="fa-solid fa-trash-can"></i></a>
                             </td>
                         </tr>
                         @endforeach
                     </table>
                 </form>
+>>>>>>> Stashed changes
             </div>
         </div>
     </div>
+    @livewireScripts
 </body>
 
 </html>

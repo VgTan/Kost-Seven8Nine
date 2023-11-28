@@ -15,6 +15,7 @@
         rel="stylesheet">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="/css/_event.css">
 </head>
 
 <body>
@@ -37,7 +38,7 @@
                 </div>
 
                 <div class="text-title">
-                    <p>Need a place to learn<br />Or place to teach?</p>
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
 
                 <!-- SEARCH ABSOLUTE START -->
@@ -169,25 +170,10 @@
                     <h1>OUR LOCATION</h1>
                     <h3>Book Your Room Now</h3>
                 </div>
-                <!-- <div class="branch-wrapper">
-                    @foreach ($room as $branch)
-                    <div class="branch-card">
-                        <div class="branch-img">
-                            <img src="../images/cabang/{{ $branch->img }}">
-                            <h1>{{ $branch->name }}</h1>
-                        </div>
-                        <div class="branch-text">
-                            <p>{{ $branch->branch_desc }}</p>
-                        </div>
-                        <a class="read-more" href="/room/{{ $branch->site }}">Read More</a>
-                    </div>
-                    @endforeach -->
-
-                <!-- BRANCH END -->
                 <div class="branch-cards-container">
                     @foreach ($room as $branch)
                     <div class="branch-card">
-                        <img src="../images/cabang/{{ $branch->img }}" class="branch-background">
+                        <img src="/images/cabang/{{ $branch->img }}" class="branch-background">
                         <div class="branch_card_content | flow">
                             <div class="branch_card_content--container | flow">
                                 <h2 class="branch_title">{{ $branch->name }}</h2>
@@ -200,58 +186,88 @@
                 </div>
             </div>
 
-                <!-- PRICE PLAN START -->
-                <div class="priceplan">
-                    <div class="priceplan-title">
-                        <h1>OUR PRICE LIST</h1>
-                        <h3>Make Time and Learn</h3>
+            <!-- PRICE PLAN START -->
+            <div class="priceplan">
+                <div class="priceplan-title">
+                    <h1>OUR PRICE LIST</h1>
+                    <h3>Make Time and Learn</h3>
+                </div>
+                <div class="price-cards">
+                    <div class="card shadow">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 2</li>
+                            <li class="price bottom-bar">IDR 150.000</li>
+                            <li class="bottom-bar">60 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                        </ul>
                     </div>
-                    <div class="price-cards">
-                        <div class="card shadow">
-                            <ul class="price-ul">
-                                <li class="pack">BASIC 2</li>
-                                <li class="price bottom-bar">IDR 150.000</li>
-                                <li class="bottom-bar">60 Mins</li>
-                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><a href="/token" class="price-btn">Learn More</a></li>
-                            </ul>
-                        </div>
-                        <div class="card active">
-                            <ul class="price-ul">
-                                <li class="pack">BASIC 1</li>
-                                <li class="price bottom-bar">IDR 75.000</li>
-                                <li class="bottom-bar">30 Mins</li>
-                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
-                            </ul>
-                        </div>
-                        <div class="card shadow">
-                            <ul class="price-ul">
-                                <li class="pack">BASIC 3</li>
-                                <li class="price bottom-bar">IDR 450.000</li>
-                                <li class="bottom-bar">180 Mins</li>
-                                <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                                <li><a href="/token" class="price-btn">Learn More</a></li>
-                            </ul>
-                        </div>
+                    <div class="card active">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 1</li>
+                            <li class="price bottom-bar">IDR 75.000</li>
+                            <li class="bottom-bar">30 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
+                        </ul>
+                    </div>
+                    <div class="card shadow">
+                        <ul class="price-ul">
+                            <li class="pack">BASIC 3</li>
+                            <li class="price bottom-bar">IDR 450.000</li>
+                            <li class="bottom-bar">180 Mins</li>
+                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
+                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                        </ul>
                     </div>
                 </div>
-                <!-- PRICE PLAN END -->
+            </div>
+            <!-- PRICE PLAN END -->
+
+            <!-- EVENT START -->
+            <div class="eventlist">
+                <div class="eventlist-title">
+                    <h1>OUR NEWS AND EVENT</h1>
+                    <h3>Come Join Our Adventure</h3>
+                </div>
+                <div class="event-cards-container">
+                    @foreach($event as $listevent)
+                    <div class="ticket">
+                        <div class="eventname">{{ $listevent->name }}</div>
+                        <div class="eventdesc">{{ $listevent->desc }}</div>
+                        <div class="image-event">
+                            <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        </div>
+                        <div class="deetz">
+                            <div class="event">
+                                <div class="date"> <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    {{ $listevent->date }}</div>
+                                <div class="location"> <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                                    {{ $listevent->location }}</div>
+                            </div>
+                        </div>
+                        <div class="button-event-bottom">
+                            <div class="bottom-bott">
+                                <div class="rip"></div>
+                                <a class="event-seemore" href="{{ $listevent->link }}" target="_blank">
+                                    <div class="buy-events">See More</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    @endforeach
+                </div>
+            </div>
 
 
             <!-- INSTAGRAM START -->
             <div class="contact-us">
                 <div class="contact-content">
                     <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top music places</p>
-                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                        will receive news
-                        and valuable information
+                    <p class="subs">Harmony Unleashed <br> Your Gateway to Musical Escape</p>
+                    <p class="desc-sub">Explore our music book room—a symphony of words and melodies, offering a
+                        harmonious escape for music lovers and avid readers alike
                     </p>
-                    <form class="sub-form" action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button class="btn-sub">Subscription</button>
-                    </form>
                 </div>
             </div>
             <!-- INSTAGRAM END -->

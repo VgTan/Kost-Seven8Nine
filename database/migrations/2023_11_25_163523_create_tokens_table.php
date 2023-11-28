@@ -16,8 +16,9 @@ return new class extends Migration
             $table->string('user_id');
             $table->string('name');
             $table->string('bundle');
+            $table->integer('price');
             $table->string('proof');
-            $table->string('status')->default('pending');
+            $table->enum('status', ['Unpaid', 'Paid'])->default('Unpaid');
             $table->timestamps();
         });
     }

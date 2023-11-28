@@ -19,10 +19,10 @@
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
             <div class="roomdetail-header1">
-                <img src="/images/{{ $loc->img }}" alt="">
+                <img src="/images/cabang/{{ $loc->img }}" alt="">
 
                 <div class="text-title">
-                    <p>Need a place to learn<br />Or place to teach?</p>
+                    <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
             </div>
             <div class="roomdetail-header-margin">
@@ -51,7 +51,7 @@
                             <h3>{{ $rooms->room_desc }}</h3>
                         </div>
                         <div class="roomdetail-image">
-                            <img src="/images/{{ $rooms->img }}" alt="">
+                            <img src="/images/rooms/{{ $rooms->img }}" alt="">
                         </div>
                     </div>
 
@@ -60,76 +60,42 @@
                             <div class="box">
                                 <h1>Special Price</h1>
                                 <h2>Start from 75K/30mins</h2>
-                                <a href="/book" class="book-button">Book Now</a>
+                                <a href="/{{$loc->site}}/{{$rooms->room_id}}/book" class="book-button">Book Now</a>
                             </div>
                             <hr>
                             <br>
                             <h4>SCHEDULE</h4>
-                            @if($schedule->isNotEmpty())
-                            <div class="schedule">
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th>Day</th>
-                                            <th>Time</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Monday</td>
-                                            <td>
-                                                @foreach($mon as $mon)
-                                                <input type="checkbox" class="time-checkbox"
-                                                    value="{{ $mon->time }}">{{ $mon->time }}
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Tuesday</td>
-                                            <td>
-                                                @foreach($tues as $tues)
-                                                <input type="checkbox" class="time-checkbox"
-                                                    value="{{ $tues->time }}">{{ $tues->time }}
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Wednesday</td>
-                                            <td>
-                                                @foreach($wed as $wed)
-                                                <input type="checkbox" class="time-checkbox"
-                                                    value="{{ $wed->time }}">{{ $wed->time }}
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Thursday</td>
-                                            <td>
-                                                @foreach($thur as $thur)
-                                                <input type="checkbox" class="time-checkbox"
-                                                    value="{{ $thur->time }}">{{ $thur->time }}
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Friday</td>
-                                            <td>
-                                                @foreach($fri as $fri)
-                                                <input type="checkbox" class="time-checkbox"
-                                                    value="{{ $fri->time }}">{{ $fri->time }}
-                                                @endforeach
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            @else
-                            <div>
-                                <p>No Schedule</p>
-                            </div>
-                            @endif
+                            <div class="schedule-container">
+                                <div class="schedule-title-roomdetails">
+                                <h5> Week of {{ $currentDateMD }}th </h5>
+                                </div>
+                                <div class="schedule">
 
-                            <div class="">
+                                    <div class="left-column day-schedule">
+                                        <p class="day-name">Time</p>
+                                        @foreach($mon as $schedule)
+                                        <p class="leftcolumn-time">{{ $schedule->time }}</p>
+                                        @endforeach
+                                    </div>
+
+                                    @foreach(['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'] as $index => $day)
+                                    <div class="day-schedule">
+                                        <p class="day-name">{{ ucfirst($day) }}</p>
+                                        <div class="time-slots">
+                                            @foreach(${$day} as $schedule)
+                                            <div class="time-slot {{ $schedule->status == 'ready' ? 'booked' : 'disabled' }}"
+                                                data-day="{{ $day }}" data-date="{{ $dates[$index] }}"
+                                                data-time="{{ $schedule->time }}">
+                                            </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                    @endforeach
+                                </div>
+                            </div>
+
+
+                            <div class="button-back">
                                 <a href="/room/{{ $loc->site }}">Back</a>
                             </div>
                         </div>
@@ -147,3 +113,4 @@
 </body>
 
 </html>
+
