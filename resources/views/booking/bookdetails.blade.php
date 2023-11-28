@@ -26,6 +26,7 @@
         @endforeach
         <button type="submit">BOOK</button>
     </form>
+    
 </body>
 
 </html>
