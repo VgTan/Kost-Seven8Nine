@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/checkout.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,47 +13,59 @@
 
     <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
 
-    <title>Document</title>
+    <title>Rhapsodie</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-anu">
         <div class="trans-container">
-            <div class="title">Transaction Detail</div>
+            <div class="music-space">
+                <p>Rhapsodie.co Music Space</p>
+            </div>
+            <div class="title">
+                <div class="receipt">
+                    <p class="receipt-top">RECEIPT FOR</p>
+                    <p class="name">{{ $token->name }}</p>
+                </div>
+                <div class="token-bundle">
+                    <p>Rp {{ $token->price }}</p>
+                </div>
+            </div>
             <div class="info">
-                <div class="">User Info</div>
                 <div class="detail-info">
                     <div class="trans-detail">
-                        <div class="name">
-                            <p>Name: </p>
-                            <p>
-                                {{ $token->name }}
+                        <div class="date-bundle">
+                            <p class="date">DATE </p>
+                            <p class="date-val">
+                                {{ date_format($token->created_at, 'M, d Y') }}
                             </p>
-                        </div>
-                        <div class="bundle">
-                            <p>Bundle: </p>
-                            <p>
+                            <p class="bundle">BUNDLE </p>
+                            <p class="bundle-val">
                                 {{ $token->bundle }}
                             </p>
                         </div>
-                        <div class="bundle">
-                            <p>Token: </p>
-                            <p>
-                                {{ $total_token }}
-                            </p>
+                        <div class="token-container">
+                            <div class="token">
+                                <p class="token">TOKEN </p>
+                                <p class="token-count">
+                                    {{ $total_token }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="price">
-                            <p>Price: </p>
-                            <p>
-                                Rp {{ $token->price }},00
-                            </p>
-                        </div>
-                        <button id="pay-button">Pay</button>
                     </div>
+                    <div class="price">
+                        <i class='bx bx-coin-stack'></i>
+                        <p class="price-head">TOTAL </p>
+                        <p class="total-price">
+                            Rp {{ $token->price }},00
+                        </p>
+                    </div>
+                    <button class="btn" id="pay-button">Pay</button>
                 </div>
             </div>
         </div>
     </div>
+    
     <script type="text/javascript">
     // For example trigger on button clicked, or any time you need
     var payButton = document.getElementById('pay-button');
