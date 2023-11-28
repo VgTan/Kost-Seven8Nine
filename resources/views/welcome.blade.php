@@ -227,27 +227,33 @@
             <!-- EVENT START -->
             <div class="eventlist">
                 <div class="eventlist-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
+                    <h1>OUR NEWS AND EVENT</h1>
+                    <h3>Come Join Our Adventure</h3>
                 </div>
                 <div class="event-cards-container">
                     @foreach($event as $listevent)
                     <div class="ticket">
-                        <div class="bandname">{{ $listevent->name }}</div>
-                        <div class="tourname">{{ $listevent->desc }}</div>
-                        <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        <div class="eventname">{{ $listevent->name }}</div>
+                        <div class="eventdesc">{{ $listevent->desc }}</div>
+                        <div class="image-event">
+                            <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        </div>
                         <div class="deetz">
                             <div class="event">
-                                <div class="date">{{ $listevent->date }}</div>
-                                <div class="location">{{ $listevent->location }}</div>
+                                <div class="date"> <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    {{ $listevent->date }}</div>
+                                <div class="location"> <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                                    {{ $listevent->location }}</div>
                             </div>
-                            <!-- <div class="price">
-                                <div class="label">Price</div>
-                                <div class="cost">$30</div>
-                            </div> -->
                         </div>
-                        <div class="rip"></div>
-                        <a class="buy-events" href="#">See More</a>
+                        <div class="button-event-bottom">
+                            <div class="bottom-bott">
+                                <div class="rip"></div>
+                                <a class="event-seemore" href="{{ $listevent->link }}" target="_blank">
+                                    <div class="buy-events">See More</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     @endforeach
                 </div>
@@ -258,15 +264,10 @@
             <div class="contact-us">
                 <div class="contact-content">
                     <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top music places</p>
-                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                        will receive news
-                        and valuable information
+                    <p class="subs">Harmony Unleashed <br> Your Gateway to Musical Escape</p>
+                    <p class="desc-sub">Explore our music book room—a symphony of words and melodies, offering a
+                        harmonious escape for music lovers and avid readers alike
                     </p>
-                    <form class="sub-form" action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button class="btn-sub">Subscription</button>
-                    </form>
                 </div>
             </div>
             <!-- INSTAGRAM END -->

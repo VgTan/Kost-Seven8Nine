@@ -23,7 +23,7 @@
 
 .text-title h1{
     position: absolute;
-    font-size: 3.5rem;
+    font-size: 5.5rem;
     font-weight: bold;
     color: white;
     top: 35%;
@@ -62,7 +62,6 @@
 .roomdetail-header {
     overflow: hidden;
     width: 100%;
-    max-height: 600px;
     display: flex;
     align-items: start;
 }
@@ -80,7 +79,7 @@
 }
 
 .roomdetail-textinfo h2{
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
     width: 70%;
@@ -125,7 +124,8 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    flex-wrap: wrap;
 }
 
 .roomdetail-imginfo{
@@ -142,11 +142,6 @@
     margin-top: 40px;
     color: #013F6B;
     margin-bottom: 40px;
-}
-
-.roomdetail-info iframe{
-    width: 450px;
-    height: 250px;
 }
 
 .box {
@@ -201,8 +196,21 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.roomdetail-info iframe{
+.roomdetail-infolocation h4 {
+    font-size: 1rem;
+    margin-top: 40px;
+    color: #013F6B;
+    margin-bottom: 40px;
+}
+
+.roomdetail-infolocation iframe{
     box-shadow: 0 0 15px #E6AD76;
+}
+
+.roomdetail-infolocation iframe{
+    width: 450px;
+    height: 250px;
+    margin-left: 15px;
 }
 
 .info-item {
@@ -216,7 +224,7 @@
 }
 
 .button-back {
-    margin-top: 40px;
+    margin-top: auto;
     margin-bottom: 40px;
 }
 
@@ -241,7 +249,8 @@
 /* CSS TIMETABLE */
 
 .schedule-container {
-    max-width: 700px;
+    max-width: 650px;
+    height: 100%;
 }
 
 .schedule {
@@ -250,7 +259,6 @@
     gap: 5px;
     margin-top: 20px;
     border: 1px solid #ddd;
-    padding: 10px;
 }
 
 .day-schedule {
@@ -290,8 +298,8 @@
 
 .time-slot {
     padding: 10px;
-    height: 100%; /* Set the height to 100% to match the container height */
-    background-color: white; /* Set the initial background color */
+    height: 100%;
+    background-color: white;
 }
 
 .time-slots .time-slot:nth-child(2n) {
@@ -312,7 +320,7 @@
 .left-column {
     display: flex;
     flex-direction: column;
-    grid-column: 1; /* Set to the first column of the grid */
+    grid-column: 1;
     width: 100px;
 }
 
@@ -326,9 +334,31 @@
     text-align: center;
 }
 
-/* Responsive styles */
-@media (max-width: 600px) {
-    .schedule {
-        grid-template-columns: 1fr; /* Change to a single column for smaller screens */
-    }
+.tab-content-room {
+    overflow: hidden;
+}
+
+.tab-content-room h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-content-room h4 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: #013F6B;
+}
+
+.tab-pane {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.tab-pane.active {
+    display: block;
+    height: auto;
+    visibility: visible;
 }

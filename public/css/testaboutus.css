@@ -104,6 +104,7 @@ body {
    font-weight: 700;
    white-space: nowrap;
    z-index: 5;
+   text-shadow: 0px 1px 8px rgba(255, 255, 255, 1);
 }
 
 .custom_count_title .icon i {
@@ -117,6 +118,7 @@ body {
    font-family: 'Poppins', sans-serif;
    font-size: 14px;
    z-index: 5;
+   text-shadow: 0px 1px 8px rgba(255, 255, 255, 1);
 }
 
 .counter-head h4:after {
@@ -267,4 +269,49 @@ body {
    .heading-about {
       width: 90%;
    }
+}
+
+.image-gallery {
+   margin-top: 120px;
+   max-width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.container-image-gallery {
+   background: #f9f9f9;
+   margin-bottom: 90px;
+}
+
+.flex-column {
+   max-width: 400px;
+}
+
+img {
+   margin: 5px;
+}
+
+.scale {
+   transform: scaleY(1.05);
+   padding-top: 5px; 
+}
+
+.image-gallery-title {
+   text-align: center;
+}
+
+.image-gallery-title h1 {
+   font-weight: bold;
+   font-size: 30px;
+   font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.image-gallery-title h3 {
+   font-weight: bold;
+   font-size: 40px;
+   font-family: 'Heebo', sans-serif;
+   font-style: italic;
+   color: #E6AD76;
+   margin-bottom: 70px;
 }

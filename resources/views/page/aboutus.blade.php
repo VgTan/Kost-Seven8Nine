@@ -24,6 +24,7 @@
     </script>
 
 </head>
+
 <body>
     @include('header')
 
@@ -103,8 +104,9 @@
                             </div>
                             <div class="we-desc">
                                 <h4 class="we-title">
-                                    Find By Location</h4>
-                                <P>Temukan Para Music Professionals dimanapun sesuai dengan lokasi Anda.</p>
+                                    Private Rooms</h4>
+                                <P>Discover the intimacy of our private small music rooms for a personalized musical
+                                    retreat</p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +118,8 @@
                             <div class="we-desc">
                                 <h4 class="we-title">
                                     Various Easy Payment</h4>
-                                <P>Pilih cara pembayaran sesuai keinginan, proses mudah dan simpel.</p>
+                                <P>Select your preferred payment method and experience the effortless and
+                                    straightforward process.</p>
                             </div>
                         </div>
                     </div>
@@ -136,74 +139,91 @@
                     <div class="col-md-12">
                         <div class="vc_custom_heading no_stripe text-center  d-md-block counter-head
 	  text_align_left has_icon  mb-3">
-                        <h4 style="font-size:31px;color:black;line-height:37px;text-align:center;font-weight:bold"
-                            class="consulting-custom-title">Traffic Breakdown Annual Session</h4>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-6">
-                    <div class="fun-facts-card">
-                        <div class="content text-center">
-                            <span class="counter" data-val="8832">5800</span>
-                            <div class="counter-title">High-Traffic</div>
+                            <h4 style="font-size:31px;color:black;line-height:37px;text-align:center;font-weight:bold; text-shadow: 0px 1px 8px rgba(255, 255, 255, 1);"
+                                class="consulting-custom-title">Booked by Many: A Preferred Choice for Countless
+                                Visitors</h4>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-6">
-                    <div class="fun-facts-card">
-                        <div class="content text-center">
-                            <span class="counter" data-val="7488">5800</span>
-                            <div class="counter-title">Medium-Traffic</div>
+                    <div class="col-lg-2 col-md-2 col-sm-3 col-6">
+                        <div class="fun-facts-card">
+                            <div class="content text-center">
+                                <span class="counter" data-val="8832">8832</span>
+                                <div class="counter-title">Annual Sessions</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-2  col-md-2 col-sm-4 col-6">
-                    <div class="fun-facts-card">
-                        <div class="content text-center">
-                            <span class="counter" data-val="6144">5800</span>
-                            <div class="counter-title">Low-Traffic</div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-6">
+                        <div class="fun-facts-card">
+                            <div class="content text-center">
+                                <span class="counter" data-val="736">736</span>
+                                <div class="counter-title">Monthly Sessions</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="col-lg-2  col-md-2 col-sm-4 col-6">
+                        <div class="fun-facts-card">
+                            <div class="content text-center">
+                                <span class="counter" data-val="184">184</span>
+                                <div class="counter-title">Weekly Sessions</div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
         </div>
+
+        <div class="image-gallery">
+            <div class="image-gallery-title">
+                <h1>OUR GALLERY</h1>
+                <h3>Evolution of Excellence: <span style="color:#268AC9">Our Storied Journey</span></h3>
+            </div>
+            <div class="container-image-gallery">
+                <div class="d-flex flex-row flex-wrap justify-content-center">
+                    <div class="d-flex flex-column">
+                        <img src="/images/aboutus/about3.jpg" class="img-fluid">
+
+                        <img src="/images/aboutus/aboutus1.jpeg" class="img-fluid scale">
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <img src="/images/aboutus/aboutus5.jpg" class="img-fluid">
+
+                        <img src="/images/aboutus/aboutus2.jpeg" class="img-fluid scale">
+                    </div>
+
+                    <div class="d-flex flex-column">
+                        <img src="/images/aboutus/about6.jpeg" class="img-fluid scale mb-2">
+                        <img src="/images/aboutus/aboutus4.jpg" class="img-fluid">
+                    </div>
                 </div>
             </div>
+
         </div>
+
+
     </div>
+
 
     @include('footer')
 
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
     <script>
-        let valueDisplays = document.querySelectorAll(".counter");
-        let interval = 10000;
-        valueDisplays.forEach((valueDisplay) => {
-            let startValue = 5800;
-            let endValue = parseInt(valueDisplay.getAttribute("data-val"));
-            let duration = Math.floor(interval / endValue);
-            let counter = setInterval(function() {
-                startValue += 1;
-                valueDisplay.textContent = startValue;
-                if (startValue == endValue) {
-                    clearInterval(counter);
-                }
-            }, duration);
-        });
-        document.addEventListener('DOMContentLoaded', function() {
-            let path = window.location.pathname;
-            let navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-            for (let link of navLinks) {
-                if (link.getAttribute('href') === path) {
-                    link.parentElement.classList.add('active');
-                } else {
-                    link.parentElement.classList.remove('active');
-                }
+    let valueDisplays = document.querySelectorAll(".counter");
+    let interval = 10000;
+    valueDisplays.forEach((valueDisplay) => {
+        let startValue = 150;
+        let endValue = parseInt(valueDisplay.getAttribute("data-val"));
+        let duration = Math.floor(interval / endValue);
+        let counter = setInterval(function() {
+            startValue += 1;
+            valueDisplay.textContent = startValue;
+            if (startValue == endValue) {
+                clearInterval(counter);
             }
-        });
+        }, duration);
+    });
     </script>
 
 </body>

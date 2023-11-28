@@ -9,6 +9,7 @@ use App\Models\Room;
 use App\Models\BranchRoom;
 use App\Models\Token;
 use App\Models\User;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Session;
@@ -29,6 +30,7 @@ class AdminController extends Controller
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         return view('admin.add_cabang');
     }
+
     public function add_cabang(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
@@ -49,6 +51,37 @@ class AdminController extends Controller
             $cabang->img = $fileName;
         }
         $cabang->save();
+        return back();
+    }
+
+    public function event() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        return view('admin.add_event');
+    }
+
+    public function add_event(Request $request) {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        $event = new Event();
+        $event->name = $request->name;
+        $event->desc = $request->desc;
+        $event->location = $request->location;
+        $event->date = $request->date;
+        if ($request->img) {
+            $file = $request->file('img');
+        
+            if (!file_exists('images/events/')) {
+                mkdir('images/events/', 0777, true);
+            }
+            $fileName = $file->getClientOriginalName();
+            $file->move('images/events/', $fileName);
+
+            // Simpan nama file ke dalam database atau di tempat yang sesuai
+            $event->img = $fileName;
+        }
+        $event->link = $request->link;
+        $event->save();
         return back();
     }
 

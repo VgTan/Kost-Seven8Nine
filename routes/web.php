@@ -83,11 +83,12 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/done', 'done')->name('done');
 
     Route::post('/processbranch','add_cabang')->name('');
+    Route::post('/processevent','add_event')->name('');
 
+    Route::get('/addevent', 'event');
     Route::get('/addbranch', 'branch');
     Route::get('/addroom','rooms')->name('');
     Route::post('/processroom','add_room')->name('');
-
     
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/addscheds','process_schedule')->name('');
