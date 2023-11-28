@@ -171,6 +171,7 @@ class BookController extends Controller
        }
     }
 
+    public $total_token;
     public function buytoken(Request $request) {
         if(Auth::check()) {
             $user = User::find(Auth::user()->id);
@@ -179,27 +180,35 @@ class BookController extends Controller
             $token->user_id = $user->id;
             $token->name = $user->name;
             $token->bundle = $request->bundle;
+            
             switch($token->bundle) {
                 case 'basic1':
                     $token->price = 75000;
+                    $total_token = 1;
                     break;
                 case 'basic2':
                     $token->price = 150000;
+                    $total_token = 2;
                     break;
                 case 'basic3':
                     $token->price = 450000;
+                    $total_token = 6;
                     break;
                 case 'flexi1':
                     $token->price = 280000;
+                    $total_token = 4;
                     break;
                 case 'flexi2':
                     $token->price = 1200000;
+                    $total_token = 20;
                     break;
                 case 'flexi3':
                     $token->price = 2000000;
+                    $total_token = 40;
                     break;
                 case 'flexi4':
                     $token->price = 4000000;
+                    $total_token = 100;
                     break;
             }
             $file = $request->file('img');
@@ -239,7 +248,7 @@ class BookController extends Controller
 
             // dd($snapToken);
         }
-        return view('booking.checkout', compact('token', 'snapToken'));
+        return view('booking.checkout', compact('token', 'snapToken', 'total_token'));
     }
 
     public function checkout_token() {
