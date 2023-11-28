@@ -264,15 +264,10 @@
             <div class="contact-us">
                 <div class="contact-content">
                     <img class="logo-sub" src="./images/logo.png" alt="">
-                    <p class="subs">Subscribe & <br /> get news and top music places</p>
-                    <p class="desc-sub">At the moment of subscribing you accept to be a VIP member of funhouse, you
-                        will receive news
-                        and valuable information
+                    <p class="subs">Harmony Unleashed <br> Your Gateway to Musical Escape</p>
+                    <p class="desc-sub">Explore our music book room—a symphony of words and melodies, offering a
+                        harmonious escape for music lovers and avid readers alike
                     </p>
-                    <form class="sub-form" action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button class="btn-sub">Subscription</button>
-                    </form>
                 </div>
             </div>
             <!-- INSTAGRAM END -->
