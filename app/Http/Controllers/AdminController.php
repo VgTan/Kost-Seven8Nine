@@ -83,8 +83,6 @@ class AdminController extends Controller
             $room->img = $fileName;
         }
         if(!BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first()){
-            // $anu = BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first();
-            // dd($anu);
             $branchname = Branch::where('id', $request->branch_id)->first();
             $schedule = new Schedule();
             $room->branch_id = $request->branch_id;
@@ -97,7 +95,6 @@ class AdminController extends Controller
             $room->save();
             
             $branchroom = BranchRoom::where('branch_id', $request->branch_id)->where('room_id', $room_id)->first();
-            // dd($branchroom);
             $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
             $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
             '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',

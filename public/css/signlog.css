@@ -115,8 +115,9 @@
 
 .login-wrapper {
     max-width: 100%;
-    padding-top: 24px;
-    padding-bottom: 24px; 
+    max-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 20px; 
 }
 
 .login-wrapper label {
@@ -130,10 +131,60 @@
     border-bottom: 3px solid #000;
     border-radius: 0;
     padding: 9px 5px;
-    min-height: 40px;
+    min-height: 30px;
     font-size: 18px;
     font-weight: normal; 
 }
+
+.gender-choice label{
+    font-size: 18px;
+    color: #000;
+    font-weight: normal;
+    margin-right: 10px;
+}
+
+.genderclas input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+}
+
+.genderclass:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+
+.genderclass input:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+.genderclass input:checked ~ .checkmark:after {
+    display: block;
+  }
+
+.genderclass .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+  }
 
 .login-wrapper .login-btn {
     padding: 13px 20px;

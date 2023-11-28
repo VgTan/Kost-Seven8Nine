@@ -42,10 +42,32 @@
                                 <input type="email" name="email" id="email" class="form-control"
                                     placeholder="email@example.com">
                             </div>
-                            <div class="form-group mb-4">
+                            <div class="form-group">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" class="form-control"
                                     placeholder="Enter your passsword">
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <input type="text" name="address" id="address" class="form-control"
+                                    placeholder="Enter your Address">
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label><br>
+                                <div class="gender-choice">
+                                    <input type="radio" name="gender" value="F" class="genderclass">
+                                    <label for="female">Female
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <input type="radio" name="gender" value="M" class="genderclass">
+                                    <label for="male">Male
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <input type="radio" name="gender" value="none" class="genderclass">
+                                    <label for="none">Rather Not Say
+                                        <span class="checkmark"></span>
+                                    </label>
+                                </div>
                             </div>
                             <button type="submit" id="login" class="btn btn-block login-btn">SignUp</button>
                         </form>

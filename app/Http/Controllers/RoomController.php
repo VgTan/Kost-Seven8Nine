@@ -7,6 +7,7 @@ use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
 use App\Models\User;
+use App\Models\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +19,9 @@ class RoomController extends Controller
             if($user->status == 'admin') return redirect()->route('dashboard');   
         }
         $room = Branch::all();
-        return view('welcome', compact('room'));
+        $event = Event::all();
+
+        return view('welcome', compact('room', 'event'));
     }
     
     public function room($site){
