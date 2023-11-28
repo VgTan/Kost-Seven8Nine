@@ -31,6 +31,8 @@ class UserController extends Controller
         $val = $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
+            'address' => 'required',
+            'gender' => 'required',
             'password' => 'required|min:5|max:12',
         ]);
             if($val) {
@@ -40,6 +42,8 @@ class UserController extends Controller
                 }
                 $user->name = $request->name;
                 $user->email = $request->email;
+                $user->address = $request->address;
+                $user->gender = $request->gender;
                 $user->password = bcrypt($request->password);
                 $user->save();
                 // return redirect('/login');

@@ -31,6 +31,9 @@
                     </div>
                     <div class="login-wrapper my-auto">
                         <h1 class="login-title">Create an account!</h1>
+                        @if(Session::has('success'))
+                        <div class="alert alert-success w-full">{{Session::get('success')}}</div>
+                        @endif
                         <form action="{{ route('signup') }}" method="get">
                             <div class="form-group">
                                 <label for="name">Full Name</label>
@@ -60,6 +63,9 @@
                                 <label for="address">Address</label>
                                 <input type="text" name="address" id="address" class="form-control"
                                     placeholder="Enter your Address">
+                                    <p class="text-danger absolute text-sm">@error('address') {{$message}}
+                                    @enderror
+                                </p>
                             </div>
                             <div class="form-group">
                                 <label for="gender">Gender</label><br>
@@ -77,6 +83,9 @@
                                         <span class="checkmark"></span>
                                     </label>
                                 </div>
+                                <p class="text-danger absolute text-sm">@error('gender') {{$message}}
+                                    @enderror
+                                </p>
                             </div>
                             <button type="submit" id="login" class="btn btn-block login-btn">SignUp</button>
                         </form>
