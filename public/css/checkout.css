@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 90vh;x */
+}
+
+.trans-container {
+    width: 70%;
+    text-align: center;
+}
+
+.info {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #bfbfc0;
+    border-radius: 12px;
+    box-shadow: 0px 0px 2px rgb(152, 152, 152);
+    padding-bottom: 20px;
+}
+
+.detail-info {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.trans-detail {
+    justify-content: center;
+    
+    width: 70%;
+}
+
+.name, .bundle, .price {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: start;
+    
+}
+
+.name p, .bundle p, .price p {
+    width: 50%;
+}
