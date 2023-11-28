@@ -27,7 +27,7 @@ a:hover, a {
     border-radius: 20px;
 }
 
-.text-title {
+.text-title h1{
     position: absolute;
     font-size: 3.5rem;
     font-weight: bold;
@@ -303,6 +303,7 @@ a:hover, a {
 .aboutus-row-desc {
     margin: 20px;
     line-height: 30px;
+    font-size: 15px;
 }
 
 .aboutus-desc-title h5 {
@@ -322,11 +323,6 @@ a:hover, a {
 
 .aboutus-desc-title h1 span{
     color: #E6AD76;
-}
-
-.aboutus-desc-title p{
-    font-size: 20px;
-    font-family: 'Lora', serif;
 }
 
 .aboutus-icons {
@@ -634,7 +630,7 @@ a:hover, a {
 
 /* PRICE PLAN CSS */
 .priceplan {
-    margin-top: 70px;
+    margin-top: 50px;
     font-family: "Montserrat", sans-serif;
     max-width: 100%;
     display: flex;
@@ -659,6 +655,10 @@ a:hover, a {
     font-style: italic;
     color: #E6AD76;
     margin-bottom: 70px;
+}
+
+.priceplan-title span {
+    color: #268AC9;
 }
 
 .price-cards {
@@ -752,6 +752,137 @@ a:hover, a {
 .pack {
     font-size: 35px;
     font-weight: bold;
+}
+
+/* EVENT CSS */
+
+.eventlist {
+    margin-top: 120px;
+    font-family: "Montserrat", sans-serif;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.eventlist-title{
+    text-align: center;
+}
+
+.eventlist-title h1 {
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
+
+.eventlist-title h3 {
+    font-weight: bold;
+    font-size: 40px;
+    font-family: 'Heebo', sans-serif;
+    font-style: italic;
+    color: #268AC9;
+    margin-bottom: 40px;
+}
+
+.event-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+.ticket {
+    width: 40%;
+    max-width: 400px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 2px solid #ccc;
+    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    margin: 30px;
+    min-height: 400px;
+}
+
+.image-event {
+    overflow: hidden;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-event img {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.eventname {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.eventdesc {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.event, .price {
+    flex: 1;
+}
+
+.date {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.location {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cost {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button-event-bottom {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: end;
+    justify-content: center;
+}
+
+.bottom-bott {
+    width: 100%;
+}
+
+.rip {
+    background-image: linear-gradient(45deg, transparent 75%, #ccc 75%);
+    background-size: 20px 20px;
+    height: 1px;
+    margin: 20px 0;
+}
+
+.buy-events {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.event-seemore a{
+    width: 100%;
 }
   
 @media (max-width: 280px) {

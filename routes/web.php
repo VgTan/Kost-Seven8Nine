@@ -35,9 +35,13 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
-Route::get('/book', function () {
-    return view('book');
+Route::get('/contactus', function () {
+    return view('page.contactus');
 });
+
+// Route::get('/book', function () {
+//     return view('book');
+// });
 
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
@@ -63,9 +67,9 @@ Route::controller(RoomController::class)->group(function () {
     Route::get('/{site}/{room}/details','room_details')->name('');
 });
 
-Route::get('/addbranches', function () {
-    return view('admin.add_cabang');
-});
+// Route::get('/addbranches', function () {
+//     return view('admin.add_cabang');
+// });
 
 
 Route::controller(AdminController::class)->group(function () {
@@ -79,22 +83,28 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/done', 'done')->name('done');
 
     Route::post('/processbranch','add_cabang')->name('');
+    Route::post('/processevent','add_event')->name('');
 
+    Route::get('/addevent', 'event');
+    Route::get('/addbranch', 'branch');
     Route::get('/addroom','rooms')->name('');
     Route::post('/processroom','add_room')->name('');
-
     
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/addscheds','process_schedule')->name('');
 }); 
 
+
 Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
-    Route::get('{site}/{room}/book', 'page');
+    Route::get('{site}/{room}/book', 'page')->name('book_page');
     Route::get('/token', 'token');
     Route::post('/token', 'buytoken')->name('buytoken');
+    Route::post('/checkout', 'checkout_token');
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
+
+
 // Route::get('/footer', function () {
 //     return view('footer');
 // });

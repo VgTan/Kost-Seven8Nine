@@ -21,12 +21,12 @@
     object-fit: cover;
 }
 
-.text-title {
+.text-title h1{
     position: absolute;
-    font-size: 3.5rem;
+    font-size: 5.5rem;
     font-weight: bold;
     color: white;
-    top: 25%;
+    top: 35%;
     left: 8%;
 }
 
@@ -62,7 +62,6 @@
 .roomdetail-header {
     overflow: hidden;
     width: 100%;
-    max-height: 600px;
     display: flex;
     align-items: start;
 }
@@ -80,7 +79,7 @@
 }
 
 .roomdetail-textinfo h2{
-    font-size: 0.8rem;
+    font-size: 1.3rem;
     margin-bottom: 30px;
     font-family: 'Poppins', sans-serif;
     width: 70%;
@@ -125,7 +124,8 @@
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+    flex-wrap: wrap;
 }
 
 .roomdetail-imginfo{
@@ -139,13 +139,9 @@
 
 .roomdetail-info h4{
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 40px;
     color: #013F6B;
-}
-
-.roomdetail-info iframe{
-    width: 450px;
-    height: 250px;
+    margin-bottom: 40px;
 }
 
 .box {
@@ -191,7 +187,6 @@
     text-align: center;
 }
 
-
 .box a:hover {
     background-color: rgb(185, 124, 66);
 }
@@ -201,8 +196,21 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-.roomdetail-info iframe{
+.roomdetail-infolocation h4 {
+    font-size: 1rem;
+    margin-top: 40px;
+    color: #013F6B;
+    margin-bottom: 40px;
+}
+
+.roomdetail-infolocation iframe{
     box-shadow: 0 0 15px #E6AD76;
+}
+
+.roomdetail-infolocation iframe{
+    width: 450px;
+    height: 250px;
+    margin-left: 15px;
 }
 
 .info-item {
@@ -215,40 +223,142 @@
     margin-right: 20px;
 }
 
-.schedule {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    margin-top: 20px;
+.button-back {
+    margin-top: auto;
+    margin-bottom: 40px;
 }
 
-.mon, .tues, .wed, .thur, .fri {
-    display: grid;
-    justify-content: center;
+.button-back a{
+    background-color: #cecccc; 
+    padding: 10px 80px;
+    color: black;
+    font-weight: bold;
+    transition-duration: 0.4s;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
     text-align: center;
+    width: 15%;
 }
 
-.day {
-    display: none;
+.button-back a:hover{
+    color: white;
+    background-color: #707070;
 }
 
-table {
-    width: 70%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
+/* CSS TIMETABLE */
+
+.schedule-container {
+    max-width: 650px;
+    height: 100%;
 }
 
-th, td {
+.schedule {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    margin-top: 20px;
     border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;
 }
 
-th {
-    background-color: #E6AD76;
+.day-schedule {
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.schedule-title-roomdetails {
+    background-color: #268AC9;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.schedule-title-roomdetails h5{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.time-slot {
+    padding: 10px;
+    height: 100%;
+    background-color: white;
+}
+
+.time-slots .time-slot:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+
+.time-slot.booked {
+    background-color: #e6e6e6;
     color: white;
 }
 
-.time-checkbox {
-    margin-right: 10px;
+.time-slot.disabled {
+    background-color: #E6AD76 !important;
+    cursor: not-allowed;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    width: 100px;
+}
+
+.leftcolumn-time {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.left-column .day-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.tab-content-room {
+    overflow: hidden;
+}
+
+.tab-content-room h3 {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-content-room h4 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: #013F6B;
+}
+
+.tab-pane {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.tab-pane.active {
+    display: block;
+    height: auto;
+    visibility: visible;
 }

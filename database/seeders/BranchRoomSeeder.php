@@ -37,7 +37,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '2',
-            'branch_name' => 'Aeon JGC',
+            'branch_name' => 'Aeon Mall Jakarta Garden City',
             'room_id' => '1',
             'room_type' => 'Piano Room',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -48,7 +48,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '2',
-            'branch_name' => 'Aeon JGC',
+            'branch_name' => 'Aeon Mall Jakarta Garden City',
             'room_id' => '3',
             'room_type' => 'Vocal Room',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -59,7 +59,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '3',
-            'branch_name' => 'Maxxbox',
+            'branch_name' => 'MaxxBox Lippo Village',
             'room_id' => '4',
             'room_type' => 'Piano Room 1',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -70,7 +70,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '3',
-            'branch_name' => 'Maxxbox',
+            'branch_name' => 'MaxxBox Lippo Village',
             'room_id' => '5',
             'room_type' => 'Piano Room 2',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -81,7 +81,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '3',
-            'branch_name' => 'Maxxbox',
+            'branch_name' => 'MaxxBox Lippo Village',
             'room_id' => '2',
             'room_type' => 'Vocal Room',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -92,7 +92,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '3',
-            'branch_name' => 'Maxxbox',
+            'branch_name' => 'MaxxBox Lippo Village',
             'room_id' => '3',
             'room_type' => 'Drum Room',
             'room_size' => '2,5 x 1,5 (m²)',

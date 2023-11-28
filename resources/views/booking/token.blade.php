@@ -3,114 +3,129 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
     <link rel="stylesheet" href="/css/token.css">
-    <title>Rhapsodie</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-    <div class="margin-token">
-        <div class="token-container">
-            <h1>Token Payment</h1>
+    @include('header')
+
+    <div class="token-container">
+        <div class="wrapper">
+
+            <h2>Token Payment</h2>
+            <div class="title">
+                <h4>Select a <span style="color: #E6AD76">Payment</span> method</h4>
+            </div>
+
             <form action="{{ route('buytoken') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <h2>Choose Your Pricing Plan</h2>
-                <div class="wrapper-token">
-                    <input required type="radio" name="bundle" id="basic-1" value="basic1">
-                    <input required type="radio" name="bundle" id="basic-2" value="basic2">
-                    <input required type="radio" name="bundle" id="basic-3" value="basic3">
-                    <input required type="radio" name="bundle" id="flexi-1" value="flexi1">
-                    <input required type="radio" name="bundle" id="flexi-2" value="flexi2">
-                    <input required type="radio" name="bundle" id="flexi-3" value="flexi3">
-                    <input required type="radio" name="bundle" id="flexi-4" value="flexi4">
-                    <label for="basic-1" class="option basic-1">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Basic 1</p>
-                            <p>30 Minutes</p>
-                            <h1>IDR 75.000</h1>
-                        </span>
+                <input type="radio" name="bundle" value="basic1" id="basic-1" class="radio-token">
+                <input type="radio" name="bundle" value="basic2" id="basic-2" class="radio-token">
+                <input type="radio" name="bundle" value="basic3" id="basic-3" class="radio-token">
+                <input type="radio" name="bundle" value="flexi1" id="flexi-1" class="radio-token">
+                <input type="radio" name="bundle" value="flexi2" id="flexi-2" class="radio-token">
+                <input type="radio" name="bundle" value="flexi3" id="flexi-3" class="radio-token">
+                <input type="radio" name="bundle" value="flexi4" id="flexi-4" class="radio-token">
+
+                <div class="category">
+                    <label for="basic-1" class="basic1token">
+                        <div class="imgName">
+                            <span class="name">Basic 1 <br> 30 Minutes <br> IDR 75.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="basic-2" class="option basic-2">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Basic 2</p>
-                            <p>60 Minutes</p>
-                            <h1>IDR 150.000</h1>
-                        </span>
+
+                    <label for="basic-2" class="basic2token">
+                        <div class="imgName">
+                            <span class="name">Basic 2 <br> 60 Minutes <br> IDR 150.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="basic-3" class="option basic-3">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Basic 3</p>
-                            <p>180 Minutes</p>
-                            <h1>IDR 450.000</h1>
-                        </span>
+
+                    <label for="basic-3" class="basic3token">
+                        <div class="imgName">
+                            <span class="name">Basic 3 <br> 180 Minutes <br> IDR 450.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="flexi-1" class="option flexi-1">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Flexi 1</p>
-                            <p>2 Hours</p>
-                            <h1>IDR 280.000</h1>
-                        </span>
+
+                    <label for="flexi-1" class="flexi1token">
+                        <div class="imgName">
+                            <span class="name">Flexi 1 <br> 2 Hours <br> IDR 280.00</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="flexi-2" class="option flexi-2">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Flexi 2</p>
-                            <p>10 Hours</p>
-                            <h1>IDR 1.200.000</h1>
-                        </span>
+
+                    <label for="flexi-2" class="flexi2token">
+                        <div class="imgName">
+                            <span class="name">Flexi 2 <br> 10 Hours <br> IDR 1.200.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="flexi-3" class="option flexi-3">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Flexi 3</p>
-                            <p>20 Hours</p>
-                            <h1>IDR 2.000.000</h1>
-                        </span>
+
+                    <label for="flexi-3" class="flexi3token">
+                        <div class="imgName">
+                            <span class="name">Flexi 3 <br> 20 Hours <br> IDR 2.000.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
-                    <label for="flexi-4" class="option flexi-4">
-                        <div class="dot"></div>
-                        <span>
-                            <p>Flexi 4</p>
-                            <p>50 Hours</p>
-                            <h1>IDR 4.000.000</h1>
-                        </span>
+
+                    <label for="flexi-4" class="flexi4token">
+                        <div class="imgName">
+                            <span class="name">Flexi 4 <br> 50 hours <br> IDR 4.000.000</span>
+                        </div>
+                        <span class="check"><i class="fa-solid fa-circle-check" style="color: #6064b6;"></i></span>
                     </label>
                 </div>
-                <div class="buyer">
-                    <div class="buyer-info">
-                        <div class="buyerinfo-container">
-                            <div class="buyerinfo-info">
-                                <label for="namebuyer">Full Name</label>
-                                <input type="text" id="namebuyer" class="infobuyer" value="{{ $user->name }}" disabled>
-                            </div>
-                            <div class="buyerinfo-info">
-                                <label for="emailbuyer">Email Address</label>
-                                <input type="text" id="emailbuyer" class="infobuyer" value="{{ $user->email }}"
-                                    disabled>
-                            </div>
-                            <div class="buyerinfo-info">
-                                <label for="addbuyer">Address</label>
-                                <input type="text" id="addbuyer" class="infobuyer" value="{{ $user->address }}"
-                                    disabled>
-                            </div>
-                        </div>
-                        <div class="buy-proof">
-                            <img class="qrcode" src="" alt="">
-                            <input required id="images" class="file-input" type="file" name="img"
-                                accept=".jpg, .jpeg, .png" value="" multiple />
-                            <label for="images" class="upload-label">Choose File</label>
-                            <button type="submit">Buy</button>
-                        </div>
+
+                <!--Account Information Start-->
+                <h2>Billing Information</h2>
+                <h4>Account</h4>
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="text" placeholder="Full Name" required class="name" value="{{ $user->name }}"
+                            disabled>
+                        <i class="fa fa-user icon"></i>
                     </div>
                 </div>
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="email" placeholder="Email Address" required class="name" value="{{ $user->email }}"
+                            disabled>
+                        <i class="fa fa-envelope icon"></i>
+                    </div>
+                </div>
+
+                <div class="input_group">
+                    <div class="input_box">
+                        <input type="text" placeholder="Address" required class="name" value="{{ $user->address }}"
+                            disabled>
+                        <i class="fa fa-map-marker icon" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <!--Account Information End-->
+
+                <div class="input_group">
+                    <div class="input_box">
+                        <p class="proof-input">Input Your Payment Proof</p>
+                        <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
+                            value="" multiple/>
+                        <button type="submit">PROCEED</button>
+                    </div>
+                </div>
+
             </form>
         </div>
     </div>
 
+    @include('footer')
 </body>
 
 </html>
