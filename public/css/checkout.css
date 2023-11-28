@@ -2,23 +2,25 @@
     font-weight: bold;
 }
 
-/* body {
-    background-color: ;
-} */
+body {
+    /* background: rgb(255,255,255); */
+    background: linear-gradient(145deg, rgba(255,255,255,1) 29%, rgba(38,138,201,1) 100%);
+}
 
 .container-anu {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    height: 100vh;
 }
 
 .trans-container {
+    background-color: white;
     width: 40%;
     text-align: center;
     border: 1px solid #bfbfc0;
     border-radius: 12px;
-    box-shadow: 0px 0px 2px rgb(152, 152, 152);
+    box-shadow: 0px 2px 20px 0px #176697;
     overflow: hidden;
 }
 
@@ -58,8 +60,8 @@
 
 .music-space p {
     margin: 0;
-    padding: 10px 10px 0 0;
-    color: #cccccc;
+    padding: 20px 15px 20px 0;
+    color: #dbdbdb;
     font-size: 1.1rem;
 }
 
@@ -158,12 +160,12 @@ p.token  {
     padding: 8px 0 8px 0;
     border-radius: 20px;
     border: 1px solid #268AC9;
-    background-color: #56a5d6;
+    background-color: #268AC9;
     cursor: pointer;
     color: white;
     font-size: 1.2rem;
 }
 
 .btn:hover {
-    background-color: #268AC9;
+    background-color: #2c94d5;
 }
