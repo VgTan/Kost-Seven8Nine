@@ -19,24 +19,59 @@ a:hover, a {
 body {
     margin: 0;
 }
+
 .header-container {
-    margin-bottom: 50px;
-}
-.navbar {
+    display: flex;
+    justify-content: center;
     background-color: white;
+    width: 100%;
+    position: fixed;
     z-index: 100;
+    /* border-bottom: 5px solid #4688C3; */
 }
 
-.navbar-nav .nav-link {
+.header {
+    height: 110px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.header .name {
+    font-size: 1.5rem;
+    width: 30%;
+    overflow: hidden;
+}
+
+.header .logo img {
+    width: 150px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 45%;
+}
+
+.header-content a {
+    text-decoration: none;
     color: black;
+    font-size: 16px;
 }
 
-.navbar-nav .nav-item.active .nav-link {
+.header .content-box {
+    padding: 30px;
+    padding-bottom: 10px;
+    padding-top: 0;
+    border-bottom: 2px solid transparent;
+}
+
+.header .content-box:hover {
     border-bottom: 2px solid #2E4C59;
-}
-
-.navbar-brand img {
-    width: 200px;
+    transition-duration: 500ms;
 }
 
 .header .active {
@@ -46,9 +81,8 @@ body {
 
 .header-select {
     background-color: transparent;
-    border: none;
-    margin-top: 0.75vw;
-    margin-left: 0.5vw;
+    color: black;
+    border: none
 }
 
 .header-button {
