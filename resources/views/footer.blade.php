@@ -15,7 +15,7 @@
         <div class="container_footer">
             <div class="row">
                 <div class="col" id="company">
-                    <img src="images/logo.png" alt="" class="logo">
+                    <img src="/images/logo.png" alt="" class="logo">
                     <p>
                     Now Everyone Can Learn Music.
                     </p>
