@@ -215,7 +215,17 @@ class AdminController extends Controller
     
         $user = User::all();
         $book = BookList::all();
-        return view("admin.booklist", compact('user', 'book'));
+        $branches = Branch::all();
+
+        $branchBooks = [];
+
+        foreach ($branches as $branch) {
+            $branchBooks[$branch->id] = BookList::where('branch', $branch->name)->get();
+            // dd($branchBooks[$branch->id]);
+            $branchBooks[$branch->id]->branch = $branch->name;
+        }
+
+        return view("admin.booklist", compact('user', 'book', 'branchBooks', 'branches'));
     }
     public function done(Request $request) {
         $user = User::find(Auth::user()->id);

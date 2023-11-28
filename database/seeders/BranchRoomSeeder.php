@@ -37,7 +37,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '2',
-            'branch_name' => 'Aeon JGC',
+            'branch_name' => 'Aeon Mall Jakarta Garden City',
             'room_id' => '1',
             'room_type' => 'Piano Room',
             'room_size' => '2,5 x 1,5 (m²)',
@@ -48,7 +48,7 @@ class BranchRoomSeeder extends Seeder
 
         BranchRoom::create([
             'branch_id' => '2',
-            'branch_name' => 'Aeon JGC',
+            'branch_name' => 'Aeon Mall Jakarta Garden City',
             'room_id' => '3',
             'room_type' => 'Vocal Room',
             'room_size' => '2,5 x 1,5 (m²)',
