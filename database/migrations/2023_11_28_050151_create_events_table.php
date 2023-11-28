@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('date');
             $table->string('img');
+            $table->string('link');
             $table->timestamps();
         });
     }

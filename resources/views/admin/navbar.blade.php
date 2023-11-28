@@ -85,11 +85,11 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="#" class="nav_link">
+                    <a href="/addevent" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-filter"></i>
+                            <i class='bx bx-calendar-event'></i>
                         </span>
-                        <span class="navlink">Filter</span>
+                        <span class="navlink">Add Event</span>
                     </a>
                 </li>
                 <li class="item">

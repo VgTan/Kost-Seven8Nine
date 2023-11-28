@@ -223,68 +223,37 @@
                 </div>
             </div>
             <!-- PRICE PLAN END -->
-            <!-- PRICE PLAN START -->
-            <div class="priceplan">
-                <div class="priceplan-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
-                </div>
-                <div class="price-cards">
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 2</li>
-                            <li class="price bottom-bar">IDR 150.000</li>
-                            <li class="bottom-bar">60 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
-                        </ul>
-                    </div>
-                    <div class="card active">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 1</li>
-                            <li class="price bottom-bar">IDR 75.000</li>
-                            <li class="bottom-bar">30 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
-                        </ul>
-                    </div>
-                    <div class="card shadow">
-                        <ul class="price-ul">
-                            <li class="pack">BASIC 3</li>
-                            <li class="price bottom-bar">IDR 450.000</li>
-                            <li class="bottom-bar">180 Mins</li>
-                            <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <!-- PRICE PLAN END -->
 
             <!-- EVENT START -->
             <div class="eventlist">
                 <div class="eventlist-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
+                    <h1>OUR NEWS AND EVENT</h1>
+                    <h3>Come Join Our Adventure</h3>
                 </div>
                 <div class="event-cards-container">
                     @foreach($event as $listevent)
                     <div class="ticket">
-                        <div class="bandname">{{ $listevent->name }}</div>
-                        <div class="tourname">{{ $listevent->desc }}</div>
-                        <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        <div class="eventname">{{ $listevent->name }}</div>
+                        <div class="eventdesc">{{ $listevent->desc }}</div>
+                        <div class="image-event">
+                            <img src="/images/events/{{ $listevent->img }}" alt="" />
+                        </div>
                         <div class="deetz">
                             <div class="event">
-                                <div class="date">{{ $listevent->date }}</div>
-                                <div class="location">{{ $listevent->location }}</div>
+                                <div class="date"> <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                    {{ $listevent->date }}</div>
+                                <div class="location"> <i class="fa fa-thumb-tack" aria-hidden="true"></i>
+                                    {{ $listevent->location }}</div>
                             </div>
-                            <!-- <div class="price">
-                                <div class="label">Price</div>
-                                <div class="cost">$30</div>
-                            </div> -->
                         </div>
-                        <div class="rip"></div>
-                        <a class="buy-events" href="#">See More</a>
+                        <div class="button-event-bottom">
+                            <div class="bottom-bott">
+                                <div class="rip"></div>
+                                <a class="event-seemore" href="{{ $listevent->link }}" target="_blank">
+                                    <div class="buy-events">See More</div>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     @endforeach
                 </div>
