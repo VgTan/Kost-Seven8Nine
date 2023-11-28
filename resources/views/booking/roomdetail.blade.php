@@ -49,8 +49,8 @@
                             </div>
                             <hr>
                             <ul class="nav nav-pills">
-                                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-                                <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
+                                <li class="active"><a data-toggle="pill" href="#home">Description</a></li>
+                                <li><a data-toggle="pill" href="#menu1"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Schedule</a></li>
                             </ul>
                             <div class="tab-content-room">
                                 <div id="home" class="tab-pane fade in active">
@@ -114,10 +114,7 @@
                             </div>
                         </div>
 
-
-
                     </div>
-
                 </div>
             </div>
         </div>
