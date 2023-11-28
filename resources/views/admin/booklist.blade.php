@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/check.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
         integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -15,14 +16,21 @@
     <div class="container">
         <div class="container-size">
             <div class="details">
-                <div class="branch-count">
+                <!-- <div class="branch-count">
                     <p>{{ COUNT($user) }}</p>
                     <span>User(s)</span>
                 </div>
                 <div class="room-count">
                     <p>{{ COUNT($book) }}</p>
                     <span>Book List(s)</span>
+                </div> -->
+                @foreach($branchBooks as $branch)
+                <div class="room-count">
+                    <p>{{ COUNT($branch) }}</p>
+                    <span>{{ $branch->branch }} Book List(s)</span>
                 </div>
+                @endforeach
+                
             </div>
             <div class="user">
                 <form class="function" action="">

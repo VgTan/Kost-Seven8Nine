@@ -40,18 +40,30 @@
                         <tr class="table-head">
                             <th class="input-head">Time</th>
                             <th>Name</th>
-                            <th>Transaction</th>
+                            <th>Bundle</th>
+                            <th>Price</th>
+                            <th>Proof</th>
                             <th></th>
                             <th></th>
                         </tr>
                         @foreach($token as $user)
-                        @if($user->status == 'pending')
+                        @if($user->status == 'Unpaid')
                         <tr class="table-content">
                             <td class="input-content">
                                 {{ $user->created_at }}</td>
                             <td>
                                 <div class="user-name">
                                     {{ $user->name }}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="user-name">
+                                    {{ $user->bundle }}
+                                </div>
+                            </td>
+                            <td>
+                                <div class="user-name">
+                                    {{ $user->price }}
                                 </div>
                             </td>
                             <td class="proof">

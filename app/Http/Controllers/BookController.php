@@ -235,7 +235,7 @@ class BookController extends Controller
         $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
         if($hashed == $request->signature_key) {
             if($request->transaction_status == 'capture') {
-                $token = Token::find($request->order_id);
+                $token = Token::where('id', $request->order_id)->first();
                 $user = User::where('id', $token->user_id)->first();
                 $token->update(['status' => 'Paid']);
                 $user_token = $user->token;
