@@ -112,6 +112,7 @@
             <a href="/logout">Log Out</a>
         </div>
     </div>
+    
     <script>
     function openForm() {
         document.getElementById("myForm").style.display = "flex";

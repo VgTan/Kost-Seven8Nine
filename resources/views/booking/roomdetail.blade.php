@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     @include('header')
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
@@ -44,6 +43,7 @@
                                         style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
                                     {{ $rooms->room_equipment }}
                                 </p>
+                                
                             </div>
                             <hr>
                             <h4>ROOM'S DESCRIPTION</h4>
@@ -63,6 +63,7 @@
                                 <a href="/book" class="book-button">Book Now</a>
                             </div>
                             <hr>
+                            <br>
                             <h4>SCHEDULE</h4>
                             @if($schedule->isNotEmpty())
                             <div class="schedule">
@@ -133,6 +134,7 @@
                             </div>
                         </div>
                         <hr>
+                        <br>
                         <h4>LOCATION</h4>
                         <iframe src="{{ $branchloc->location_map }}" frameborder="0"></iframe>
                     </div>
@@ -142,7 +144,6 @@
     </div>
 
     @include('footer')
-
 </body>
 
 </html>
