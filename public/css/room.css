@@ -25,15 +25,28 @@ body {
 .heading-branch {
     margin: 0 30px;
     margin-top: 100px;
+    padding: 50px;
     display: flex;
-    max-height: max-content;
+    min-height: 500px;
     box-shadow: -10px 10px 20px 5px #00000040;
     align-items: center;
 }
 
-.heading-branch img {
-    width: 50%;
+.branch-image {
+    display: flex;
+    flex-direction: row;
+}
+
+.branch-image img {
+    width: 250px;
+    height: 350px;
+    object-fit: cover;
+    margin: 30px;
     margin-left: auto;
+}
+
+.branch-image .image {
+    margin-top: 60px;
 }
 
 .branch-text {
@@ -43,6 +56,13 @@ body {
 
 .branch-text p{
     padding-top: 20px;
+    font-size: 20px;
+}
+
+.branch-text h1{
+    color: #268AC9;
+    font-weight: bold;
+    font-size: 50px;
 }
 
 .heading-branch-room {

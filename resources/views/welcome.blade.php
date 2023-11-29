@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="/css/_event.css">
@@ -41,56 +41,8 @@
                 <div class="text-title">
                     <h1>Need a place to learn<br />Or place to teach?</h1>
                 </div>
-
-                <!-- SEARCH ABSOLUTE START -->
-                <div class="container-abs">
-                    <div class="">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="book-tab" data-bs-toggle="tab"
-                                    data-bs-target="#book" type="button" role="tab" aria-controls="book"
-                                    aria-selected="true">BOOK MUSIC PLACE</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="search-tab" data-bs-toggle="tab" data-bs-target="#search"
-                                    type="button" role="tab" aria-controls="search"
-                                    aria-selected="false">SEARCH</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane show active" id="book" role="tabpanel" aria-labelledby="book-tab">
-                                <form action="" class="buy">
-                                    <div class="book-content">
-                                        <div>
-                                            <p>Area</p>
-                                            <select name="" id="">
-                                                <option value="">Allogio</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <p>Price</p>
-                                            <select name="" id="">
-                                                <option value="">Rp 100.000.000</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="search-button" type="submit"><img src="./images/search.png"
-                                            alt="">Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane " id="search" role="tabpanel" aria-labelledby="search-tab">...</div>
-                            <div class="tab-pane " id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- SEARCH ABSOLUTE END -->
             </div>
             <!-- CAROUSEL HEADING END -->
-
 
             <!-- ABOUT US LP START -->
             <div class="about-lp">
@@ -164,7 +116,6 @@
             </div>
             <!-- ABOUT US LP END -->
 
-
             <!-- BRANCH START -->
             <div class="branch">
                 <div class="branch-title">
@@ -184,6 +135,42 @@
                         </div>
                     </div>
                     @endforeach
+                </div>
+            </div>
+            <!-- BRANCH END -->
+
+            <div class="music">
+                <div class="music-title">
+                    <h1>OUR PRICE LIST</h1>
+                    <h3>Make Time and Learn</h3>
+                </div>
+                <div class="music-cards-grid">
+                    <div class="music-cards-container">
+                        <div class="music-cards">
+                            <div class="music-column">
+                                <div class="icon-wrapper">
+                                    <img src="" alt="">
+                                </div>
+                                <h3>Grand Piano</h3>
+                            </div>
+                        </div>
+                        <div class="music-cards">
+                            <div class="music-column">
+                                <div class="icon-wrapper">
+                                    <img src="/images/drum.png" alt="">
+                                </div>
+                                <h3>Drum-kit</h3>
+                            </div>
+                        </div>
+                        <div class="music-cards">
+                            <div class="music-column">
+                                <div class="icon-wrapper">
+                                    <img src="" alt="">
+                                </div>
+                                <h3>Grand Piano</h3>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

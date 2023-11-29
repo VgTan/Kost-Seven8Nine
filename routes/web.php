@@ -43,6 +43,10 @@ Route::get('/termncon', function () {
     return view('page.termncon');
 });
 
+Route::get('/policy', function () {
+    return view('page.policy');
+});
+
 // Route::get('/book', function () {
 //     return view('book');
 // });

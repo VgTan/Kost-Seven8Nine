@@ -3,6 +3,10 @@ body {
     padding: 0;
 }
 
+.policy-main {
+  margin: 50px;
+}
+
 .info h3{
   line-height: 40px;
   font-size: 15px;
