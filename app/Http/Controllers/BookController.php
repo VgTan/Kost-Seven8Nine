@@ -108,16 +108,16 @@ class BookController extends Controller
                             list($day, $date, $time) = explode(' ', $times, 3);
                             $book = new BookList();
                             // $book->day = $request->day;
-                            $book->branch = $request->branch;
-                            $book->room = $request->room;
+                            $book->branch = $request->branchname;
+                            $book->room = $request->roomname;
                             $book->user_id = $user->id;
                             $book->name = $user->name;
                             $book->date = $date;
                             $book->time = $time;
                             $book->save();
                             
-                            $branchroom = BranchRoom::where('branch_name', $request->branch)
-                            ->where('room_type', $request->room)->first();
+                            $branchroom = BranchRoom::where('branch_name', $request->branchname)
+                            ->where('room_type', $request->roomname)->first();
                             // dd($request->room);
                             $schedule = Schedule::where('branchroom_id', $branchroom->id)
                             ->where('day', $day)

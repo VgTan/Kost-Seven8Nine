@@ -3,10 +3,12 @@
 
 body {
 background: #DFC2F2;
-	background-image: linear-gradient( to right, #667085,#000AFF);
-	background-attachment: fixed;	
+	background-image: linear-gradient( to right, #fff,#fff);
+	background-attachment: fixed;
 	background-size: cover;
-  
+	
+	
+
 	}
 
 #container{
@@ -16,7 +18,7 @@ background: #DFC2F2;
 	border-radius: 5px;
 	overflow: hidden;
 	margin: 5em auto;
-	min-height: 530px;
+	min-height: fit-content;
 	max-width: 700px;	
 }
 
@@ -39,7 +41,7 @@ background: #DFC2F2;
 	display: inline-block;
 	position: relative;
 	font-size: 30px;
-	color: #344055;
+	color: #3498db;
 	margin: 0;
 	
 }
@@ -62,11 +64,6 @@ background: #DFC2F2;
 
 }
 
-
-
-	
-
-
 .hint-star {
 	display: inline-block;
 	margin-left: 0.5em;
@@ -74,14 +71,66 @@ background: #DFC2F2;
 	width: 50%;
 }
 
+.bdlocation {
+	display: flex;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.bddate {
+	display: flex;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.bdclock {
+	display: flex;
+	text-align: center;
+	padding-top: 20px;
+}
+
+.bdtime {
+	display: flex;
+	text-align: center;
+	margin-left: 10%;
+	padding-top: 20px;
+}
+
+
+.date-icon {
+	height: 20px;
+	width: 20px;
+	font-size: larger;
+	color: #3498db;
+}
+
+.location-icon {
+	height: 20px;
+	width: 20px;
+	font-size: larger;
+	color: #3498db;
+}
+
+.clock-icon {
+	height: 20px;
+	width: 20px;
+	font-size: larger;
+	color: #3498db;
+}
 
 #container .product-details > p {
 font-family: 'EB Garamond', serif;
-	text-align: center;
+	text-align: left;
 	font-size: 18px;
-	color: #7d7d7d;
-	
+	color: #3498db;
 }
+
+.information {
+	margin: 0;
+	padding-left: 10px;
+	color: #3498db;
+}
+
 .control{
     text-align: center;
 	bottom: 20%;
@@ -102,7 +151,7 @@ font-family: 'EB Garamond', serif;
 	color: #eee;
 	padding: 0;
 	margin: 0;
-	
+	margin-top: 20px;
 }
 
 .btn:hover{transform: translateY(-6px);
@@ -190,7 +239,7 @@ font-family: 'EB Garamond', serif;
 @media screen and (max-width: 768px) {
     body {
         background: #DFC2F2;
-        background-image: linear-gradient( to bottom,#000AFF,#667085);
+        background-image: linear-gradient( to bottom,#fff,#fff);
     }
 
     #container {
@@ -211,9 +260,11 @@ font-family: 'EB Garamond', serif;
         float: none;
         text-align: center;
         padding: 0px;
-
     }
 
+	.product-details{
+		padding-left: 10px;
+	}
     .product-image {
         margin-top: 20px;
     }
