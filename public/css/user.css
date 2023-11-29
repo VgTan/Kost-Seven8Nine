@@ -84,7 +84,6 @@ body {
 
 .user-table td,
 .user-table th {
->>>>>>> Stashed changes
     text-align: start;
 }
 
@@ -94,17 +93,8 @@ body {
     box-shadow: 1px 1px 3px rgb(152, 152, 152);
 }
 
-<<<<<<< Updated upstream
-.head-content {
-    max-width: 100px;
-    overflow-x: auto;
-}
-
-.input-head, .input-content {
-=======
 .input-head,
 .input-content {
->>>>>>> Stashed changes
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
