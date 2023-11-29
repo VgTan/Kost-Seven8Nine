@@ -90,6 +90,7 @@
   justify-content: space-evenly;
   background-color: #f3efefa1;
   padding: 20px;
+  position: relative;
 }
 
 .schedule-container {
@@ -333,4 +334,12 @@
 .button-book a:hover {
   color: white;
   background-color: #707070;
+}
+
+@media screen and (max-width: 1543px) {
+  .schedule {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
 }
