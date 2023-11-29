@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap"
         rel="stylesheet">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="/css/_event.css">

@@ -45,7 +45,7 @@
                         <a href="#">About</a>
                         <a href="#">Services</a>
                         <a href="#">Our Policy</a>
-                        <a href="#">Help</a>
+                        <a href="/termncon">Terms and Condition</a>
                     </div>
                 </div>
 

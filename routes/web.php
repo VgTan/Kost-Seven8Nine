@@ -39,6 +39,10 @@ Route::get('/contactus', function () {
     return view('page.contactus');
 });
 
+Route::get('/termncon', function () {
+    return view('page.termncon');
+});
+
 // Route::get('/book', function () {
 //     return view('book');
 // });
