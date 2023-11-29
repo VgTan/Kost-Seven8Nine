@@ -157,7 +157,8 @@ class BookController extends Controller
                 ->where('room_type', $roomname)->first();
                 $roomimg = $room->img;
                 $time = $request->time;
-                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg'));
+                $token = count($request->time);
+                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg', 'token'));
         }
     }
     public function token() {
