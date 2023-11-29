@@ -56,9 +56,6 @@
     width: 100%;
 }
 
-<<<<<<< Updated upstream
-.user-table td, .user-table th {
-=======
 .user-table {
     width: 100%;
     box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
@@ -70,7 +67,6 @@
 
 .user-table td,
 .user-table th {
->>>>>>> Stashed changes
     text-align: start;
 }
 
@@ -80,17 +76,8 @@
     box-shadow: 1px 1px 3px rgb(152, 152, 152);
 }
 
-<<<<<<< Updated upstream
-.head-content {
-    max-width: 100px;
-    overflow-x: auto;
-}
-
-.input-head, .input-content {
-=======
 .input-head,
 .input-content {
->>>>>>> Stashed changes
     display: flex;
     padding-left: 10px;
     padding-right: 10px;
@@ -170,59 +157,6 @@
 
 .function {
     display: flex;
-<<<<<<< Updated upstream
-    justify-content: space-between;
-}
-
-.pagination {
-    width: 30%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-ul li {
-    list-style: none;
-}
-
-.disabled {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #363740;
-}
-
-.page-item {
-    width: 100%;
-    text-align: center;
-    /* background-color: #c1c3c6; */
-    
-}
-
-.active {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background-color: rgb(152, 152, 152);
-    align-items: center;
-}
-
-button.page-link {
-    width: 100%;
-    /* background-color: transparent; */
-    border: 1px solid #363740;
-}
-
-/* .form{
-    transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    background: white;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid white;
-=======
     justify-content: flex-end;
     width: 100%;
     margin-bottom: 1%;
@@ -245,7 +179,6 @@ td.remove {
 }
 
 .table-content td {
->>>>>>> Stashed changes
     padding: 5px;
 }
 
