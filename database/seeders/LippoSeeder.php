@@ -900,6 +900,361 @@ class LippoSeeder extends Seeder
             'time' => '20.30 - 21.00',
             'status' => 'ready'
         ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '10.00 - 10.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '10.30 - 11.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '11.00 - 11.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '11.30 - 12.00',
+            'status' => 'ready'
+        ]);
+        
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '12.00 - 12.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '12.30 - 13.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '13.00 - 13.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '13.30 - 14.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '14.00 - 14.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '14.30 - 15.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '15.00 - 15.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '15.30 - 16.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '16.00 - 16.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '16.30 - 17.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '17.00 - 17.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '17.30 - 18.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '18.00 - 18.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '18.30 - 19.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '19.00 - 19.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '19.30 - 20.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '20.00 - 20.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sat',
+            'time' => '20.30 - 21.00',
+            'status' => 'ready'
+        ]);
+
+        // SUNDAY
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '10.00 - 10.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '10.30 - 11.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '11.00 - 11.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '11.30 - 12.00',
+            'status' => 'ready'
+        ]);
+        
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '12.00 - 12.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '12.30 - 13.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '13.00 - 13.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '13.30 - 14.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '14.00 - 14.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '14.30 - 15.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '15.00 - 15.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '15.30 - 16.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '16.00 - 16.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '16.30 - 17.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '17.00 - 17.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '17.30 - 18.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '18.00 - 18.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '18.30 - 19.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '19.00 - 19.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '19.30 - 20.00',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '20.00 - 20.30',
+            'status' => 'ready'
+        ]);
+
+        Schedule::create([
+            'branchroom_id' => '5',
+            'date' => '-',
+            'day' => 'sun',
+            'time' => '20.30 - 21.00',
+            'status' => 'ready'
+        ]);
+        
         
         Schedule::create([
             'branchroom_id' => '6',
@@ -4284,7 +4639,7 @@ class LippoSeeder extends Seeder
         // SATURDAY
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '10.00 - 10.30',
@@ -4292,7 +4647,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '10.30 - 11.00',
@@ -4300,7 +4655,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '11.00 - 11.30',
@@ -4308,7 +4663,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '11.30 - 12.00',
@@ -4316,7 +4671,7 @@ class LippoSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '12.00 - 12.30',
@@ -4324,7 +4679,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '12.30 - 13.00',
@@ -4332,7 +4687,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '13.00 - 13.30',
@@ -4340,7 +4695,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '13.30 - 14.00',
@@ -4348,7 +4703,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '14.00 - 14.30',
@@ -4356,7 +4711,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '14.30 - 15.00',
@@ -4364,7 +4719,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '15.00 - 15.30',
@@ -4372,7 +4727,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '15.30 - 16.00',
@@ -4380,7 +4735,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '16.00 - 16.30',
@@ -4388,7 +4743,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '16.30 - 17.00',
@@ -4396,7 +4751,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '17.00 - 17.30',
@@ -4404,7 +4759,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '17.30 - 18.00',
@@ -4412,7 +4767,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '18.00 - 18.30',
@@ -4420,7 +4775,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '18.30 - 19.00',
@@ -4428,7 +4783,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '19.00 - 19.30',
@@ -4436,7 +4791,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '19.30 - 20.00',
@@ -4444,7 +4799,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '20.00 - 20.30',
@@ -4452,7 +4807,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sat',
             'time' => '20.30 - 21.00',
@@ -4462,7 +4817,7 @@ class LippoSeeder extends Seeder
         // SUNDAY
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '10.00 - 10.30',
@@ -4470,7 +4825,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '10.30 - 11.00',
@@ -4478,7 +4833,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '11.00 - 11.30',
@@ -4486,7 +4841,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '11.30 - 12.00',
@@ -4494,7 +4849,7 @@ class LippoSeeder extends Seeder
         ]);
         
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '12.00 - 12.30',
@@ -4502,7 +4857,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '12.30 - 13.00',
@@ -4510,7 +4865,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '13.00 - 13.30',
@@ -4518,7 +4873,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '13.30 - 14.00',
@@ -4526,7 +4881,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '14.00 - 14.30',
@@ -4534,7 +4889,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '14.30 - 15.00',
@@ -4542,7 +4897,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '15.00 - 15.30',
@@ -4550,7 +4905,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '15.30 - 16.00',
@@ -4558,7 +4913,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '16.00 - 16.30',
@@ -4566,7 +4921,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '16.30 - 17.00',
@@ -4574,7 +4929,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '17.00 - 17.30',
@@ -4582,7 +4937,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '17.30 - 18.00',
@@ -4590,7 +4945,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '18.00 - 18.30',
@@ -4598,7 +4953,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '18.30 - 19.00',
@@ -4606,7 +4961,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '19.00 - 19.30',
@@ -4614,7 +4969,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '19.30 - 20.00',
@@ -4622,7 +4977,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '20.00 - 20.30',
@@ -4630,7 +4985,7 @@ class LippoSeeder extends Seeder
         ]);
 
         Schedule::create([
-            'branchroom_id' => '2',
+            'branchroom_id' => '8',
             'date' => '-',
             'day' => 'sun',
             'time' => '20.30 - 21.00',

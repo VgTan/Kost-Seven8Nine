@@ -1,3 +1,8 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
 .id {
     display: none;
 }
@@ -7,11 +12,12 @@
     height: 100%;
     display: flex;
     justify-content: center;
+    background-color: #F5F5FF;
     margin-left: 80px;
 }
 
 .container-size {
-    width: 100%;
+    width: 90%;
 }
 
 .details {
@@ -22,9 +28,9 @@
     padding: 20px;
     padding-left: 0;
     padding-right: 0;
+    background-color: white;
     align-items: center;
 }
-
 
 .branch-count,
 .user-count,
@@ -63,10 +69,22 @@
     overflow: hidden;
     height: 100%;
     border-collapse: collapse;
+    background-color: white;
+}
+
+.user-table {
+    width: 100%;
+    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    border-collapse: collapse;
+    background-color: white;
 }
 
 .user-table td,
 .user-table th {
+>>>>>>> Stashed changes
     text-align: start;
 }
 
@@ -76,8 +94,17 @@
     box-shadow: 1px 1px 3px rgb(152, 152, 152);
 }
 
+<<<<<<< Updated upstream
+.head-content {
+    max-width: 100px;
+    overflow-x: auto;
+}
+
+.input-head, .input-content {
+=======
 .input-head,
 .input-content {
+>>>>>>> Stashed changes
     display: flex;
     padding-left: 10px;
     padding-right: 10px;

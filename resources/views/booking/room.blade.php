@@ -21,6 +21,7 @@
 
 <body>
     @include('header')
+    
     <div class="branch-section">
         <div class="base-branch">
             <div class="heading-branch">
