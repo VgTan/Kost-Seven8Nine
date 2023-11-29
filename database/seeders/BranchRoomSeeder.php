@@ -76,7 +76,7 @@ class BranchRoomSeeder extends Seeder
             'room_size' => '2,5 x 1,5 (m²)',
             'room_equipment' => 'Grand Piano',
             'room_desc' => 'Indulge in the melodic resonance of our exclusive practice room, featuring a grand piano, where every keystroke invites you to refine your musical artistry in an environment crafted for both concentration and inspiration.',
-            'img' => 'pianoroom1-maxx.jpg'
+            'img' => 'pianoroom1-maxx.jpeg'
         ]);
 
         BranchRoom::create([
@@ -87,7 +87,7 @@ class BranchRoomSeeder extends Seeder
             'room_size' => '2,5 x 1,5 (m²)',
             'room_equipment' => 'Keyboard, Speakers, Microphone',
             'room_desc' => 'Immerse yourself in the enchanting world of music in our room featuring a grand piano, offering the perfect environment for learning and mastering the art of playing the piano.',
-            'img' => 'vocalroom-maxx.jpg'
+            'img' => 'vocalroom-maxx.jpeg'
         ]);
 
         BranchRoom::create([
@@ -98,7 +98,7 @@ class BranchRoomSeeder extends Seeder
             'room_size' => '2,5 x 1,5 (m²)',
             'room_equipment' => 'Drum Kit',
             'room_desc' => 'Unleash your rhythmic potential in our dynamic drum practice room, equipped with a professional drum kit that invites drummers of all skill levels to explore, experiment, and perfect their beats.',
-            'img' => 'drumroom-maxx.jpg'
+            'img' => 'drumroom-maxx.jpeg'
         ]);
     }
 }
