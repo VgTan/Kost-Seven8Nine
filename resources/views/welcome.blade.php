@@ -44,6 +44,7 @@
             </div>
             <!-- CAROUSEL HEADING END -->
 
+
             <!-- ABOUT US LP START -->
             <div class="about-lp">
                 <div class="aboutus-lp">
@@ -115,6 +116,7 @@
                 </div>
             </div>
             <!-- ABOUT US LP END -->
+            
 
             <!-- BRANCH START -->
             <div class="branch">
@@ -135,42 +137,6 @@
                         </div>
                     </div>
                     @endforeach
-                </div>
-            </div>
-            <!-- BRANCH END -->
-
-            <div class="music">
-                <div class="music-title">
-                    <h1>OUR PRICE LIST</h1>
-                    <h3>Make Time and Learn</h3>
-                </div>
-                <div class="music-cards-grid">
-                    <div class="music-cards-container">
-                        <div class="music-cards">
-                            <div class="music-column">
-                                <div class="icon-wrapper">
-                                    <img src="" alt="">
-                                </div>
-                                <h3>Grand Piano</h3>
-                            </div>
-                        </div>
-                        <div class="music-cards">
-                            <div class="music-column">
-                                <div class="icon-wrapper">
-                                    <img src="/images/drum.png" alt="">
-                                </div>
-                                <h3>Drum-kit</h3>
-                            </div>
-                        </div>
-                        <div class="music-cards">
-                            <div class="music-column">
-                                <div class="icon-wrapper">
-                                    <img src="" alt="">
-                                </div>
-                                <h3>Grand Piano</h3>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
 

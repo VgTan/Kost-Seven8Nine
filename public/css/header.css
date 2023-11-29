@@ -23,6 +23,17 @@ body {
 .header-container {
     display: flex;
     justify-content: center;
+    background-color: transparent;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    color:white;
+    /* border-bottom: 5px solid #4688C3; */
+}
+
+.header-color {
+    display: flex;
+    justify-content: center;
     background-color: white;
     width: 100%;
     position: fixed;

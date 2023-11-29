@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="/css/header.css">
-<div class="header-container">
+<div class="header-container" id="header">
     <div class="header">
         <div class="name">
             <a href="/" class="logo"><img src="/images/logo.png" alt=""></a>
@@ -38,3 +38,16 @@
         @endguest
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+<script>
+        window.addEventListener('scroll', function() {
+            var header = document.getElementById('header');
+            if (window.scrollY > 0) {
+                header.classList.remove('header-container');
+                header.classList.add('header-color');
+            } else {
+                header.classList.add('header-color');
+                header.classList.remove('header-container');
+            }
+        });
+    </script>
