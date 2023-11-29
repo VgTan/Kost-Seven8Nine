@@ -311,12 +311,17 @@
 
 
 .time-slot.booked {
-    background-color: #e6e6e6;
+    background-color: #ababab;
     color: white;
 }
 
 .time-slot.disabled {
     background-color: #E6AD76 !important;
+    cursor: not-allowed;
+}
+
+.time-slot.expired {
+    background-color: #858585 !important;
     cursor: not-allowed;
 }
 

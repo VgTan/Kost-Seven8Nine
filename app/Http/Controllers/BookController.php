@@ -26,21 +26,43 @@ class BookController extends Controller
 
         // Calculate the number of days to Monday (the beginning of the week)
         $daysToMonday = (8 - $currentDayNumber) % 7;
-
+        $daysToMonday2 = 7-((8 - $currentDayNumber) % 7);
+        // dd($daysToMonday);
         // Get the current date
         $currentDate = date('Y-m-d');
         $currentDateYM = date('F Y');
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
-        $dates = [
-        $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
-        $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
-        $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
-        $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
-        $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
-        $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
-        $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
-        ];
+        if($currentDate == 7) {
+            $dates = [
+            $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+            $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+            $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+            $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+            $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+            $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+            $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        } else {
+            $dates = [
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
+                $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+                $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+                $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+                $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+                $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+                $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        }
+        $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+        for($i = 0; $i < $daysToMonday2+1; $i++) {
+            $expired = Schedule::where('day', $days[$i])->get();
+            foreach ($expired as $ex) {
+                if($ex->status != 'booked') {
+                    $ex->update(['status' => 'expired']);
+                }
+            }
+        }
 
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
