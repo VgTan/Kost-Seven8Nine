@@ -21,14 +21,7 @@
 
 <body>
     @include('header')
-<<<<<<< Updated upstream
-    <div class="room-margin">
-        <div class="room-container">
-            <div class="branch-room">
-                <img src="/images/cabang/{{ $loc->img }}" alt="">
-                <div class="text-title">
-                    <h1>{{ $loc->name }}</h1>
-=======
+    
     <div class="branch-section">
         <div class="base-branch">
             <div class="heading-branch">
@@ -42,7 +35,6 @@
                 <div class="branch-room-text">
                     <h1>LOCATION</h1>
                     <p>{{ $loc->location }}</p>
->>>>>>> Stashed changes
                 </div>
             </div>
 
@@ -64,35 +56,18 @@
                     $roomNames = \App\Models\Room::where('id', $room->room_id)->get();
                     @endphp
 
-<<<<<<< Updated upstream
-            <div class="room-type-container">
-                <div class="room-type">
-                    <div class="room-image">
-                        <a class="" href="/{{$loc->site}}/{{$room->room_id}}/details">
-                            <img src="/images/rooms/{{$room->img}}" alt="Room Image">
-                        </a>
-                    </div>
-                    <div class="room-details">
-                        <h1>{{ $item->name }}</h1>
-                        <div class="room-desc">
-                            <p>{{ $room->room_desc }}</p>
-                        </div>
-                        <a class="book-button" href="/{{$loc->site}}/{{$room->room_id}}/details">Book Now</a>
-                    </div>
-=======
                     @foreach($roomNames as $item)
                     <a href="/{{$loc->site}}/{{$room->room_id}}">
                         <div class="card" style="width: 18rem;">
-                            <img src="/images/{{$room->img}}" class="card-img-top" alt="...">
+                            <img src="/images/rooms/{{$room->img}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h3 class="card__name">{{ $item->name }}</h3>
-                                <a href="/{{$loc->site}}/{{$room->room_id}}" class="card__button">Book Now</a>
+                                <a href="/{{$loc->site}}/{{$room->room_id}}/details" class="card__button">Book Now</a>
                             </div>
                         </div>
                     </a>
                     @endforeach
                     @endforeach
->>>>>>> Stashed changes
                 </div>
             </div>
 
