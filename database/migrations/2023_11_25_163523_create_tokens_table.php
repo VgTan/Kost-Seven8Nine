@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('tokens', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->string('bundle');
             $table->integer('price');
             $table->string('proof');
             $table->enum('status', ['Unpaid', 'Paid'])->default('Unpaid');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

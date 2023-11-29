@@ -27,21 +27,24 @@ body {
     width: 100%;
     position: fixed;
     z-index: 100;
-    /* border-bottom: 5px solid #4688C3; */
 }
 
 .header {
     height: 110px;
     width: 90%;
-    display: flex;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    justify-content: center;
+    align-items: center;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    overflow: hidden;
+    overflow: hidden; */
 }
 
 .header .name {
     font-size: 1.5rem;
-    width: 30%;
+    /* width: 30%; */
     overflow: hidden;
 }
 
@@ -52,8 +55,9 @@ body {
 .header-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 45%;
+    justify-content: center;
+    gap: 30px;
+    /* width: 45%; */
 }
 
 .header-content a {
@@ -113,4 +117,27 @@ body {
 .sign-button img {
     width: 30px;
     height: auto;
+}
+
+.head-end {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 10px;
+}
+
+.search-form {
+    display: flex;
+    height: 40px;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.search {
+    border-radius: 3px;
+    border: 1px solid black;
+    font-size: 13px;
+    width: 150px;
+    padding: 0 6px;
+    height: 100%;
 }

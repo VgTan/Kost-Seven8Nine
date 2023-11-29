@@ -76,4 +76,16 @@ class RoomController extends Controller
         // dd($schedule);
         return view('booking.roomdetail', compact('room', 'rooms','loc','schedule', 'roomname', 'currentDateMD', 'branchloc', 'dates', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
     }
+
+    public function findroom($room, Request $request) {
+        $val = $request->validate([
+            'room' => 'required'
+        ]);
+        if($val) {
+            $branchroom = BranchRoom::where('room_type', 'like', '%' . $request->room . '%')
+            ->orWhere('branch_name', 'like', '%' . $request->room . '%')->get();
+            return view('page.findroom', compact('branchroom', 'request'));
+        }
+
+    }
 }

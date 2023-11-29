@@ -67,6 +67,7 @@ Route::controller(ProfileController::class)->group(function () {
 
 Route::controller(RoomController::class)->group(function () {
     Route::get('/', 'home');
+    Route::get('/{room}/all', 'findroom')->name('findroom');
     Route::get('/room/{site}','room')->name('room');
     Route::get('/{site}/{room}/details','room_details')->name('');
 });
