@@ -12,9 +12,6 @@ a:hover, a {
     text-decoration: none;
     color: white;
 }
-.carousel {
-    /* padding-top: 100px; */
-}
 
 .carousel-img {
     width: 100%;
@@ -33,6 +30,29 @@ a:hover, a {
     color: white;
     top: 25%;
     left: 8%;
+}
+
+.blue-border {
+    background-color: #72bdec;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.blue-border-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.blue-border-text h1 {
+    font-size: 25px;
+    color: white;
+    font-weight: bold;
 }
 
 .margin {
@@ -70,7 +90,7 @@ a:hover, a {
 /* ABOUT US LP CSS */
 .about-lp {
     display: flex;
-    margin-top: 100px;
+    padding: 80px;
 }
 
 .aboutus-row {
@@ -105,7 +125,7 @@ a:hover, a {
     font-weight: bold;
     font-size: 40px;
     font-family: 'Heebo', sans-serif;
-    font-style: italic;
+
     color: #268AC9;
 }
 
@@ -179,73 +199,16 @@ a:hover, a {
     font-weight: bold;
     font-size: 40px;
     font-family: 'Heebo', sans-serif;
-    font-style: italic;
+
     color: #268AC9;
 }
-
-/* .branch-img h1{
-    position: absolute;
-    font-family: 'Heebo', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    font-size:32px;
-    bottom: 15px;
-    width: 100%;
-    color: #fff;
-    text-shadow: 10px 10px 10 #000,
-}
-
-.branch-wrapper{
-    padding:15px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.branch-card{
-    max-width: 400px;
-    margin: 15px;
-    background:#fff;
-    border: 1px solid #E6AD76;
-    text-align: center;
-    cursor: pointer;
-}
-
-.branch-img{
-    position: relative;
-    text-align: center;
-    background:#E6AD76;
-}
-
-.branch-img img{
-    width: 400px;
-    height: 250px;
-}
-
-.branch-text{
-    padding: 30px 15px;
-    font-size: 15px;
-    line-height: 22px;
-}
-      
-.read-more{
-    display:inline-block;
-    width:auto;
-    text-align:center;
-    text-transform:uppercase;
-    background:#E6AD76;
-    color:#fff;
-    padding:15px;
-    margin-bottom:30px;
-    font-family: 'Oswald', sans-serif;
-} */
 
 /* TEST BRANCH CSS */
 .branch {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #eec2992f;
 }
 
 .branch-cards-container {
@@ -440,7 +403,7 @@ a:hover, a {
     font-weight: bold;
     font-size: 40px;
     font-family: 'Heebo', sans-serif;
-    font-style: italic;
+
     color: #E6AD76;
     margin-bottom: 70px;
 }
@@ -567,7 +530,6 @@ a:hover, a {
     font-weight: bold;
     font-size: 40px;
     font-family: 'Heebo', sans-serif;
-    font-style: italic;
     color: #268AC9;
     margin-bottom: 40px;
 }
@@ -575,7 +537,8 @@ a:hover, a {
 .event-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
     align-items: stretch;
 }
 
@@ -585,10 +548,11 @@ a:hover, a {
     box-sizing: border-box;
     padding: 20px;
     border: 2px solid #ccc;
+    border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     display: grid;
     grid-template-rows: auto auto auto auto;
-    margin: 30px;
+    margin: 10px;
     min-height: 400px;
 }
 
@@ -603,18 +567,18 @@ a:hover, a {
 .image-event img {
     height: 100%;
     object-fit: contain;
+    border-radius: 8px;
+
 }
 
-
-
 .eventname {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .eventdesc {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 

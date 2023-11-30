@@ -22,29 +22,38 @@
 <body>
 
     @include('header')
+    <!-- CAROUSEL HEADING START -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="carousel-img" src="./images/building.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
+            </div>
+        </div>
+
+        <div class="text-title">
+            <h1>Need a place to learn<br />Or place to teach?</h1>
+        </div>
+    </div>
+    <div class="blue-border">
+        <div class="blue-border-text">
+            <h1 class="text-blue">Guitar</h1>
+            <h1>Piano</h1>
+            <h1>Flute</h1>
+            <h1>Drum</h1>
+            <h1>Vocal</h1>
+            <h1>Much More</h1>
+        </div>
+    </div>
+    <!-- CAROUSEL HEADING END -->
+
     <div class="margin">
         <div class="main-container">
-            <!-- CAROUSEL HEADING START -->
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="carousel-img" src="./images/building.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
-                    </div>
-                </div>
-
-                <div class="text-title">
-                    <h1>Need a place to learn<br />Or place to teach?</h1>
-                </div>
-            </div>
-            <!-- CAROUSEL HEADING END -->
-
-
             <!-- ABOUT US LP START -->
             <div class="about-lp">
                 <div class="aboutus-lp">
@@ -116,7 +125,7 @@
                 </div>
             </div>
             <!-- ABOUT US LP END -->
-            
+
 
             <!-- BRANCH START -->
             <div class="branch">

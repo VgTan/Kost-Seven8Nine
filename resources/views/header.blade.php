@@ -38,7 +38,7 @@
         @endguest
     </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.7.0/flowbite.min.js"></script>
 <script>
         window.addEventListener('scroll', function() {
             var header = document.getElementById('header');
@@ -50,4 +50,4 @@
                 header.classList.remove('header-container');
             }
         });
-    </script>
+    </script> -->
