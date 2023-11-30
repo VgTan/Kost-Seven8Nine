@@ -35,12 +35,16 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
-Route::get('/contactus', function () {
-    return view('page.contactus');
-});
-
 Route::get('/termncon', function () {
     return view('page.termncon');
+});
+
+Route::get('/policy', function () {
+    return view('page.policy');
+});
+
+Route::get('/contactus', function () {
+    return view('page.contactus');
 });
 
 // Route::get('/book', function () {
@@ -57,6 +61,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/login','loginPage');
     Route::get('/loginn','login')->name('login');
     Route::get('/logout','logout')->name('logout');
+    Route::post('/contactuss', 'contact')->name('contact');
 });
 
 Route::controller(ProfileController::class)->group(function () {

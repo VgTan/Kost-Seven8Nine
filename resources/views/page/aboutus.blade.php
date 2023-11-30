@@ -190,7 +190,7 @@
                     </div>
 
                     <div class="d-flex flex-column">
-                        <img src="/images/aboutus/about6.jpeg" class="img-fluid scale mb-2">
+                        <img src="/images/aboutus/about6.jpeg" class="img-fluid scale mb-3">
                         <img src="/images/aboutus/aboutus4.jpg" class="img-fluid">
                     </div>
                 </div>

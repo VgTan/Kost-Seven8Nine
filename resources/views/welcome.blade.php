@@ -13,84 +13,47 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="/css/_event.css">
 </head>
 
 <body>
-    @include('header', compact('home'))
+
+    @include('header')
+    <!-- CAROUSEL HEADING START -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img class="carousel-img" src="./images/building.jpg" alt="First slide">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
+            </div>
+            <div class="carousel-item">
+                <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
+            </div>
+        </div>
+
+        <div class="text-title">
+            <h1>Need a place to learn<br />Or place to teach?</h1>
+        </div>
+    </div>
+    <div class="blue-border">
+        <div class="blue-border-text">
+            <h1 class="text-blue">Guitar</h1>
+            <h1>Piano</h1>
+            <h1>Flute</h1>
+            <h1>Drum</h1>
+            <h1>Vocal</h1>
+            <h1>Much More</h1>
+        </div>
+    </div>
+    <!-- CAROUSEL HEADING END -->
+
     <div class="margin">
         <div class="main-container">
-            <!-- CAROUSEL HEADING START -->
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="carousel-img" src="./images/building.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
-                    </div>
-                </div>
-
-                <div class="text-title">
-                    <h1>Need a place to learn<br />Or place to teach?</h1>
-                </div>
-
-                <!-- SEARCH ABSOLUTE START -->
-                <div class="container-abs">
-                    <div class="">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="book-tab" data-bs-toggle="tab"
-                                    data-bs-target="#book" type="button" role="tab" aria-controls="book"
-                                    aria-selected="true">BOOK MUSIC PLACE</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="search-tab" data-bs-toggle="tab" data-bs-target="#search"
-                                    type="button" role="tab" aria-controls="search"
-                                    aria-selected="false">SEARCH</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane show active" id="book" role="tabpanel" aria-labelledby="book-tab">
-                                <form action="" class="buy">
-                                    <div class="book-content">
-                                        <div>
-                                            <p>Area</p>
-                                            <select name="" id="">
-                                                <option value="">Allogio</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <p>Price</p>
-                                            <select name="" id="">
-                                                <option value="">Rp 100.000.000</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="search-button" type="submit"><img src="./images/search.png"
-                                            alt="">Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane " id="search" role="tabpanel" aria-labelledby="search-tab">...</div>
-                            <div class="tab-pane " id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- SEARCH ABSOLUTE END -->
-            </div>
-            <!-- CAROUSEL HEADING END -->
-
-
             <!-- ABOUT US LP START -->
             <div class="about-lp">
                 <div class="aboutus-lp">

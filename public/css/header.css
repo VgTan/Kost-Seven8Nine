@@ -27,6 +27,7 @@ body {
     width: 100%;
     position: fixed;
     z-index: 100;
+    /* border-bottom: 5px solid #4688C3; */
 }
 
 .header {
