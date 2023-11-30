@@ -15,7 +15,7 @@
 <body>
     @include('header')
 
-    <div class="book-margin">
+    <div class="book-margin">   
         <div class="book-margin-container">
             <div class="book-title">
                 <h1> Start Booking </h1>

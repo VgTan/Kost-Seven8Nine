@@ -78,7 +78,7 @@
                                                 <p class="day-name">{{ ucfirst($day) }}</p>
                                                 <div class="time-slots">
                                                     @foreach(${$day} as $schedule)
-                                                    <div class="time-slot {{ $schedule->status == 'ready' ? 'booked' : 'disabled' ? 'expired' : 'expired'}}"
+                                                    <div class="time-slot {{ $schedule->status == 'ready' ? 'booked' : ('disabled' ? 'expired' : 'expired') }}"
                                                         data-day="{{ $day }}" data-date="{{ $dates[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
