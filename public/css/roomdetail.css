@@ -310,8 +310,8 @@
 }
 
 
-.time-slot.booked {
-    background-color: #ababab;
+.time-slot.ready {
+    background-color: #e3e2e2;
     color: white;
 }
 

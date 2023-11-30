@@ -91,9 +91,9 @@ class RoomController extends Controller
         }
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
         for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->get();
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
             foreach ($expired as $ex) {
-                $ex->update(['status' => 'booked']);
+                $ex->update(['status' => 'expired']);
             }
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();

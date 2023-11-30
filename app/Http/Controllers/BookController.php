@@ -56,11 +56,10 @@ class BookController extends Controller
         }
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
         for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->get();
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
+        // dd($expired);
             foreach ($expired as $ex) {
-                if($ex->status != 'booked') {
-                    $ex->update(['status' => 'expired']);
-                }
+                $ex->update(['status' => 'expired']);
             }
         }
 
