@@ -58,7 +58,7 @@
                         <a href="/dashboard" class="nav_link sublink">User</a>
                         <a href="{{ route('trans') }}" class="nav_link sublink">Transaction</a>
                         <a href="{{ route('booklist') }}" class="nav_link sublink">Book</a>
-                        <a href="#" class="nav_link sublink">Nav Sub Link</a>
+                        <a href="{{ route('conadmin') }}" class="nav_link sublink">Message</a>
                     </ul>
                 </li>
                 <!-- end -->
