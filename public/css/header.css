@@ -117,7 +117,7 @@ header{
 .nav-link:hover > a{
     transform: scale(1.1);
     color: rgb(66, 98, 156);
-/* } */
+}
 
 .dropdown{
     position: absolute;
