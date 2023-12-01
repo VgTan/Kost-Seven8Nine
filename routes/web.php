@@ -102,7 +102,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/scheduleroom', 'schedule_room')->name('');
     
     Route::get('/addschedule','add_schedule')->name('add');
-    Route::get('/addscheds','process_schedule')->name('');
+    Route::get('/{site}/{room}/admin','edit_schedule')->name('');
 }); 
 
 

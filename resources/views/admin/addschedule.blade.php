@@ -4,32 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/adminschedule.css">
     <title>Rhapsodie</title>
 </head>
 
 <body>
+    @include('admin.navbar')
 
-    <div class="branch-room-details">
-        <div class="room-details">
-            @foreach($rooms as $room)
-            @php
-            $roomNames = \App\Models\Room::where('id', $room->room_id)->get();
-            @endphp
+    <div class="schedule-con">
+        @foreach ($cabang->unique('branch_name') as $branch)
+        <div class="schedule-card">
+            <div class="scheduletext">
+                <h1>{{ $branch->branch_name }}</h1>
+            </div>
+        </div>
 
-            @foreach($roomNames as $item)
-            <a href="/{{$loc->site}}/{{$room->room_id}}/details">
-                <div class="card" style="width: 18rem;">
-                    <img src="/images/rooms/{{$room->img}}" class="card-img-top" alt="...">
+        <div class="schedule-room-details">
+            <div class="roomschedule-details">
+                @foreach ($cabang->where('branch_name', $branch->branch_name) as $room)
+                <div class="card">
+                    <img src="/images/rooms/{{ $room->img }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h3 class="card__name">{{ $item->name }}</h3>
-                        <a href="/{{$loc->site}}/{{$room->room_id}}/details" class="card__button">Book Now</a>
+                        <h3 class="card_name">{{ $room->room_type }}</h3>
+                        <a href="/{{ $branch->site }}/{{ $room->room_id }}/admin" class="card__button">Edit Schedule</a>
                     </div>
                 </div>
-            </a>
-            @endforeach
-            @endforeach
+                @endforeach
+            </div>
         </div>
+        @endforeach
     </div>
+
+
 </body>
 
 </html>

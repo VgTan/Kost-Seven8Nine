@@ -19,6 +19,7 @@ class RoomController extends Controller
             $user = User::find(Auth::user()->id);
             if($user->status == 'admin') return redirect()->route('dashboard');   
         }
+        
         $room = Branch::all();
         $event = Event::all();
         $home = TRUE;
