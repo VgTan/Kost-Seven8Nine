@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.id {
+    display: none;
+}
+
+.container {
+    padding: 100px 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F5F5FF;
+    margin-left: 80px;
+}
+
+.container-size {
+    width: 90%;
+}
+
+.details {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    box-shadow: 1px 3px 5px rgb(152, 152, 152);
+    padding: 20px;
+    padding-left: 0;
+    padding-right: 0;
+    background-color: white;
+    align-items: center;
+}
+
+.branch1-count,
+.user1-count,
+.room1-count {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.branch1-count,
+.room1-count {
+    border-right: 2px solid #b9b9b9;
+}
+
+.branch1-count p,
+.user1-count p,
+.room1-count p {
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+.container-admin {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+}
+
+h2 {
+    color: #333;
+    text-align: center;
+    padding: 15px;
+}
+
+.table_admin {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); 
+}
+
+.table_admin, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #EAECF0;
+    color: black;
+}
+
+.table_admin tr:hover {
+    background-color: rgba(173, 216, 230, 0.541);
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.contactus {
+    margin-top: 50px;
+}
