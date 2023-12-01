@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\BookList;
 use App\Models\Branch;
+use App\Models\Contact;
 use App\Models\Schedule;
 use App\Models\Room;
 use App\Models\BranchRoom;
@@ -320,5 +321,12 @@ class AdminController extends Controller
         $booklist->status = "done";
         $booklist->save();
         return back();
+    }
+
+    public function contactus() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        $contact = Contact::all();
+        return view('admin.admin_contactus', compact('contact'));
     }
 }

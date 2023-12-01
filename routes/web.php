@@ -101,6 +101,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::post('/processroom','add_room')->name('');
     Route::get('/scheduleroom', 'schedule_room')->name('');
     
+    Route::get('/admin/contactus', 'contactus')->name('conadmin');
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/{site}/{room}/admin','edit_schedule')->name('');
 }); 
@@ -110,8 +111,8 @@ Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
     Route::get('{site}/{room}/book', 'page')->name('book_page');
     Route::get('/token', 'token');
-    Route::post('/token', 'buytoken')->name('buytoken');
-    Route::post('/checkout', 'checkout_token');
+    Route::post('/paymentdetail', 'buytoken')->name('buytoken');
+    Route::post('/checkout', 'callback')->name('callback');
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
 
