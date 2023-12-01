@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('location');
             $table->string('site')->unique();
             $table->string('img');
+            $table->string('img1');
             $table->string('branch_desc')->nullable();
             $table->string('branch_equipment')->nullable();
             $table->text('location_map')->nullable();

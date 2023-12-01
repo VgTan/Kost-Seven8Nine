@@ -26,21 +26,42 @@ class BookController extends Controller
 
         // Calculate the number of days to Monday (the beginning of the week)
         $daysToMonday = (8 - $currentDayNumber) % 7;
-
+        $daysToMonday2 = 7-((8 - $currentDayNumber) % 7);
+        // dd($daysToMonday);
         // Get the current date
         $currentDate = date('Y-m-d');
         $currentDateYM = date('F Y');
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
-        $dates = [
-        $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
-        $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
-        $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
-        $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
-        $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
-        $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
-        $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
-        ];
+        if($currentDate == 7) {
+            $dates = [
+            $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+            $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+            $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+            $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+            $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+            $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+            $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        } else {
+            $dates = [
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
+                $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+                $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+                $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+                $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+                $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+                $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        }
+        $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+        for($i = 0; $i < $daysToMonday2+1; $i++) {
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
+        // dd($expired);
+            foreach ($expired as $ex) {
+                $ex->update(['status' => 'expired']);
+            }
+        }
 
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
@@ -175,120 +196,138 @@ class BookController extends Controller
     public function buytoken(Request $request) {
         if(Auth::check()) {
             $user = User::find(Auth::user()->id);
-            // $this->validate($request->all);
-            $token = new Token();
-            $token->user_id = $user->id;
-            $token->name = $user->name;
-            $token->bundle = $request->bundle;
-            
-            switch($token->bundle) {
-                case 'basic1':
-                    $token->price = 75000;
-                    $total_token = 1;
-                    break;
-                case 'basic2':
-                    $token->price = 150000;
-                    $total_token = 2;
-                    break;
-                case 'basic3':
-                    $token->price = 450000;
-                    $total_token = 6;
-                    break;
-                case 'flexi1':
-                    $token->price = 280000;
-                    $total_token = 4;
-                    break;
-                case 'flexi2':
-                    $token->price = 1200000;
-                    $total_token = 20;
-                    break;
-                case 'flexi3':
-                    $token->price = 2000000;
-                    $total_token = 40;
-                    break;
-                case 'flexi4':
-                    $token->price = 4000000;
-                    $total_token = 100;
-                    break;
+            $paidToken = Token::where('user_id', $user->id)
+            ->where('bundle', $request->bundle)
+            ->where('status', 'Paid')
+            ->first();
+            $existingToken = Token::where('user_id', $user->id)
+            ->where('bundle', $request->bundle)
+            ->where('status', 'Unpaid')
+            ->first();
+
+            if(!$existingToken) {
+                
+                    $token = new Token();
+                    $token->user_id = $user->id;
+                    $token->name = $user->name;
+                    $token->bundle = $request->bundle;
+                    switch($token->bundle) {
+                        case 'basic1':
+                            $token->price = 75000;
+                            $total_token = 1;
+                            break;
+                        case 'basic2':
+                            $token->price = 150000;
+                            $total_token = 2;
+                            break;
+                        case 'basic3':
+                            $token->price = 450000;
+                            $total_token = 6;
+                            break;
+                        case 'flexi1':
+                            $token->price = 280000;
+                            $total_token = 4;
+                            break;
+                        case 'flexi2':
+                            $token->price = 1200000;
+                            $total_token = 20;
+                            break;
+                        case 'flexi3':
+                            $token->price = 2000000;
+                            $total_token = 40;
+                            break;
+                        case 'flexi4':
+                            $token->price = 4000000;
+                            $total_token = 100;
+                            break;
+                        }
+                        $token->proof = '-';
+                        // $token->status = 'Unpaid';
+                        $token->save();
+                    
+                return view('booking.checkout', compact('token', 'total_token', 'existingToken', 'paidToken'));
             }
-            $file = $request->file('img');
-            if (!file_exists('images/proof/')) {
-                mkdir('images/proof/', 0777, true);
+            else {
+                $token = $existingToken;
+                switch($token->bundle) {
+                    case 'basic1':
+                        $token->price = 75000;
+                        $total_token = 1;
+                        break;
+                    case 'basic2':
+                        $token->price = 150000;
+                        $total_token = 2;
+                        break;
+                    case 'basic3':
+                        $token->price = 450000;
+                        $total_token = 6;
+                        break;
+                    case 'flexi1':
+                        $token->price = 280000;
+                        $total_token = 4;
+                        break;
+                    case 'flexi2':
+                        $token->price = 1200000;
+                        $total_token = 20;
+                        break;
+                    case 'flexi3':
+                        $token->price = 2000000;
+                        $total_token = 40;
+                        break;
+                    case 'flexi4':
+                        $token->price = 4000000;
+                        $total_token = 100;
+                        break;
+                }
+                return view('booking.checkout', compact('token', 'total_token', 'existingToken', 'paidToken'));                
             }
-            $fileName = $file->getClientOriginalName();
-            $file->move('images/proof/', $fileName);
-
-            // Simpan nama file ke dalam database atau di tempat yang sesuai
-            $token->proof = $fileName;
-            $token->save();
-          
-            //SAMPLE REQUEST START HERE
-
-            // Set your Merchant Server Key
-            \Midtrans\Config::$serverKey = config('midtrans.server_key'); // Corrected key name
-            \Midtrans\Config::$isProduction = false;
-            \Midtrans\Config::$isSanitized = true;
-            \Midtrans\Config::$is3ds = true;
-
-            $params = array(
-                'transaction_details' => array(
-                    'order_id' => $token->id,
-                    'gross_amount' => $token->price,
-                ),
-                'customer_details' => array(
-                    'user_id' => $token->user_id,
-                    'first_name' => $token->name,
-                    'last_name' => '',
-                    'email' => $user->email
-                ),
-            );
-
-            $snapToken = \Midtrans\Snap::getSnapToken($params);
-           
-
-            // dd($snapToken);
         }
-        return view('booking.checkout', compact('token', 'snapToken', 'total_token'));
     }
 
-    public function checkout_token() {
-        return view('booking.checkout');
-    }
+    // public function checkout_token() {
+    //     return view('booking.checkout');
+    // }
 
     public function callback(Request $request) {
-        $serverKey = config('midtrans.server_key');
-        $hashed = hash("sha512", $request->order_id.$request->status_code.$request->gross_amount.$serverKey);
-        if($hashed == $request->signature_key) {
-            if($request->transaction_status == 'capture') {
-                $token = Token::where('id', $request->order_id)->first();
-                $user = User::where('id', $token->user_id)->first();
-                $token->update(['status' => 'Paid']);
-                $user_token = $user->token;
-                switch($token->bundle) {
-                case 'basic1':
-                    $user->token = $user_token + 1;
-                    break;
-                case 'basic2':
-                    $user->token = $user_token + 2;
-                    break;
-                case 'basic3':
-                    $user->token = $user_token + 6;
-                    break;
-                case 'flexi1':
-                    $user->token = $user_token + 4;
-                    break;
-                case 'flexi2':
-                    $user->token = $user_token + 20;
-                    break;
-                case 'flexi3':
-                    $user->token = $user_token + 40;
-                    break;
-                case 'flexi4':
-                    $user->token = $user_token + 100;
-                    break;
-                }
-                $user->save();
-            }
+        $token = Token::where('id', $request->order_id)->first();
+        $user = User::find(Auth::user()->id);
+        $file = $request->file('img');
+        // dd($file);
+        if(!file_exists('images/proof/')) {
+            mkdir('images/proof/', 0777, true);
         }
+        $fileName = $file->getClientOriginalName();
+        $file->move('images/proof/', $fileName);
+        // dd($fileName);        
+    
+        $token->proof = $fileName;
+        $token->status = 'Pending';        
+        $token->save();
+        $user_token = $user->token;
+        switch($token->bundle) {
+            case 'basic1':
+                $user->token = $user_token + 1;
+            break;
+            case 'basic2':
+                $user->token = $user_token + 2;
+            break;
+            case 'basic3':
+                $user->token = $user_token + 6;
+            break;
+            case 'flexi1':
+                $user->token = $user_token + 4;
+            break;
+            case 'flexi2':
+                $user->token = $user_token + 20;
+            break;
+            case 'flexi3':
+                $user->token = $user_token + 40;
+            break;
+            case 'flexi4':
+                $user->token = $user_token + 100;
+            break;
+        }
+        $user->save();
+        return redirect('/token');
     }
 }

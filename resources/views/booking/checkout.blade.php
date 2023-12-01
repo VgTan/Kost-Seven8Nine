@@ -2,85 +2,80 @@
 <html lang="en">
 
 <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/checkout.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- @TODO: replace SET_YOUR_CLIENT_KEY_HERE with your client key -->
-    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js"
-        data-client-key="{{ config('midtrans.client_key') }}"></script>
-
-    <!-- Note: replace with src="https://app.midtrans.com/snap/snap.js" for Production environment -->
-
-    <title>Document</title>
+    <title>Rhapsodie</title>
 </head>
 
 <body>
-    <div class="container">
+    <form class="container-anu" action="{{ route('callback') }}" method="post" enctype="multipart/form-data">
+        @csrf
+        <input type="text" value="{{ $token->id }}" name="order_id" hidden>
         <div class="trans-container">
-            <div class="title">Transaction Detail</div>
+            <div class="music-space">
+                <p>Rhapsodie.co Music Space</p>
+            </div>
+            <div class="title">
+                <div class="receipt">
+                    <p class="receipt-top">RECEIPT FOR</p>
+                    <p class="name">{{ $token->name }}</p>
+                </div>
+                <div class="token-bundle">
+                    <p>Rp {{ $token->price }}</p>
+                </div>
+            </div>
             <div class="info">
-                <div class="">User Info</div>
                 <div class="detail-info">
                     <div class="trans-detail">
-                        <div class="name">
-                            <p>Name: </p>
-                            <p>
-                                {{ $token->name }}
+                        <div class="date-bundle">
+                            <p class="date">DATE </p>
+                            <p class="date-val">
+                                {{ date_format($token->created_at, 'M, d Y') }}
                             </p>
-                        </div>
-                        <div class="bundle">
-                            <p>Bundle: </p>
-                            <p>
+                            <p class="bundle">BUNDLE </p>
+                            <p class="bundle-val">
                                 {{ $token->bundle }}
                             </p>
                         </div>
-                        <div class="bundle">
-                            <p>Token: </p>
-                            <p>
-                                {{ $total_token }}
-                            </p>
+                        <div class="token-container">
+                            <div class="token">
+                                <p class="token">TOKEN </p>
+                                <p class="token-count">
+                                    {{ $total_token }}
+                                </p>
+                            </div>
                         </div>
-                        <div class="price">
-                            <p>Price: </p>
-                            <p>
-                                Rp {{ $token->price }},00
-                            </p>
-                        </div>
-                        <button id="pay-button">Pay</button>
                     </div>
+                    <div class="price">
+                        <i class='bx bx-coin-stack'></i>
+                        <p class="price-head">TOTAL </p>
+                        <p class="total-price">
+                            Rp {{ $token->price }},00
+                        </p>
+                    </div>
+                    @if(!$paidToken)
+                    <div class="input_box">
+                        <p class="proof-input">PAYMENT PROOF</p>
+                        <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
+                            value="" multiple />
+                    </div>
+                    <button class="btn" type="submit" id="pay-button">Proceed</button>
+                    @else
+                    <div class="input_box">
+                        <p class="proof-input">PAYMENT PROOF</p>
+                        <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
+                            multiple disabled />
+                    </div>
+                    <p class="button" type="submit" id="pay-button">PAID</p>
+                    @endif
                 </div>
             </div>
         </div>
-    </div>
-    <script type="text/javascript">
-    // For example trigger on button clicked, or any time you need
-    var payButton = document.getElementById('pay-button');
-    payButton.addEventListener('click', function() {
-        // Trigger snap popup. @TODO: Replace TRANSACTION_TOKEN_HERE with your transaction token
-        window.snap.pay('{{ $snapToken }}', {
-            onSuccess: function(result) {
-                /* You may add your own implementation here */
-                window.location.href = '/profile'
-                alert("payment success!");
-                console.log(result);
-            },
-            onPending: function(result) {
-                /* You may add your own implementation here */
-                alert("wating your payment!");
-                console.log(result);
-            },
-            onError: function(result) {
-                /* You may add your own implementation here */
-                alert("payment failed!");
-                console.log(result);
-            },
-            onClose: function() {
-                /* You may add your own implementation here */
-                alert('you closed the popup without finishing the payment');
-            }
-        })
-    });
-    </script>
+    </form>
+    
 </body>
 
 </html>
