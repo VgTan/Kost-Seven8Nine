@@ -15,7 +15,7 @@
 <body>
     @include('header')
 
-    <div class="book-margin">
+    <div class="book-margin">   
         <div class="book-margin-container">
             <div class="book-title">
                 <h1> Start Booking </h1>
@@ -66,10 +66,20 @@
                                             </span>
                                         </label>
                                     </div>
-                                    @else
+                                    @elseif($schedule->status == 'booked')
                                     <div class="checkbox-wrapper-disabled">
                                         <label class="checkbox-wrapper">
                                             <p class="checkbox-input disabled" value="{{ $schedule->time }}" disabled>
+                                            </p>
+                                            <span class="checkbox-tile">
+                                                <span class="checkbox-label">{{ $schedule->time }}</span>
+                                            </span>
+                                        </label>
+                                    </div>
+                                    @else
+                                    <div class="checkbox-wrapper-expired">
+                                        <label class="checkbox-wrapper">
+                                            <p class="checkbox-input expired" value="{{ $schedule->time }}" disabled>
                                             </p>
                                             <span class="checkbox-tile">
                                                 <span class="checkbox-label">{{ $schedule->time }}</span>

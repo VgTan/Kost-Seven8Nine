@@ -241,7 +241,7 @@ img {
 
 .scale {
    transform: scaleY(1.05);
-   padding-top: 5px; 
+   padding-top: 12px; 
 }
 
 .image-gallery-title {

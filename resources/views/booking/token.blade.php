@@ -114,10 +114,9 @@
 
                 <div class="input_group">
                     <div class="input_box">
-                        <p class="proof-input">Input Your Payment Proof</p>
-                        <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
-                            value="" multiple/>
-                        <button type="submit">PROCEED</button>
+                        <!-- <p class="proof-input">Input Your Payment Proof</p> -->
+                        
+                        <button type="submit">NEXT</button>
                     </div>
                 </div>
 

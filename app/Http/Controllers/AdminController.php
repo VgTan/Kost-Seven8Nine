@@ -63,6 +63,7 @@ class AdminController extends Controller
     public function add_event(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        
         $event = new Event();
         $event->name = $request->name;
         $event->desc = $request->desc;

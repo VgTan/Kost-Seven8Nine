@@ -169,3 +169,23 @@ p.token  {
 .btn:hover {
     background-color: #2c94d5;
 }
+
+.proof-input {
+    font-size: .8rem;
+    margin: 0;
+    padding: 0;
+    color: #bfbfc0;;
+    text-align: start;
+}
+
+.file-input {
+    width: 100%;
+    border: 1px dashed #268AC9;
+    color: #333;
+    padding: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    font-weight: normal;
+}

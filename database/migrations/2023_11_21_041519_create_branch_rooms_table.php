@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Room;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -25,6 +26,10 @@ return new class extends Migration
                 $table->string('img');
                 $table->timestamps();
             });
+        }
+        public function room()
+        {
+            return $this->belongsTo(Room::class, 'room_id');
         }
 
     /**
