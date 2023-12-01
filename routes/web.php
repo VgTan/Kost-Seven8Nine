@@ -90,6 +90,7 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/addroom','rooms')->name('');
     Route::post('/processroom','add_room')->name('');
     
+    Route::get('/admin/contactus', 'contactus');
     Route::get('/addschedule','add_schedule')->name('add');
     Route::get('/addscheds','process_schedule')->name('');
 }); 

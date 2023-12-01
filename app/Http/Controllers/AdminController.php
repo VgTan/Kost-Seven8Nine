@@ -266,4 +266,8 @@ class AdminController extends Controller
         $booklist->save();
         return back();
     }
+
+    public function contactus() {
+        // $contact = Contac
+    }
 }
