@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\BookList;
+use App\Models\Schedule;
+use App\Models\Token;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,8 +15,10 @@ class ProfileController extends Controller
             return back();
         }
         $user = User::find(Auth::user()->id);
-        $edit = FALSE;
-        return view('page.profile', compact('user', 'edit'));
+        // $edit = FALSE;
+        $booklist = BookList::where('user_id', $user->id)->get();
+        $transactions = Token::where('user_id', $user->id)->get();
+        return view('page.profile', compact('user','booklist', 'transactions'));
     }
 
     public function editProfile(Request $request) {
@@ -52,7 +57,6 @@ class ProfileController extends Controller
     
         }
         $user->save();
-        $edit = FALSE;
         return redirect('/profile');
     }
 }
