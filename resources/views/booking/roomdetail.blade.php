@@ -61,7 +61,7 @@
                                     <h4>SCHEDULE</h4>
                                     <div class="schedule-container">
                                         <div class="schedule-title-roomdetails">
-                                            <h5> Week of {{ $currentDateMD }}th </h5>
+                                            <h5> Week of {{ $currentDateMD }}</h5>
                                         </div>
                                         <div class="schedule">
 

@@ -75,7 +75,6 @@ body {
 .branch-room-text {
     align-items: center;
     text-align: center;
-
 }
 
 .room-details{
@@ -158,10 +157,6 @@ body {
 .branch-card-text h1 {
     padding: 10px;
     font-size: 5rem;
-}
-
-.text-before-card{
-    opacity: 0;
 }
 
 @media screen and (max-width: 780px) {

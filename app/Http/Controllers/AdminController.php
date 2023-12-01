@@ -166,6 +166,7 @@ class AdminController extends Controller
     public function process_schedule(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        
         $cabang_id = Branch::where('id', $request->cabang)->first()->id;
         $room_id = Room::where('id', $request->room)->first()->id;
         $roomset = BranchRoom::where('branch_id', $cabang_id)->where('room_id', $room_id)->first()->id;
@@ -258,6 +259,7 @@ class AdminController extends Controller
 
         return view("admin.booklist", compact('user', 'book', 'branchBooks', 'branches'));
     }
+
     public function done(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');

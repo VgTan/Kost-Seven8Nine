@@ -1,0 +1,70 @@
+.findroom-con {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.find-card {
+    width: 100%;
+}
+
+.findtext h1 {
+    font-size: 25px;
+    font-weight: bold;
+    background: #fff;
+    padding: 10px 15px;
+}
+
+.find-room-details {
+    display: flex;
+}
+
+.roomfind-details {
+    margin: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    max-height: 100%;
+    max-width: 100%;
+    border-radius: 8px 8px 0px 0;
+}
+
+.card-body {
+    padding: 0;
+}
+
+.card_name {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.card__button {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100%;
+    background-color: #1F487E;
+    color: #fff;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+}
+
+.card__button:hover {
+    background-color: #0056b3;
+}

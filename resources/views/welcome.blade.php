@@ -13,7 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="/css/_event.css">
@@ -25,21 +25,28 @@
     <!-- CAROUSEL HEADING START -->
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="carousel-img" src="./images/building.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
+            <div class="overlay">
+                <div class="carousel-item active">
+                    <img class="carousel-img" src="./images/building.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="./images/building1.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="./images/building2.jpg" alt="Third slide">
+                </div>
             </div>
         </div>
 
         <div class="text-title">
-            <h1>Need a place to learn<br />Or place to teach?</h1>
+            <div class="text-title2">
+            <h1>Need A Place To Learn Or <span>Place To Teach?</span></h1>
+            <p>Embark on Your Musical Odyssey with Our Exclusive Private Music Rooms – Tailored Spaces for Learning, Creating, and Sharing the Art of Melody!</p>
+            </div>
         </div>
     </div>
+
+
     <div class="blue-border">
         <div class="blue-border-text">
             <h1 class="text-blue">Guitar</h1>
@@ -78,39 +85,39 @@
                             <div class="aboutus-icons">
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-guitar' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Qualified
-                                            <small class="d-block" style="color:#E6AD76">Guitar Lesson</small>
+                                        <i class='fas fa-guitar' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Personalized
+                                            <small class="d-block" style="color:#E6AD76">Music Practice</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-music' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Incredible
-                                            <small class="d-block" style="color:#E6AD76">Piano Lesson</small>
+                                        <i class='fas fa-music' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Various
+                                            <small class="d-block" style="color:#E6AD76">Musical Instruments</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-microphone-alt' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Exciting
-                                            <small class="d-block" style="color:#E6AD76">Vocal Lesson</small>
+                                        <i class='fa fa-calendar-check-o' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Flexible
+                                            <small class="d-block" style="color:#E6AD76">Book Schedule</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-drum' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Amazing
-                                            <small class="d-block" style="color:#E6AD76">Drum Lesson</small>
+                                        <i class='fas fa-volume-up' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Enhanced
+                                            <small class="d-block" style="color:#E6AD76">Sound Quality</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-headphones' style='font-size:48px;color:#268AC9'></i>
+                                        <i class='fas fa-headphones' style='font-size:40px;color:#268AC9'></i>
                                         <h6>Much More
                                             <small class="d-block" style="color:#E6AD76">Exciting Lessons</small>
                                         </h6>

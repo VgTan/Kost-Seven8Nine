@@ -16,24 +16,47 @@ a:hover, a {
 .carousel-img {
     width: 100%;
     object-fit: contain;
+    filter: brightness(0.4);
 }
 
 .carousel-inner {
-    height: 700px;
+    height: 710px;
     transition-duration: 200;
+    display: flex;
+    justify-content: center;
 }
 
-.text-title h1{
-    position: absolute;
-    font-size: 3.5rem;
-    font-weight: bold;
+.text-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.text-title2 p {
+    font-size: 1.5rem;
     color: white;
-    top: 25%;
-    left: 8%;
+    width: 50%;
+}
+
+.text-title2 h1 {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.text-title2 span{
+    color: #E6AD76;
+}
+
+.text-title2 {
+    text-align: center;
+    position: absolute;
+    top: 40%;
 }
 
 .blue-border {
-    background-color: #72bdec;
+    background-color: #268AC9;
     width: 100%;
     height: 100px;
     padding: 20px;
@@ -125,7 +148,6 @@ a:hover, a {
     font-weight: bold;
     font-size: 40px;
     font-family: 'Heebo', sans-serif;
-
     color: #268AC9;
 }
 
@@ -141,6 +163,10 @@ a:hover, a {
 
 .aboutus-icon-desc {
     text-align: center;
+}
+
+.aboutus-icon-desc i {
+    margin-bottom: 10px;
 }
 
 .aboutus-button {
