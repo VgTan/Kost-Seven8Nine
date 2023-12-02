@@ -143,6 +143,7 @@
                         @foreach($booklist->where('branch', $book->branch)->where('user_id', $user->id)->unique('date')
                         as $datedetail)
                         <a href="#">{{ $datedetail->date }} <i class="fas fa-chevron-right"></i></a>
+                        @endforeach
                     </div>
                     <div class="course-info">
                         <div class="progress-container">
@@ -151,15 +152,14 @@
                         @foreach($booklist->where('branch', $book->branch)->where('user_id',
                         $user->id)->unique('room') as $detail)
                         <h6>{{ $detail->room }}</h6>
+                        @endforeach
                         @foreach($booklist->where('branch', $book->branch)->where('user_id',
                         $user->id)->where('room', $detail->room)->where('date', $datedetail->date) as $room)
                         <h2>{{ $room->time }}</h2>
                         @endforeach
                         <button class="btn">Continue</button>
                     </div>
-                    @endforeach
                 </div>
-                @endforeach
                 @endforeach
                 @else
                 <p>You haven't book a room</p>
