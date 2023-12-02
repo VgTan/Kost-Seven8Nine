@@ -68,7 +68,9 @@
                                             <div class="left-column day-schedule">
                                                 <p class="day-name">Time</p>
                                                 @foreach($mon as $schedule)
+                                                @if($schedule->week == 'week 1')
                                                 <p class="leftcolumn-time">{{ $schedule->time }}</p>
+                                                @endif
                                                 @endforeach
                                             </div>
 
@@ -78,10 +80,23 @@
                                                 <p class="day-name">{{ ucfirst($day) }}</p>
                                                 <div class="time-slots">
                                                     @foreach(${$day} as $schedule)
-                                                    <div class="time-slot {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
-                                                        data-day="{{ $day }}" data-date="{{ $dates[$index] }}"
+                                                    @if($schedule->status == 'ready' && $schedule->week == 'week 1')
+                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
+                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
+                                                    @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
+                                                    if($schedule->status == 'ready' && $schedule->week == 'week 1')
+                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
+                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
+                                                        data-time="{{ $schedule->time }}">
+                                                    </div>
+                                                    @elseif($schedule->status == 'expired' && $schedule->week == 'week 1')
+                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
+                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
+                                                        data-time="{{ $schedule->time }}">
+                                                    </div>
+                                                    @endif
                                                     @endforeach
                                                 </div>
                                             </div>
