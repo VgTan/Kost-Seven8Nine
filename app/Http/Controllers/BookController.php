@@ -128,8 +128,7 @@ class BookController extends Controller
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
-        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
-        'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'datenextmon', 'datenexttues', 'datenextwed', 'datenextthur', 'datenextfri', 'datenextsat', 'datenextsun', 'dates1', 'dates2'));
+        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 'user', 'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'datenextmon', 'datenexttues', 'datenextwed', 'datenextthur', 'datenextfri', 'datenextsat', 'datenextsun', 'dates1', 'dates2'));
     }
 
     public function book(Request $request) {
