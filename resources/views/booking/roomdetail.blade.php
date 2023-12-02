@@ -17,7 +17,6 @@
 </head>
 
 <body>
-
     @include('header')
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
@@ -46,11 +45,12 @@
                                         style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
                                     {{ $rooms->room_equipment }}
                                 </p>
+                                
                             </div>
                             <hr>
                             <ul class="nav nav-pills">
-                                <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
-                                <li><a data-toggle="pill" href="#menu1">Menu 1</a></li>
+                                <li class="active"><a data-toggle="pill" href="#home">Description</a></li>
+                                <li><a data-toggle="pill" href="#menu1"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Schedule</a></li>
                             </ul>
                             <div class="tab-content-room">
                                 <div id="home" class="tab-pane fade in active">
@@ -78,7 +78,7 @@
                                                 <p class="day-name">{{ ucfirst($day) }}</p>
                                                 <div class="time-slots">
                                                     @foreach(${$day} as $schedule)
-                                                    <div class="time-slot {{ $schedule->status == 'ready' ? 'booked' : 'disabled' }}"
+                                                    <div class="time-slot {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
                                                         data-day="{{ $day }}" data-date="{{ $dates[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
@@ -114,17 +114,12 @@
                             </div>
                         </div>
 
-
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
-
     @include('footer')
-
 </body>
 
 </html>

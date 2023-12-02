@@ -95,7 +95,6 @@
     font-size: 1rem;
     margin-top: 20px;
     color: #013F6B;
-    
 }
 
 .roomdetail-textinfo hr{
@@ -196,11 +195,15 @@
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
+.roomdetail-infolocation {
+    margin-top: 30px;
+}
+
 .roomdetail-infolocation h4 {
-    font-size: 1rem;
-    margin-top: 40px;
+    font-size: 1.4rem;
+    margin-top: 20px;
     color: #013F6B;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .roomdetail-infolocation iframe{
@@ -229,12 +232,11 @@
 }
 
 .button-back a{
-    background-color: #cecccc; 
     padding: 10px 80px;
     color: black;
     font-weight: bold;
     transition-duration: 0.4s;
-    border: none;
+    border: 2px solid #cecccc;
     border-radius: 10px;
     cursor: pointer;
     text-align: center;
@@ -251,6 +253,7 @@
 .schedule-container {
     max-width: 650px;
     height: 100%;
+    margin-top: 30px;
 }
 
 .schedule {
@@ -307,13 +310,18 @@
 }
 
 
-.time-slot.booked {
-    background-color: #e6e6e6;
+.time-slot.ready {
+    background-color: #e3e2e2;
     color: white;
 }
 
 .time-slot.disabled {
     background-color: #E6AD76 !important;
+    cursor: not-allowed;
+}
+
+.time-slot.expired {
+    background-color: #858585 !important;
     cursor: not-allowed;
 }
 
@@ -339,15 +347,17 @@
 }
 
 .tab-content-room h3 {
-    font-size: 1.2rem;
+    font-size: 2rem;
     margin-top: 20px;
     font-family: 'Poppins', sans-serif;
+    line-height: 30px;
 }
 
 .tab-content-room h4 {
-    font-size: 1.4rem;
-    margin-top: 20px;
+    font-size: 2rem;
+    margin-top: 40px;
     color: #013F6B;
+    font-weight: bold;
 }
 
 .tab-pane {

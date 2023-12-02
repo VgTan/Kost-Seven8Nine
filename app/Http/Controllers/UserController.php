@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -91,5 +92,25 @@ class UserController extends Controller
             return redirect('/');
         }
         return view('roomdetail');;
+    }
+
+    public function contact(Request $request) {
+        $val = $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'subject' => 'required',
+            'message' => 'required',
+        ]);
+        $user = User::find(Auth::user()->id);
+        $contact = new Contact();
+        $contact->name = $request->name;
+        $contact->phone = $request->phone;
+        $contact->email = $request->email;
+        $contact->subject = $request->subject;
+        $contact->message = $request->message;
+        // dd($request->all());
+        $contact->save();
+        return back()->with('success', 'Sent');
     }
 }
