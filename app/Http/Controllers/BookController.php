@@ -162,7 +162,13 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $book = new BookList();
         $user = User::find(Auth::user()->id);
-        if(BookList::where('branch', $request->branch_name)
+        $anu = BookList::where('branch', $request->branch)
+            ->where('room', $request->room)
+            ->where('date', $request->date)
+            // ->where('time', $request->time)
+        ->first();
+        dd($anu);
+        if(BookList::where('branch', $request->branch)
         ->where('room', $request->room)
         ->where('date', $request->date)
         ->where('time', $request->time)
@@ -171,7 +177,7 @@ class BookController extends Controller
             return back();
         }
         else {
-                $branchroom = BranchRoom::where('branch_name', $request->branch_name)
+                $branchroom = BranchRoom::where('', $request->branch_name)
                 ->where('room_type', $request->room);
                 $branchname = $request->branch;
                 $roomname = $request->room;
@@ -208,7 +214,6 @@ class BookController extends Controller
             ->first();
 
             if(!$existingToken) {
-                
                     $token = new Token();
                     $token->user_id = $user->id;
                     $token->name = $user->name;
