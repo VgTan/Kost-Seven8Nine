@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
 }
+
 .container-size {
     width: 80%;
 }
@@ -27,15 +28,20 @@
 }
 
 
-.branch-count, .user-count, .room-count {
+.branch-count,
+.user-count,
+.room-count {
     text-align: center;
 }
 
-.branch-count p, .user-count p, .room-count p {
+.branch-count p,
+.user-count p,
+.room-count p {
     font-size: 1.4rem;
     font-weight: bold;
 }
-.user{
+
+.user {
     margin-top: 50px
 }
 
@@ -52,7 +58,8 @@
     border-collapse: collapse;
 }
 
-.user-table td, .user-table th {
+.user-table td,
+.user-table th {
     text-align: start;
 }
 
@@ -62,10 +69,10 @@
     box-shadow: 1px 1px 3px rgb(152, 152, 152);
 }
 
-.input-head, .input-content {
+.input-head,
+.input-content {
 
     padding-left: 20px
-
 }
 
 .table-content {
@@ -86,7 +93,8 @@
     gap: 10px
 }
 
-.table-head input, .table-content input {
+.table-head input,
+.table-content input {
     width: 20px;
     height: 20px;
     margin: auto;
@@ -118,19 +126,58 @@
     width: 50px;
 }
 
-/* .form{
-    transform: translate(-50%,-50%);
-    transition: all 1s;
-    width: 50px;
-    height: 50px;
-    background: white;
-    box-sizing: border-box;
-    border-radius: 25px;
-    border: 4px solid white;
-    padding: 5px;
+.filterForm {
+    float: left;
+    padding-right: 50%;
 }
 
-.form input{
+.searchForm {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form input {
+    width: 200px;
+    height: 30px;
+    line-height: 30px;
+    outline: 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.form input:focus {
+    border-color: #007BFF;
+}
+
+.form button {
+    height: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+.form button:hover {
+    background-color: #0056b3;
+}
+
+#clear-btn {
+    margin-left: 10px;
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: underline;
+}
+
+#clear-btn:hover {
+    color: #0056b3;
+}
+
+/* .form input{
     position: absolute;
     top: 0;
     left: 0;

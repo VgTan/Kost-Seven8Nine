@@ -6,7 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ForgotPasswordManager;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,12 +47,14 @@ Route::get('/contactus', function () {
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {
+    Route::middleware('web')->group(function(){
     Route::get('/signup', 'signupPage');
-    Route::get('/newuser', 'signup')->name('signup');
+    Route::post('/newuser', 'signup')->name('signup');
 
     Route::get('/login','loginPage');
-    Route::get('/loginn','login')->name('login');
+    Route::post('/login','login')->name('login');
     Route::get('/logout','logout')->name('logout');
+    });
 });
 
 Route::controller(ProfileController::class)->group(function () {
@@ -104,7 +106,15 @@ Route::controller(BookController::class)->group(function () {
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
 
+Route::get("/forget-password", [ForgotPasswordManager::class, "forgetPassword"])
+    ->name("forget.password");
+Route::post("/forget-password", [ForgotPasswordManager::class, "forgetPasswordPost"])
+    ->name("forget.password.post");
 
+Route::get("/reset-password/{token}", [ForgotPasswordManager::class, "resetPassword"])
+    ->name("reset-password");
+Route::post("/reset-password", [ForgotPasswordManager::class, "resetPasswordPost"])
+    ->name("reset.password.post");
 // Route::get('/footer', function () {
 //     return view('footer');
 // });
