@@ -176,7 +176,7 @@ class BookController extends Controller
                 }
                 else {
                     if(!$isBooked) {
-                        $user->token = $user->token - $j; 
+                        $user->token = $user->token - $token; 
                         foreach($request->time as $times) {
                             $user->save();
                             list($day, $date, $time) = explode(' ', $times, 3);
