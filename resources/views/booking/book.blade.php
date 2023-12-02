@@ -104,12 +104,12 @@
             <div class="book-userinfo">
                 <div class="userinfo-name">
                     <img src="/images/contact.png" alt="">
-                    <p>Alfonsus Vega</p>
+                    <p>{{ $user->name }}</p>
                 </div>
                 <div class="userinfo-token">
                     <h2>Booking Room</h2>
                     <p> <i class="fa fa-clock-o" aria-hidden="true"></i> Duration (30 Minutes/Token)
-                    <p>3 Token</p>
+                    <p>{{ $user->token }} Token(s)</p>
                     </p>
                 </div>
             </div>

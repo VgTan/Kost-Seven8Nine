@@ -131,53 +131,68 @@
                 </div>
             </div>
             <!-- PROFILE END -->
+
             <!-- SCHEDULE START -->
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 @if(!$booklist->isEmpty())
                 @foreach($booklist->unique('branch') as $book)
-                <div class="book-containter">
-                    <div class="book-header">
-                        <p>{{ $book->branch }}</p>
+                <div class="course">
+                    <div class="course-preview">
+                        <h6>Booking Schedule</h6>
+                        <h2>{{ $book->branch }}</h2>
                         @foreach($booklist->where('branch', $book->branch)->where('user_id', $user->id)->unique('date')
                         as $datedetail)
-                        <div class="book-detail">
-                            <div class="detail-date">
-                                <p>{{ $datedetail->date }}</p>
-                            </div>
-                            @foreach($booklist->where('branch', $book->branch)->where('user_id',
-                            $user->id)->unique('room') as $detail)
-                            <div class="detail-room-time">
-                                <p>{{ $detail->room }}</p>
-                                @foreach($booklist->where('branch', $book->branch)->where('user_id',
-                                $user->id)->where('room', $detail->room)->where('date', $datedetail->date) as $room)
-                                <p>{{ $room->time }}</p>
-                                @endforeach
-                            </div>
-                            @endforeach
-                        </div>
-                        @endforeach
+                        <a href="#">{{ $datedetail->date }} <i class="fas fa-chevron-right"></i></a>
                     </div>
+                    <div class="course-info">
+                        <div class="progress-container">
+                            <div class="progress"></div>
+                        </div>
+                        @foreach($booklist->where('branch', $book->branch)->where('user_id',
+                        $user->id)->unique('room') as $detail)
+                        <h6>{{ $detail->room }}</h6>
+                        @foreach($booklist->where('branch', $book->branch)->where('user_id',
+                        $user->id)->where('room', $detail->room)->where('date', $datedetail->date) as $room)
+                        <h2>{{ $room->time }}</h2>
+                        @endforeach
+                        <button class="btn">Continue</button>
+                    </div>
+                    @endforeach
                 </div>
+                @endforeach
                 @endforeach
                 @else
                 <p>You haven't book a room</p>
                 @endif
             </div>
+
             <!-- SCHEDULE END -->
+
             <!-- TRANSACTION START -->
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-                @foreach($transactions as $trans)
-                <div class="trans-container">
-                    <p>{{ date_format($trans->created_at, 'M, d Y') }}</p>
-                    <div class="trans-detail">
-                        <div class="bundle">
-                            <p>{{ $trans->bundle }}</p>
-                            <p>{{ $trans->price }}</p>
-                        </div>
-                        <p>{{ $trans->status }}</p>
-                    </div>
+                <div class="profile-container">
+                    <table class="profile-table">
+                        <tr class="profile-header-row">
+                            <td class="profile-cell profile-date-cell">Date</td>
+                            <td class="profile-cell profile-detail-cell">Amount</td>
+                            <td class="profile-cell profile-status-cell">Payment Status</td>
+                        </tr>
+                        @foreach($transactions as $trans)
+                        <tr class="profile-row">
+                            <td class="profile-cell profile-date-cell" data-label="Job Id">
+                                {{ date_format($trans->created_at, 'M, d Y') }}</td>
+                            <td class="profile-cell profile-detail-cell" data-label="Customer Name">
+                                <div class="bundle">
+                                    <p>{{ $trans->bundle }}</p>
+                                    <p>{{ $trans->price }}</p>
+                                </div>
+                            </td>
+                            <td class="profile-cell profile-status-cell" data-label="Payment Status">
+                                {{ $trans->status }}</td>
+                        </tr>
+                        @endforeach
+                    </table>
                 </div>
-                @endforeach
             </div>
         </div>
         <div class="logout-button">

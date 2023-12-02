@@ -52,8 +52,6 @@ body {
 .comprof h1 {
    margin-bottom: 30px;
    font-weight: bold;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.36);
-   font-style: italic;
 }
 
 .comprof h3 {
@@ -155,7 +153,6 @@ body {
    line-height: 60px;
    color: #228aca;
    font-weight: bold;
-   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.36);
 }
 
 .we-do-item {
@@ -258,7 +255,6 @@ img {
    font-weight: bold;
    font-size: 40px;
    font-family: 'Heebo', sans-serif;
-   font-style: italic;
    color: #E6AD76;
    margin-bottom: 70px;
 }

@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 class BookController extends Controller
 {
     public function page($site, $room){
+        if(!Auth::check()) return redirect('/login');
+        $user = User::find(Auth::user()->id);
+
         $loc = Branch::where('site', $site)->first();
         // dd($loc);
 
@@ -72,7 +75,7 @@ class BookController extends Controller
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
-        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
+        return view('booking.book', compact('rooms', 'user', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
         'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
     }
 

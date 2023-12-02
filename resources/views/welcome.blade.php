@@ -40,8 +40,11 @@
 
         <div class="text-title">
             <div class="text-title2">
-            <h1>Need A Place To Learn Or <span>Place To Teach?</span></h1>
-            <p>Embark on Your Musical Odyssey with Our Exclusive Private Music Rooms – Tailored Spaces for Learning, Creating, and Sharing the Art of Melody!</p>
+                <h1>Need A Place To Learn Or <span>Place To Teach?</span></h1>
+                <div class="text-title3">
+                    <p>Embark on Your Musical Odyssey with Our Exclusive Private Music Rooms – Tailored Spaces for
+                        Learning, Creating, and Sharing the Art of Melody!</p>
+                </div>
             </div>
         </div>
     </div>
@@ -168,8 +171,9 @@
                             <li class="pack">BASIC 2</li>
                             <li class="price bottom-bar">IDR 150.000</li>
                             <li class="bottom-bar">60 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Learn More</a></li>
                         </ul>
                     </div>
                     <div class="card active">
@@ -177,6 +181,7 @@
                             <li class="pack">BASIC 1</li>
                             <li class="price bottom-bar">IDR 75.000</li>
                             <li class="bottom-bar">30 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
                             <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
                         </ul>
@@ -186,8 +191,9 @@
                             <li class="pack">BASIC 3</li>
                             <li class="price bottom-bar">IDR 450.000</li>
                             <li class="bottom-bar">180 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Learn More</a></li>
                         </ul>
                     </div>
                 </div>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&family=Poppins:wght@400;500;600&display=swap');
+
 body {
     padding: 0;
     margin: 0;
@@ -39,6 +41,12 @@ a:hover, a {
     width: 50%;
 }
 
+.text-title3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .text-title2 h1 {
     font-size: 3.5rem;
     color: white;
@@ -52,7 +60,7 @@ a:hover, a {
 .text-title2 {
     text-align: center;
     position: absolute;
-    top: 40%;
+    top: 45%;
 }
 
 .blue-border {
@@ -84,6 +92,7 @@ a:hover, a {
 }
 
 .contact-us {
+    margin: 85px;
     margin-top: 120px;
     display: flex;
     justify-content: center;
@@ -97,11 +106,13 @@ a:hover, a {
 .contact-content {
     text-align: center;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .subs {
     font-size: 3.5rem;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -137,22 +148,28 @@ a:hover, a {
     font-size: 15px;
 }
 
+.aboutus-row-desc p {
+    font-family: 'Istok Web', sans-serif;
+    color: #67748E;
+}
+
 .aboutus-desc-title h5 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .aboutus-desc-title h1 {
     margin-top: 25px;
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
 }
 
 .aboutus-desc-title h1 span{
     color: #E6AD76;
+    font-family: 'Poppins', sans-serif;
 }
 
 .aboutus-icons {
@@ -218,14 +235,13 @@ a:hover, a {
     margin-top: 50px;
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .branch-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
 }
 
@@ -307,7 +323,7 @@ a:hover, a {
   .branch_title {
     position: relative;
     width: fit-content;
-    width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+    width: -moz-fit-content;
   }
   
 .branch_title::after {
@@ -323,7 +339,7 @@ a:hover, a {
 .branch_button {
     padding: 0.55rem 0.9rem;
     width: fit-content;
-    width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+    width: -moz-fit-content;
     font-variant: small-caps;
     font-weight: bold;
     border-radius: 0.45em;
@@ -407,8 +423,8 @@ a:hover, a {
 
 /* PRICE PLAN CSS */
 .priceplan {
-    margin-top: 50px;
-    font-family: "Montserrat", sans-serif;
+    margin-top: 80px;
+    font-family: 'Poppins', sans-serif;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -422,14 +438,13 @@ a:hover, a {
 .priceplan-title h1 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .priceplan-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-
+    font-family: 'Poppins', sans-serif;
     color: #E6AD76;
     margin-bottom: 70px;
 }
@@ -494,7 +509,7 @@ a:hover, a {
     color: #fff;
 }
   
-.price-btn {
+.price-btns, .price-btn {
     margin-top: 1rem;
     height: 2.6rem;
     width: 13.3rem;
@@ -517,6 +532,19 @@ a:hover, a {
     background: #fff;
     color: #E6AD76;
 }
+
+.price-btn:hover {
+    background: linear-gradient(
+      135deg,
+      #eec299 0%,
+      #E6AD76 100%
+    );
+}
+
+.price-btns:hover {
+    background: #4da4da;
+    color: #fff;
+}
   
 .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
@@ -535,7 +563,7 @@ a:hover, a {
 
 .eventlist {
     margin-top: 120px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Poppins', sans-serif;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -549,13 +577,13 @@ a:hover, a {
 .eventlist-title h1 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .eventlist-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
     margin-bottom: 40px;
 }

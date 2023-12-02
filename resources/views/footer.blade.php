@@ -32,18 +32,18 @@
                 <div class="col" id="services">
                     <h3>Services</h3>
                     <div class="links">
-                        <a href="#">Illustration</a>
-                        <a href="#">Creatives</a>
-                        <a href="#">Poster Design</a>
-                        <a href="#">Card Design</a>
+                        <a href="/room/maxxbox">Maxxbox Lippo</a>
+                        <a href="/room/bassura">Mall @Bassura</a>
+                        <a href="/room/aeon">Aeon Mall JGC</a>
+                        <a href="#">Price</a>
                     </div>
                 </div>
 
                 <div class="col" id="useful-links">
                     <h3>Links</h3>
                     <div class="links">
-                        <a href="#">About</a>
-                        <a href="#">Services</a>
+                        <a href="/aboutus">About</a>
+                        <a href="/contactus">Contact Us</a>
                         <a href="/policy">Our Policy</a>
                         <a href="/termncon">Terms and Condition</a>
                     </div>

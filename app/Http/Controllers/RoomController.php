@@ -21,7 +21,7 @@ class RoomController extends Controller
         }
         
         $room = Branch::all();
-        $event = Event::all();
+        $event = Event::orderBy('created_at', 'desc')->take(3)->get();
         $home = TRUE;
         return view('welcome', compact('room', 'event', 'home'));
     }

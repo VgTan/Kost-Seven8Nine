@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
 </head>
 
 <body>
@@ -30,8 +27,10 @@
             </div>
             <div class="head-end">
                 <form class="search-form" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
-                    <input class="search" type="text" name="room" placeholder="Search Room/Branch">
-
+                    <div class="search-container">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                        <input class="search" type="text" name="room" placeholder="Search Room/Branch">
+                    </div>
                 </form>
                 @auth
                 <div class="header-button">

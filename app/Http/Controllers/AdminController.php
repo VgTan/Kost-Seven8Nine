@@ -173,15 +173,10 @@ class AdminController extends Controller
         
         $loc = Branch::where('site', $site)->first();
         // dd($loc);
-        if(!$loc) return back();
 
         $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
         $roomname = Room::where('id', $room)->first()->name;
         $branchloc = Branch::where('site', $site)->first();
-        
-        // dd($rooms);
-        $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
-
         $currentDayNumber = date('N');
 
         // Calculate the number of days to Monday (the beginning of the week)
@@ -190,17 +185,10 @@ class AdminController extends Controller
         // dd($daysToMonday);
         // Get the current date
         $currentDate = date('Y-m-d');
-        $currentDateMD = date('F d');
+        $currentDateYM = date('F Y');
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
         if($currentDate == 7) {
-            $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-            for($i = 0; $i < 7; $i++) {
-                $expired = Schedule::where('day', $days[$i])->get();
-                foreach ($expired as $ex) {
-                    $ex->update(['status' => 'ready']);
-                }
-            }
             $dates = [
             $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
             $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
@@ -212,7 +200,7 @@ class AdminController extends Controller
             ];
         } else {
             $dates = [
-                $datemon = date('Y-m-d', strtotime("$currentDate -$daysToMonday2 days")),
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
@@ -224,10 +212,14 @@ class AdminController extends Controller
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
         for($i = 0; $i < $daysToMonday2+1; $i++) {
             $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
+        // dd($expired);
             foreach ($expired as $ex) {
                 $ex->update(['status' => 'expired']);
             }
         }
+
+        // dd($rooms);
+        $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
         $tues = Schedule::where('branchroom_id', $rooms->id)->where('day', 'tues')->get();
         $wed = Schedule::where('branchroom_id', $rooms->id)->where('day', 'wed')->get();
@@ -235,8 +227,8 @@ class AdminController extends Controller
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
-        // dd($schedule);
-        return view('admin.editschedule', compact('room', 'rooms','loc','schedule', 'roomname', 'currentDateMD', 'branchloc', 'dates', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
+        return view('admin.editschedule', compact('rooms', 'user', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
+        'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
     }
 
     public function check_trans() {
@@ -326,6 +318,7 @@ class AdminController extends Controller
     public function contactus() {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        
         $contact = Contact::all();
         return view('admin.admin_contactus', compact('contact'));
     }
