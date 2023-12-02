@@ -36,8 +36,11 @@
                     <div class="card">
                         <img src="/images/rooms/{{ $room->img }}" class="card-img-top" alt="...">
                         <div class="card-body">
+                            @php
+                            $cabangsite = App\Models\Branch::where('id', $branch->branch_id)->first()
+                            @endphp
                             <h3 class="card_name">{{ $room->room_type }}</h3>
-                            <a href="/{{$branch->site}}/{{$room->room_id}}/details" class="card__button">Book Now</a>
+                            <a href="/{{$cabangsite->site}}/{{$room->room_id}}/details" class="card__button">Book Now</a>
                         </div>
                     </div>
                 </div>
