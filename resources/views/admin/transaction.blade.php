@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhapsodie</title>
     <link rel="stylesheet" href="/css/check.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
 </head>
 
 <body>
@@ -86,17 +86,15 @@
                                 </a>
                             </td>
                             <form action="{{ route('remove') }}" method="get">
-                                @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <button type="submit">Remove</button>
+                                    <i class="fa-solid fa-trash"><button type="submit"></button></i>
                                 </td>
                             </form>
                             <form action="{{ route('acc') }}" method="get">
-                                @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <button type="submit">Done</button>
+                                    <i class="fa-solid fa-check-to-slot"><button type="submit"></button></i>
                                 </td>
                             </form>
                         </tr>
