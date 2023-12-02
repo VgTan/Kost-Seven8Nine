@@ -236,7 +236,7 @@ class AdminController extends Controller
         }
         $user->save();
         
-        $token->status = "yes";
+        $token->status = "Paid";
         $token->save();
         return back();
     }

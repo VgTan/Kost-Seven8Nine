@@ -54,12 +54,12 @@
                 @endphp
                 @endif
                 <div class="bdtime">
+                    <input type="text" hidden name="time[]" value="{{ $times }}">
                     <p class="information">{{ $time }}</p>
                 </div>
                 @endforeach
 
                 <div class="control">
-                    <input type="text" hidden name="time[]" value="{{ $times }}">
                     <input type="hidden" name="branchname" value="{{ $branchname }}">
                     <input type="hidden" name="roomname" value="{{ $roomname }}">
                     <button class="btn" type="submit">
