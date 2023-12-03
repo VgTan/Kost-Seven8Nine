@@ -24,7 +24,6 @@ body {
 
 .heading-branch {
     margin: 0 30px;
-    margin-top: 100px;
     padding: 50px;
     display: flex;
     min-height: 500px;
@@ -51,7 +50,7 @@ body {
 
 .branch-text {
     display: block;
-    padding: 100px;
+    padding: 50px;
 }
 
 .branch-text p{
@@ -164,7 +163,60 @@ body {
     opacity: 0;
 }
 
-@media screen and (max-width: 780px) {
+@media screen and (max-width: 1100px) {
+.branch-image img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    margin: 30px;
+    margin-left: auto;
+}
+
+.heading-branch {
+    padding: 0px;
+}
+
+.branch-text p{
+    padding-top: 20px;
+    font-size: 15px;
+}
+
+.branch-text h1{
+    color: #268AC9;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+}
+
+@media screen and (max-width: 885px) {
+    .branch-image img {
+        width: 150px;
+        height: 250px;
+        object-fit: cover;
+        margin: 25px;
+        margin-left: auto;
+    }
+    
+    .heading-branch {
+        padding: 0px;
+    }
+    
+    .branch-text p{
+        padding-top: 20px;
+        font-size: 15px;
+    }
+    
+    .branch-text h1{
+        color: #268AC9;
+        font-weight: bold;
+        font-size: 30px;
+    }
+    
+    }
+
+
+@media screen and (max-width: 800px) {
 
     .base-branch {
         padding: 60px 0;
@@ -176,8 +228,8 @@ body {
 
     .heading-branch {
         margin: 0 30px;
-        margin-top: 100px;
         display: block;
+        padding: 50px;
         max-height: max-content;
         box-shadow: -10px 10px 20px 5px #00000040;
         align-items: center;
@@ -190,7 +242,7 @@ body {
     
     .branch-text {
         display: block;
-        padding: 100px;
+        padding: 30px;
     }
 
     .design-card-branch {
@@ -271,6 +323,22 @@ body {
         padding: 10px;
         font-size: 4rem;
     }
+
+    .branch-image .image {
+        margin-top: 60px;
+        margin-right: 20px;
+    }
+
+    .branch-text p{
+        padding-top: 20px;
+        font-size: 18px;
+    }
+    
+    .branch-text h1{
+        color: #268AC9;
+        font-weight: bold;
+        font-size: 40px;
+    }
 }
 
 @media screen and (max-width: 435px) {
@@ -284,9 +352,9 @@ body {
     }
 
     .heading-branch {
-        margin: 0 30px;
-        margin-top: 100px;
+        margin: 0 10px;
         display: block;
+        padding: 30px;
         max-height: max-content;
         box-shadow: -10px 10px 20px 5px #00000040;
         align-items: center;
@@ -299,7 +367,7 @@ body {
     
     .branch-text {
         display: block;
-        padding: 50px;
+        padding: 10px;
     }
 
     .design-card-branch {
@@ -390,4 +458,31 @@ body {
         color: #000000;
     }
     
+}
+
+@media screen and (max-width: 355px) {
+.heading-branch{
+    margin: 0;
+}
+.branch-image {
+    display: block;
+    align-items: center;
+}
+
+.branch-image .image {
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+.branch-image .image1 {
+    margin-top: 0px;
+    margin-right: 0px;
+}
+
+    .branch-image img {
+        width: 150px;
+        height: 250px;
+        object-fit: cover;
+        margin: 15px;
+    }
 }
