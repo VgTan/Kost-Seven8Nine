@@ -13,6 +13,7 @@
 <body>
     @include('header')
     <div class="container">
+        
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
@@ -195,6 +196,9 @@
                 </div>
             </div>
         </div>
+        <div class="logout-button">
+            <a href="/logout">Log Out</a>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -207,35 +211,35 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
     <script>
-        function openForm() {
-            document.getElementById("myForm").style.display = "flex";
-        }
+    function openForm() {
+        document.getElementById("myForm").style.display = "flex";
+    }
 
-        function closeForm() {
-            document.getElementById("myForm").style.display = "none";
-        }
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
 
-        const dropContainer = document.getElementById("dropcontainer")
-        const fileInput = document.getElementById("images")
+    const dropContainer = document.getElementById("dropcontainer")
+    const fileInput = document.getElementById("images")
 
-        dropContainer.addEventListener("dragover", (e) => {
-            // prevent default to allow drop
-            e.preventDefault()
-        }, false)
+    dropContainer.addEventListener("dragover", (e) => {
+        // prevent default to allow drop
+        e.preventDefault()
+    }, false)
 
-        dropContainer.addEventListener("dragenter", () => {
-            dropContainer.classList.add("drag-active")
-        })
+    dropContainer.addEventListener("dragenter", () => {
+        dropContainer.classList.add("drag-active")
+    })
 
-        dropContainer.addEventListener("dragleave", () => {
-            dropContainer.classList.remove("drag-active")
-        })
+    dropContainer.addEventListener("dragleave", () => {
+        dropContainer.classList.remove("drag-active")
+    })
 
-        dropContainer.addEventListener("drop", (e) => {
-            e.preventDefault()
-            dropContainer.classList.remove("drag-active")
-            fileInput.files = e.dataTransfer.files
-        })
+    dropContainer.addEventListener("drop", (e) => {
+        e.preventDefault()
+        dropContainer.classList.remove("drag-active")
+        fileInput.files = e.dataTransfer.files
+    })
     </script>
 </body>
 
