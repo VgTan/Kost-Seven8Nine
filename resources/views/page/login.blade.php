@@ -26,9 +26,6 @@
                      </div>
                  </div>
                  <div class="col-sm-6 login-section-wrapper">
-                     <div class="brand-wrapper">
-                         <img src="../images/logokost.png" alt="logo" class="logo">
-                     </div>
                      <div class="login-wrapper my-auto">
                          @if(session()->has('success'))
                          <div class="alert alert-success w-full">{{ session('success') }}</div>

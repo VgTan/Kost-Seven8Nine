@@ -7,12 +7,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/c32adfdcda.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/contactus.css">
 </head>
 
 <body>
-    @include('header')
+    @Auth
+    @php
+    $user = App\Models\User::find(Auth::user()->id);
+    @endphp
+    @endauth
 
+    @include('header')
     <div class="contactus-margin">
         <div class="container-contactus">
             <div class="contact-title">
@@ -21,31 +27,55 @@
             </div>
             <div class="contact-box">
                 <div class="contact-left">
+                    @if(Session::has('success'))
+                    <div class="alert alert-success">
+                        <p>{{ Session::get('success') }}</p>
+                    </div>
+                    @endif
                     <h3>Send Your Message</h3>
-                    <form action="">
+                    <form action="{{ route('contact') }}" method="post">
                         <div class="input-row">
+                            @csrf
                             <div class="input-group">
                                 <label for="">Name</label>
-                                <input type="text" placeholder="Enter your full name">
+                                @if(isset($user))
+                                <input type="text" placeholder="{{ $user->name }}" name="name" class="contact-input"
+                                    disabled>
+                                <input type="text" placeholder="{{ $user->name }}" name="name" value="{{ $user->name }}"
+                                    class="contact-input" hidden>
+                                @else
+                                <input type="text" required placeholder="Enter your full name" name="name"
+                                    class="contact-input">
+                                @endif
                             </div>
                             <div class="input-group">
                                 <label for="">Phone</label>
-                                <input type="text" placeholder="Enter your phone number">
+                                <input type="number" required placeholder="Enter your phone number" name="phone"
+                                    class="contact-input">
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
                                 <label for="">Email</label>
-                                <input type="email" placeholder="Enter your email">
+                                @if(isset($user))
+                                <input type="email" placeholder="{{ $user->email }}" name="email" class="contact-input"
+                                    disabled>
+                                <input type="email" placeholder="{{ $user->email }}" name="email" class="contact-input"
+                                    value="{{ $user->email }}" hidden>
+                                @else
+                                <input type="email" required placeholder="Enter your email" name="email"
+                                    class="contact-input">
+                                @endif
                             </div>
                             <div class="input-group">
                                 <label for="">Subject</label>
-                                <input type="text" placeholder="Enter your subject">
+                                <input type="text" required placeholder="Enter your subject" name="subject"
+                                    class="contact-input">
                             </div>
                         </div>
 
                         <label for="">Message</label>
-                        <textarea rows="5" placeholder="Your Message..."></textarea>
+                        <textarea rows="5" placeholder="Your Message..." name="message"></textarea>
                         <button type="submit">Send</button>
                     </form>
                 </div>

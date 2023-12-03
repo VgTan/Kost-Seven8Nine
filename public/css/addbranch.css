@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&family=Poppins:wght@400;500;600&display=swap');
+
+.container {
+    padding: 100px;
+}
+
+
+* {
+
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+
+  form {
+    color: black;
+  }
+
+
+.dragger_wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    background: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    padding: 0px 40px 40px 40px; 
+    border-radius: 10px;
+    margin-left: 100px;
+    height: 600px;
+}
+
+.branchinfo{
+    flex-basis: 40%;
+}
+
+#dragger.active {
+    border: 2px dashed #000000;
+}
+
+
+.form-desc img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+#filename {
+    width: 100%;
+}
+
+.fileName {
+    padding: 5px;
+    width: 100%;
+    margin: 10px 0 0 0;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-trash-can {
+    color: red;
+    cursor: pointer;
+}
+
+.icon {
+    color: #000AFF;
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+h2,
+h3 {
+    margin: 5px 0;
+    color: #232D42;
+}
+
+.button{
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 10px;
+    background-color: #000AFF;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.inp{
+    color: #363740;
+    font-size: 20px;
+}
+
+.addbranch h1{
+    text-align: center;
+    color: #232D42;
+    margin-bottom: 30px;
+    margin-top: 25px;
+}
+
+
+#drag-text{
+    color: #232D42;
+}
+
+.form-desc input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #268AC9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+
+  .drop-container {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px dashed #000AFF;
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .drop-container:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container:hover .drop-title {
+    color: #222;
+  }
+  
+  .drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+
+  .drop-container.drag-active {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-container.drag-active .drop-title {
+    color: #222;
+}
+
+.form-desc{
+    width: 55%;
+    height: 85%;
+}
+
+.form-desc input{
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+    .dragger_wrap{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: row;
+        background: white;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        padding: 0px 40px 40px 40px; 
+        border-radius: 10px;
+        margin-left: 20px;
+        height: 600px;
+    }
+}
+
+@media screen and (max-width: 557px){
+    .inp{
+        color: #363740;
+        font-size: 15px;
+    }
+}

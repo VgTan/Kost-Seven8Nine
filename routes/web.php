@@ -35,6 +35,14 @@ Route::get('/aboutus', function () {
     return view('page.aboutus');
 });
 
+Route::get('/termncon', function () {
+    return view('page.termncon');
+});
+
+Route::get('/policy', function () {
+    return view('page.policy');
+});
+
 Route::get('/contactus', function () {
     return view('page.contactus');
 });
@@ -54,7 +62,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/login','loginPage');
     Route::post('/login','login')->name('login');
     Route::get('/logout','logout')->name('logout');
-    });
+    Route::post('/contactuss', 'contact')->name('contact');
 });
 
 Route::controller(ProfileController::class)->group(function () {
@@ -65,6 +73,7 @@ Route::controller(ProfileController::class)->group(function () {
 
 Route::controller(RoomController::class)->group(function () {
     Route::get('/', 'home');
+    Route::get('/{room}/all', 'findroom')->name('findroom');
     Route::get('/room/{site}','room')->name('room');
     Route::get('/{site}/{room}/details','room_details')->name('');
 });
@@ -91,9 +100,11 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/addbranch', 'branch');
     Route::get('/addroom','rooms')->name('');
     Route::post('/processroom','add_room')->name('');
+    Route::get('/scheduleroom', 'schedule_room')->name('');
     
+    Route::get('/admin/contactus', 'contactus')->name('conadmin');
     Route::get('/addschedule','add_schedule')->name('add');
-    Route::get('/addscheds','process_schedule')->name('');
+    Route::get('/{site}/{room}/admin','edit_schedule')->name('');
 }); 
 
 
@@ -101,8 +112,8 @@ Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
     Route::get('{site}/{room}/book', 'page')->name('book_page');
     Route::get('/token', 'token');
-    Route::post('/token', 'buytoken')->name('buytoken');
-    Route::post('/checkout', 'checkout_token');
+    Route::post('/paymentdetail', 'buytoken')->name('buytoken');
+    Route::post('/checkout', 'callback')->name('callback');
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
 });
 

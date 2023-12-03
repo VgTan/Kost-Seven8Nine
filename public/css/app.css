@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&family=Poppins:wght@400;500;600&display=swap');
+
 body {
     padding: 0;
     margin: 0;
@@ -12,107 +14,78 @@ a:hover, a {
     text-decoration: none;
     color: white;
 }
-.carousel {
-    padding-top: 100px;
-}
 
 .carousel-img {
     width: 100%;
     object-fit: contain;
+    filter: brightness(0.3);
 }
 
 .carousel-inner {
-    height: 700px;
+    height: 710px;
     transition-duration: 200;
-    border-radius: 20px;
-}
-
-.text-title h1{
-    position: absolute;
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: white;
-    top: 25%;
-    left: 8%;
-}
-
-.container-abs {
-    width: 70%;
-    position: absolute;
-    bottom: -7%;
-    left: 15%;
-    right: 15%;
-}
-
-.nav-tabs .nav-link {
-    border: 1px solid transparent;
-    background-color: rgba(0, 0, 0, 0.612);
-    width: 200px;
-    height: 60px;
-    color: #ffffff;
-    text-align: start;
-}
-
-#home-tab {
-    border-top-left-radius: 10px;
-}
-
-#contact-tab {
-    border-top-right-radius: 10px;
-}
-
-.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-    color: #000000;
-    background-color: #ffffff;
-    border-color: black;
-}
-
-.tab-content>.active {
-    display: block;
-    background-color: white;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    padding: 1rem;
-    height: 100px;
-    border: 1px solid black;
-}
-
-.buy {
     display: flex;
-    height: 100%;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.text-title {
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
+    font-family: 'Poppins', sans-serif;
+}
+
+.text-title2 p {
+    font-size: 1.5rem;
+    color: white;
+    width: 60%;
+}
+
+.text-title3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-title2 h1 {
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bold;
+}
+
+.text-title2 span{
+    color: #E6AD76;
+}
+
+.text-title2 {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+}
+
+.blue-border {
+    background-color: #268AC9;
+    width: 100%;
+    height: 100px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.blue-border-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
     width: 100%;
 }
 
-.buy .book-content {
-    display: flex;
-    gap: 100px;
-}
-
-.buy .search-button {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #E6AD76;
-    border-radius: 8px;
+.blue-border-text h1 {
+    font-size: 25px;
     color: white;
-    width: 130px;
-    padding: 10px;
-    padding-right: 25px;
-    padding-left: 20px;
-
-}
-
-.buy .search-button:hover {
-    background-color: rgb(39, 39, 39);
-    cursor: pointer;
-    transition-duration: 300ms;
-}
-
-.buy .search-button img{
-    width: 13px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .margin {
@@ -120,104 +93,8 @@ a:hover, a {
     justify-content: center;
 }
 
-.main-container {
-    width: 93%;
-}
-
-.detail-container {
-    margin-top: 70px;
-}
-
-.places span, 
-.today-news span, 
-.services span {
-    font-size: 2rem;
-}
-
-.new {
-    font-weight: bold;
-}
-
-.places .list, 
-.today-news .list, 
-.services .list  {
-    font-size: 3rem;
-    font-weight: lighter;
-}
-
-.slider-container {
-    position: relative;
-    overflow-x: hidden;
-    height: 600px;
-}
-
-.slider-width {
-    position: absolute;
-    display: flex;
-    align-items: start;
-    justify-content: start;
-    left: 0;
-    top: 0;
-    transition: 0.4s ease-in-out;
-}
-
-.card{
-    margin: 0 .5em;
-    box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
-    border: none;
-    height: auto;
-}
-
-.card-img {
-    width: 100px;
-    height: 400px;
-    object-fit: contain;
-}
-
-.card-container {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-}
-
-.card-margin {
-    display: flex;
-    justify-content: space-between;
-    width: 85%;
-}
-
-.card-service {
-    height: 320px;
-    width: 450px;
-    background-color: #FAFAFA;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    border: 1px solid #D9D9D9;
-    /* box-shadow: #000000 1px 1px 1px; */
-}
-
-.card-content {
-    width: 80%;
-    height: 80%;
-}
-
-.card-content img {
-    margin-bottom: 20px;
-}
-
-.card-content .card-title {
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.card-content .card-desc {
-    font-size: 1rem;
-    /* font-weight: bold; */
-}
-
 .contact-us {
+    margin: 85px;
     margin-top: 120px;
     display: flex;
     justify-content: center;
@@ -231,11 +108,13 @@ a:hover, a {
 .contact-content {
     text-align: center;
     height: 100%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .subs {
     font-size: 3.5rem;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     margin-bottom: 20px;
 }
 
@@ -244,45 +123,10 @@ a:hover, a {
     scale: 1.5;
 }
 
-.sub-form {
-    margin-top: 2rem;
-    display: flex;
-    justify-content: center;
-}
-
-.sub-form input{
-    height: 60px;
-    width: 50%;
-    border: 0;
-    border-top-left-radius: 100px;
-    border-bottom-left-radius: 100px;
-    overflow: hidden;
-    padding-left: 20px;
-    box-shadow: gray 3px 3px 3px;
-}
-
-.desc-sub {
-    font-size: larger;
-}
-
-.btn-sub {
-    height: 60px;
-    text-align: center;
-    width: 130px;
-    border: 0;
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
-    overflow: hidden;
-    margin: 0;
-    background-color: #E6AD76;
-    color: white;
-    box-shadow: gray 3px 3px 3px;
-}
-
 /* ABOUT US LP CSS */
 .about-lp {
     display: flex;
-    margin-top: 100px;
+    padding: 80px;
 }
 
 .aboutus-row {
@@ -306,33 +150,43 @@ a:hover, a {
     font-size: 15px;
 }
 
+.aboutus-row-desc p {
+    font-family: 'Istok Web', sans-serif;
+    color: #67748E;
+}
+
 .aboutus-desc-title h5 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .aboutus-desc-title h1 {
     margin-top: 25px;
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
 }
 
 .aboutus-desc-title h1 span{
     color: #E6AD76;
+    font-family: 'Poppins', sans-serif;
 }
 
 .aboutus-icons {
     display: flex;
     justify-content: space-between;
-    margin: 40px 20px;
+    margin: 40px 0px 0 0;
 }
 
 .aboutus-icon-desc {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.aboutus-icon-desc i {
+    margin-bottom: 10px;
 }
 
 .aboutus-button {
@@ -384,80 +238,22 @@ a:hover, a {
     margin-top: 50px;
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .branch-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
 }
-
-/* .branch-img h1{
-    position: absolute;
-    font-family: 'Heebo', sans-serif;
-    font-weight: bold;
-    margin: 0;
-    font-size:32px;
-    bottom: 15px;
-    width: 100%;
-    color: #fff;
-    text-shadow: 10px 10px 10 #000,
-}
-
-.branch-wrapper{
-    padding:15px;
-    display:flex;
-    flex-direction:row;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-
-.branch-card{
-    max-width: 400px;
-    margin: 15px;
-    background:#fff;
-    border: 1px solid #E6AD76;
-    text-align: center;
-    cursor: pointer;
-}
-
-.branch-img{
-    position: relative;
-    text-align: center;
-    background:#E6AD76;
-}
-
-.branch-img img{
-    width: 400px;
-    height: 250px;
-}
-
-.branch-text{
-    padding: 30px 15px;
-    font-size: 15px;
-    line-height: 22px;
-}
-      
-.read-more{
-    display:inline-block;
-    width:auto;
-    text-align:center;
-    text-transform:uppercase;
-    background:#E6AD76;
-    color:#fff;
-    padding:15px;
-    margin-bottom:30px;
-    font-family: 'Oswald', sans-serif;
-} */
 
 /* TEST BRANCH CSS */
 .branch {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #eec2992f;
 }
 
 .branch-cards-container {
@@ -530,7 +326,7 @@ a:hover, a {
   .branch_title {
     position: relative;
     width: fit-content;
-    width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+    width: -moz-fit-content;
   }
   
 .branch_title::after {
@@ -546,7 +342,7 @@ a:hover, a {
 .branch_button {
     padding: 0.55rem 0.9rem;
     width: fit-content;
-    width: -moz-fit-content; /* Prefijo necesario para Firefox  */
+    width: -moz-fit-content;
     font-variant: small-caps;
     font-weight: bold;
     border-radius: 0.45em;
@@ -630,8 +426,8 @@ a:hover, a {
 
 /* PRICE PLAN CSS */
 .priceplan {
-    margin-top: 50px;
-    font-family: "Montserrat", sans-serif;
+    margin-top: 80px;
+    font-family: 'Poppins', sans-serif;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -645,14 +441,13 @@ a:hover, a {
 .priceplan-title h1 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .priceplan-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     color: #E6AD76;
     margin-bottom: 70px;
 }
@@ -717,7 +512,7 @@ a:hover, a {
     color: #fff;
 }
   
-.price-btn {
+.price-btns, .price-btn {
     margin-top: 1rem;
     height: 2.6rem;
     width: 13.3rem;
@@ -740,6 +535,19 @@ a:hover, a {
     background: #fff;
     color: #E6AD76;
 }
+
+.price-btn:hover {
+    background: linear-gradient(
+      135deg,
+      #eec299 0%,
+      #E6AD76 100%
+    );
+}
+
+.price-btns:hover {
+    background: #4da4da;
+    color: #fff;
+}
   
 .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
@@ -758,7 +566,7 @@ a:hover, a {
 
 .eventlist {
     margin-top: 120px;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Poppins', sans-serif;
     max-width: 100%;
     display: flex;
     flex-direction: column;
@@ -772,14 +580,13 @@ a:hover, a {
 .eventlist-title h1 {
     font-weight: bold;
     font-size: 30px;
-    font-family: 'Fira Sans Condensed', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .eventlist-title h3 {
     font-weight: bold;
     font-size: 40px;
-    font-family: 'Heebo', sans-serif;
-    font-style: italic;
+    font-family: 'Poppins', sans-serif;
     color: #268AC9;
     margin-bottom: 40px;
 }
@@ -787,20 +594,22 @@ a:hover, a {
 .event-cards-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
+    justify-content: center;
     align-items: stretch;
 }
 
 .ticket {
-    width: 40%;
+    width: 100%;
     max-width: 400px;
     box-sizing: border-box;
     padding: 20px;
     border: 2px solid #ccc;
+    border-radius: 12px;
     box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
     display: grid;
     grid-template-rows: auto auto auto auto;
-    margin: 30px;
+    margin: 10px;
     min-height: 400px;
 }
 
@@ -815,18 +624,18 @@ a:hover, a {
 .image-event img {
     height: 100%;
     object-fit: contain;
+    border-radius: 8px;
+
 }
 
-
-
 .eventname {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
 .eventdesc {
-    font-size: 18px;
+    font-size: 15px;
     margin-bottom: 10px;
 }
 

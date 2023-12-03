@@ -55,10 +55,13 @@
                         <i class="bx bx-chevron-right arrow-left"></i>
                     </div>
                     <ul class="menu_items submenu">
-                        <a href="/dashboard" class="nav_link sublink">User</a>
-                        <a href="{{ route('trans') }}" class="nav_link sublink">Transaction</a>
-                        <a href="{{ route('booklist') }}" class="nav_link sublink">Book</a>
-                        <a href="#" class="nav_link sublink">Nav Sub Link</a>
+                        <a href="/dashboard" class="nav_link sublink"> <i class='bx bxs-user-circle' style="margin-right:8px;"></i> User</a>
+                        <a href="{{ route('trans') }}" class="nav_link sublink"> <i class='bx bx-receipt' style="margin-right:8px;"></i>
+                            Transaction</a>
+                        <a href="{{ route('booklist') }}" class="nav_link sublink"> <i class='bx bxs-bookmarks' style="margin-right:8px;"></i>
+                            Book</a>
+                        <a href="{{ route('conadmin') }}" class="nav_link sublink"> <i class='bx bx-comment-dots' style="margin-right:8px;"></i>
+                            Message</a>
                     </ul>
                 </li>
                 <!-- end -->
@@ -70,7 +73,7 @@
                 <li class="item">
                     <a href="/addbranch" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bxs-magic-wand"></i>
+                            <i class='bx bxs-buildings'></i>
                         </span>
                         <span class="navlink">Add Branch</span>
                     </a>
@@ -79,7 +82,7 @@
                 <li class="item">
                     <a href="/addroom" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-loader-circle"></i>
+                            <i class='bx bx-image-add'></i>
                         </span>
                         <span class="navlink">Add Room</span>
                     </a>
@@ -93,11 +96,11 @@
                     </a>
                 </li>
                 <li class="item">
-                    <a href="#" class="nav_link">
+                    <a href="/addschedule" class="nav_link">
                         <span class="navlink_icon">
-                            <i class="bx bx-cloud-upload"></i>
+                            <i class='bx bx-calendar-edit'></i>
                         </span>
-                        <span class="navlink">Upload new</span>
+                        <span class="navlink">Edit Schedule</span>
                     </a>
                 </li>
             </ul>

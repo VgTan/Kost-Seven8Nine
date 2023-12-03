@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed&family=Heebo&family=Lora:ital,wght@0,500;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="/css/_event.css">
@@ -21,76 +22,48 @@
 <body>
 
     @include('header')
+    <!-- CAROUSEL HEADING START -->
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="overlay">
+                <div class="carousel-item active">
+                    <img class="carousel-img" src="./images/building.jpg" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="./images/building1.jpg" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="carousel-img" src="./images/building2.jpg" alt="Third slide">
+                </div>
+            </div>
+        </div>
+
+        <div class="text-title">
+            <div class="text-title2">
+                <h1>Need A Place To Learn Or <span>Place To Teach?</span></h1>
+                <div class="text-title3">
+                    <p>Embark on Your Musical Odyssey with Our Exclusive Private Music Rooms – Tailored Spaces for
+                        Learning, Creating, and Sharing the Art of Melody!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="blue-border">
+        <div class="blue-border-text">
+            <h1 class="text-blue">Guitar</h1>
+            <h1>Piano</h1>
+            <h1>Flute</h1>
+            <h1>Drum</h1>
+            <h1>Vocal</h1>
+            <h1>Much More</h1>
+        </div>
+    </div>
+    <!-- CAROUSEL HEADING END -->
+
     <div class="margin">
         <div class="main-container">
-            <!-- CAROUSEL HEADING START -->
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="carousel-img" src="./images/building.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="carousel-img" src="./images/building.jpg" alt="Third slide">
-                    </div>
-                </div>
-
-                <div class="text-title">
-                    <h1>Need a place to learn<br />Or place to teach?</h1>
-                </div>
-
-                <!-- SEARCH ABSOLUTE START -->
-                <div class="container-abs">
-                    <div class="">
-                        <ul class="nav nav-tabs" id="myTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="book-tab" data-bs-toggle="tab"
-                                    data-bs-target="#book" type="button" role="tab" aria-controls="book"
-                                    aria-selected="true">BOOK MUSIC PLACE</button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="search-tab" data-bs-toggle="tab" data-bs-target="#search"
-                                    type="button" role="tab" aria-controls="search"
-                                    aria-selected="false">SEARCH</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane show active" id="book" role="tabpanel" aria-labelledby="book-tab">
-                                <form action="" class="buy">
-                                    <div class="book-content">
-                                        <div>
-                                            <p>Area</p>
-                                            <select name="" id="">
-                                                <option value="">Allogio</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                        <div>
-                                            <p>Price</p>
-                                            <select name="" id="">
-                                                <option value="">Rp 100.000.000</option>
-                                                <option value="">B</option>
-                                                <option value="">C</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <button class="search-button" type="submit"><img src="./images/search.png"
-                                            alt="">Search</button>
-                                </form>
-                            </div>
-                            <div class="tab-pane " id="search" role="tabpanel" aria-labelledby="search-tab">...</div>
-                            <div class="tab-pane " id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- SEARCH ABSOLUTE END -->
-            </div>
-            <!-- CAROUSEL HEADING END -->
-
-
             <!-- ABOUT US LP START -->
             <div class="about-lp">
                 <div class="aboutus-lp">
@@ -115,39 +88,39 @@
                             <div class="aboutus-icons">
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-guitar' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Qualified
-                                            <small class="d-block" style="color:#E6AD76">Guitar Lesson</small>
+                                        <i class='fas fa-guitar' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Personalized
+                                            <small class="d-block" style="color:#E6AD76">Music Practice</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-music' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Incredible
-                                            <small class="d-block" style="color:#E6AD76">Piano Lesson</small>
+                                        <i class='fas fa-music' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Various
+                                            <small class="d-block" style="color:#E6AD76">Musical Instruments</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-microphone-alt' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Exciting
-                                            <small class="d-block" style="color:#E6AD76">Vocal Lesson</small>
+                                        <i class='fa fa-calendar-check-o' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Flexible
+                                            <small class="d-block" style="color:#E6AD76">Book Schedule</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-drum' style='font-size:48px;color:#268AC9'></i>
-                                        <h6>Amazing
-                                            <small class="d-block" style="color:#E6AD76">Drum Lesson</small>
+                                        <i class='fas fa-volume-up' style='font-size:40px;color:#268AC9'></i>
+                                        <h6>Enhanced
+                                            <small class="d-block" style="color:#E6AD76">Sound Quality</small>
                                         </h6>
                                     </div>
                                 </div>
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
-                                        <i class='fas fa-headphones' style='font-size:48px;color:#268AC9'></i>
+                                        <i class='fas fa-headphones' style='font-size:40px;color:#268AC9'></i>
                                         <h6>Much More
                                             <small class="d-block" style="color:#E6AD76">Exciting Lessons</small>
                                         </h6>
@@ -198,8 +171,9 @@
                             <li class="pack">BASIC 2</li>
                             <li class="price bottom-bar">IDR 150.000</li>
                             <li class="bottom-bar">60 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Learn More</a></li>
                         </ul>
                     </div>
                     <div class="card active">
@@ -207,6 +181,7 @@
                             <li class="pack">BASIC 1</li>
                             <li class="price bottom-bar">IDR 75.000</li>
                             <li class="bottom-bar">30 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
                             <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
                         </ul>
@@ -216,8 +191,9 @@
                             <li class="pack">BASIC 3</li>
                             <li class="price bottom-bar">IDR 450.000</li>
                             <li class="bottom-bar">180 Mins</li>
+                            <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Learn More</a></li>
                         </ul>
                     </div>
                 </div>

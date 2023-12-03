@@ -60,7 +60,7 @@
                             <th></th>
                         </tr>
                         @foreach($token as $user)
-                        @if($user->status == 'Unpaid')
+                        @if($user->status == 'Pending')
                         <tr class="table-content">
                             <td class="input-content">
                                 {{ $user->created_at }}

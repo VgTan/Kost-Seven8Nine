@@ -356,7 +356,7 @@ input[type=file] {
     padding: 16px 20px;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 100px;
     opacity: 0.8;
 }
 
@@ -379,8 +379,7 @@ input[type=file] {
     cursor: pointer;
 }
 
-.double-button {
-    display: flex;
+.logout-button {
     justify-content: center;
     align-items: center;
 }
@@ -393,51 +392,154 @@ input[type=file] {
 
 .logout-button a {
     color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1rem;
+    font-size: 18px;
+    padding: 10px;
+    border: 0;
     background-color: #c92626;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    text-align: center;
 }
 
+.logout-button a:hover {
+    background-color: #a51e1e;
+    color: white;
+}
 
-[class*="profile"] {
-    width: 100%;
-    flex-direction: column;
+/* SCHEDULE */
+
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	margin: 20px;
+	overflow: hidden;
+	width: 100%;
+    margin-bottom: 50px;
+}
+
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+    font-size: 20px;
+}
+
+.course-preview {
+	background-color: #268AC9;
+	color: #fff;
+	padding: 30px;
+	width: 350px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #268AC9;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #268AC9;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
+
+/* TRANSACTION */
+
+.trans-container {
+    margin: 10px 0 10px;
+}
+
+.trans-detail {
+    display: flex;
     align-items: center;
-    justify-content: center;
 }
 
-@media (min-width: 768px) {
-    .container {
-        flex-direction: row;
-    }
-
-    .profile-container {
-        flex-direction: row;
-    }
-
-    .profile {
-        width: 34%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .line-container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .line {
-        height: 30vw;
-        border-bottom: 1px solid black;
-    }
+.profile-container {
+    margin-top: 50px;
+    width: 100%;
 }
 
-@media (max-width: 767px) {
-    .basic-info {
-        padding-left: 10vw;
-        max-width: 80%;
-    }
+.profile-table {
+    width: 100%;
+}
+
+.profile-header-row {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.profile-row {
+    background-color: #ffffff;
+}
+
+.profile-row:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.profile-cell {
+    padding: 10px;
+    text-align: left;
+}
+
+.profile-date-cell {
+    width: 20%;
+}
+
+.profile-detail-cell {
+    width: 50%;
+}
+
+.profile-status-cell {
+    width: 30%;
 }
