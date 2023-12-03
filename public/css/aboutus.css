@@ -203,7 +203,11 @@ body {
    font-size: 10px;
 }
 
+<<<<<<< HEAD:public/css/aboutus.css
 .we-do-item .we-desc {
+=======
+.we-do-item .we-desc{
+>>>>>>> parent of 21b8972 (Revert "Merge branch 'Tia' into Vega"):public/css/testaboutus.css
    display: table-cell;
 }
 

@@ -88,7 +88,6 @@ class BookController extends Controller
             foreach ($branchrooms as $branchroom) {
                 foreach ($day as $index => $days) {
                     foreach ($time as $times) {
-                        // Cari jadwal yang sudah ada dengan kondisi yang sesuai
                         $existingScheduleWeek1 = Schedule::where('branchroom_id', $branchroom->id)
                             ->where('week', 'week 1')
                             ->where('day', $days)
@@ -165,7 +164,7 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $currentDayNumber = date('N');
         $currentDate = date('d');
-        // dd($request);
+        // dd($request->all());
         // $nau = BookList::where('branch', $request->branch_name)
         // ->where('room', $request->room)
         // ->where('date', $request->date)
@@ -248,6 +247,8 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $book = new BookList();
         $user = User::find(Auth::user()->id);
+        dd($request->all());
+
         if(BookList::where('branch', $request->branch_name)
         ->where('room', $request->room)
         ->where('date', $request->date)

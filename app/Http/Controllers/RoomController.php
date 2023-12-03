@@ -62,6 +62,7 @@ class RoomController extends Controller
         $currentDateMD = date('F d');
         $tomorrow = date('F d', strtotime('+1 day'));
 
+        // Calculate the dates for the next 7 days (Monday to Sunday)
         $branchrooms = BranchRoom::all();
         $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
             $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
@@ -102,7 +103,7 @@ class RoomController extends Controller
                 $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
                 $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
-            $dates2 = [
+            $dates2 = [  
                 $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
@@ -116,7 +117,6 @@ class RoomController extends Controller
             foreach ($branchrooms as $branchroom) {
                 foreach ($day as $index => $days) {
                     foreach ($time as $times) {
-                        // Cari jadwal yang sudah ada dengan kondisi yang sesuai
                         $existingScheduleWeek1 = Schedule::where('branchroom_id', $branchroom->id)
                             ->where('week', 'week 1')
                             ->where('day', $days)
@@ -167,16 +167,16 @@ class RoomController extends Controller
         }
 
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-
         for($i = 0; $i < $daysToMonday2+1; $i++) {
-                $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
-                // dd($expired);
-                foreach ($expired as $ex) {
-                    $ex->update(['status' => 'expired']);
-                }
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
+            // dd($expired);
+            foreach ($expired as $ex) {
+                $ex->update(['status' => 'expired']);
+            }
             
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
+        // dd($mon);
         $tues = Schedule::where('branchroom_id', $rooms->id)->where('day', 'tues')->get();
         $wed = Schedule::where('branchroom_id', $rooms->id)->where('day', 'wed')->get();
         $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
