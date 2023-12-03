@@ -18,7 +18,7 @@ a:hover, a {
 .carousel-img {
     width: 100%;
     object-fit: contain;
-    filter: brightness(0.3);
+    filter: brightness(0.4);
 }
 
 .carousel-inner {
@@ -33,13 +33,12 @@ a:hover, a {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'Poppins', sans-serif;
 }
 
 .text-title2 p {
     font-size: 1.5rem;
     color: white;
-    width: 60%;
+    width: 50%;
 }
 
 .text-title3 {
@@ -85,7 +84,6 @@ a:hover, a {
     font-size: 25px;
     color: white;
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
 }
 
 .margin {
@@ -177,12 +175,11 @@ a:hover, a {
 .aboutus-icons {
     display: flex;
     justify-content: space-between;
-    margin: 40px 0px 0 0;
+    margin: 40px 20px;
 }
 
 .aboutus-icon-desc {
     text-align: center;
-    font-family: 'Poppins', sans-serif;
 }
 
 .aboutus-icon-desc i {
