@@ -247,7 +247,7 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $book = new BookList();
         $user = User::find(Auth::user()->id);
-        dd($request->all());
+        // dd($request->all());
 
         if(BookList::where('branch', $request->branch_name)
         ->where('room', $request->room)
