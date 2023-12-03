@@ -93,6 +93,7 @@ class AdminController extends Controller
         $branch = Branch::all();
         return view('admin.add_room', compact('branch'));
     }
+
     public function add_room(Request $request) {
         // dd($request->name);
         $user = User::find(Auth::user()->id);
@@ -154,36 +155,80 @@ class AdminController extends Controller
         }
         return back();
     }
-    public function add_schedule(Request $request) {
+
+    public function add_schedule() {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
-        $cabang = Branch::all();
+
+        $cabang = BranchRoom::all();
         $room = Room::all();
-        $schedule = Schedule::all();
+        $schedule = TRUE;
         
-        return view("admin.addschedule", compact("cabang","room","schedule"));
+        return view('admin.addschedule', compact('cabang', 'room', 'schedule'));
     }
 
-    public function process_schedule(Request $request) {
+    public function edit_schedule($site, $room) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
-        $cabang_id = Branch::where('id', $request->cabang)->first()->id;
-        $room_id = Room::where('id', $request->room)->first()->id;
-        $roomset = BranchRoom::where('branch_id', $cabang_id)->where('room_id', $room_id)->first()->id;
         
-        foreach ($request->time as $selectedTime) {
-            $existingScheduleCount = Schedule::where('time', $selectedTime)->count();
-        
-            if ($existingScheduleCount == 0) {
-                $schedule = new Schedule();
-                $schedule->branchroom_id = $roomset;
-                $schedule->time = $selectedTime;
-                $schedule->day = $request->day;
-                $schedule->date = $request->date;
-                $schedule->save();
+        $loc = Branch::where('site', $site)->first();
+        // dd($loc);
+
+        $rooms = BranchRoom::where('branch_id', $loc->id)->where('room_id', $room)->first();
+        $roomname = Room::where('id', $room)->first()->name;
+        $branchloc = Branch::where('site', $site)->first();
+        $currentDayNumber = date('N');
+
+        // Calculate the number of days to Monday (the beginning of the week)
+        $daysToMonday = (8 - $currentDayNumber) % 7;
+        $daysToMonday2 = 7-((8 - $currentDayNumber) % 7);
+        // dd($daysToMonday);
+        // Get the current date
+        $currentDate = date('Y-m-d');
+        $currentDateYM = date('F Y');
+
+        // Calculate the dates for the next 7 days (Monday to Sunday)
+        if($currentDate == 7) {
+            $dates = [
+            $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+            $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+            $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+            $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+            $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+            $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+            $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        } else {
+            $dates = [
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
+                $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
+                $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
+                $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
+                $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
+                $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
+                $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+            ];
+        }
+        $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+        for($i = 0; $i < $daysToMonday2+1; $i++) {
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
+        // dd($expired);
+            foreach ($expired as $ex) {
+                $ex->update(['status' => 'expired']);
             }
         }
-        return back();
+
+        // dd($rooms);
+        $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
+        $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
+        $tues = Schedule::where('branchroom_id', $rooms->id)->where('day', 'tues')->get();
+        $wed = Schedule::where('branchroom_id', $rooms->id)->where('day', 'wed')->get();
+        $thur = Schedule::where('branchroom_id', $rooms->id)->where('day', 'thur')->get();
+        $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
+        $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
+        $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
+        return view('admin.editschedule', compact('rooms', 'user', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
+        'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
     }
 
     public function check_trans() {
@@ -236,7 +281,7 @@ class AdminController extends Controller
         }
         $user->save();
         
-        $token->status = "yes";
+        $token->status = "Paid";
         $token->save();
         return back();
     }
@@ -259,6 +304,7 @@ class AdminController extends Controller
 
         return view("admin.booklist", compact('user', 'book', 'branchBooks', 'branches'));
     }
+
     public function done(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
@@ -272,6 +318,7 @@ class AdminController extends Controller
     public function contactus() {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        
         $contact = Contact::all();
         return view('admin.admin_contactus', compact('contact'));
     }

@@ -19,6 +19,7 @@
     border-radius: 15px;
     margin-top: 30px;
     object-fit: cover;
+    filter: brightness(0.4);
 }
 
 .text-title h1{
@@ -28,6 +29,7 @@
     color: white;
     top: 35%;
     left: 8%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container-abs {
@@ -73,9 +75,9 @@
 
 .roomdetail-textinfo h1{
     color: #013F6B;
-    font-family:'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .roomdetail-textinfo h2{
@@ -88,13 +90,15 @@
 .roomdetail-textinfo h3{
     font-size: 1.2rem;
     margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Istok Web', sans-serif;
+    color: #67748E;
 }
 
 .roomdetail-textinfo h4{
     font-size: 1rem;
     margin-top: 20px;
     color: #013F6B;
+    font-family: 'Poppins', sans-serif;
 }
 
 .roomdetail-textinfo hr{
@@ -141,6 +145,7 @@
     margin-top: 40px;
     color: #013F6B;
     margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .box {
@@ -156,17 +161,19 @@
 }
 
 .box h1, .box h2, .box a {
-    margin: 10px 0; 
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 .box h1 {
-    font-family: 'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 25px;
     margin-bottom: 0;
 }
 
 .box h2 {
-    font-family: 'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
     color: #E6AD76;
     text-align: center;
 }
@@ -184,6 +191,7 @@
     width: 150px;
     align-self: center; 
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .box a:hover {
@@ -204,6 +212,7 @@
     margin-top: 20px;
     color: #013F6B;
     margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .roomdetail-infolocation iframe{
@@ -224,6 +233,7 @@
 .info-item p {
     margin: 0; 
     margin-right: 20px;
+    font-family: 'Istok Web', sans-serif;
 }
 
 .button-back {
@@ -241,6 +251,7 @@
     cursor: pointer;
     text-align: center;
     width: 15%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .button-back a:hover{
@@ -291,6 +302,7 @@
     color: white;
     text-align: center;
     margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .time-slots {
@@ -303,6 +315,7 @@
     padding: 10px;
     height: 100%;
     background-color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .time-slots .time-slot:nth-child(2n) {
@@ -358,6 +371,7 @@
     margin-top: 40px;
     color: #013F6B;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .tab-pane {
@@ -371,4 +385,190 @@
     display: block;
     height: auto;
     visibility: visible;
+}
+
+@media only screen and (min-width: 371px) and (max-width: 600px) {
+    .roomdetail-header1 {
+        padding-top: 80px;
+        margin-bottom: 0;
+    }
+
+    .roomdetail-header1 img {
+        border-radius: 0;
+        height: 300px;
+    }
+
+    .text-title h1 {
+        font-size: 2.3rem;
+        top: 25%;
+    }
+
+    .container-abs {
+        width: 90%;
+    }
+
+    .roomdetail-container {
+        width: 100%;
+    }
+
+    .roomdetail-header {
+        flex-direction: column-reverse;
+    }
+
+    .roomdetail-image {
+        width: 100%;
+    }
+
+    .roomdetail-textinfo {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .roomdetail-textinfo h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .roomdetail-textinfo h2 {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .roomdetail-header img,
+    .roomdetail-image img {
+        height: auto;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box a {
+        width: 100%;
+    }
+
+    .schedule {
+        gap: 0;
+    }
+
+    .day-schedule {
+        padding: 0;
+    }
+
+    .day-name {
+        padding-top: 10px;
+    }
+}
+
+@media only screen and (min-width: 601px) and (max-width: 768px) {
+    .roomdetail-header1 {
+        padding-top: 80px;
+        margin-bottom: 200px;
+    }
+
+    .text-title h1 {
+        font-size: 4rem;
+    }
+
+    .container-abs {
+        width: 90%;
+    }
+
+    .roomdetail-container {
+        width: 100%;
+    }
+
+    .roomdetail-header {
+        flex-direction: column-reverse;
+    }
+
+    .roomdetail-image {
+        width: 80%;
+    }
+
+    .roomdetail-textinfo {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .roomdetail-textinfo h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .roomdetail-textinfo h2 {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .roomdetail-header img,
+    .roomdetail-image img {
+        height: auto;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box a {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .roomdetail-header1 {
+        padding-top: 80px;
+        margin-bottom: 200px;
+    }
+
+    .text-title h1 {
+        font-size: 4rem;
+    }
+
+    .container-abs {
+        width: 90%;
+    }
+
+    .roomdetail-container {
+        width: 100%;
+    }
+
+    .roomdetail-header {
+        flex-direction: column-reverse;
+    }
+
+    .roomdetail-image {
+        width: 100%;
+    }
+
+    .roomdetail-textinfo {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .roomdetail-textinfo h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .roomdetail-textinfo h2 {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .roomdetail-header img,
+    .roomdetail-image img {
+        height: auto;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .box a {
+        width: 100%;
+    }
 }

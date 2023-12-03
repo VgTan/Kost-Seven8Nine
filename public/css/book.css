@@ -7,11 +7,10 @@
 }
 
 .book-maincontainer {
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column; 
-  padding-right: 40px;
-  padding-left: 40px;
+  padding: 0 40px 0 40px;
   margin-top: 50px;
 }
 
@@ -86,10 +85,11 @@
 
 .schedule {
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: space-evenly;
   background-color: #f3efefa1;
-  padding: 20px;
+  /* padding: 20px; */
   position: relative;
 }
 
@@ -137,7 +137,7 @@
 .checkbox-wrapper-16 *:before {
   box-sizing: border-box;
   font-size: 15px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   font-weight: bold;
   border-radius: 8px;
 }
@@ -392,6 +392,7 @@
 
 @media screen and (max-width: 1543px) {
   .schedule {
+    width: 100%;
     display: flex;
     justify-content: start;
     align-items: start;

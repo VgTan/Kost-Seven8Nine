@@ -11,14 +11,13 @@ use Illuminate\Support\Facades\Auth;
 class ProfileController extends Controller
 {
     public function profile() {
-        if(!Auth::check()) {
+        if (!Auth::check()) {
             return back();
         }
         $user = User::find(Auth::user()->id);
-        // $edit = FALSE;
-        $booklist = BookList::where('user_id', $user->id)->get();
-        $transactions = Token::where('user_id', $user->id)->get();
-        return view('page.profile', compact('user','booklist', 'transactions'));
+        $booklist = BookList::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        $transactions = Token::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        return view('page.profile', compact('user', 'booklist', 'transactions'));        
     }
 
     public function editProfile(Request $request) {

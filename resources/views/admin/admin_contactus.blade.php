@@ -36,27 +36,17 @@
                             <th scope="col">Message</th>
                         </tr>
                     </thead>
-
                     <tbody>
+                        @foreach($contact as $con)
                         <tr>
-                            @foreach($contact as $con)
                             <th scope="row">{{ $con->id }}</th>
                             <td>{{ $con->name }}</td>
                             <td>{{ $con->phone }}</td>
                             <td>{{ $con->email }}</td>
                             <td>{{ $con->subject }}</td>
                             <td>{{ $con->message }}</td>
-                            @endforeach
                         </tr>
-
-                        <!-- <tr>
-                        <th scope="row">2</th>
-                        <td>Person 2</td>
-                        <td>08190812344</td>
-                        <td>person2@gmail.com</td>
-                        <td>the website is crashing</td>
-                        <td>Hello, my name is person2. send help? test hehe</td>
-                        </tr> -->
+                        @endforeach
                     </tbody>
                 </table>
                 @else

@@ -102,13 +102,18 @@ class UserController extends Controller
             'subject' => 'required',
             'message' => 'required',
         ]);
-        $user = User::find(Auth::user()->id);
+
+        if($val) {
         $contact = new Contact();
         $contact->name = $request->name;
         $contact->phone = $request->phone;
         $contact->email = $request->email;
         $contact->subject = $request->subject;
         $contact->message = $request->message;
+        }
+        else {
+        $user = User::find(Auth::user()->id);
+        }
         // dd($request->all());
         $contact->save();
         return back()->with('success', 'Sent');

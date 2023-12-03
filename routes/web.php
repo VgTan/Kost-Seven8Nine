@@ -99,10 +99,11 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/addbranch', 'branch');
     Route::get('/addroom','rooms')->name('');
     Route::post('/processroom','add_room')->name('');
+    Route::get('/scheduleroom', 'schedule_room')->name('');
     
     Route::get('/admin/contactus', 'contactus')->name('conadmin');
     Route::get('/addschedule','add_schedule')->name('add');
-    Route::get('/addscheds','process_schedule')->name('');
+    Route::get('/{site}/{room}/admin','edit_schedule')->name('');
 }); 
 
 
