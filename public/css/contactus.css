@@ -5,10 +5,6 @@
     justify-content: center;
 }
 
-.container-contactus {
-    margin-top: 100px;
-}
-
 .contact-box {
     background: #fff;
     display: flex;
@@ -42,8 +38,8 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
-.container-contactus p {
-    margin-bottom: 40px;
+.contact-title p{
+    padding: 0 20px;
 }
 
 .input-row {
@@ -114,6 +110,8 @@ tr td:first-child {
 tr td {
     padding-top: 20px;
 }
+
+
 
 .container-contactus-second {
     max-width: 1080px;
@@ -227,7 +225,7 @@ tr td {
     pointer-events: auto;
 }
 
-.icon:hover{
+.icon:hover {
     color: white;
 }
 
@@ -271,24 +269,28 @@ tr td {
     background: #e1306c;
 }
 
-.wrapper .icon span i:hover{
+.wrapper .icon span i:hover {
     color: white;
 }
 
+.contact-right p {
+    margin-bottom: 20px;
+}
+
+
 @media only screen and (max-width: 768px) {
     .contact-box {
-        flex-direction: column;
+        flex-wrap: wrap;
     }
 
-    .contact-left,
     .contact-right {
         flex-basis: 100%;
-        padding: 20px;
+        padding: 30px;
     }
 
-    button {
+    .contact-left button {
         background: #268AC9;
-        width: 400px;
+        width: 30%;
         border: none;
         color: #fff;
         height: 35px;
@@ -304,9 +306,52 @@ tr td {
     .input-row .input-group {
         flex-basis: 100%;
         margin-bottom: 10px;
- }
+    }
+
+    .container-contactus{
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .contact-left{
+        flex-basis: 100%;
+        padding: 10%;
+    }
+
+    .contact-right p{
+        margin-bottom: 20px;
+    }
 }
 
+@media (max-width: 768px) {
+    .heading-about {
+        height: 40vh;
+    }
 
-/* Admin Contact Us CSS */
+    .company-profile {
+        flex-direction: column;
+        padding: 0 20px;
+    }
 
+    .company-profile img {
+        width: 100%;
+        height: auto;
+        margin-top: 20px;
+    }
+
+    .contact-left form {
+        margin-right: 0px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .heading-about {
+        height: 30vh;
+    }
+
+    .company-profile {
+        padding: 0 10px;
+    }
+}
