@@ -38,8 +38,8 @@ h1 {
     font-family: 'Poppins', sans-serif;
 }
 
-.container-contactus p {
-    margin-bottom: 40px;
+.contact-title p{
+    padding: 0 20px;
 }
 
 .input-row {
@@ -110,6 +110,8 @@ tr td:first-child {
 tr td {
     padding-top: 20px;
 }
+
+
 
 .container-contactus-second {
     max-width: 1080px;
@@ -271,6 +273,11 @@ tr td {
     color: white;
 }
 
+.contact-right p {
+    margin-bottom: 20px;
+}
+
+
 @media only screen and (max-width: 768px) {
     .contact-box {
         flex-wrap: wrap;
@@ -278,7 +285,7 @@ tr td {
 
     .contact-right {
         flex-basis: 100%;
-        padding: 20px;
+        padding: 30px;
     }
 
     .contact-left button {
@@ -303,6 +310,7 @@ tr td {
 
     .container-contactus{
         width: 100%;
+        margin-top: 20px;
     }
 
     .contact-left{
@@ -310,8 +318,8 @@ tr td {
         padding: 10%;
     }
 
-    .contact-title p{
-        padding: 0px 20px;
+    .contact-right p{
+        margin-bottom: 20px;
     }
 }
 

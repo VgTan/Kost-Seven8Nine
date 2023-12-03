@@ -189,9 +189,9 @@
                         <img src="/images/aboutus/aboutus2.jpeg" class="img-fluid scale">
                     </div>
 
-                    <div class="d-flex flex-column">
+                    <div class="d-flex flex-column" id="galery3">
                         <img src="/images/aboutus/about6.jpeg" class="img-fluid">
-                        
+
                         <img src="/images/aboutus/aboutus4.jpg" class="img-fluid scale">
                     </div>
                 </div>
