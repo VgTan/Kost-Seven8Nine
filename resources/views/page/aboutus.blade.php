@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    <link rel="stylesheet" href="./css/testaboutus.css">
+    <link rel="stylesheet" href="./css/aboutus.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
@@ -70,7 +70,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="about-info sec-padd text-center mb-5">
+                        <div class="about-info sec-padd text-center mb-3">
                             <div class="section-title">
                                 <h2>Finding the Best Music Teachers & Schools For You</h2>
                             </div>
@@ -190,8 +190,9 @@
                     </div>
 
                     <div class="d-flex flex-column">
-                        <img src="/images/aboutus/about6.jpeg" class="img-fluid scale mb-3">
-                        <img src="/images/aboutus/aboutus4.jpg" class="img-fluid">
+                        <img src="/images/aboutus/about6.jpeg" class="img-fluid">
+                        
+                        <img src="/images/aboutus/aboutus4.jpg" class="img-fluid scale">
                     </div>
                 </div>
             </div>

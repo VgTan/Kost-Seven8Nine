@@ -255,6 +255,11 @@ input {
 }
 
 @media (max-width: 890px) {
+
+    .logo img {
+        width: 5rem;
+    }
+
     .container {
         max-width: 100%;
         padding: 0 2rem;
