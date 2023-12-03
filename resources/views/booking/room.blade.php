@@ -31,10 +31,10 @@
                 </div>
                 <div class="branch-image">
                     <div class="image">
-                        <img src="/images/cabang/{{ $loc->img }}" class="images" />
+                        <img src="/images/cabang/{{ $loc->img }}" class="image" />
                     </div>
                     <div class="image1">
-                        <img src="/images/cabang/{{ $loc->img1 }}" class="images1" />
+                        <img src="/images/cabang/{{ $loc->img1 }}" class="image1" />
                     </div>
                 </div>
             </div>
