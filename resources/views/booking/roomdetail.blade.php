@@ -86,7 +86,6 @@
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
                                                     @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
-                                                    if($schedule->status == 'ready' && $schedule->week == 'week 1')
                                                     <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
                                                         data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
                                                         data-time="{{ $schedule->time }}">
