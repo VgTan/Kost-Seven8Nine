@@ -19,8 +19,9 @@ class RoomController extends Controller
             $user = User::find(Auth::user()->id);
             if($user->status == 'admin') return redirect()->route('dashboard');   
         }
+        
         $room = Branch::all();
-        $event = Event::all();
+        $event = Event::orderBy('created_at', 'desc')->take(3)->get();
         $home = TRUE;
         return view('welcome', compact('room', 'event', 'home'));
     }
@@ -62,14 +63,7 @@ class RoomController extends Controller
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
         if($currentDate == 7) {
-            $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-            for($i = 0; $i < 7; $i++) {
-                $expired = Schedule::where('day', $days[$i])->get();
-                foreach ($expired as $ex) {
-                    $ex->update(['status' => 'ready']);
-                }
-            }
-            $dates = [
+            $dates1 = [
             $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
             $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
             $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
@@ -78,23 +72,80 @@ class RoomController extends Controller
             $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
             $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
             ];
+            $dates2 = [
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday+7 days")),
+                $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
+                $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
+                $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
+                $datenextfri = date('Y-m-d', strtotime("$datenextmon +4 days")),
+                $datenextsat = date('Y-m-d', strtotime("$datenextmon +5 days")),
+                $datenextsun = date('Y-m-d', strtotime("$datenextmon +6 days"))
+            ];
         } else {
-            $dates = [
-                $datemon = date('Y-m-d', strtotime("$currentDate -$daysToMonday2 days")),
+            $branchrooms = BranchRoom::all();
+            $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
+            '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
+            '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
+            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
+            '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
+            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
+            '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
+            '20.30 - 21.00'];
+            
+            $dates1 = [
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
                 $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
                 $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
-                $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+                $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
+            ];
+            $dates2 = [
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+                $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
+                $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
+                $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
+                $datenextfri = date('Y-m-d', strtotime("$datenextmon +4 days")),
+                $datenextsat = date('Y-m-d', strtotime("$datenextmon +5 days")),
+                $datenextsun = date('Y-m-d', strtotime("$datenextmon +6 days"))
             ];
         }
-        $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-        for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
-            foreach ($expired as $ex) {
-                $ex->update(['status' => 'expired']);
+        if(!Schedule::where('branchroom_id', $rooms->id)->where('date', 'like', '%' . $currentDate . '%')->first()) {
+            foreach ($branchrooms as $branchroom) {
+                foreach ($day as $index => $days) {
+                    foreach ($time as $times) {
+                        $schedule1 = new Schedule();
+                        $schedule1->branchroom_id = $branchroom->id;
+                        $schedule1->week = 'week 1';
+                        $schedule1->day = $days;
+                        $schedule1->date = $dates1[$index];
+                        $schedule1->time = $times;
+                        $schedule1->save();
+            
+                        $schedule2 = new Schedule();
+                        $schedule2->branchroom_id = $branchroom->id;
+                        $schedule2->week = 'week 2';
+                        $schedule2->day = $days;
+                        $schedule2->date = $dates2[$index];
+                        $schedule2->time = $times;
+                        $schedule2->save();
+                    }
+                }
+                $j = 0; // Reset $j for the next branchroom
             }
+        }
+
+        $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+
+        for($i = 0; $i < $daysToMonday2+1; $i++) {
+                $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
+                // dd($expired);
+                foreach ($expired as $ex) {
+                    $ex->update(['status' => 'expired']);
+                }
+            
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
         $tues = Schedule::where('branchroom_id', $rooms->id)->where('day', 'tues')->get();
@@ -104,7 +155,7 @@ class RoomController extends Controller
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
         // dd($schedule);
-        return view('booking.roomdetail', compact('room', 'rooms','loc','schedule', 'roomname', 'currentDateMD', 'branchloc', 'dates', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
+        return view('booking.roomdetail', compact('room', 'rooms','loc','schedule', 'roomname', 'currentDateMD', 'branchloc', 'dates1', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
     }
 
     public function findroom($room, Request $request) {

@@ -53,10 +53,10 @@
 
                         <p>You must not:</p>
                         <ul>
-                            <li>1. Republish material from Rhapsodie.co Music Space</li>
-                            <li>2. Sell, rent or sub-license material from Rhapsodie.co Music Space</li>
-                            <li>3. Reproduce, duplicate or copy material from Rhapsodie.co Music Space</li>
-                            <li>4. Redistribute content from Rhapsodie.co Music Space</li>
+                            <li>Republish material from Rhapsodie.co Music Space</li>
+                            <li>Sell, rent or sub-license material from Rhapsodie.co Music Space</li>
+                            <li>Reproduce, duplicate or copy material from Rhapsodie.co Music Space</li>
+                            <li>Redistribute content from Rhapsodie.co Music Space</li>
                         </ul>
                         <br>
                         <p>This Agreement shall begin on the date hereof.</p>
@@ -77,16 +77,16 @@
                         <p>You warrant and represent that:</p>
 
                         <ul>
-                            <li>1. You are entitled to post the Comments on our website and have all necessary licenses
+                            <li>You are entitled to post the Comments on our website and have all necessary licenses
                                 and
                                 consents to do so;</li>
-                            <li>2. The Comments do not invade any intellectual property right, including without
+                            <li>The Comments do not invade any intellectual property right, including without
                                 limitation
                                 copyright, patent or trademark of any third party;</li>
-                            <li>3. The Comments do not contain any defamatory, libelous, offensive, indecent or
+                            <li>The Comments do not contain any defamatory, libelous, offensive, indecent or
                                 otherwise
                                 unlawful material which is an invasion of privacy</li>
-                            <li>4. The Comments will not be used to solicit or promote business or custom or present
+                            <li>The Comments will not be used to solicit or promote business or custom or present
                                 commercial activities or unlawful activity.</li>
                         </ul>
                         <br>
@@ -98,12 +98,12 @@
                         <p>The following organizations may link to our Website without prior written approval:</p>
 
                         <ul>
-                            <li>1. Government agencies;</li>
-                            <li>2. Search engines;</li>
-                            <li>3. News organizations;</li>
-                            <li>4. Online directory distributors may link to our Website in the same manner as they
+                            <li>Government agencies;</li>
+                            <li>Search engines;</li>
+                            <li>News organizations;</li>
+                            <li>Online directory distributors may link to our Website in the same manner as they
                                 hyperlink to the Websites of other listed businesses; and</li>
-                            <li>5. System wide Accredited Businesses except soliciting non-profit organizations, charity
+                            <li>System wide Accredited Businesses except soliciting non-profit organizations, charity
                                 shopping malls, and charity fundraising groups which may not hyperlink to our Web site.
                             </li>
                         </ul>
@@ -117,13 +117,13 @@
                         </p>
 
                         <ul>
-                            <li>1. Commonly-known consumer and/or business information sources;</li>
-                            <li>2. dot.com community sites;</li>
-                            <li>3. Associations or other groups representing charities;</li>
-                            <li>4. Online directory distributors;</li>
-                            <li>5. Internet portals;</li>
-                            <li>6. Accounting, law and consulting firms; and</li>
-                            <li>7. Educational institutions and trade associations.</li>
+                            <li>Commonly-known consumer and/or business information sources;</li>
+                            <li>dot.com community sites;</li>
+                            <li>Associations or other groups representing charities;</li>
+                            <li>Online directory distributors;</li>
+                            <li>Internet portals;</li>
+                            <li>Accounting, law and consulting firms; and</li>
+                            <li>Educational institutions and trade associations.</li>
                         </ul>
                         <br>
                         <p>We will approve link requests from these organizations if we decide that: (a) the link would
@@ -146,9 +146,9 @@
                         <p>Approved organizations may hyperlink to our Website as follows:</p>
 
                         <ul>
-                            <li>1. By use of our corporate name; or</li>
-                            <li>2. By use of the uniform resource locator being linked to; or</li>
-                            <li>3. By use of any other description of our Website being linked to that makes sense
+                            <li>By use of our corporate name; or</li>
+                            <li>By use of the uniform resource locator being linked to; or</li>
+                            <li>By use of any other description of our Website being linked to that makes sense
                                 within
                                 the context and format of content on the linking party's site.</li>
                         </ul>
@@ -188,13 +188,13 @@
                             disclaimer will:</p>
 
                         <ul>
-                            <li>1. Limit or exclude our or your liability for death or personal injury;</li>
-                            <li>2. Limit or exclude our or your liability for fraud or fraudulent misrepresentation;
+                            <li>Limit or exclude our or your liability for death or personal injury;</li>
+                            <li>Limit or exclude our or your liability for fraud or fraudulent misrepresentation;
                             </li>
-                            <li>3. Limit any of our or your liabilities in any way that is not permitted under
+                            <li>Limit any of our or your liabilities in any way that is not permitted under
                                 applicable
                                 law; or</li>
-                            <li>4. Exclude any of our or your liabilities that may not be excluded under applicable law.
+                            <li>Exclude any of our or your liabilities that may not be excluded under applicable law.
                             </li>
                         </ul>
                         <br>

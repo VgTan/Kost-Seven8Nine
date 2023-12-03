@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 class BookController extends Controller
 {
     public function page($site, $room){
+        if(!Auth::check()) return redirect('/login');
+        $user = User::find(Auth::user()->id);
+
         $loc = Branch::where('site', $site)->first();
         // dd($loc);
 
@@ -34,7 +37,7 @@ class BookController extends Controller
 
         // Calculate the dates for the next 7 days (Monday to Sunday)
         if($currentDate == 7) {
-            $dates = [
+            $dates1 = [
             $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
             $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
             $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
@@ -43,25 +46,78 @@ class BookController extends Controller
             $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
             $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
             ];
+            $dates2 = [
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday+7 days")),
+                $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
+                $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
+                $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
+                $datenextfri = date('Y-m-d', strtotime("$datenextmon +4 days")),
+                $datenextsat = date('Y-m-d', strtotime("$datenextmon +5 days")),
+                $datenextsun = date('Y-m-d', strtotime("$datenextmon +6 days"))
+            ];
         } else {
-            $dates = [
+            $branchrooms = BranchRoom::all();
+            $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
+            '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
+            '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
+            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
+            '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
+            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
+            '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
+            '20.30 - 21.00'];
+            
+            $dates1 = [
                 $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
                 $datefri = date('Y-m-d', strtotime("$datemon +4 days")),
                 $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
-                $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
+                $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
+            $dates2 = [
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+                $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
+                $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
+                $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
+                $datenextfri = date('Y-m-d', strtotime("$datenextmon +4 days")),
+                $datenextsat = date('Y-m-d', strtotime("$datenextmon +5 days")),
+                $datenextsun = date('Y-m-d', strtotime("$datenextmon +6 days"))
+            ];
+        }
+        if(!Schedule::where('branchroom_id', $rooms->id)->where('date', 'like', '%' . $currentDate . '%')->first()) {
+            foreach ($branchrooms as $branchroom) {
+                foreach ($day as $index => $days) {
+                    foreach ($time as $times) {
+                        $schedule1 = new Schedule();
+                        $schedule1->branchroom_id = $branchroom->id;
+                        $schedule1->week = 'week 1';
+                        $schedule1->day = $days;
+                        $schedule1->date = $dates1[$index];
+                        $schedule1->time = $times;
+                        $schedule1->save();
+            
+                        $schedule2 = new Schedule();
+                        $schedule2->branchroom_id = $branchroom->id;
+                        $schedule2->week = 'week 2';
+                        $schedule2->day = $days;
+                        $schedule2->date = $dates2[$index];
+                        $schedule2->time = $times;
+                        $schedule2->save();
+                    }
+                }
+            }
         }
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
         for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->get();
-        // dd($expired);
+            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
+            // dd($expired);
             foreach ($expired as $ex) {
                 $ex->update(['status' => 'expired']);
             }
-        }
+        
+    }
 
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
@@ -72,41 +128,39 @@ class BookController extends Controller
         $fri = Schedule::where('branchroom_id', $rooms->id)->where('day', 'fri')->get();
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
-        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 
-        'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'dates'));
+        return view('booking.book', compact('rooms', 'loc', 'schedule', 'roomname', 'currentDateYM', 'branchloc', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun', 'user', 'datemon', 'datetues', 'datewed', 'datethur', 'datefri', 'datesat', 'datesun', 'datenextmon', 'datenexttues', 'datenextwed', 'datenextthur', 'datenextfri', 'datenextsat', 'datenextsun', 'dates1', 'dates2'));
     }
 
     public function book(Request $request) {
+        $token = count($request->time);
+        // dd($token);
         if(!Auth::check()) return redirect('/login');
-
         $currentDayNumber = date('N');
         $currentDate = date('d');
-        $book = new BookList();
         // dd($request);
         // $nau = BookList::where('branch', $request->branch_name)
         // ->where('room', $request->room)
         // ->where('date', $request->date)
         // ->where('time', $request->time)->first();
         // dd($nau);
+        // dd($request->all());
         $user = User::find(Auth::user()->id);
         $i = 0;
+        $j = 0;
         foreach($request->time as $times) {
             list($day, $date, $time) = explode(' ', $times, 3);
-            $isBooked[$i] = BookList::where('branch', $request->branch)
-            ->where('room', $request->room)
+            $isBooked = BookList::where('branch', $request->branchname)
+            ->where('room', $request->roomname)
             ->where('date', $date)
             ->where('time', $time)
             ->first();
             // dd($isBooked);
             // dd($request->all());
-            $i++;
-        };
-        foreach($isBooked as $isBooked) {
             if($isBooked) 
             {
-                $branch = Branch::where('name', $request->branch)->first();
+                $branch = Branch::where('name', $request->branchname)->first();
                 // dd($branch->all());
-                $room = Room::where('name', $request->room)->first();
+                $room = Room::where('name', $request->roomname)->first();
                 return redirect(url("{$branch->site}/{$room->id}/book"))
                 ->with('message', 'List Already Booked');
             }
@@ -115,7 +169,6 @@ class BookController extends Controller
                 // dd($date);
                 // $currentDay = date('l'); // Returns the full name of the current day (e.g., Monday)
                 // Get the current day number (1 for Monday, 2 for Tuesday, ..., 7 for Sunday)
-                $token = count($request->time);
                 // dd($token);
                 if($user->token < $token)
                 {
@@ -128,34 +181,40 @@ class BookController extends Controller
                             $user->save();
                             list($day, $date, $time) = explode(' ', $times, 3);
                             $book = new BookList();
-                            // $book->day = $request->day;
-                            $book->branch = $request->branch;
-                            $book->room = $request->room;
+                            $book->branch = $request->branchname;
+                            $book->room = $request->roomname;
                             $book->user_id = $user->id;
                             $book->name = $user->name;
                             $book->date = $date;
                             $book->time = $time;
                             $book->save();
                             
-                            $branchroom = BranchRoom::where('branch_name', $request->branch)
-                            ->where('room_type', $request->room)->first();
+                            $branchroom = BranchRoom::where('branch_name', $request->branchname)
+                            ->where('room_type', $request->roomname)->first();
                             // dd($request->room);
                             $schedule = Schedule::where('branchroom_id', $branchroom->id)
                             ->where('day', $day)
+                            ->where('date', $date)
                             ->where('time', $time)
                             ->first();
+                            // dd($schedule);
                             $schedule->status = "booked";
                             $schedule->save();
                         }
                         // $book->time = $request->input('time', []);
-                            $branchroom = BranchRoom::where('branch_name', $request->branch_name)
-                            ->where('room_type', $request->room);
-                            return back()->with('message', 'hahahaha');
+                            $branchroom = BranchRoom::where('branch_name', $request->branchname)
+                            ->where('room_type', $request->roomname);
+                            $branch = Branch::where('name', $request->branchname)->first();
+                            // dd($branch->all());
+                            $room = Room::where('name', $request->roomname)->first();
+                            return redirect(url("{$branch->site}/{$room->id}/book"))
+                            ->with('message', 'List Already Booked');
                         }
                 }
             }
         }
     }
+
 
     public function book_details(Request $request) {
         if(!Auth::check()) return redirect('/login');
@@ -178,7 +237,8 @@ class BookController extends Controller
                 ->where('room_type', $roomname)->first();
                 $roomimg = $room->img;
                 $time = $request->time;
-                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg'));
+                $token = count($request->time);
+                return view('booking.bookdetails', compact('branchname', 'roomname', 'time', 'roomimg', 'token'));
         }
     }
     public function token() {
@@ -206,7 +266,6 @@ class BookController extends Controller
             ->first();
 
             if(!$existingToken) {
-                
                     $token = new Token();
                     $token->user_id = $user->id;
                     $token->name = $user->name;
@@ -303,30 +362,7 @@ class BookController extends Controller
         $token->proof = $fileName;
         $token->status = 'Pending';        
         $token->save();
-        $user_token = $user->token;
-        switch($token->bundle) {
-            case 'basic1':
-                $user->token = $user_token + 1;
-            break;
-            case 'basic2':
-                $user->token = $user_token + 2;
-            break;
-            case 'basic3':
-                $user->token = $user_token + 6;
-            break;
-            case 'flexi1':
-                $user->token = $user_token + 4;
-            break;
-            case 'flexi2':
-                $user->token = $user_token + 20;
-            break;
-            case 'flexi3':
-                $user->token = $user_token + 40;
-            break;
-            case 'flexi4':
-                $user->token = $user_token + 100;
-            break;
-        }
+        
         $user->save();
         return redirect('/token');
     }

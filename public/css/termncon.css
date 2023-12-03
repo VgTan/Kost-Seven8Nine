@@ -26,7 +26,6 @@ body {
   width: 90%;
   height: 650px;
   background: white;
-  text-align: center;
 }
 
 .tc_main .title{
@@ -36,6 +35,7 @@ body {
   line-height: 32px;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center
 }
 
 .tc_main .tc_content .tc_bottom .title{
@@ -76,6 +76,7 @@ body {
 
 .tc_main .tc_content .tc_top .info{
   color: #838384;
+  text-align: center;
 }
 
 .tc_main .tc_content .tc_bottom .info p{
