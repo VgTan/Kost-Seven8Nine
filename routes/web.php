@@ -64,6 +64,7 @@ Route::controller(UserController::class)->group(function () {
     Route::get('/logout','logout')->name('logout');
     Route::post('/contactuss', 'contact')->name('contact');
 });
+});
 
 Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile','profile')->name('profile');
@@ -128,4 +129,4 @@ Route::post("/reset-password", [ForgotPasswordManager::class, "resetPasswordPost
     ->name("reset.password.post");
 // Route::get('/footer', function () {
 //     return view('footer');
-// });
+// })
