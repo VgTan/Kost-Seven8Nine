@@ -57,6 +57,11 @@
                         </p>
                     </div>
                     @if(!$paidToken)
+                    <div class="no-rek">
+                        <!-- <p>Rek. PT Lumi Musik Indonesia - Pusat</p> -->
+                        <p>No. Rek: <label>761-580-7486</label></p>
+                        <p>A/n PT Lumi Musik Indonesia</p>
+                    </div>
                     <div class="input_box">
                         <p class="proof-input">PAYMENT PROOF</p>
                         <input required id="images" class="file-input" type="file" name="img" accept=".jpg, .jpeg, .png"
@@ -75,7 +80,7 @@
             </div>
         </div>
     </form>
-    
+
 </body>
 
 </html>

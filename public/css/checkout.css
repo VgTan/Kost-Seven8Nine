@@ -16,7 +16,7 @@ body {
 
 .trans-container {
     background-color: white;
-    width: 40%;
+    width: 45%;
     text-align: center;
     border: 1px solid #bfbfc0;
     border-radius: 12px;
@@ -188,4 +188,22 @@ p.token  {
     border-radius: 8px;
     margin-bottom: 25px;
     font-weight: normal;
+}
+
+.no-rek {
+    display: flex;
+    justify-content: space-between;
+    text-align: start;
+    font-size: 0.7rem;
+    margin: 6px 0 0;
+}
+
+.no-rek p {
+    margin: 0;
+    font-weight: normal;
+}
+
+.no-rek label {
+    font-weight: bold;
+    font-size: 0.9rem;
 }
