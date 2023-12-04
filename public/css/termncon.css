@@ -3,33 +3,28 @@ body {
     padding: 0;
 }
 
-.policy-main {
-  margin: 50px;
-}
-
 .info h3{
-  line-height: 40px;
-  font-size: 15px;
-  color: #394168;;
+    line-height: 40px;
+    font-size: 15px;
+    color: #E6AD76;
 }
 
 .flex_center{
-    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 100px;
 }
 
 .tc_main{
-  margin: 20px 0;
   width: 90%;
   height: 650px;
   background: white;
 }
 
 .tc_main .title{
-  color: #394168;
+  color: #E6AD76;
   margin-bottom: 5px;
   font-size: 24px;
   line-height: 32px;
@@ -58,24 +53,24 @@ body {
 }
 
 .tc_main .tc_content .tc_top{
-  margin: 0 35px 35px;
+    margin: 0 35px 35px;
 }
 
 .tc_main .tc_content .tc_bottom{
-  padding: 0 35px;
-  overflow: auto;
-  height: 355px;
+    padding: 0 35px;
+    overflow: auto;
+    height: 355px;
 }
 
 .tc_main .tc_content .tc_top .icon{
   font-size: 42px;
   text-align: center;
   margin-bottom: 10px;
-  color: #394168;
+  color: #E6AD76;
 }
 
 .tc_main .tc_content .tc_top .info{
-  color: #838384;
+  color: #67748E;
   text-align: center;
 }
 
@@ -94,21 +89,22 @@ body {
 }
 
 .tc_btns button.accept{
-  background: #394168;
+  background: #E6AD76;
   color: white;
 }
 
 .tc_btns button.decline{
-  border: 1px solid #394168;
+  border: 1px solid #E6AD76;
   background: transparent;
-  color: #394168;
+  color: #E6AD76;
 }
 
 .tc_btns button.decline:hover{
-  background: #394168;
+  background: #268AC9;
   color: white;
+  border: transparent;
 }
 
 .tc_btns button.accept:hover{
-  background: #5363b0;
+  background: #268AC9;
 }

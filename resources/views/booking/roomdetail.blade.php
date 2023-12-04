@@ -18,6 +18,7 @@
 
 <body>
     @include('header')
+    
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
             <div class="roomdetail-header1">

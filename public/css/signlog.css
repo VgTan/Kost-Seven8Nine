@@ -29,7 +29,6 @@ body {
 .login-wrapper {
     max-width: 100%;
     max-height: 100vh;
-    padding-top: 60px;
 }
 
 .login-wrapper label {

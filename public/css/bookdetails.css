@@ -2,16 +2,14 @@
 
 
 body {
-background: #DFC2F2;
+	background: #DFC2F2;
 	background-image: linear-gradient( to right, #fff,#fff);
 	background-attachment: fixed;
 	background-size: cover;
 	
-	
+}
 
-	}
-
-#container{
+.container{
 	box-shadow: 0 15px 30px 1px grey;
 	background: rgba(255, 255, 255, 0.90);
 	text-align: center;
@@ -22,11 +20,8 @@ background: #DFC2F2;
 	max-width: 700px;	
 }
 
-
-
 .product-details {
-    
-	position: relative;
+    position: relative;
 	text-align: left;
 	overflow: hidden;
 	padding: 30px;
@@ -36,7 +31,7 @@ background: #DFC2F2;
 
 }
 
-#container .product-details h1{
+.container .product-details h1{
 	font-family: 'Bebas Neue', cursive;
 	display: inline-block;
 	position: relative;
@@ -46,7 +41,7 @@ background: #DFC2F2;
 	
 }
 
-#container .product-details h1:before{
+.container .product-details h1:before{
 	position: absolute;
 	content: '';
 	right: 0%; 
@@ -118,8 +113,8 @@ background: #DFC2F2;
 	color: #3498db;
 }
 
-#container .product-details > p {
-font-family: 'EB Garamond', serif;
+.container .product-details > p {
+	font-family: 'EB Garamond', serif;
 	text-align: left;
 	font-size: 18px;
 	color: #3498db;
@@ -137,8 +132,8 @@ font-family: 'EB Garamond', serif;
 	left: 22.8%;
 	
 }
-.btn {
 
+.btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
 	background:  #809fff;
@@ -154,8 +149,10 @@ font-family: 'EB Garamond', serif;
 	margin-top: 20px;
 }
 
-.btn:hover{transform: translateY(-6px);
-	background: #1a66ff;}
+.btn:hover{
+	transform: translateY(-6px);
+	background: #1a66ff;
+}
 
 .btn span {
 	font-family: 'Farsan', cursive;
@@ -181,16 +178,21 @@ font-family: 'EB Garamond', serif;
     position: absolute;
 	background: #333;
 	z-index: 1;
-  left: 0;
-  top: 0;
+	left: 0;
+	top: 0;
 }
 
-.btn .buy {z-index: 3; font-weight: bolder;}
+.btn .buy {
+	z-index: 3; font-weight: bolder;
+}
 
-.btn:hover .price {transform: translateX(-110%);}
+.btn:hover .price {
+	transform: translateX(-110%);
+}
 
-.btn:hover .shopping-cart {transform: translateX(0%);}
-
+.btn:hover .shopping-cart {
+	transform: translateX(0%);
+}
 
 
 .product-image {
@@ -208,7 +210,7 @@ font-family: 'EB Garamond', serif;
     scale: 1.05;
 }
 
-#container img {max-width: 355px; max-height: 530px;}
+.container img {max-width: 355px; max-height: 530px;}
 
 .info {
     background: rgba(27, 26, 26, 0.9);
@@ -242,7 +244,7 @@ font-family: 'EB Garamond', serif;
         background-image: linear-gradient( to bottom,#fff,#fff);
     }
 
-    #container {
+    .container {
         width: fit-content;
         margin: 5em auto;
         height: auto;
