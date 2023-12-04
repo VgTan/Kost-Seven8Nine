@@ -19,7 +19,7 @@
   display: flex;
   flex-direction: column;
   width: 60%;
-  padding-top: 70px;
+  padding-top: 120px;
 }
 
 .book-margin-container .currentdate {
@@ -62,6 +62,11 @@ p {
   line-height: 35px;
 }
 
+.userinfo-token h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
 .userinfo-howto {
   margin-top: 20px;
   padding: 50px;
@@ -69,6 +74,11 @@ p {
 
 .userinfo-howto h2 {
   margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.userinfo-howto h3 {
+  font-size: 20px;
 }
 
 .book-title {
@@ -106,7 +116,7 @@ p {
 }
 
 .day-schedule {
-  background-color: #f3efefa1;
+  background-color: white;
   padding: 10px 0 0 10px;
 }
 
@@ -121,7 +131,6 @@ p {
   font-size: 0.8rem;
   margin-bottom: 0;
   white-space: nowrap;
-  /* Prevent day names from breaking to the next line */
   min-width: 80px;
 }
 
@@ -161,8 +170,7 @@ p {
 .checkbox-wrapper-16 *:after,
 .checkbox-wrapper-16 *:before {
   box-sizing: border-box;
-  font-size: 15px;
-  /* margin-bottom: 5px; */
+  font-size: 13px;
   font-weight: bold;
   border-radius: 8px;
 }
@@ -253,6 +261,9 @@ p {
 .checkbox-wrapper-disabled *:after,
 .checkbox-wrapper-disabled *:before {
   box-sizing: border-box;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .checkbox-wrapper-disabled .checkbox-input {
@@ -306,6 +317,9 @@ p {
 .checkbox-wrapper-expired *:after,
 .checkbox-wrapper-expired *:before {
   box-sizing: border-box;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
 }
 
 .checkbox-wrapper-expired .checkbox-input {
