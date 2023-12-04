@@ -89,16 +89,16 @@ header {
     align-items: center;
 }
 
-.nav-link {
+.nav-link-header {
     position: relative;
     color: rgb(0, 0, 0);
 }
 
-.nav-link i {
+.nav-link-header i {
     margin-left: 5px;
 }
 
-.nav-link>a {
+.nav-link-header>a {
     line-height: 3rem;
     color: #000000;
     padding: 0 .8rem;
@@ -110,11 +110,11 @@ header {
     transition: .5s;
 }
 
-.nav-link>a>i {
+.nav-link-header>a>i {
     margin-left: .2rem;
 }
 
-.nav-link:hover>a {
+.nav-link-header:hover>a {
     transform: scale(1.1);
     color: rgb(66, 98, 156);
 }
@@ -298,7 +298,7 @@ input {
         transform: translateX(0);
     }
 
-    #check:checked~.nav-btn .nav-link,
+    #check:checked~.nav-btn .nav-link-header,
     #check:checked~.nav-btn .log-sign {
         animation: animation .5s ease forwards var(--i);
     }
@@ -312,26 +312,26 @@ input {
         flex-direction: column;
     }
 
-    .nav-link {
+    .nav-link-header {
         width: 100%;
         opacity: 0;
         transform: translateY(15px);
         overflow: hidden;
     }
 
-    .nav-link>a {
+    .nav-link-header>a {
         line-height: 1;
         padding: 1.6rem 2rem;
     }
 
-    .nav-link:hover>a {
+    .nav-link-header:hover>a {
         transform: scale(1);
         background-color: #268ac9bd;
         border-radius: 10px;
         color: rgb(0, 0, 0);
     }
 
-    .nav-link>#dropdownfind {
+    .nav-link-header>#dropdownfind {
         line-height: 1;
         padding: 1.6rem 2rem;
     }
@@ -350,12 +350,12 @@ input {
         display: none;
     }
 
-    .nav-link:hover>.dropdown,
+    .nav-link-header:hover>.dropdown,
     .dropdown-link:hover>.dropdown {
         display: block;
     }
 
-    .nav-link:hover>a>i,
+    .nav-link-header:hover>a>i,
     .dropdown-link:hover>a>i {
         transform: rotate(360deg);
     }
@@ -388,7 +388,7 @@ input {
         transition: .5s;
     }
 
-    .nav-link:hover .arrow {
+    .nav-link-header:hover .arrow {
         background-color: #268AC9;
     }
 
@@ -404,7 +404,7 @@ input {
         background-color: #268AC9;
     }
 
-    .nav-link>a>i {
+    .nav-link-header>a>i {
         font-size: 1.1rem;
         transform: rotate(-90deg);
         transition: .7s;

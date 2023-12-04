@@ -25,7 +25,7 @@
                     again if you have enough tokens </p>
             </div>
             <div class="currentdate">
-                <p class="timezone"> <i class="fa fa-globe" aria-hidden="true"></i> Indonesia(WIB) </p>
+                <p class="timezone"> <i class="fa fa-globe" aria-hidden="true"></i> Indonesia (WIB) </p>
                 <p> {{ $currentDateYM }} </p>
                 <p> <i class="fa fa-calendar-check-o" aria-hidden="true"> </i> Current Date </p>
             </div>

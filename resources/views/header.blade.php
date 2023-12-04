@@ -24,13 +24,13 @@
             <div class="nav-btn">
                 <div class="nav-links">
                     <ul>
-                        <li class="nav-link" style="--i: .6s">
+                        <li class="nav-link nav-link-header" style="--i: .6s">
                             <a href="/">Home</a>
                         </li>
-                        <li class="nav-link" style="--i: .6s">
+                        <li class="nav-link nav-link-header" style="--i: .6s">
                             <a href="/aboutus">About Us</a>
                         </li>
-                        <li class="nav-link" style="--i: 1.35s">
+                        <li class="nav-link nav-link-header" style="--i: 1.35s">
                             <a href="/contactus">Contact Us</a>
                         </li>
                     </ul>
