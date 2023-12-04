@@ -30,7 +30,7 @@ class BranchSeeder extends Seeder
             'site' => 'aeon',
             'img' => 'aeon.jpg',
             'img1' => 'aeon1.jpg',
-            'branch_desc' => 'Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves in the world of melody.',
+            'branch_desc' => 'Step into the vibrant music scene at Aeon Mall Jakarta Garden City, where musicians can dive deep into the world of melody.',
             'branch_equipment' => 'Grand Piano, Keyboard, Guitar, Violin',
             'location_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6901814285425!2d106.94965347461759!3d-6.172220460483689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698b02782a13cb%3A0x2c473319d7d1eef6!2sAEON%20MALL%20JGC%20-%20Jakarta%20Garden%20City!5e0!3m2!1sen!2sid!4v1700755537618!5m2!1sen!2sid'
         ]);
@@ -41,7 +41,7 @@ class BranchSeeder extends Seeder
             'site' => 'maxxbox',
             'img' => 'lippo.jpg',
             'img1' => 'lippo1.jpg',
-            'branch_desc' => 'Visit the music space at Mall Bassura, where aspiring musicians can immerse themselves in the world of melody.',
+            'branch_desc' => 'Embark on a musical journey at MaxxBox Lippo Village, where the air is filled with the contagious energy of aspiring musicians.',
             'branch_equipment' => 'Grand Piano, Keyboard, Guitar, Violin, Drum Kit',
             'location_map' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2628994588977!2d106.60169437630088!3d-6.229029744885006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fc1f463d2da7%3A0x50e69f92e6270e23!2sMaxxBox%20Lippo%20Village!5e0!3m2!1sen!2sid!4v1700755682413!5m2!1sen!2sid'
         ]);

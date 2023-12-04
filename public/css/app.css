@@ -24,7 +24,7 @@ a {
 }
 
 .carousel-inner {
-    height: 70vh;
+    height: 100vh;
     transition-duration: 200;
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ a {
     text-align: center;
     flex-flow: column;
     position: absolute;
-    top: 25vh;
+    top: 45vh;
     width: 100%;
 }
 

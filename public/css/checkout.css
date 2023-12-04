@@ -87,7 +87,7 @@ body {
 }
 
 .trans-detail {
-    padding: 20px 0 20px 0;
+    padding: 20px 0 0px 0;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -194,7 +194,7 @@ p.token  {
     display: flex;
     justify-content: space-between;
     text-align: start;
-    font-size: 0.7rem;
+    font-size: 1rem;
     margin: 6px 0 0;
 }
 
@@ -205,5 +205,5 @@ p.token  {
 
 .no-rek label {
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
 }

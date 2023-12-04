@@ -138,11 +138,12 @@
                 @if(!$booklist->isEmpty())
                 @foreach($booklist->unique('date') as $datedetail)
                 <div class="schedule-date">
-                    <h6>{{ $datedetail->date }}</h6>
                     @foreach($booklist->where('date', $datedetail->date)->unique('branch') as $book)
                     <div class="course">
                         <div class="course-preview">
+                            <h6>BOOKING SCHEDULE</h6>
                             <h2>{{ $book->branch }}</h2>
+                            <h6>BOOK ON: {{ $datedetail->date }}</h6>
                         </div>
                         <div class="course-info">
                             <div class="progress-container">
@@ -154,7 +155,6 @@
                             @foreach($booklist->where('date', $datedetail->date)->where('branch',
                             $book->branch)->where('user_id', $user->id)->where('room', $detail->room) as $room)
                             <h2>{{ $room->time }}</h2>
-                            <button class="btn">Continue</button>
                             @endforeach
                             @endforeach
                         </div>
