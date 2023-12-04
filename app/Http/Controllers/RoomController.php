@@ -179,6 +179,11 @@ class RoomController extends Controller
                 ->where('status', 'ready')
                 ->where('date', '<=', $currentDate)
                 ->get();
+            foreach($expired as $ex) {
+                $ex->status = 'expired';
+                $ex->save();
+                // dd($ex);
+            }
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
         // dd($mon);
