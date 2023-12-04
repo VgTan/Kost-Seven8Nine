@@ -28,13 +28,13 @@
 
             <form action="{{ route('buytoken') }}" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="radio" name="bundle" value="basic1" id="basic-1" class="radio-token">
-                <input type="radio" name="bundle" value="basic2" id="basic-2" class="radio-token">
-                <input type="radio" name="bundle" value="basic3" id="basic-3" class="radio-token">
-                <input type="radio" name="bundle" value="flexi1" id="flexi-1" class="radio-token">
-                <input type="radio" name="bundle" value="flexi2" id="flexi-2" class="radio-token">
-                <input type="radio" name="bundle" value="flexi3" id="flexi-3" class="radio-token">
-                <input type="radio" name="bundle" value="flexi4" id="flexi-4" class="radio-token">
+                <input type="radio" required name="bundle" value="basic1" id="basic-1" class="radio-token">
+                <input type="radio" required name="bundle" value="basic2" id="basic-2" class="radio-token">
+                <input type="radio" required name="bundle" value="basic3" id="basic-3" class="radio-token">
+                <input type="radio" required name="bundle" value="flexi1" id="flexi-1" class="radio-token">
+                <input type="radio" required name="bundle" value="flexi2" id="flexi-2" class="radio-token">
+                <input type="radio" required name="bundle" value="flexi3" id="flexi-3" class="radio-token">
+                <input type="radio" required name="bundle" value="flexi4" id="flexi-4" class="radio-token">
 
                 <div class="category">
                     <label for="basic-1" class="basic1token">

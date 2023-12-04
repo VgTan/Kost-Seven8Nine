@@ -143,6 +143,11 @@ class BookController extends Controller
                 ->where('status', 'ready')
                 ->where('date', '<=', $currentDate)
                 ->get();
+            foreach($expired as $ex) {
+                $ex->status = 'expired';
+                $ex->save();
+                // dd($ex);
+            }
         }
 
         // dd($rooms);
@@ -394,10 +399,10 @@ class BookController extends Controller
         $user->save();
         
         Mail::send(['text' => 'mail'], ['token' => $token], function ($msg) use ($user, $token) {
-            $msg->to($user->email, 'Pacar')->subject('Booking Confirmation - Payment Proof Attached');
+            $msg->to($user->email)->subject('Booking Confirmation - Payment Proof Attached');
             $msg->attach(public_path('/images/proof/' . $token->proof));
             // $msg->action('')
-            $msg->from('Pacarmu.yang.paling.ganteng@gmail.com', 'Ganteng banget');
+            $msg->from('no.reply@gmail.com');
         });
 
         return redirect('/token');
