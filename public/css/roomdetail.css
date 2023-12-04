@@ -29,6 +29,7 @@
     color: white;
     top: 35%;
     left: 8%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .container-abs {
@@ -74,9 +75,9 @@
 
 .roomdetail-textinfo h1{
     color: #013F6B;
-    font-family:'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
     margin-bottom: 15px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .roomdetail-textinfo h2{
@@ -89,13 +90,15 @@
 .roomdetail-textinfo h3{
     font-size: 1.2rem;
     margin-top: 20px;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Istok Web', sans-serif;
+    color: #67748E;
 }
 
 .roomdetail-textinfo h4{
     font-size: 1rem;
     margin-top: 20px;
     color: #013F6B;
+    font-family: 'Poppins', sans-serif;
 }
 
 .roomdetail-textinfo hr{
@@ -142,6 +145,7 @@
     margin-top: 40px;
     color: #013F6B;
     margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .box {
@@ -157,17 +161,19 @@
 }
 
 .box h1, .box h2, .box a {
-    margin: 10px 0; 
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
 }
 
 .box h1 {
-    font-family: 'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 25px;
     margin-bottom: 0;
 }
 
 .box h2 {
-    font-family: 'Abril Fatface', serif;
+    font-family: 'Poppins', sans-serif;
     color: #E6AD76;
     text-align: center;
 }
@@ -185,6 +191,7 @@
     width: 150px;
     align-self: center; 
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .box a:hover {
@@ -205,6 +212,7 @@
     margin-top: 20px;
     color: #013F6B;
     margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .roomdetail-infolocation iframe{
@@ -225,6 +233,7 @@
 .info-item p {
     margin: 0; 
     margin-right: 20px;
+    font-family: 'Istok Web', sans-serif;
 }
 
 .button-back {
@@ -242,6 +251,7 @@
     cursor: pointer;
     text-align: center;
     width: 15%;
+    font-family: 'Poppins', sans-serif;
 }
 
 .button-back a:hover{
@@ -292,6 +302,7 @@
     color: white;
     text-align: center;
     margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .time-slots {
@@ -304,6 +315,7 @@
     padding: 10px;
     height: 100%;
     background-color: white;
+    font-family: 'Poppins', sans-serif;
 }
 
 .time-slots .time-slot:nth-child(2n) {
@@ -359,6 +371,7 @@
     margin-top: 40px;
     color: #013F6B;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .tab-pane {

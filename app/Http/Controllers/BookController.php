@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Branch;
 use App\Models\Room;
 use App\Models\Schedule;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -68,7 +69,7 @@ class BookController extends Controller
             '20.30 - 21.00'];
             
             $dates1 = [
-                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
+                $datemon = date('Y-m-d', strtotime("$currentDate + $daysToMonday days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
@@ -76,8 +77,8 @@ class BookController extends Controller
                 $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
                 $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
-            $dates2 = [
-                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+            $dates2 = [  
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday2 days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
                 $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
@@ -90,34 +91,61 @@ class BookController extends Controller
             foreach ($branchrooms as $branchroom) {
                 foreach ($day as $index => $days) {
                     foreach ($time as $times) {
-                        $schedule1 = new Schedule();
-                        $schedule1->branchroom_id = $branchroom->id;
-                        $schedule1->week = 'week 1';
-                        $schedule1->day = $days;
-                        $schedule1->date = $dates1[$index];
-                        $schedule1->time = $times;
-                        $schedule1->save();
+                        $existingScheduleWeek1 = Schedule::where('branchroom_id', $branchroom->id)
+                            ->where('week', 'week 1')
+                            ->where('day', $days)
+                            ->where('time', $times)
+                            ->first();
             
-                        $schedule2 = new Schedule();
-                        $schedule2->branchroom_id = $branchroom->id;
-                        $schedule2->week = 'week 2';
-                        $schedule2->day = $days;
-                        $schedule2->date = $dates2[$index];
-                        $schedule2->time = $times;
-                        $schedule2->save();
+                        $existingScheduleWeek2 = Schedule::where('branchroom_id', $branchroom->id)
+                            ->where('week', 'week 2')
+                            ->where('day', $days)
+                            ->where('time', $times)
+                            ->first();
+            
+                        if ($existingScheduleWeek1) {
+                            $existingScheduleWeek1->update([
+                                'day' => $days,
+                                'date' => $dates1[$index],
+                            ]);
+                        } else {
+                            $schedule1 = new Schedule();
+                            $schedule1->branchroom_id = $branchroom->id;
+                            $schedule1->week = 'week 1';
+                            $schedule1->day = $days;
+                            $schedule1->date = $dates1[$index];
+                            $schedule1->time = $times;
+                            $schedule1->save();
+                        }
+            
+                        if ($existingScheduleWeek2) {
+                            $existingScheduleWeek2->update([
+                                'day' => $days,
+                                'date' => $dates2[$index],
+                            ]);
+                        } else {
+                            $schedule2 = new Schedule();
+                            $schedule2->branchroom_id = $branchroom->id;
+                            $schedule2->week = 'week 2';
+                            $schedule2->day = $days;
+                            $schedule2->date = $dates2[$index];
+                            $schedule2->time = $times;
+                            $schedule2->save();
+                        }
                     }
                 }
             }
         }
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-        for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
-            // dd($expired);
-            foreach ($expired as $ex) {
-                $ex->update(['status' => 'expired']);
-            }
-        
-    }
+        $daysCount = count($days);
+
+        for ($i = 0; $i < $daysToMonday2 + 1; $i++) {
+            $dayIndex = $i % $daysCount;
+            $expired = Schedule::where('day', $days[$dayIndex])
+                ->where('status', 'ready')
+                ->where('date', '<=', $currentDate)
+                ->get();
+        }
 
         // dd($rooms);
         $schedule = Schedule::where('branchroom_id', $rooms->id)->get();
@@ -137,7 +165,7 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $currentDayNumber = date('N');
         $currentDate = date('d');
-        // dd($request);
+        // dd($request->all());
         // $nau = BookList::where('branch', $request->branch_name)
         // ->where('room', $request->room)
         // ->where('date', $request->date)
@@ -220,6 +248,8 @@ class BookController extends Controller
         if(!Auth::check()) return redirect('/login');
         $book = new BookList();
         $user = User::find(Auth::user()->id);
+        // dd($request->all());
+
         if(BookList::where('branch', $request->branch_name)
         ->where('room', $request->room)
         ->where('date', $request->date)
@@ -358,12 +388,20 @@ class BookController extends Controller
         $fileName = $file->getClientOriginalName();
         $file->move('images/proof/', $fileName);
         // dd($fileName);        
-    
+        
         $token->proof = $fileName;
         $token->status = 'Pending';        
         $token->save();
         
         $user->save();
+        
+        Mail::send(['text' => 'mail'], ['token' => $token], function ($msg) use ($user, $token) {
+            $msg->to($user->email, 'Pacar')->subject('Booking Confirmation - Payment Proof Attached');
+            $msg->attach(public_path('/images/proof/' . $token->proof));
+            // $msg->action('')
+            $msg->from('Pacarmu.yang.paling.ganteng@gmail.com', 'Ganteng banget');
+        });
+
         return redirect('/token');
     }
 }

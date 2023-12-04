@@ -39,32 +39,38 @@
                             <div class="input-group">
                                 <label for="">Name</label>
                                 @if(isset($user))
-                                <input type="text" placeholder="{{ $user->name }}" name="name" disabled>
+                                <input type="text" placeholder="{{ $user->name }}" name="name" class="contact-input"
+                                    disabled>
                                 <input type="text" placeholder="{{ $user->name }}" name="name" value="{{ $user->name }}"
-                                    hidden>
+                                    class="contact-input" hidden>
                                 @else
-                                <input type="text" required placeholder="Enter your full name" name="name">
+                                <input type="text" required placeholder="Enter your full name" name="name"
+                                    class="contact-input">
                                 @endif
                             </div>
                             <div class="input-group">
                                 <label for="">Phone</label>
-                                <input type="number" required placeholder="Enter your phone number" name="phone">
+                                <input type="number" required placeholder="Enter your phone number" name="phone"
+                                    class="contact-input">
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
                                 <label for="">Email</label>
                                 @if(isset($user))
-                                <input type="email" placeholder="{{ $user->email }}" name="email" disabled>
-                                <input type="email" placeholder="{{ $user->email }}" name="email"
+                                <input type="email" placeholder="{{ $user->email }}" name="email" class="contact-input"
+                                    disabled>
+                                <input type="email" placeholder="{{ $user->email }}" name="email" class="contact-input"
                                     value="{{ $user->email }}" hidden>
                                 @else
-                                <input type="email" required placeholder="Enter your email" name="email">
+                                <input type="email" required placeholder="Enter your email" name="email"
+                                    class="contact-input">
                                 @endif
                             </div>
                             <div class="input-group">
                                 <label for="">Subject</label>
-                                <input type="text" required placeholder="Enter your subject" name="subject">
+                                <input type="text" required placeholder="Enter your subject" name="subject"
+                                    class="contact-input">
                             </div>
                         </div>
 

@@ -15,8 +15,10 @@
 
 <body>
     @include('header')
-
     <div class="token-container">
+        @if(Session::has('booked'))
+        <div class="alert alert-success w-full">{{Session::get('booked')}}</div>
+        @endif
         <div class="wrapper">
 
             <h2>Token Payment</h2>
@@ -115,7 +117,7 @@
                 <div class="input_group">
                     <div class="input_box">
                         <!-- <p class="proof-input">Input Your Payment Proof</p> -->
-                        
+
                         <button type="submit">NEXT</button>
                     </div>
                 </div>

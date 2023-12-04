@@ -14,7 +14,7 @@
     <form action="{{ route('booking') }}" method="post">
         @csrf
 
-        <div id="container">
+        <div id="container" class="container-bookdetails">
 
             <div class="product-details">
 

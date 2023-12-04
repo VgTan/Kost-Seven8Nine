@@ -64,7 +64,6 @@
                                             <h5> Week of {{ $currentDateMD }}</h5>
                                         </div>
                                         <div class="schedule">
-
                                             <div class="left-column day-schedule">
                                                 <p class="day-name">Time</p>
                                                 @foreach($mon as $schedule)
@@ -86,13 +85,13 @@
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
                                                     @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
-                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
+                                                    <div class="time-slot read disabled" data-day="{{ $day }}"
+                                                        data-date="{{ $dates1[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
                                                     @elseif($schedule->status == 'expired' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
-                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
+                                                    <div class="time-slot read expired" data-day="{{ $day }}"
+                                                        data-date="{{ $dates1[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
                                                     @endif

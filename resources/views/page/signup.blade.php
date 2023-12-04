@@ -31,7 +31,8 @@
                         @if(Session::has('success'))
                         <div class="alert alert-success w-full">{{Session::get('success')}}</div>
                         @endif
-                        <form action="{{ route('signup') }}" method="get">
+                        <form action="{{ route('signup') }}" method="post">
+                            @csrf
                             <div class="form-group">
                                 <label for="name">Full Name</label>
                                 <input type="text" name="name" id="name" class="form-control"
