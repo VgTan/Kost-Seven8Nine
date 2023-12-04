@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Auth;
 
 class RoomController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'verified']);
+    }
     public function home() {
         if(Auth::check()){
             $user = User::find(Auth::user()->id);

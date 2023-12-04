@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordManager;
 /*
@@ -130,3 +131,5 @@ Route::post("/reset-password", [ForgotPasswordManager::class, "resetPasswordPost
 // Route::get('/footer', function () {
 //     return view('footer');
 // })
+
+Auth::routes(['verify'=>true]);
