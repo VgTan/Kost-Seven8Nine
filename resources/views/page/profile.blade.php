@@ -12,7 +12,7 @@
 
 <body>
     @include('header')
-    <div class="container">
+    <div class="container container-profiles">
 
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">

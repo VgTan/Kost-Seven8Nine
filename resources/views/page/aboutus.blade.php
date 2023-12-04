@@ -11,16 +11,19 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
 
-    <link rel="stylesheet" href="./css/aboutus.css">
+    <link rel="stylesheet" href="/css/aboutus.css">
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
     </script>
 
 </head>
@@ -37,17 +40,17 @@
             <a href="/signup" class="btn btn-light" style="font-weight: bold;">Create Account</a>
             @endguest
         </div>
-        </div>
 
-        <div class="company-profile-title">
-            <h1 style="color:#268AC9">Company</h1>
-            <h1 style="color:#E6AD76; margin-left:10px">Profile</h1>
-        </div>
-        <div class="comprof">
-            <div class="teks">
+        <div class="company-profile">
+            <div class="comprof">
+                <div class="titleprofile">
+                    <h1 style="color:#268AC9">Company</h1>
+                    <h1 style="color:#E6AD76; margin-left:10px">Profile</h1>
+                </div>
                 <h3>Rhapsodie.co Music Space is a brand new concept in Indonesian music industry. It is a place where
                     everyone can learn music in public area
-                    (in this occasion is Mall) and turns music activity inclusively to everyone. This activity is a pushing
+                    (in this occasion is Mall) and turns music activity inclusively to everyone. This activity is a
+                    pushing
                     forward to develop children's growth
                     with music by providing a place to learn individually or with professional. </h3>
                 <h3>Rhapsodie.co Music Space is open for individual and professional rent.
@@ -56,18 +59,18 @@
                     This can be rent with hourly rent system and offer special prices for professionals to have classes.
                 </h3>
                 <h3>Rhapsodie.co Music Space helps the venue to get more
-                    traffic of daily visitors because it's placed in Mall as the quarter of hangout activities for family
+                    traffic of daily visitors because it's placed in Mall as the quarter of hangout activities for
+                    family
                     and kids market.</h3>
             </div>
             <img src="images/aboutus/learnmusic.jpg" />
         </div>
-        
 
-        <section class="service what-bg">
+        <div class="service what-bg">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="about-info sec-padd text-center mb-3">
+                        <div class="about-info sec-padd text-center mb-5">
                             <div class="section-title">
                                 <h2>Finding the Best Music Teachers & Schools For You</h2>
                             </div>
@@ -80,7 +83,7 @@
                             </div>
                             <div class="we-desc">
                                 <h4 class="we-title">Realtime Schedule</h4>
-                                <P>Kemudahan dalam memilih jadwal pengajaran musik sesuai yang diinginkan.</p>
+                                <P>Ease of choosing a book schedule according to your wishes.</p>
                             </div>
                         </div>
                     </div>
@@ -91,9 +94,8 @@
                             </div>
                             <div class="we-desc">
                                 <h4 class="we-title">
-                                    Verified Music Professionals</h4>
-                                <P>Menghubungkan Anda dengan Music Professionals yang ahli dan terverifikasi dalam
-                                    bidangnya.</p>
+                                    Various Instruments</h4>
+                                <P>Offer a diverse array of musical genres to cater to a wide range of preferences.</p>
                             </div>
                         </div>
                     </div>
@@ -125,14 +127,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
 
-        <div class="fun-facts">
-            <div class="container">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-md-12">
-                        <div class="vc_custom_heading no_stripe text-center  d-md-block counter-head
         <div class="fun-facts">
             <div class="container">
                 <div class="row d-flex justify-content-center">
@@ -192,10 +189,9 @@
                         <img src="/images/aboutus/aboutus2.jpeg" class="img-fluid scale">
                     </div>
 
-                    <div class="d-flex flex-column" id="galery3">
-                        <img src="/images/aboutus/about6.jpeg" class="img-fluid">
-
-                        <img src="/images/aboutus/aboutus4.jpg" class="img-fluid scale">
+                    <div class="d-flex flex-column">
+                        <img src="/images/aboutus/about6.jpeg" class="img-fluid scale mb-3">
+                        <img src="/images/aboutus/aboutus4.jpg" class="img-fluid">
                     </div>
                 </div>
             </div>
