@@ -705,6 +705,20 @@ a {
         align-items: center;
         padding: 50px 20px;
     }
+    .card.shadow {
+        width: 31%;
+        height: 650px;
+    }
+    .card.active {
+        width: 31%;
+        height: 620px;
+    }
+    .pack {
+        font-size: 27px;
+    }
+    .price-ul li.price {
+        font-size: 2.2rem;
+    }
 
 }
 
@@ -733,6 +747,24 @@ a {
 
     .aboutus-row {
         display: flex;
+        flex-direction: column;
+    }
+
+    .card.shadow {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+
+    .card.active {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 50px;
+    }
+    .price-cards {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
     }
 }
@@ -830,11 +862,13 @@ a {
 
     .card.shadow {
         width: 80%;
+        height: 100%;
         margin-bottom: 50px;
     }
 
     .card.active {
         width: 80%;
+        height: 100%;
         margin-bottom: 50px;
     }
 
@@ -845,6 +879,9 @@ a {
 
     .eventlist-title h1 {
         font-size: 25px;
+    }
+    .aboutus-row-icons {
+        width: 30%;
     }
 
 }
@@ -885,6 +922,9 @@ a {
         height: 100%;
         width: 100%;
         font-family: 'Poppins', sans-serif;
+    }
+    .aboutus-row-icons {
+        width: 50%;
     }
 }
 
