@@ -30,7 +30,7 @@ header {
     justify-content: space-between;
 }
 
-.container {
+.container-header {
     max-width: 100%;
     padding: 0 2rem;
     margin: 0 auto;
@@ -198,7 +198,7 @@ header {
     height: auto;
 }
 
-.container #search-main {
+.container-header #search-main {
     opacity: 0;
 }
 
@@ -260,7 +260,7 @@ input {
         width: 5rem;
     }
 
-    .container {
+    .container-header {
         max-width: 100%;
         padding: 0 2rem;
         margin: 0 auto;

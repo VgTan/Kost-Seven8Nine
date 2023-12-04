@@ -27,34 +27,39 @@
                  </div>
                  <div class="col-sm-6 login-section-wrapper">
                      <div class="login-wrapper my-auto">
+                         @if(session()->has('success'))
+                         <div class="alert alert-success w-full">{{ session('success') }}</div>
+                         @endif
+
+                         @if(session()->has('error'))
+                         <div class="alert alert-danger w-full">{{ session('error') }}</div>
+                         @endif
                          <h1 class="login-title">Welcome Back!</h1>
-                        @if(Session::has('failed'))
-                        <div class="alert alert-danger w-full">{{Session::get('failed')}}</div>
-                        @endif
-                        @if(Session::has('no'))
-                        <div class="alert alert-danger w-full">{{Session::get('no')}}</div>
-                        @endif
-                         <form action="{{ route('login')}}" method="get">
+                         @if(Session::has('failed'))
+                         <div class="alert alert-danger w-full">{{Session::get('failed')}}</div>
+                         @endif
+                         @if(Session::has('no'))
+                         <div class="alert alert-danger w-full">{{Session::get('no')}}</div>
+                         @endif
+                         <form action="{{ route('login')}}" method="post">
+                             @csrf
                              <div class="form-group">
                                  <label for="email">Email</label>
-                                 <input type="email" name="email" id="email" class="form-control"
-                                     placeholder="email@example.com" value="{{old('email')}}">
+                                 <input type="email" name="email" id="email" class="form-control" placeholder="email@example.com" value="{{old('email')}}">
                                  <p class="text-danger absolute text-sm">@error('email') {{$message}}
                                      @enderror
                                  </p>
                              </div>
                              <div class="form-group mb-4">
                                  <label for="password">Password</label>
-                                 <input type="password" name="password" id="password" class="form-control"
-                                     placeholder="Enter your passsword">
-                                     <p class="text-danger absolute text-sm">@error('password') {{$message}}
+                                 <input type="password" name="password" id="password" class="form-control" placeholder="Enter your passsword">
+                                 <p class="text-danger absolute text-sm">@error('password') {{$message}}
                                      @enderror
                                  </p>
                              </div>
-                             <button name="login" id="login" class="btn btn-block login-btn" type="submit"
-                                 value="Login">Login</button>
+                             <button name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login">Login</button>
                          </form>
-                         <a href="#!" class="forgot-password-link">Forgot password?</a>
+                         <a href="{{route('forget.password')}}" class="forgot-password-link">Forgot password?</a>
                          <p class="login-wrapper-footer-text">Don't have an account?
                              <a href="/signup" class="regishere">Register here</a>
                          </p>

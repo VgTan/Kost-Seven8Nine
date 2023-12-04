@@ -17,9 +17,8 @@ class RoomController extends Controller
     // public function __construct() {
     //     $this->middleware(['auth', 'verified']);
     // }
-    public function home()
-    {
-        if (Auth::check()) {
+    public function home() {
+        if(Auth::check()){
             $user = User::find(Auth::user()->id);
             if ($user->status == 'admin') return redirect()->route('dashboard');
         }

@@ -242,9 +242,7 @@ class AdminController extends Controller
     public function remove(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
-        $token = Token::where('id', $request->id);
-        $token->status = "no";
-        $token->save();
+        $user = Token::where('id', $request->id)->forceDelete();
         return back();
     }
 

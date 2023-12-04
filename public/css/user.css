@@ -13,6 +13,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: #F5F5FF;
+    background-color: #F5F5FF;
     margin-left: 80px;
 }
 
@@ -60,6 +61,26 @@ body {
 
 .table-form {
     width: 100%;
+}
+
+.user-table {
+    width: 100%;
+    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+.user-table {
+    width: 100%;
+    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+    border-collapse: collapse;
+    background-color: white;
 }
 
 .user-table {
