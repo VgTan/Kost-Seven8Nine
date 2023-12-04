@@ -10,36 +10,34 @@ p {
     margin: 0;
 }
 
-a:hover, a {
+a:hover,
+a {
     text-decoration: none;
     color: white;
 }
 
 .carousel-img {
     width: 100%;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     filter: brightness(0.3);
 }
 
 .carousel-inner {
-    height: 710px;
+    height: 70vh;
     transition-duration: 200;
     display: flex;
     justify-content: center;
 }
 
 .text-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     font-family: 'Poppins', sans-serif;
 }
 
 .text-title2 p {
     font-size: 1.5rem;
     color: white;
-    width: 60%;
+    width: 80%;
 }
 
 .text-title3 {
@@ -54,14 +52,19 @@ a:hover, a {
     font-weight: bold;
 }
 
-.text-title2 span{
+.text-title2 span {
     color: #E6AD76;
 }
 
 .text-title2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    flex-flow: column;
     position: absolute;
-    top: 45%;
+    top: 25vh;
+    width: 100%;
 }
 
 .blue-border {
@@ -76,7 +79,7 @@ a:hover, a {
 
 .blue-border-text {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     width: 100%;
 }
@@ -124,22 +127,23 @@ a:hover, a {
 }
 
 /* ABOUT US LP CSS */
-.about-lp {
+.aboutus-lp {
     display: flex;
     padding: 80px;
 }
 
 .aboutus-row {
     display: flex;
-    justify-content: space-evenly;  
+    justify-content: space-between;
 }
 
 .aboutus-img {
     margin: 20px;
+    width: 100%;
 }
 
 .aboutus-img img {
-    width: 700px;
+    width: 100%;
     height: 100%;
     object-fit: cover;
 }
@@ -148,6 +152,7 @@ a:hover, a {
     margin: 20px;
     line-height: 30px;
     font-size: 15px;
+    width: 100%;
 }
 
 .aboutus-row-desc p {
@@ -169,7 +174,7 @@ a:hover, a {
     color: #268AC9;
 }
 
-.aboutus-desc-title h1 span{
+.aboutus-desc-title h1 span {
     color: #E6AD76;
     font-family: 'Poppins', sans-serif;
 }
@@ -190,7 +195,8 @@ a:hover, a {
 }
 
 .aboutus-button {
-    background-color: #3498db; /* Example color for the button */
+    background-color: #3498db;
+    /* Example color for the button */
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -207,7 +213,7 @@ a:hover, a {
     cursor: pointer;
 }
 
-.aboutus-button p{
+.aboutus-button p {
     color: white;
 }
 
@@ -216,22 +222,10 @@ a:hover, a {
     transition: ease-in;
 }
 
-@media (max-width: 768px) {
-    .about-lp {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .aboutus-img,
-    .aboutus-row-desc {
-        width: 100%;
-        margin-right: 0;
-    }
-}
-
 /* BRANCH CSS */
 .branch-title {
     text-align: center;
+    width: 100%;
 }
 
 .branch-title h1 {
@@ -246,6 +240,7 @@ a:hover, a {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
     color: #268AC9;
+    padding: 0 10px;
 }
 
 /* TEST BRANCH CSS */
@@ -264,7 +259,7 @@ a:hover, a {
     margin: 20px;
 }
 
-.flow > * + * {
+.flow>*+* {
     margin-top: var(--flow-space, 1em);
 }
 
@@ -278,23 +273,24 @@ a:hover, a {
     border-radius: 0.625rem;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
     margin: 30px;
-  }
+}
 
-.branch-card h2{
+.branch-card h2 {
     color: white;
     font-size: 2rem;
     line-height: 1.1;
 }
 
-.branch-card p{
+.branch-card p {
     font-size: 1rem;
     line-height: 1.5;
     color: white;
 }
-  
-.branch-card > * {
+
+.branch-card>* {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    border-radius: 0.625rem;
 }
 
 .branch-background {
@@ -310,25 +306,24 @@ a:hover, a {
     justify-content: space-between;
     align-self: flex-end;
     height: 70%;
+    z-index: 0;
     padding: 8% 1.25rem 2.875rem;
-    background: linear-gradient(
-      180deg,
-      hsla(0, 0%, 0%, 0) 0%,
-      hsla(0, 0%, 0%, 0.3) 10%,
-      hsl(0, 0%, 0%) 100%
-    );
-  }
-  
-  .branch_card_content--container {
+    background: linear-gradient(180deg,
+            hsla(0, 0%, 0%, 0) 0%,
+            hsla(0, 0%, 0%, 0.3) 10%,
+            hsl(0, 0%, 0%) 100%);
+}
+
+.branch_card_content--container {
     --flow-space: 1.55rem;
-  }
-  
-  .branch_title {
+}
+
+.branch_title {
     position: relative;
     width: fit-content;
     width: -moz-fit-content;
-  }
-  
+}
+
 .branch_title::after {
     content: "";
     position: absolute;
@@ -338,7 +333,7 @@ a:hover, a {
     left: -1.25rem;
     background-color: #E6AD76;
 }
-  
+
 .branch_button {
     padding: 0.55rem 0.9rem;
     width: fit-content;
@@ -352,76 +347,76 @@ a:hover, a {
     color: white;
 }
 
-.branch_button:hover  {
+.branch_button:hover {
     background-color: #d28a47;
     color: rgb(240, 240, 240);
 }
-  
-  
-  @media (any-hover: hover) and (any-pointer: fine) {
+
+
+@media (any-hover: hover) and (any-pointer: fine) {
     .branch_card_content {
-      transform: translateY(62%);
-      transition: transform 500ms ease-out;
-      transition-delay: 500ms;
+        transform: translateY(62%);
+        transition: transform 500ms ease-out;
+        transition-delay: 500ms;
     }
-  
+
     .branch_title::after {
-      opacity: 0;
-      transform: scaleX(0);
-      transition: opacity 1000ms ease-in, transform 500ms ease-out;
-      transition-delay: 500ms;
-      transform-origin: right;
+        opacity: 0;
+        transform: scaleX(0);
+        transition: opacity 1000ms ease-in, transform 500ms ease-out;
+        transition-delay: 500ms;
+        transform-origin: right;
     }
-  
+
     .branch_background {
-      transition: transform 500ms ease-in;
+        transition: transform 500ms ease-in;
     }
-  
-    .branch_card_content--container > :not(.branch_title),
+
+    .branch_card_content--container> :not(.branch_title),
     .branch_button {
-      opacity: 0;
-      transition: transform 500ms ease-out, opacity 500ms ease-out;
+        opacity: 0;
+        transition: transform 500ms ease-out, opacity 500ms ease-out;
     }
-  
+
     .branch-card:hover,
     .branch-card:focus-within {
-      transform: scale(1.05);
-      transition: transform 500ms ease-in;
+        transform: scale(1.05);
+        transition: transform 500ms ease-in;
     }
-  
+
     .branch-card:hover .branch_card_content,
     .branch-card:focus-within .branch_card_content {
-      transform: translateY(0);
-      transition: transform 500ms ease-in;
+        transform: translateY(0);
+        transition: transform 500ms ease-in;
     }
-  
+
     .branch-card:focus-within .branch_card_content {
-      transition-duration: 0ms;
+        transition-duration: 0ms;
     }
-  
+
     .branch-card:hover .card__background,
     .branch-card:focus-within .card__background {
-      transform: scale(1.3);
+        transform: scale(1.3);
     }
-  
-    .branch-card:hover .branch_card_content--container > :not(.branch_title),
+
+    .branch-card:hover .branch_card_content--container> :not(.branch_title),
     .branch-card:hover .branch_button,
-    .branch-card:focus-within .branch_card_content--container > :not(.branch_title),
+    .branch-card:focus-within .branch_card_content--container> :not(.branch_title),
     .branch-card:focus-within .branch_button {
-      opacity: 1;
-      transition: opacity 500ms ease-in;
-      transition-delay: 1000ms;
+        opacity: 1;
+        transition: opacity 500ms ease-in;
+        transition-delay: 1000ms;
     }
-  
+
     .branch-card:hover .branch_title::after,
     .branch-card:focus-within .branch_title::after {
-      opacity: 1;
-      transform: scaleX(1);
-      transform-origin: left;
-      transition: opacity 500ms ease-in, transform 500ms ease-in;
-      transition-delay: 500ms;
+        opacity: 1;
+        transform: scaleX(1);
+        transform-origin: left;
+        transition: opacity 500ms ease-in, transform 500ms ease-in;
+        transition-delay: 500ms;
     }
-  }
+}
 
 
 /* PRICE PLAN CSS */
@@ -432,6 +427,7 @@ a:hover, a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 2;
 }
 
 .priceplan-title {
@@ -467,21 +463,19 @@ a:hover, a {
     background: #fff;
     color: hsl(233, 13%, 49%);
     border-radius: 0.8rem;
-  }
-  
+}
+
 .price-cards .card.active {
-    background: linear-gradient(
-      135deg,
-      #4da4da 0%,
-      #268AC9 100%
-    );
+    background: linear-gradient(135deg,
+            #4da4da 0%,
+            #268AC9 100%);
     color: #fff;
     display: flex;
     align-items: center;
     transform: scale(1.1);
     z-index: 1;
 }
-  
+
 .price-ul {
     margin: 2.6rem;
     display: flex;
@@ -489,7 +483,7 @@ a:hover, a {
     align-items: center;
     justify-content: space-around;
 }
-  
+
 .price-ul li {
     list-style-type: none;
     display: flex;
@@ -497,22 +491,23 @@ a:hover, a {
     width: 100%;
     padding: 1rem 0;
 }
-  
+
 .price-ul li.price {
     font-size: 3rem;
     color: hsl(232, 13%, 33%);
     padding-bottom: 2rem;
 }
-  
+
 .shadow {
     box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
 }
-  
+
 .card.active .price {
     color: #fff;
 }
-  
-.price-btns, .price-btn {
+
+.price-btns,
+.price-btn {
     margin-top: 1rem;
     height: 2.6rem;
     width: 13.3rem;
@@ -520,11 +515,9 @@ a:hover, a {
     justify-content: center;
     align-items: center;
     border-radius: 4px;
-    background: linear-gradient(
-      135deg,
-      #eec299 0%,
-      #E6AD76 100%
-    );
+    background: linear-gradient(135deg,
+            #eec299 0%,
+            #E6AD76 100%);
     color: #fff;
     outline: none;
     border: 0;
@@ -537,26 +530,24 @@ a:hover, a {
 }
 
 .price-btn:hover {
-    background: linear-gradient(
-      135deg,
-      #eec299 0%,
-      #E6AD76 100%
-    );
+    background: linear-gradient(135deg,
+            #eec299 0%,
+            #E6AD76 100%);
 }
 
 .price-btns:hover {
     background: #4da4da;
     color: #fff;
 }
-  
+
 .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
 }
-  
+
 .card.active .bottom-bar {
     border-bottom: 2px solid hsla(240, 8%, 85%, 0.253);
 }
-  
+
 .pack {
     font-size: 35px;
     font-weight: bold;
@@ -573,7 +564,7 @@ a:hover, a {
     align-items: center;
 }
 
-.eventlist-title{
+.eventlist-title {
     text-align: center;
 }
 
@@ -606,11 +597,15 @@ a:hover, a {
     padding: 20px;
     border: 2px solid #ccc;
     border-radius: 12px;
-    box-shadow: 5px 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
     display: grid;
     grid-template-rows: auto auto auto auto;
     margin: 10px;
     min-height: 400px;
+}
+
+.aboutus-row-icons {
+    width: 100%;
 }
 
 .image-event {
@@ -639,7 +634,8 @@ a:hover, a {
     margin-bottom: 10px;
 }
 
-.event, .price {
+.event,
+.price {
     flex: 1;
 }
 
@@ -690,72 +686,281 @@ a:hover, a {
     font-weight: bold;
 }
 
-.event-seemore a{
+.event-seemore a {
     width: 100%;
 }
-  
+
+@media (max-width: 1100px) {
+    .text-title2 h1 {
+        font-size: 2.5rem;
+        padding: 0 10px;
+    }
+
+    .text-title2 p {
+        font-size: 1.2rem;
+    }
+
+    .aboutus-lp {
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 20px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .aboutus-lp {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .aboutus-img,
+    .aboutus-row-desc {
+        width: 100%;
+        padding: 30px;
+        margin: 0px;
+    }
+
+    .aboutus-img {
+        margin-bottom: 0px;
+        padding-bottom: 5px;
+    }
+
+    .aboutus-row-desc {
+        margin-top: 0px;
+    }
+
+    .aboutus-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 550px) {
+    .text-title2 {
+        top: 20vh;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+        margin-right: 0px;
+    }
+
+    .branch-title h3 {
+        font-size: 30px;
+    }
+
+    .branch-title h1 {
+        font-size: 20px;
+    }
+
+    .branch-card h2 {
+        color: white;
+        font-size: 1.5rem;
+        line-height: 1.1;
+    }
+
+    .aboutus-icons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: 40px 0 0 0;
+    }
+
+    .text-title2 h1 {
+        padding: 0 10px;
+    }
+
+    .aboutus-img img {
+        max-width: 100%;
+        max-height: auto;
+        object-fit: cover;
+    }
+
+    .branch-card {
+        width: 100%;
+    }
+
+    .branch-cards-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 20px;
+        width: 100%;
+    }
+
+    .logo-sub {
+        height: 130px;
+        scale: 1;
+    }
+
+    .subs {
+        font-size: 2.5rem;
+    }
+
+    .contact-us {
+        margin: 35px;
+        padding: 30px;
+    }
+
+    .priceplan-title h3 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .priceplan-title h1 {
+        font-size: 25px;
+    }
+
+    .price-ul {
+        margin: 1.6rem;
+    }
+
+    .pack {
+        font-size: 25px;
+    }
+
+    .price-ul li.price {
+        font-size: 2rem;
+        color: hsl(232, 13%, 33%);
+        padding-bottom: 2rem;
+    }
+
+    .card.shadow {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    .card.active {
+        width: 80%;
+        margin-bottom: 50px;
+    }
+
+    .eventlist-title h3 {
+        font-size: 30px;
+        padding: 0 10px;
+    }
+
+    .eventlist-title h1 {
+        font-size: 25px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .logo-sub {
+        height: 130px;
+        scale: 0.7;
+    }
+
+    .subs {
+        font-size: 2rem;
+    }
+
+    .ticket {
+        width: 78%;
+    }
+
+    .card.active, .card.shadow {
+        width: 80%;
+    }
+
+    .branch-card {
+        width: 80%;
+    }
+
+    .text-title2 {
+        top: 15vh;
+    }
+
+    .text-title2 h1 {
+        font-size: 2rem;
+        padding: 0 10px;
+    }
+
+    .contact-content {
+        text-align: center;
+        height: 100%;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
 @media (max-width: 280px) {
-    ul {
-      margin: 1rem;
+    .text-title2 p {
+        font-size: 1rem;
     }
 
-    h1 {
-      font-size: 1.2rem;
-    }
-    
-    .price-cards {
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .card {
-      transform: scale(0.8);
-      margin-bottom: 1rem;
+    .blue-border-text h1 {
+        font-size: 15px;
     }
 
-    .price-cards .card.active {
-      transform: scale(0.8);
+    .aboutus-desc-title h1 {
+        font-size: 30px;
     }
+
+    .branch-title {
+        text-align: center;
+        width: 80%;
+    }
+
+    .priceplan-title {
+        width: 80%;
+    }
+
+    .price-ul li.price {
+        font-size: 1.7rem;
+        color: hsl(232, 13%, 33%);
+        padding-bottom: 2rem;
+    }
+
+    .eventlist-title {
+        width: 70%;
+    }
+
+    .contact-us {
+        margin: 0px;
+        padding: 30px;
+        width: 60%;
+        margin-top: 50px;
+        margin-left: 65px;
+        margin-bottom: 50px;
+    }
+
+    .logo-sub {
+        height: 130px;
+        scale: 0.5;
+        margin-left: -65px;
+    }
+
+    .subs {
+        font-size: 1.5rem;
+    }
+
+    .card.active .price-ul{
+        width: 80%;
+    }
+
+    .branch-card {
+        height: 22.5rem;
+    }
+
+    .branch_card_content {
+        height: 90%;
+    }
+
+    .ticket {
+        width: 75%;
+    }
+
+    .card.active, .card.shadow {
+        width: 70%;
+    }
+
+    .branch-card {
+        width: 75%;
+    }
+
 }
-  
-@media (min-width: 280px) and (max-width: 320px) {
-    ul {
-      margin: 20px;
-    }
-
-    .price-cards {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card {
-      margin-bottom: 1rem;
-    }
-
-    .price-cards .card.active {
-      transform: scale(1);
-    }
-}
-  
-@media (min-width: 320px) and (max-width: 414px) {
-    .price-cards {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .card {
-      margin-bottom: 1rem;
-    }
-
-    .price-cards .card.active {
-      transform: scale(1);
-    }
-}
-  
-@media (min-width: 414px) and (max-width: 768px) {
-    .card {
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-    }
-}  

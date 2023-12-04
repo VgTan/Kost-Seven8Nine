@@ -13,7 +13,7 @@
 <body>
     @include('header')
     <div class="container">
-        
+
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
@@ -136,36 +136,37 @@
             <!-- SCHEDULE START -->
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 @if(!$booklist->isEmpty())
-                @foreach($booklist->unique('branch') as $book)
-                <div class="course">
-                    <div class="course-preview">
-                        <h6>Booking Schedule</h6>
-                        <h2>{{ $book->branch }}</h2>
-                        @foreach($booklist->where('branch', $book->branch)->where('user_id', $user->id)->unique('date')
-                        as $datedetail)
-                        <a href="#">{{ $datedetail->date }} <i class="fas fa-chevron-right"></i></a>
-                        @endforeach
-                    </div>
-                    <div class="course-info">
-                        <div class="progress-container">
-                            <div class="progress"></div>
+                @foreach($booklist->unique('date') as $datedetail)
+                <div class="schedule-date">
+                    <h6>{{ $datedetail->date }}</h6>
+                    @foreach($booklist->where('date', $datedetail->date)->unique('branch') as $book)
+                    <div class="course">
+                        <div class="course-preview">
+                            <h2>{{ $book->branch }}</h2>
                         </div>
-                        @foreach($booklist->where('branch', $book->branch)->where('user_id',
-                        $user->id)->unique('room') as $detail)
-                        <h6>{{ $detail->room }}</h6>
-                        @endforeach
-                        @foreach($booklist->where('branch', $book->branch)->where('user_id',
-                        $user->id)->where('room', $detail->room)->where('date', $datedetail->date) as $room)
-                        <h2>{{ $room->time }}</h2>
-                        @endforeach
-                        <button class="btn">Continue</button>
+                        <div class="course-info">
+                            <div class="progress-container">
+                                <div class="progress"></div>
+                            </div>
+                            @foreach($booklist->where('date', $datedetail->date)->where('branch',
+                            $book->branch)->where('user_id', $user->id)->unique('room') as $detail)
+                            <h6>{{ $detail->room }}</h6>
+                            @foreach($booklist->where('date', $datedetail->date)->where('branch',
+                            $book->branch)->where('user_id', $user->id)->where('room', $detail->room) as $room)
+                            <h2>{{ $room->time }}</h2>
+                            <button class="btn">Continue</button>
+                            @endforeach
+                            @endforeach
+                        </div>
                     </div>
+                    @endforeach
                 </div>
                 @endforeach
                 @else
-                <p>You haven't book a room</p>
+                <p>You haven't booked a room</p>
                 @endif
             </div>
+
 
             <!-- SCHEDULE END -->
 
