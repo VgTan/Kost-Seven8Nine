@@ -393,12 +393,13 @@ class BookController extends Controller
         
         $user->save();
         
-        // $data = array('name' => 'Vega');
+        Mail::send(['text' => 'mail'], ['token' => $token], function ($msg) use ($user, $token) {
+            $msg->to($user->email, 'Pacar')->subject('Booking Confirmation - Payment Proof Attached');
+            $msg->attach(public_path('/images/proof/' . $token->proof));
+            // $msg->action('')
+            $msg->from('Pacarmu.yang.paling.ganteng@gmail.com', 'Ganteng banget');
+        });
 
-        // Mail::send(['text' => 'mail'], ['token' => $token], function($msg) use ($token) {
-        //     $msg->to('alfonsusvega9@gmail.com', 'Pacar')->subject('I Love You');
-        //     $msg->from('customerrelation.lumi@gmail.com', 'Ganteng banget');
-        // });
         return redirect('/token');
     }
 }

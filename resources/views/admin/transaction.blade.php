@@ -88,13 +88,13 @@
                             <form action="{{ route('remove') }}" method="get">
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <i class="fa-solid fa-trash"><button type="submit"></button></i>
+                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </form>
                             <form action="{{ route('acc') }}" method="get">
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <i class="fa-solid fa-check-to-slot"><button type="submit"></button></i>
+                                <button type="submit"><i class="fa-solid fa-check-to-slot"></i></button>
                                 </td>
                             </form>
                         </tr>

@@ -113,7 +113,7 @@ Route::controller(AdminController::class)->group(function () {
 Route::controller(BookController::class)->group(function () {
     Route::post('/book', 'book')->name('booking');
     Route::get('{site}/{room}/book', 'page')->name('book_page');
-    Route::get('/token', 'token');
+    Route::get('/token', 'token')->name('token');
     Route::post('/paymentdetail', 'buytoken')->name('buytoken');
     Route::post('/checkout', 'callback')->name('callback');
     Route::get('/bookdetails', 'book_details')->name('bookdetail');
