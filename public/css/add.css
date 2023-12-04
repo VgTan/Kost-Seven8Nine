@@ -37,6 +37,7 @@ body {
 }
 
 .container {
+  width: 50%;
   background: var(--form-bg);
   border-radius: 40px;
   padding: 50px 100px;
@@ -135,12 +136,13 @@ input:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-@media only screen and (max-width: 600px) {
+@media (max-width: 767px) {
   body {
     padding: 20px;
   }
 
   .container {
+    width: 100%;
     padding: 20px;
     margin-right: 15px;
   }
@@ -160,5 +162,15 @@ input:-webkit-autofill:focus {
 
   #size {
     margin-top: 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 150vh;
+  }
+  .container {
+    padding: 20px;
+    margin-right: 15px;
   }
 }

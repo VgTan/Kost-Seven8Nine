@@ -2,35 +2,34 @@
 
 .container {
     padding: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+* {
+    /* box-sizing: border-box; */
+    font-family: "Poppins", sans-serif;
+}
+
+form {
+    color: black;
 }
 
 
-* {
-
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
-  }
-
-  form {
-    color: black;
-  }
-
-
-.dragger_wrap{
+.dragger_wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-direction: row;
     background: white;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-    padding: 0px 40px 40px 40px; 
+    padding: 0px 40px 40px 40px;
     border-radius: 10px;
-    margin-left: 100px;
     height: 600px;
 }
 
-.branchinfo{
-    flex-basis: 40%;
+.branchinfo {
+    width: 100%;
+    /* flex-basis: 40%; */
 }
 
 #dragger.active {
@@ -38,12 +37,12 @@
 }
 
 
-.form-desc img{
+/* .form-desc img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 5px;
-}
+} */
 
 #filename {
     width: 100%;
@@ -76,24 +75,21 @@ h3 {
     color: #232D42;
 }
 
-.button{
-    padding: 10px;
-    margin: 10px 0;
+button {
     border: none;
     border-radius: 10px;
     background-color: #000AFF;
     color: #ffffff;
     outline: none;
     cursor: pointer;
-    text-align: center;
 }
 
-.inp{
+.inp {
     color: #363740;
     font-size: 20px;
 }
 
-.addbranch h1{
+.addbranch h1 {
     text-align: center;
     color: #232D42;
     margin-bottom: 30px;
@@ -101,7 +97,7 @@ h3 {
 }
 
 
-#drag-text{
+#drag-text {
     color: #232D42;
 }
 
@@ -114,80 +110,90 @@ h3 {
     color: #fff;
     cursor: pointer;
     transition: background .2s ease-in-out;
-  }
+}
 
-  .drop-container {
-    position: relative;
+.drop-container {
+    margin-top: 40px;
+    flex-direction: column;
     display: flex;
     gap: 10px;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
-    width: 100%;
-    padding: 20px;
+    height: 500px;
     border-radius: 10px;
     border: 2px dashed #000AFF;
     color: #444;
     cursor: pointer;
+    overflow: hidden;
     transition: background .2s ease-in-out, border .2s ease-in-out;
-  }
-  
-  .drop-container:hover {
+}
+
+.drop-container:hover {
     background: #eee;
     border-color: #111;
-  }
-  
-  .drop-container:hover .drop-title {
+}
+
+.drop-container:hover .drop-title {
     color: #222;
-  }
-  
-  .drop-title {
+}
+
+.drop-title {
     color: #444;
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     transition: color .2s ease-in-out;
-  }
+}
 
-  .drop-container.drag-active {
+.drop-container.drag-active {
     background: #eee;
     border-color: #111;
-  }
-  
-  .drop-container.drag-active .drop-title {
+}
+
+.drop-container.drag-active .drop-title {
     color: #222;
 }
 
-.form-desc{
-    width: 55%;
-    height: 85%;
+.form-desc {
+    width: 100%;
+    max-height: 100%;
+    margin-right: 50px;
 }
 
-.form-desc input{
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
+.form-desc input {
+    position: relative;
+    left: 30px;
 }
 
-@media screen and (max-width: 768px) {
-    .dragger_wrap{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-direction: row;
-        background: white;
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-        padding: 0px 40px 40px 40px; 
-        border-radius: 10px;
-        margin-left: 20px;
-        height: 600px;
+@media (max-width: 767px) {
+    .dragger_wrap {
+        height: 950px;
+        flex-direction: column;
     }
-}
 
-@media screen and (max-width: 557px){
-    .inp{
-        color: #363740;
+    .form-desc {
+        width: 100%;
+        margin: 0;
+    }
+    .branchinfo label{
         font-size: 15px;
+    }
+    .branchinfo {
+        margin-bottom: 50px;
+    }
+    .tombol {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .form-desc input[type=file]::file-selector-button {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .form-desc input {
+        position: relative;
+        left: 100px;
     }
 }
