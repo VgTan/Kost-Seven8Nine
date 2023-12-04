@@ -64,6 +64,7 @@ class RoomController extends Controller
         // dd($daysToMonday);
         // Get the current date
         $currentDate = date('Y-m-d');
+
         $currentDateMD = date('F d');
         $tomorrow = date('F d', strtotime('+1 day'));
 
@@ -100,7 +101,8 @@ class RoomController extends Controller
             ];
         } else {
             $dates1 = [
-                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
+                $datemon = date('Y-m-d', strtotime("$currentDate + $daysToMonday days")),
+                // dd($datemon),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
@@ -109,7 +111,7 @@ class RoomController extends Controller
                 $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
             $dates2 = [  
-                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday2 days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
                 $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
@@ -134,14 +136,12 @@ class RoomController extends Controller
                             ->where('time', $times)
                             ->first();
             
-                        // Jika jadwal sudah ada, lakukan pembaruan
                         if ($existingScheduleWeek1) {
                             $existingScheduleWeek1->update([
                                 'day' => $days,
                                 'date' => $dates1[$index],
                             ]);
                         } else {
-                            // Jika jadwal belum ada, buat yang baru
                             $schedule1 = new Schedule();
                             $schedule1->branchroom_id = $branchroom->id;
                             $schedule1->week = 'week 1';
@@ -157,7 +157,6 @@ class RoomController extends Controller
                                 'date' => $dates2[$index],
                             ]);
                         } else {
-                            // Jika jadwal belum ada, buat yang baru
                             $schedule2 = new Schedule();
                             $schedule2->branchroom_id = $branchroom->id;
                             $schedule2->week = 'week 2';
@@ -172,13 +171,14 @@ class RoomController extends Controller
         }
 
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-        for($i = 0; $i < $daysToMonday2+1; $i++) {
-            $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
-            // dd($expired);
-            foreach ($expired as $ex) {
-                $ex->update(['status' => 'expired']);
-            }
-            
+        $daysCount = count($days);
+
+        for ($i = 0; $i < $daysToMonday2 + 1; $i++) {
+            $dayIndex = $i % $daysCount;
+            $expired = Schedule::where('day', $days[$dayIndex])
+                ->where('status', 'ready')
+                ->where('date', '<=', $currentDate)
+                ->get();
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
         // dd($mon);
