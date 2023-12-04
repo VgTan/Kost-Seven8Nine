@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Branch;
 use App\Models\Room;
 use App\Models\Schedule;
+use Illuminate\Support\Facades\Mail;
 use Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -387,12 +388,19 @@ class BookController extends Controller
         $fileName = $file->getClientOriginalName();
         $file->move('images/proof/', $fileName);
         // dd($fileName);        
-    
+        
         $token->proof = $fileName;
         $token->status = 'Pending';        
         $token->save();
         
         $user->save();
+        
+        // $data = array('name' => 'Vega');
+
+        // Mail::send(['text' => 'mail'], ['token' => $token], function($msg) use ($token) {
+        //     $msg->to('alfonsusvega9@gmail.com', 'Pacar')->subject('I Love You');
+        //     $msg->from('customerrelation.lumi@gmail.com', 'Ganteng banget');
+        // });
         return redirect('/token');
     }
 }
