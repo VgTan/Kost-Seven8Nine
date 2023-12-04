@@ -132,4 +132,4 @@ Route::post("/reset-password", [ForgotPasswordManager::class, "resetPasswordPost
 //     return view('footer');
 // })
 
-Auth::routes(['verify'=>true]);
+// Auth::routes(['verify'=>true]);
