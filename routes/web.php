@@ -5,6 +5,7 @@ use App\Http\Controllers\BookController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ForgotPasswordManager;
@@ -23,6 +24,9 @@ use App\Http\Controllers\ForgotPasswordManager;
 //     return view('welcome');
 // });
 
+Auth::routes([
+    'verify' => true
+]);
 
 Route::get('/roomdetail', function () {
     return view('roomdetail');
@@ -54,30 +58,40 @@ Route::get('/contactus', function () {
 
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
+Route::get('/signup', [AuthController::class, 'signupPage'])->name('signupPage');
+Route::post('/newuser', [AuthController::class, 'signup'])->name('signup');
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware('auth')->name('verification.notice');
+
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::controller(UserController::class)->group(function () {
-    Route::middleware('web')->group(function(){
-    Route::get('/signup', 'signupPage');
-    Route::post('/newuser', 'signup')->name('signup');
-
-    Route::get('/login','loginPage');
-    Route::post('/login','login')->name('login');
-    Route::get('/logout','logout')->name('logout');
-    Route::post('/contactuss', 'contact')->name('contact');
-});
+    Route::middleware('web')->group(function () {
+        Route::get('/login', 'loginPage');
+        Route::post('/login', 'login')->name('login');
+        Route::get('/logout', 'logout')->name('logout');
+        Route::post('/contactuss', 'contact')->name('contact');
+    });
 });
 
 Route::controller(ProfileController::class)->group(function () {
-    Route::get('/profile','profile')->name('profile');
-    Route::get('/editprofile','editProfile')->name('edit_profile');
-    Route::post('/profile-update','updateProfile')->name('update_profile');
-    });
+    Route::get('/profile', 'profile')->name('profile');
+    Route::get('/editprofile', 'editProfile')->name('edit_profile');
+    Route::post('/profile-update', 'updateProfile')->name('update_profile');
+});
 
 Route::controller(RoomController::class)->group(function () {
     Route::get('/', 'home');
     Route::get('/{room}/all', 'findroom')->name('findroom');
-    Route::get('/room/{site}','room')->name('room');
-    Route::get('/{site}/{room}/details','room_details')->name('');
+    Route::get('/room/{site}', 'room')->name('room');
+    Route::get('/{site}/{room}/details', 'room_details')->name('');
 });
 
 // Route::get('/addbranches', function () {
@@ -86,8 +100,8 @@ Route::controller(RoomController::class)->group(function () {
 
 
 Route::controller(AdminController::class)->group(function () {
-    Route::get('/dashboard','user')->name('dashboard');
-    
+    Route::get('/dashboard', 'user')->name('dashboard');
+
     Route::get('/transaction', 'check_trans')->name('trans');
     Route::get('/unaccept', 'remove')->name('remove');
     Route::get('/accept', 'accept')->name('acc');
@@ -95,19 +109,19 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/booklist', 'book_list')->name('booklist');
     Route::get('/done', 'done')->name('done');
 
-    Route::post('/processbranch','add_cabang')->name('');
-    Route::post('/processevent','add_event')->name('');
+    Route::post('/processbranch', 'add_cabang')->name('');
+    Route::post('/processevent', 'add_event')->name('');
 
     Route::get('/addevent', 'event');
     Route::get('/addbranch', 'branch');
-    Route::get('/addroom','rooms')->name('');
-    Route::post('/processroom','add_room')->name('');
+    Route::get('/addroom', 'rooms')->name('');
+    Route::post('/processroom', 'add_room')->name('');
     Route::get('/scheduleroom', 'schedule_room')->name('');
-    
+
     Route::get('/admin/contactus', 'contactus')->name('conadmin');
-    Route::get('/addschedule','add_schedule')->name('add');
-    Route::get('/{site}/{room}/admin','edit_schedule')->name('');
-}); 
+    Route::get('/addschedule', 'add_schedule')->name('add');
+    Route::get('/{site}/{room}/admin', 'edit_schedule')->name('');
+});
 
 
 Route::controller(BookController::class)->group(function () {
@@ -132,4 +146,4 @@ Route::post("/reset-password", [ForgotPasswordManager::class, "resetPasswordPost
 //     return view('footer');
 // })
 
-// Auth::routes(['verify'=>true]);
+// Route::get('/verifemail', [App\Http\Controllers\HomeController::class, 'VerifyEmail'])->name('verifemail');

@@ -22,7 +22,7 @@ class UserController extends Controller
         if(Auth::check()) {
             return redirect('/');
         }
-        return view('page.login');;
+        return view('page.login');
     }
 
     public function signup(Request $request) {

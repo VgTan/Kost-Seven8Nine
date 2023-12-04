@@ -14,9 +14,6 @@ use Illuminate\Support\Facades\Auth;
 
 class RoomController extends Controller
 {
-    public function __construct() {
-        $this->middleware(['auth', 'verified']);
-    }
     public function home() {
         if(Auth::check()){
             $user = User::find(Auth::user()->id);
@@ -27,6 +24,10 @@ class RoomController extends Controller
         $event = Event::orderBy('created_at', 'desc')->take(3)->get();
         $home = TRUE;
         return view('welcome', compact('room', 'event', 'home'));
+    }
+
+    public function __construct() {
+        $this->middleware(['auth', 'verified']);
     }
     
     public function room($site){
