@@ -38,7 +38,7 @@
                                 @endif
                             </p>
                             <p class="day-number">
-                                {{ date('d', strtotime($dates[$index])) }}
+                                {{ date('d', strtotime($dates1[$index])) }}
                             </p>
                             <div class="{{ strtolower($day) }}">
                                 @foreach(${$day} as $schedule)
@@ -48,7 +48,7 @@
                                         <!-- Hidden input for day -->
                                         <!-- <input name="day[]" type="hidden" value="{{ $day }}"> -->
                                         <input name="time[]" type="checkbox" class="checkbox-input"
-                                            value="{{ $day }} {{ $dates[$index] }} {{ $schedule->time }}" />
+                                            value="{{ $day }} {{ $dates1[$index] }} {{ $schedule->time }}" />
                                         <span class="checkbox-tile">
                                             <span class="checkbox-label">{{ $schedule->time }}</span>
                                         </span>
