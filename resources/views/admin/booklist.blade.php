@@ -92,7 +92,7 @@
                                 @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
                                 <td>
-                                    <button type="submit">Done</button>
+                                    <button class="done-btn" type="submit">Done</button>
                                 </td>
                             </form>
                         </tr>
