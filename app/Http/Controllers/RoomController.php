@@ -71,18 +71,16 @@ class RoomController extends Controller
         // Calculate the dates for the next 7 days (Monday to Sunday)
         $branchrooms = BranchRoom::all();
         $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-        $time = [
-            '10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
+            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
             '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
             '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
-            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00',
+            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
             '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
-            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00',
+            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
             '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
-            '20.30 - 21.00'
-        ];
-
-        if ($currentDayNumber == 7) {
+            '20.30 - 21.00'];
+            
+        if($currentDayNumber == 7) {
             $dates1 = [
                 $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
@@ -111,7 +109,7 @@ class RoomController extends Controller
                 $datesat = date('Y-m-d', strtotime("$datemon +5 days")),
                 $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
-            $dates2 = [
+            $dates2 = [  
                 $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
@@ -130,13 +128,13 @@ class RoomController extends Controller
                             ->where('day', $days)
                             ->where('time', $times)
                             ->first();
-
+            
                         $existingScheduleWeek2 = Schedule::where('branchroom_id', $branchroom->id)
                             ->where('week', 'week 2')
                             ->where('day', $days)
                             ->where('time', $times)
                             ->first();
-
+            
                         // Jika jadwal sudah ada, lakukan pembaruan
                         if ($existingScheduleWeek1) {
                             $existingScheduleWeek1->update([
@@ -153,7 +151,7 @@ class RoomController extends Controller
                             $schedule1->time = $times;
                             $schedule1->save();
                         }
-
+            
                         if ($existingScheduleWeek2) {
                             $existingScheduleWeek2->update([
                                 'day' => $days,
@@ -175,12 +173,13 @@ class RoomController extends Controller
         }
 
         $days = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-        for ($i = 0; $i < $daysToMonday2 + 1; $i++) {
+        for($i = 0; $i < $daysToMonday2+1; $i++) {
             $expired = Schedule::where('day', $days[$i])->where('status', 'ready')->where('date', '<=', $currentDate)->get();
             // dd($expired);
             foreach ($expired as $ex) {
                 $ex->update(['status' => 'expired']);
             }
+            
         }
         $mon = Schedule::where('branchroom_id', $rooms->id)->where('day', 'mon')->get();
         // dd($mon);
@@ -191,7 +190,7 @@ class RoomController extends Controller
         $sat = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sat')->get();
         $sun = Schedule::where('branchroom_id', $rooms->id)->where('day', 'sun')->get();
         // dd($schedule);
-        return view('booking.roomdetail', compact('tomorrow', 'room', 'rooms', 'loc', 'schedule', 'roomname', 'currentDateMD', 'currentDayNumber', 'branchloc', 'dates1', 'dates2', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
+        return view('booking.roomdetail', compact('tomorrow', 'room', 'rooms','loc','schedule', 'roomname', 'currentDateMD','currentDayNumber', 'branchloc', 'dates1','dates2', 'mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'));
     }
 
     public function findroom($room, Request $request)
