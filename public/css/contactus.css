@@ -3,12 +3,14 @@
 .contactus-margin {
     display: flex;
     justify-content: center;
-    margin-bottom: 100px;
+    margin-bottom: 70px;
+    padding-top: 120px;
 }
 
 .contact-box {
     background: #fff;
     display: flex;
+    padding-top: 30px;
 }
 
 .contact-left {
