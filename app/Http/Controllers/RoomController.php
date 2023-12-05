@@ -96,8 +96,7 @@ class RoomController extends Controller
             '20.30 - 21.00'];
             
             $dates1 = [
-                $datemon = date('Y-m-d', strtotime("$currentDate + $daysToMonday days")),
-                // dd($datemon),
+                $datemon = date('Y-m-d', strtotime("$currentDate - $daysToMonday2 days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
                 $datewed = date('Y-m-d', strtotime("$datemon +2 days")),
                 $datethur = date('Y-m-d', strtotime("$datemon +3 days")),
@@ -106,7 +105,7 @@ class RoomController extends Controller
                 $datesun = date('Y-m-d', strtotime("$datemon +6 days")),
             ];
             $dates2 = [  
-                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday2 days")),
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
                 $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),

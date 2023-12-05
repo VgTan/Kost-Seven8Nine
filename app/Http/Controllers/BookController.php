@@ -148,7 +148,7 @@ class BookController extends Controller
                 ->where('status', 'ready')
                 ->where('date', '<=', $currentDate)
                 ->get();
-            // dd($currentDate);
+            // dd($expired->all());
             foreach($expired as $ex) {
                 $ex->status = 'expired';
                 $ex->save();
