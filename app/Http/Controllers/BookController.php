@@ -306,6 +306,7 @@ class BookController extends Controller
                     $token->user_id = $user->id;
                     $token->name = $user->name;
                     $token->bundle = $request->bundle;
+                    // dd($request->all());
                     switch($token->bundle) {
                         case 'basic1':
                             $token->price = 75000;

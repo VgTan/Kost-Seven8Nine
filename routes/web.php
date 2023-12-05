@@ -56,15 +56,12 @@ Route::get('/contactus', function () {
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 
 Route::controller(UserController::class)->group(function () {
-    Route::middleware('web')->group(function(){
-    Route::get('/signup', 'signupPage');
-    Route::post('/newuser', 'signup')->name('signup');
-
-    Route::get('/login','loginPage');
-    Route::post('/login','login')->name('login');
-    Route::get('/logout','logout')->name('logout');
-    Route::post('/contactuss', 'contact')->name('contact');
-});
+    Route::middleware('web')->group(function () {
+        Route::get('/login', 'loginPage');
+        Route::post('/login', 'login')->name('login');
+        Route::get('/logout', 'logout');
+        Route::post('/contactuss', 'contact')->name('contact');
+    });
 });
 
 Route::controller(ProfileController::class)->group(function () {

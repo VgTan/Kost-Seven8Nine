@@ -774,9 +774,6 @@ a {
 }
 
 @media (max-width: 550px) {
-    .text-title2 {
-        top: 20vh;
-    }
 
     .card {
         margin-bottom: 1rem;
@@ -910,10 +907,6 @@ a {
     }
     .branch-card {
         width: 80%;
-    }
-
-    .text-title2 {
-        top: 15vh;
     }
 
     .text-title2 h1 {
