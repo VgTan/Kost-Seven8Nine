@@ -24,7 +24,7 @@
                     <span>Transaction(s)</span>
                 </div>
                 <div class="room-count">
-                    <p>{{ number_format($token->sum('price'), 0, '.', '.') }}</p>
+                    <p>{{ number_format($token->whereIn('status', ['Paid', 'Pending'])->sum('price'), 0, '.', '.') }}</p>
                     <span>Rupiah</span>
                 </div>
             </div>

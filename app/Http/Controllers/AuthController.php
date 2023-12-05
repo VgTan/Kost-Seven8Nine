@@ -30,15 +30,23 @@ class AuthController extends Controller
                 if(!$request->img) {
                     $user->img = 'contact.png';
                 }
-                $user = User::create([
-                    'img' => 'contact.png',
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'address' => $request->address,
-                    'gender' => $request->gender,
-                    'no_telp' => $request->phone_number,
-                    'password' => bcrypt($request->password)
-                ]);
+                // dd($request->all());
+                // $user = User::create([
+                //     'img' => 'contact.png',
+                //     'name' => $request->name,
+                //     'email' => $request->email,
+                //     'address' => $request->address,
+                //     'gender' => $request->gender,
+                //     'no_telp' => $request->phone_number,
+                //     'password' => bcrypt($request->password)
+                // ]);
+                $user->name = $request->name;
+                $user->email = $request->email;
+                $user->address = $request->address;
+                $user->gender = $request->gender;
+                $user->no_telp = $request->phone_number;
+                $user->password = bcrypt($request->password);
+                $user->save();
                 event(new Registered($user));
                 Auth::login($user);
             }

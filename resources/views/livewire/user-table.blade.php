@@ -13,7 +13,10 @@
                 <th>Address</th>
                 <th>Phone</th>
                 <th class="user-total-token">Total Booking</th>
+                <th class="">Total Token</th>
                 <th></th>
+                <th></th>
+
             </tr>
             @foreach($users as $user)
             @if($user->status == 'user')
@@ -42,6 +45,9 @@
                 </td>
                 <td class="user-total-token">
                     {{ COUNT(App\Models\BookList::where('user_id', $user->id)->get()) }}
+                </td>
+                <td class="">
+                    {{ $user->token }}
                 </td>
                 <td class="edit">
                     <a href="/{{ $user->id }}/edit"><i class="fa-solid fa-pen"></i></a>
