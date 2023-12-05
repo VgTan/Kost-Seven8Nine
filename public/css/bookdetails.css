@@ -341,3 +341,19 @@ body {
 		object-fit: cover;
 	}
 }
+
+@media screen and (max-width: 280px) {
+	.product-details, .product-image {
+		padding: 5%;
+	}
+
+	.product-image img{
+		display: none;
+	}
+
+	.container-bookdetails{
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+}
