@@ -17,7 +17,7 @@
          <div class="container-fluid">
              <div class="row">
                  <div class="col-sm-6 px-0 d-none d-sm-block">
-                     <img src="../images/basura.jpg" alt="login image" class="login-img">
+                     <img src="../images/aeon.jpg" alt="login image" class="login-img">
                      <div class="imgtextoverlay">
                          <h1>Rhapsodie.co Music Space</h1>
                          <p>a place where everyone can learn music in public area and turns music activity inclusively
