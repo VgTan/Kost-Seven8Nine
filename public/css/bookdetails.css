@@ -39,7 +39,7 @@ body {
 	display: inline-block;
 	position: relative;
 	font-size: 30px;
-	color: #3498db;
+	color: #363740;
 	margin: 0;
 
 }
@@ -126,7 +126,7 @@ body {
 .information {
 	margin: 0;
 	padding-left: 10px;
-	color: #3498db;
+	color: #67748E;
 }
 
 .control {
@@ -139,7 +139,7 @@ body {
 .btn {
 	transform: translateY(0px);
 	transition: 0.3s linear;
-	background: #809fff;
+	background: #268AC9;
 	border-radius: 5px;
 	position: relative;
 	overflow: hidden;
@@ -154,7 +154,7 @@ body {
 
 .btn:hover {
 	transform: translateY(-6px);
-	background: #1a66ff;
+	background: #3498db;
 }
 
 .btn span {
