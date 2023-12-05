@@ -26,8 +26,8 @@
                 </div> -->
                 @foreach($branchBooks as $branch)
                 <div class="room-count">
-                    <p>{{ COUNT($branch) }}</p>
-                    <span>{{ $branch->branch }} Book List(s)</span>
+                    <p>{{ number_format((75000 * COUNT($branch)), 0, '', '.') }}</p>
+                    <span>Rupiah ({{ $branch->branch }})</span>
                 </div>
                 @endforeach
 
@@ -62,7 +62,7 @@
                             <th></th>
                         </tr>
                         @foreach($book as $booklist)
-                        @if($booklist->status == 'in progress')
+                        @if($booklist->status == 'done')
                         <tr class="table-content">
                             <!-- <td class="input-content">
                                 {{ $booklist->created_at }}
@@ -94,13 +94,13 @@
                                     <button type="submit">Remove</button>
                                 </td>
                             </form> -->
-                            <form action="{{ route('done') }}" method="get">
+                            <!-- <form action="{{ route('done') }}" method="get">
                                 @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
                                 <td>
                                     <button class="done-btn" type="submit">Done</button>
                                 </td>
-                            </form>
+                            </form> -->
                         </tr>
                         @endif
                         @endforeach

@@ -54,6 +54,19 @@ Route::get('/contactus', function () {
 
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
+Route::get('/signup', [AuthController::class, 'signupPage'])->name('signupPage');
+Route::post('/newuser', [AuthController::class, 'signup'])->name('signup');
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->name('verification.notice');
+
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
 
 Route::controller(UserController::class)->group(function () {
     Route::middleware('web')->group(function () {
@@ -102,9 +115,16 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/scheduleroom', 'schedule_room')->name('');
     
     Route::get('/admin/contactus', 'contactus')->name('conadmin');
-    Route::get('/addschedule','add_schedule')->name('add');
-    Route::get('/{site}/{room}/admin','edit_schedule')->name('');
-}); 
+    Route::get('/addschedule', 'add_schedule')->name('add');
+    Route::get('/{site}/{room}/admin', 'edit_schedule')->name('');
+
+    Route::get('/transaction/log', 'trans_log')->name('');
+    Route::get('/book/log', 'book_log')->name('');
+
+    Route::get('/{user_id}/edit', 'edit_user')->name('edit_user');
+    Route::post('/{user_id}/edit/process', 'edit_process')->name('editprocess');
+
+});
 
 
 Route::controller(BookController::class)->group(function () {
