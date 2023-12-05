@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhapsodie</title>
     <link rel="stylesheet" href="/css/check.css" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -16,100 +15,108 @@
     <div class="container">
         <div class="container-size">
             <div class="details">
-                <!-- <div class="branch-count">
+                <div class="branch-count">
                     <p>{{ COUNT($user) }}</p>
                     <span>User(s)</span>
                 </div>
                 <div class="room-count">
-                    <p>{{ COUNT($book) }}</p>
-                    <span>Book List(s)</span>
-                </div> -->
-                @foreach($branchBooks as $branch)
-                <div class="room-count">
-                    <p>{{ COUNT($branch) }}</p>
-                    <span>{{ $branch->branch }} Book List(s)</span>
+                    <p>{{ COUNT($token) }}</p>
+                    <span>Transaction(s)</span>
                 </div>
-                @endforeach
-
+                <div class="room-count">
+                    <p>{{ number_format($token->sum('price'), 0, '.', '.') }}</p>
+                    <span>Rupiah</span>
+                </div>
             </div>
             <div class="user">
-                <div class="filterForm">
-                    <p>Filter
-                        <select id="timeFilter" onchange="applyTimeFilter()">
-                            <option value="oldest">Oldest</option>
-                            <option value="newest">Newest</option>
-                        </select>
-                    </p>
-                </div>
-                <div class="searchForm">
-                    <p>Search</p>
-                    <div class="form">
-                        <input type="search" id="searchInput" oninput="searchTable()">
-                        <i class="fa fa-search"></i>
-                        <a href="javascript:void(0)" id="clear-btn" onclick="clearSearch()">Clear</a>
+                <form class="function" action="">
+                    @csrf
+                    <div class="filterForm">
+                        <p>Filter
+                            <select id="timeFilter" onchange="applyTimeFilter()">
+                                <option value="oldest">Oldest</option>
+                                <option value="newest">Newest</option>
+                            </select>
+                        </p>
                     </div>
-                </div>
-                <div class="table-form">
+                    <div class="searchForm">
+                        <p>Search</p>
+                        <div class="form">
+                            <input type="search" id="searchInput" oninput="searchTable()">
+                            <i class="fa fa-search"></i>
+                            <a href="javascript:void(0)" id="clear-btn" onclick="clearSearch()">Clear</a>
+                        </div>
+                    </div>
+                    <!-- <div class="form">
+                        <input type="search" required>
+                        <i class="fa fa-search"></i>
+                        <a href="javascript:void(0)" id="clear-btn">Clear</a>
+                    </div> -->
+                </form>
+                <form action="table-form">
                     <table class="user-table">
                         <tr class="table-head">
-                            <th class="input-head">User</th>
-                            <th>Branch</th>
-                            <th>Room</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Status</th>
+                            <th class="input-head">Time</th>
+                            <th>Name</th>
+                            <th>Bundle</th>
+                            <th>Price</th>
+                            <th>Proof</th>
                             <th></th>
                             <th></th>
                         </tr>
-                        @foreach($book as $booklist)
-                        @if($booklist->status == 'in progress')
+                        @foreach($token as $user)
+                        @if($user->status == 'Paid')
                         <tr class="table-content">
-                            <!-- <td class="input-content">
-                                {{ $booklist->created_at }}
-                            </td> -->
+                            <td class="input-content">
+                                {{ $user->created_at }}
+                            </td>
                             <td>
                                 <div class="user-name">
-                                    {{ $booklist->name }}
+                                    {{ $user->name }}
                                 </div>
                             </td>
-                            <td class="">
-                                {{ $booklist->branch }}
+                            <td>
+                                <div class="user-name">
+                                    {{ $user->bundle }}
+                                </div>
                             </td>
-                            <td class="">
-                                {{ $booklist->room }}
+                            <td>
+                                <div class="user-name">
+                                    {{ $user->price }}
+                                </div>
                             </td>
-                            <td class="">
-                                {{ $booklist->date }}
+                            
+
+                            <td class="proof">
+                                <a target="_blank" href='/images/proof/{{ $user->proof }}'>
+                                    <img class="proof-img" src='/images/proof/{{ $user->proof }}' alt="">
+                                </a>
                             </td>
-                            <td class="">
-                                {{ $booklist->time }}
-                            </td>
-                            <td class="">
-                                {{ $booklist->status }}
+                            <td>
+                                <div class="user-name">
+                                    {{ $user->status }}
+                                </div>
                             </td>
                             <!-- <form action="{{ route('remove') }}" method="get">
-                            @csrf
-                                <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
+                                <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <button type="submit">Remove</button>
+                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </form> -->
-                            <form action="{{ route('done') }}" method="get">
-                                @csrf
-                                <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
+                            <!-- <form action="{{ route('acc') }}" method="get">
+                                <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                    <button class="done-btn" type="submit">Done</button>
+                                <button type="submit"><i class="fa-solid fa-check-to-slot"></i></button>
                                 </td>
-                            </form>
+                            </form> -->
                         </tr>
                         @endif
                         @endforeach
                     </table>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
     <script>
     function applyTimeFilter() {
         var table, rows, switching, i, x, y, shouldSwitch;
@@ -154,7 +161,7 @@
         for (i = 1; i < tr.length; i++) {
             var found = false;
 
-            for (j = 0; j < tr[i].cells.length; j++) {
+            for (j = 1; j < tr[i].cells.length; j++) {
                 td = tr[i].cells[j];
                 if (td) {
                     txtValue = td.textContent || td.innerText;

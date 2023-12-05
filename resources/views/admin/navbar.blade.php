@@ -64,7 +64,20 @@
                             Message</a>
                     </ul>
                 </li>
-                <!-- end -->
+                <li class="item">
+                    <div href="/" class="nav_link submenu_item">
+                        <span class="navlink_icon">
+                            <i class="bx bx-home-alt"></i>
+                        </span>
+                        <span class="navlink">History</span>
+                        <i class="bx bx-chevron-right arrow-left"></i>
+                    </div>
+                    <ul class="menu_items submenu">
+                        <a href="/transaction/log" class="nav_link sublink">Transcation</a>
+                        <a href="/book/log" class="nav_link sublink">Book</a>
+                    </ul>
+                </li>
+               
             </ul>
             <ul class="menu_items">
                 <div class="menu_title menu_editor"></div>

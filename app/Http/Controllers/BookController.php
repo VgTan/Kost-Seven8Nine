@@ -309,6 +309,7 @@ class BookController extends Controller
                     $token->user_id = $user->id;
                     $token->name = $user->name;
                     $token->bundle = $request->bundle;
+                    // dd($request->all());
                     switch($token->bundle) {
                         case 'basic1':
                             $token->price = 75000;
@@ -405,7 +406,7 @@ class BookController extends Controller
         $user->save();
         
         Mail::send(['text' => 'mail'], ['token' => $token], function ($msg) use ($user, $token) {
-            $msg->to($user->email)->subject('Booking Confirmation - Payment Proof Attached');
+            $msg->to("customerrelation.lumi@gmail.com")->subject('Booking Confirmation - Payment Proof Attached');
             $msg->attach(public_path('/images/proof/' . $token->proof));
             // $msg->action('')
             $msg->from('no.reply@gmail.com');
