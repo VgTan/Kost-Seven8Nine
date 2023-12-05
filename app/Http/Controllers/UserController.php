@@ -34,6 +34,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users',
             'address' => 'required',
             'gender' => 'required',
+            'no_telp' => 'required',
             'password' => 'required|min:5|max:12',
         ]);
             if($val) {

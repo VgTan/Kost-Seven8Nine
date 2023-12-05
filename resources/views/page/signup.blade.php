@@ -66,6 +66,14 @@
                                 </p>
                             </div>
                             <div class="form-group">
+                                <label for="address">Phone Number</label>
+                                <input type="number" name="phone_number" id="phone_num" class="form-control"
+                                    placeholder="Enter your Phone Number">
+                                    <p class="text-danger absolute text-sm">@error('phone_number') {{$message}}
+                                    @enderror
+                                </p>
+                            </div>
+                            <div class="form-group">
                                 <label for="gender">Gender</label><br>
                                 <div class="gender-choice">
                                     <input type="radio" name="gender" value="F" class="genderclass">

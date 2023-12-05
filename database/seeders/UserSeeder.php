@@ -17,7 +17,9 @@ class UserSeeder extends Seeder
             'name' => 'aaaa',
             'email' => 'alfonsus.vega@student.umn.ac.id',
             'password' => bcrypt('12345'),
-            'token' => 100
+            'token' => 100,
+            'no_telp' => '080180'
+
         ]);
     }
 }

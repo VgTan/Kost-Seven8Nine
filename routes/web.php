@@ -87,6 +87,8 @@ Route::controller(ProfileController::class)->group(function () {
     Route::get('/profile', 'profile')->name('profile');
     Route::get('/editprofile', 'editProfile')->name('edit_profile');
     Route::post('/profile-update', 'updateProfile')->name('update_profile');
+    Route::get('/schedule-remove', 'removeSchedule')->name('remove_schedule');
+
 });
 
 Route::controller(RoomController::class)->group(function () {

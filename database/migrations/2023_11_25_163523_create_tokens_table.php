@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('bundle');
             $table->integer('price');
             $table->string('proof');
-            $table->enum('status', ['Unpaid', 'Pending', 'Paid']);
+            $table->enum('status', ['Unpaid', 'Pending', 'Paid', 'Expired']);
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });

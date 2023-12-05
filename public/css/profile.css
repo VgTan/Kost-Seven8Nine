@@ -538,3 +538,18 @@ input[type=file] {
 .nav-link-header>a {
     font-size: 16px;
 }
+
+.hidden {
+    display: none;
+}
+
+.edit-schedule {
+    display: flex;
+    gap: 10px
+}
+
+.time-countdown {
+    display: flex;
+    align-items: center;
+    gap:10px
+}

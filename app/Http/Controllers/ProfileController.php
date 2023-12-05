@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\BookList;
+use App\Models\BranchRoom;
 use App\Models\Schedule;
 use App\Models\Token;
 use App\Models\User;
@@ -57,5 +58,21 @@ class ProfileController extends Controller
         }
         $user->save();
         return redirect('/profile');
+    }
+    public function removeSchedule(Request $request) {
+        $user = User::find(Auth::user()->id);
+        foreach($request->id as $id) {
+            $thisBook = BookList::where('id', $id)->first();
+            // dd($thisBook);
+            $branchroom = BranchRoom::where('branch_name', $thisBook->branch)->where('room_type', $thisBook->room)->first();
+            $schedule = Schedule::where('date', $request->date)->where('branchroom_id', $branchroom->id)->where('time', $thisBook->time)->first();
+            // dd($schedule);
+            $schedule->status= "ready";
+            $schedule->save();
+            $user->token++;
+            $user->save();
+            $thisBook->delete();
+        }
+        return back();
     }
 }

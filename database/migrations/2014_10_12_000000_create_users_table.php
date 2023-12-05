@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('gender')->default('none');
             $table->string('address')->nullable();
+            $table->string('no_telp');
             $table->integer('token')->default(0);
             $table->string('status')->default('user');
             $table->timestamp('email_verified_at')->nullable();

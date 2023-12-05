@@ -424,7 +424,7 @@ class AdminController extends Controller
         return view('admin.edituser', compact('user'));
     }
 
-    public function editprocess($user_id, Request $request) {
+    public function edit_process($user_id, Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
 
@@ -433,6 +433,8 @@ class AdminController extends Controller
         ]);
 
         $user = User::where('id', $user_id)->first();
-        $user->update(['token', $request->token]);
+        $user->token = $request->token;
+        $user->save();
+        return back();
     }
 }

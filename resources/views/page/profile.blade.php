@@ -148,15 +148,30 @@
                         <div class="course-info">
                             <div class="progress-container">
                                 <div class="progress"></div>
+                                <button class="edit-button" onclick="edit_schedule(this)">Edit</button>
+                                <button class="done-button hidden" onclick="done_schedule(this)">Done</button>
                             </div>
-                            @foreach($booklist->where('date', $datedetail->date)->where('branch',
-                            $book->branch)->where('user_id', $user->id)->unique('room') as $detail)
-                            <h6>{{ $detail->room }}</h6>
-                            @foreach($booklist->where('date', $datedetail->date)->where('branch',
-                            $book->branch)->where('user_id', $user->id)->where('room', $detail->room) as $room)
-                            <h2>{{ $room->time }}</h2>
-                            @endforeach
-                            @endforeach
+                            <form action="{{ route('remove_schedule') }}">
+                                <input type="text" value="{{ $datedetail->date }}" name="date" hidden>
+                                <input type="text" value="{{ $book->branch }}" name="branch" hidden>
+                                @foreach($booklist->where('date', $datedetail->date)->where('branch',
+                                $book->branch)->where('user_id', $user->id)->unique('room') as $detail)
+                                <h6>{{ $detail->room }}</h6>
+                                <input type="text" value="{{ $detail->room }}" name="room" hidden>
+
+                                @foreach($booklist->where('date', $datedetail->date)->where('branch',
+                                $book->branch)->where('user_id', $user->id)->where('room', $detail->room) as $room)
+                                <div class="room-time">
+                                    <h2 class="room-time-text">{{ $room->time }}</h2>
+                                </div>
+                                <div class="checkbox-input hidden">
+                                    <input type="checkbox" value="{{ $room->id }}" name="id[]">
+                                    <h2>{{ $room->time }}</h2>
+                                </div>
+                                @endforeach
+                                @endforeach
+                                <button type="submit" class="hidden remove-button">Remove</button>
+                            </form>
                         </div>
                     </div>
                     @endforeach
@@ -186,27 +201,83 @@
                             @foreach($transactions as $trans)
                             <tr class="profile-row">
                                 <td class="profile-cell profile-date-cell" data-label="Job Id">
-                                    {{ date_format($trans->created_at, 'M, d Y') }}</td>
-                                    <input type="text" value="{{ $trans->id }}" name="id" hidden>
-                                    <input type="text" value="{{ $trans->bundle }}" name="bundle" hidden>
-                                    <input type="text" value="{{ $trans->price }}" name="price" hidden>
+                                    {{ date_format($trans->created_at, 'M, d Y') }}
+                                </td>
+                                <input type="text" value="{{ $trans->id }}" name="id" hidden>
+                                <input type="text" value="{{ $trans->bundle }}" name="bundle" hidden>
+                                <input type="text" value="{{ $trans->price }}" name="price" hidden>
                                 <td class="profile-cell profile-detail-cell" data-label="Customer Name">
                                     <div class="bundle">
                                         <p>{{ $trans->bundle }}</p>
                                         <p>{{ $trans->price }}</p>
                                     </div>
                                 </td>
-
                                 <td class="profile-cell profile-status-cell" data-label="Payment Status">
+                                    @if($trans->status != 'Unpaid')
                                     {{ $trans->status }}
-                                    @if($trans->status == 'Unpaid')
-                                    <button type="submit">Pay</button>
+                                    @else
+                                    @php
+                                    $currentTime = now();
+                                    $paymentTimeLimit = $trans->created_at->addHours(2);
+                                    $timeRemaining = max(0, $paymentTimeLimit->diffInSeconds($currentTime));
+                                    $hoursRemaining = floor($timeRemaining / 3600);
+                                    $minutesRemaining = floor(($timeRemaining % 3600) / 60);
+                                    $secondsRemaining = $timeRemaining % 60;
+                                    @endphp
+
+                                    @if($timeRemaining > 0)
+                                    <div class="time-countdown">
+                                        <div id="countdown">
+                                            <p> {{ $trans->status }}</p>
+                                            Time remaining: {{ $hoursRemaining }}h {{ $minutesRemaining }}m
+                                            {{ $secondsRemaining }}s
+                                        </div>
+                                        <button type="submit">Pay</button>
+                                    </div>
+                                    <script>
+                                        // JavaScript countdown
+                                        setInterval(function() {
+                                            var hours = {{ $hoursRemaining }};
+                                            var minutes = {{ $minutesRemaining }};
+                                            var seconds = {{ $secondsRemaining }};
+
+                                            function updateCountdown() {
+                                                if (hours === 0 && minutes === 0 && seconds === 0) {
+                                                    clearInterval(countdownInterval);
+                                                    // Optionally disable the button or take other actions when the countdown reaches zero
+                                                } else {
+                                                    if (seconds === 0) {
+                                                        if (minutes === 0) {
+                                                            hours--;
+                                                            minutes = 59;
+                                                        } else {
+                                                            minutes--;
+                                                        }
+                                                        seconds = 59;
+                                                    } else {
+                                                        seconds--;
+                                                    }
+
+                                                    document.querySelector("#countdown").innerHTML = "Time remaining: " + hours + "h " + minutes + "m " + seconds + "s";
+                                                }
+                                            }
+
+                                            var countdownInterval = setInterval(updateCountdown, 1000);
+                                            updateCountdown(); // Initial update
+                                        }, 1000);
+                                    </script>
+                                    @else
+                                    @php
+                                    $trans->delete();
+                                    @endphp
+                                    @endif
                                     @endif
                                 </td>
                             </tr>
+                            @endforeach
+
                         </form>
 
-                        @endforeach
                     </table>
                 </div>
                 @else
@@ -259,6 +330,50 @@
         dropContainer.classList.remove("drag-active")
         fileInput.files = e.dataTransfer.files
     })
+
+    function edit_schedule(button) {
+        var container = button.closest(".course");
+        var checkboxInput = container.querySelectorAll(".checkbox-input");
+        var roomTime = container.querySelectorAll(".room-time");
+        var doneBtn = container.querySelector(".done-button");
+        var editBtn = container.querySelector(".edit-button");
+        var removeBtn = container.querySelector(".remove-button");
+
+        checkboxInput.forEach(function(input) {
+            input.classList.remove("hidden");
+            input.classList.add("edit-schedule");
+        });
+
+        roomTime.forEach(function(time) {
+            time.classList.add("hidden");
+        });
+
+        doneBtn.classList.remove("hidden");
+        editBtn.classList.add("hidden");
+        removeBtn.classList.remove("hidden");
+    }
+
+    function done_schedule(button) {
+        var container = button.closest(".course");
+        var checkboxInput = container.querySelectorAll(".checkbox-input");
+        var roomTime = container.querySelectorAll(".room-time");
+        var doneBtn = container.querySelector(".done-button");
+        var editBtn = container.querySelector(".edit-button");
+        var removeBtn = container.querySelector(".remove-button");
+
+        checkboxInput.forEach(function(input) {
+            input.classList.add("hidden");
+            input.classList.remove("edit-schedule");
+        });
+
+        roomTime.forEach(function(time) {
+            time.classList.remove("hidden");
+        });
+
+        doneBtn.classList.add("hidden");
+        editBtn.classList.remove("hidden");
+        removeBtn.classList.add("hidden");
+    }
     </script>
 </body>
 

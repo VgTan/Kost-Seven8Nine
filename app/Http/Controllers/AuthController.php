@@ -14,18 +14,34 @@ class AuthController extends Controller
     }
     public function signup(Request $request)
     {
-        $user = User::create([
-            'img' => 'contact.png',
-            'name' => $request->name,
-            'email' => $request->email,
-            'address' => $request->address,
-            'gender' => $request->gender,
-            'password' => bcrypt($request->password)
+        if(Auth::check()) {
+            return redirect('/');
+        }
+        $val = $request->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users',
+            'address' => 'required',
+            'gender' => 'required',
+            'phone_number' => 'required',
+            'password' => 'required|min:5|max:12',
         ]);
-        event(new Registered($user));
-
-        Auth::login($user);
-
+            if($val) {
+                $user = new User();
+                if(!$request->img) {
+                    $user->img = 'contact.png';
+                }
+                $user = User::create([
+                    'img' => 'contact.png',
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'address' => $request->address,
+                    'gender' => $request->gender,
+                    'no_telp' => $request->phone_number,
+                    'password' => bcrypt($request->password)
+                ]);
+                event(new Registered($user));
+                Auth::login($user);
+            }
         return redirect('/email/verify');
     }
 }

@@ -11,6 +11,7 @@
                 <th>Gender</th>
                 <th>Email</th>
                 <th>Address</th>
+                <th>Phone</th>
                 <th class="user-total-token">Total Booking</th>
                 <th></th>
             </tr>
@@ -35,6 +36,9 @@
                 </td>
                 <td>
                     {{ $user->address }}
+                </td>
+                <td>
+                    {{ $user->no_telp }}
                 </td>
                 <td class="user-total-token">
                     {{ COUNT(App\Models\BookList::where('user_id', $user->id)->get()) }}

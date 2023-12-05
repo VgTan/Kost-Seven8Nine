@@ -18,7 +18,8 @@ class AdminSeeder extends Seeder
             'email' => 'admin@admin.com',
             'password' => bcrypt('admin'),
             'email_verified_at' => '2023-12-04 19:31:46',
-            'status' => 'admin'
+            'status' => 'admin',
+            'no_telp' => '080180'
         ]);
     }
 }

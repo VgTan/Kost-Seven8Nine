@@ -62,7 +62,7 @@
                     </div>
                     <br />
                     <div class="tombol">
-                        <button type="submit" class="btn btn-outline-primary">UPLOAD FILES</button>
+                        <button type="submit" class="btn btn-outline-primary">DONE</button>
                     </div>
                 </div>
             </div>
