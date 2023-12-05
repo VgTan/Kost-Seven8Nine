@@ -211,64 +211,7 @@
                                 </td>
                                 <td class="profile-cell profile-status-cell" data-label="Payment Status">
                                     @if($trans->status != 'Unpaid')
-                                    @if($trans->status != 'Unpaid')
                                     {{ $trans->status }}
-                                    @else
-                                    @php
-                                    $currentTime = now();
-                                    $paymentTimeLimit = $trans->created_at->addHours(2);
-                                    $timeRemaining = max(0, $paymentTimeLimit->diffInSeconds($currentTime));
-                                    $hoursRemaining = floor($timeRemaining / 3600);
-                                    $minutesRemaining = floor(($timeRemaining % 3600) / 60);
-                                    $secondsRemaining = $timeRemaining % 60;
-                                    @endphp
-
-                                    @if($timeRemaining > 0)
-                                    <div class="time-countdown">
-                                        <div id="countdown">
-                                            <p> {{ $trans->status }}</p>
-                                            Time remaining: {{ $hoursRemaining }}h {{ $minutesRemaining }}m
-                                            {{ $secondsRemaining }}s
-                                        </div>
-                                        <button type="submit">Pay</button>
-                                    </div>
-                                    <script>
-                                        // JavaScript countdown
-                                        setInterval(function() {
-                                            var hours = {{ $hoursRemaining }};
-                                            var minutes = {{ $minutesRemaining }};
-                                            var seconds = {{ $secondsRemaining }};
-
-                                            function updateCountdown() {
-                                                if (hours === 0 && minutes === 0 && seconds === 0) {
-                                                    clearInterval(countdownInterval);
-                                                    // Optionally disable the button or take other actions when the countdown reaches zero
-                                                } else {
-                                                    if (seconds === 0) {
-                                                        if (minutes === 0) {
-                                                            hours--;
-                                                            minutes = 59;
-                                                        } else {
-                                                            minutes--;
-                                                        }
-                                                        seconds = 59;
-                                                    } else {
-                                                        seconds--;
-                                                    }
-
-                                                    document.querySelector("#countdown").innerHTML = "Time remaining: " + hours + "h " + minutes + "m " + seconds + "s";
-                                                }
-                                            }
-
-                                            var countdownInterval = setInterval(updateCountdown, 1000);
-                                            updateCountdown(); // Initial update
-                                        }, 1000);
-                                    </script>
-                                    @else
-                                    @php
-                                    $trans->delete();
-                                    @endphp
-                                    @endif
                                     @else
                                     @php
                                     $currentTime = now();
