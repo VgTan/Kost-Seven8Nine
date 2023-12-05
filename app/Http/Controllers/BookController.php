@@ -408,6 +408,6 @@ class BookController extends Controller
             $msg->from('no.reply@gmail.com');
         });
 
-        return redirect('/token');
+        return redirect(route('token'))->with('buy', 'You have bought token(s), please wait for confirmation');
     }
 }

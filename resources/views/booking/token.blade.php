@@ -11,16 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"> -->
 </head>
 
 <body>
     @include('header')
     <div class="token-container">
-        @if(Session::has('booked'))
-        <div class="alert alert-success w-full">{{Session::get('booked')}}</div>
-        @endif
         <div class="wrapper">
-
+            @if(Session::has('buy'))
+            <div class="alert alert-success w-full">{{Session::get('buy')}}</div>
+            @endif
             <h2>Token Payment</h2>
             <div class="title">
                 <h4>Select a <span style="color: #E6AD76">Payment</span> method</h4>
@@ -125,8 +125,11 @@
             </form>
         </div>
     </div>
-
     @include('footer')
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>
