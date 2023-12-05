@@ -94,7 +94,7 @@ header {
 .nav-link-header {
     position: relative;
     color: rgb(0, 0, 0);
-    padding: 12px 20px;
+    padding: 12px 5px;
 }
 
 .nav-link-header i {
@@ -363,7 +363,12 @@ header {
         margin-right: auto;
         opacity: 0;
         transform: translateY(15px);
-        padding-inline-start: 50px;
+        padding-inline-start: 30px;
+        margin-bottom: 80px;
+    }
+
+    .log-sign a{
+        margin-left: 0px;
     }
 
     .searchInput {

@@ -85,25 +85,18 @@
                     <div class="container-contactus-second">
                         <div class="row-contactus">
                             <div class="contact-info">
+                                
                                 <div class="contact-info-item">
-                                    <div class="contact-info-icon">
-                                        <i class="fa fa-map-marker" aria-hidden="true" style="color: #ffffff;"></i>
-                                    </div>
-                                    <div class="contact-info-content">
-                                        <h4>Address</h4>
-                                        <p>4671 Sugar Camp Road,<br /> Owatonna, Minnesota, <br />55060</p>
-                                    </div>
-                                </div>
-
-                                <div class="contact-info-item">
+                                <a href="https://wa.me/6281381188625">
                                     <div class="contact-info-icon">
                                         <i class="fas fa-phone"></i>
                                     </div>
 
                                     <div class="contact-info-content">
                                         <h4>Phone</h4>
-                                        <p>561-456-2321</p>
+                                        <p>+62 813-8118-8625</p>
                                     </div>
+                                </a>
                                 </div>
 
                                 <div class="contact-info-item">
@@ -118,24 +111,22 @@
                                 </div>
                             </div>
                             <div class="wrapper">
+                            <a href="https://m.facebook.com/p/lumimusicspace-100088209488757/">
                                 <div class="icon facebook">
                                     <div class="tooltip">
                                         Facebook
                                     </div>
                                     <span><i class="fab fa-facebook-f"></i></span>
                                 </div>
-                                <div class="icon twitter">
-                                    <div class="tooltip">
-                                        Twitter
-                                    </div>
-                                    <span><i class="fab fa-twitter"></i></span>
-                                </div>
+                            </a>
+                                <a href="https://www.instagram.com/rhapsodiemusicspace/">
                                 <div class="icon instagram">
                                     <div class="tooltip">
                                         Instagram
                                     </div>
                                     <span><i class="fab fa-instagram"></i></span>
                                 </div>
+                                </a>
                             </div>
                         </div>
                     </div>
