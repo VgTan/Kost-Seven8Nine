@@ -12,50 +12,66 @@
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
 </head>
 
-<body>
-    <header>
-        <div class="header-container">
-            <div class="header">
-                <div class="name">
-                    <a href="/" class="logo"><img src="/images/logo.png" alt=""></a>
-                </div>
-                <div class="header-content">
-                    <div class="content-box active">
-                        <a class="" active href="/">Home</a>
-                    </div>
-                    <div class="content-box">
-                        <a class="" href="/aboutus">About Us</a>
-                    </div>
-                    <div class="content-box">
-                        <a class="" href="/contactus">Contact Us</a>
-                    </div>
-                </div>
-                <div class="head-end">
-                    <form class="search-form" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
-                        <input class="search" type="text" name="room" placeholder="Search Room/Branch">
+<header>
+    <div class="container-header">
+        <input type="checkbox" name="" id="check-header">
 
-                    </form>
-                    @auth
-                    <div class="header-button">
-                        <a class="sign-button" href="/profile">
-                            <p class="">Profile</p>
-                            <img src="/images/contact.png" alt="">
-                        </a>
+        <div class="logo-container">
+            <a href="/" class="logo"><img src="/images/logo.png" alt=""></a>
+        </div>
+
+        <div class="nav-btn button-header">
+            <div class="nav-links">
+                <ul>
+                    <li class="nav-link nav-link-header" style="--i: .6s">
+                        <a href="/">Home</a>
+                    </li>
+                    <li class="nav-link nav-link-header" style="--i: .6s">
+                        <a href="/aboutus">About Us</a>
+                    </li>
+                    <li class="nav-link nav-link-header" style="--i: 1.35s">
+                        <a href="/contactus">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            @auth
+            <div class="log-sign" style="--i: 1.8s">
+                <form class="search-container" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
+                    <div class="search-wrapper">
+                        <i class="ri-search-line"></i>
+                        <input class="searchInput" type="text" name="room" placeholder="Search Room/Branch">
                     </div>
-                    @endauth
-                    @guest
-                    <div class="header-button">
-                        <a class="sign-button" href="/login">
-                            <p class="">Login</p>
-                            <img src="/images/contact.png" alt="">
-                        </a>
+                </form>
+
+                <a href="/profile" class="btn btn-header solid">
+                    <p class="">Profile</p>
+                    <img src="/images/contact.png" alt="">
+                </a>
+            </div>
+            @endauth
+            @guest
+            <div class="log-sign" style="--i: 1.8s">
+                <form class="search-container" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
+                    <div class="search-wrapper">
+                        <i class="ri-search-line"></i>
+                        <input class="searchInput" type="text" name="room" placeholder="Search Room/Branch">
                     </div>
-                    @endguest
-                </div>
+                </form>
+
+                <a href="/login" class="btn btn-header solid">
+                    <p class="">Login</p>
+                    <img src="/images/contact.png" alt="">
+                </a>
+            </div>
+            @endguest
+        </div>
+
+        <div class="hamburger-menu-container">
+            <div class="hamburger-menu">
+                <div></div>
             </div>
         </div>
-    </header>
-    
-</body>
+    </div>
+</header>
 
 </html>

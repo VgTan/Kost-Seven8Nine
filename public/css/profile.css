@@ -5,7 +5,7 @@ body{
     height: auto;
 }
 
-.container{
+.container-profiles{
     padding-top: 150px;
     justify-content: center;
     align-items: center;
@@ -528,4 +528,13 @@ input[type=file] {
 
 .profile-status-cell {
     width: 30%;
+}
+
+.log-sign form {
+    margin-right: 140px;
+    width: 100%;
+}
+
+.nav-link-header>a {
+    font-size: 16px;
 }
