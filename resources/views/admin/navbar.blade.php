@@ -146,7 +146,7 @@
                     <i class='bx bx-log-in'></i>
                 </div>
                 <div class="bottom collapse_sidebar">
-                    <span>Logou</span>
+                    <span>Logout</span>
                     <i class='bx bx-log-out'></i>
                 </div>
             </a>
