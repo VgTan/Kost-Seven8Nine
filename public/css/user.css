@@ -3,6 +3,7 @@ body {
     padding: 0;
     height: 100vh;
 }
+
 .id {
     display: none;
 }
@@ -12,9 +13,7 @@ body {
     height: 100%;
     display: flex;
     justify-content: center;
-    background-color: #F5F5FF;
-    background-color: #F5F5FF;
-    margin-left: 80px;
+    align-items: center;
 }
 
 .container-size {
@@ -29,8 +28,9 @@ body {
     padding: 20px;
     padding-left: 0;
     padding-right: 0;
-    background-color: white;
+    background-color: #363740;
     align-items: center;
+    color: white;
 }
 
 .branch-count,
@@ -73,36 +73,6 @@ body {
     background-color: white;
 }
 
-.user-table {
-    width: 100%;
-    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-.user-table {
-    width: 100%;
-    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
-.user-table {
-    width: 100%;
-    box-shadow: 1px 1px 3px rgb(152, 152, 152), 1px 1px 3px rgb(152, 152, 152);
-    border-radius: 10px;
-    overflow: hidden;
-    height: 100%;
-    border-collapse: collapse;
-    background-color: white;
-}
-
 .user-table td,
 .user-table th {
     text-align: start;
@@ -110,7 +80,8 @@ body {
 
 .table-head {
     height: 60px;
-    background-color: #EAECF0;
+    background-color: #363740;
+    color: white;
     box-shadow: 1px 1px 3px rgb(152, 152, 152);
 }
 
@@ -127,6 +98,7 @@ body {
 .table-content {
     height: 80px;
     border-bottom: 2px solid #b9b9b9;
+    color: #345B77;
 }
 
 .styled-table {
@@ -150,7 +122,7 @@ body {
     padding: 12px 16px;
 }
 
-.styled-table th{
+.styled-table th {
     padding-left: 50px;
 }
 
@@ -270,9 +242,14 @@ td.remove {
     .container-size {
         width: 90%;
     }
+
+    .user-table td,
+    .user-table th {
+        text-align: center;
+    }
 }
 
-@media screen and (max-width: 670px) {
+@media (max-width: 670px) {
 
     .branch-count p,
     .user-count p,
@@ -326,8 +303,9 @@ td.remove {
 
 }
 
-@media screen and (max-width: 480px) {
-    .table-head input, .table-content input {
+@media (max-width: 480px) {
+    .table-head input,
+    .table-content input {
         width: 15px;
         height: 15px;
         margin: auto;
@@ -387,7 +365,8 @@ td.remove {
         width: 95%;
     }
 
-    .table-head input, .table-content input {
+    .table-head input,
+    .table-content input {
         width: 11px;
         height: 11px;
         margin: auto;
@@ -397,6 +376,9 @@ td.remove {
         font-size: 9px;
     }
 
+    .details {
+        flex-direction: column;
+    }
 
     .branch-count p,
     .user-count p,
@@ -417,7 +399,7 @@ td.remove {
     }
 
     .function .tooltip {
-        font-size:8px;
+        font-size: 8px;
         height: 20px;
         padding: 3.5px 10px;
     }
@@ -449,5 +431,4 @@ td.remove {
         align-items: center;
         gap: 3px;
     }
-
 }

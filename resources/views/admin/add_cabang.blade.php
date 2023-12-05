@@ -16,43 +16,45 @@
     <div class="container">
         <div class="addbranch">
             <h1>ADD BRANCH | UPLOAD FILES</h1>
-            <form action="/processbranch" method="post" enctype="multipart/form-data" class="">
-                @csrf
-                <div class="dragger_wrap">
-                    <div class="form-desc">
-                        <label for="images" class="drop-container" id="dropcontainer">
-                            <div class="icon"><i class="fa-solid fa-images"></i></div>
-                            <span class="drop-title">Drop files here</span>
-                            or
-                            <input id="images" class="" type="file" name="img" accept=".jpg, .jpeg, .png" value="" multiple />
-                        </label>
+        </div>
+        <form action="/processbranch" method="post" enctype="multipart/form-data" class="">
+            @csrf
+            <div class="dragger_wrap">
+                <div class="form-desc">
+                    <label for="images" class="drop-container" id="dropcontainer">
+                        <div class="icon"><i class="fa-solid fa-images"></i></div>
+                        <span class="drop-title">Drop files here</span>
+                        or
+                        <input id="images" class="" type="file" name="img" accept=".jpg, .jpeg, .png" value="" multiple />
+                    </label>
+                </div>
+
+                <div class="branchinfo">
+                    <br />
+                    <label for="name" class="inp"><b>Place</b></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="name" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
+                    <br />
 
-                    <div class="branchinfo">
-                        <br />
-                        <label for="name" class="inp"><b>Place</b></label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="name" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                        </div>
-                        <br />
+                    <label for="name" class="inp"><b>Location</b></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="location" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
 
-                        <label for="name" class="inp"><b>Location</b></label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="location" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                        </div>
-                        <br />
-
-                        <label for="site" class="inp"><b>Site Name [".../(site name)"]</b></label>
-                        <div class="input-group mb-3">
-                            <input type="text" class="form-control" name="site" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-                        </div>
-                        <br />
-
-                        <button type="submit" class="btn btn-outline-primary">UPLOAD FILES</button>
+                    <label for="site" class="inp"><b>Site Name [".../(site name)"]</b></label>
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" name="site" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                    </div>
+                    <br />
+                    <div class="tombol">
+                        <button type="submit" class="btn btn-outline-primary center-button">UPLOAD FILES</button>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </form>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

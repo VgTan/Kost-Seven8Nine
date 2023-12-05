@@ -30,19 +30,25 @@
                     <span>{{ $branch->branch }} Book List(s)</span>
                 </div>
                 @endforeach
-                
+
             </div>
             <div class="user">
-                <form class="function" action="">
-                    @csrf
-                    <p>Filter</p>
+                <div class="filterForm">
+                    <p>Filter
+                        <select id="timeFilter" onchange="applyTimeFilter()">
+                            <option value="oldest">Oldest</option>
+                            <option value="newest">Newest</option>
+                        </select>
+                    </p>
+                </div>
+                <div class="searchForm">
                     <p>Search</p>
-                    <!-- <div class="form">
-                        <input type="search" required>
+                    <div class="form">
+                        <input type="search" id="searchInput" oninput="searchTable()">
                         <i class="fa fa-search"></i>
-                        <a href="javascript:void(0)" id="clear-btn">Clear</a>
-                    </div> -->
-                </form>
+                        <a href="javascript:void(0)" id="clear-btn" onclick="clearSearch()">Clear</a>
+                    </div>
+                </div>
                 <div class="table-form">
                     <table class="user-table">
                         <tr class="table-head">
@@ -92,7 +98,7 @@
                                 @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $booklist->id }}">
                                 <td>
-                                    <button type="submit">Done</button>
+                                    <button class="done-btn" type="submit">Done</button>
                                 </td>
                             </form>
                         </tr>
@@ -103,6 +109,76 @@
             </div>
         </div>
     </div>
+
+    <script>
+    function applyTimeFilter() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.querySelector(".user-table");
+        switching = true;
+
+        var sortOrder = document.getElementById("timeFilter").value === "newest" ? -1 : 1;
+
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+
+            for (i = 1; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+                x = rows[i].querySelector(".input-content");
+                y = rows[i + 1].querySelector(".input-content");
+
+                var dateX = new Date(x.textContent);
+                var dateY = new Date(y.textContent);
+
+                if (sortOrder === -1 ? dateX < dateY : dateX > dateY) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+        searchTable();
+    }
+
+    function searchTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.querySelector(".user-table");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            var found = false;
+
+            for (j = 1; j < tr[i].cells.length; j++) {
+                td = tr[i].cells[j];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
+                        break;
+                    }
+                }
+            }
+
+            if (found) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+
+    function clearSearch() {
+        document.getElementById("searchInput").value = "";
+        searchTable();
+    }
+    </script>
 </body>
 
 </html>
