@@ -16,9 +16,11 @@ a {
     text-decoration: none;
     color: white;
 }
+
 .main-container {
     width: 100%;
 }
+
 .carousel-img {
     width: 100%;
     height: 100%;
@@ -112,6 +114,10 @@ a {
 }
 
 .contact-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     height: 100%;
     font-family: 'Poppins', sans-serif;
@@ -125,8 +131,7 @@ a {
 }
 
 .logo-sub {
-    height: 130px;
-    scale: 1.5;
+    width: 400px;
 }
 
 /* ABOUT US LP CSS */
@@ -214,6 +219,8 @@ a {
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .aboutus-button p {
@@ -306,15 +313,12 @@ a {
     --flow-space: 0.9375rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-self: flex-end;
     height: 70%;
     z-index: 0;
     padding: 8% 1.25rem 2.875rem;
-    background: linear-gradient(180deg,
-            hsla(0, 0%, 0%, 0) 0%,
-            hsla(0, 0%, 0%, 0.3) 10%,
-            hsl(0, 0%, 0%) 100%);
+    background: linear-gradient(180deg, hsla(0, 0%, 0%, 0) 0%, hsla(0, 0%, 0%, 0.3) 10%, hsl(0, 0%, 0%) 100%);
 }
 
 .branch_card_content--container {
@@ -596,7 +600,7 @@ a {
 
 .ticket {
     width: 100%;
-    max-width: 400px;
+    max-width: 390px;
     box-sizing: border-box;
     padding: 20px;
     border: 2px solid #ccc;
@@ -709,17 +713,21 @@ a {
         align-items: center;
         padding: 50px 20px;
     }
+
     .card.shadow {
         width: 31%;
         height: 650px;
     }
+
     .card.active {
         width: 31%;
         height: 620px;
     }
+
     .pack {
         font-size: 27px;
     }
+
     .price-ul li.price {
         font-size: 2.2rem;
     }
@@ -765,6 +773,7 @@ a {
         height: 100%;
         margin-bottom: 50px;
     }
+
     .price-cards {
         display: flex;
         justify-content: center;
@@ -826,8 +835,7 @@ a {
     }
 
     .logo-sub {
-        height: 130px;
-        scale: 1;
+        width: 350px;
     }
 
     .subs {
@@ -882,6 +890,7 @@ a {
     .eventlist-title h1 {
         font-size: 25px;
     }
+
     .aboutus-row-icons {
         width: 30%;
     }
@@ -889,8 +898,8 @@ a {
 }
 
 @media (max-width: 400px) {
+
     .logo-sub {
-        height: 130px;
         scale: 0.7;
     }
 
@@ -902,9 +911,11 @@ a {
         width: 78%;
     }
 
-    .card.active, .card.shadow {
+    .card.active,
+    .card.shadow {
         width: 80%;
     }
+
     .branch-card {
         width: 80%;
     }
@@ -920,6 +931,7 @@ a {
         width: 100%;
         font-family: 'Poppins', sans-serif;
     }
+
     .aboutus-row-icons {
         width: 40%;
     }
@@ -958,25 +970,20 @@ a {
     }
 
     .contact-us {
-        margin: 0px;
+        margin: 35px;
         padding: 30px;
-        width: 60%;
-        margin-top: 50px;
-        margin-left: 65px;
-        margin-bottom: 50px;
+        width: 75%;
     }
 
     .logo-sub {
-        height: 130px;
         scale: 0.5;
-        margin-left: -65px;
     }
 
     .subs {
         font-size: 1.5rem;
     }
 
-    .card.active .price-ul{
+    .card.active .price-ul {
         width: 80%;
     }
 
@@ -992,7 +999,8 @@ a {
         width: 75%;
     }
 
-    .card.active, .card.shadow {
+    .card.active,
+    .card.shadow {
         width: 70%;
     }
 

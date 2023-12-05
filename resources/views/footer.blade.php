@@ -20,11 +20,8 @@
                     Now Everyone Can Learn Music.
                     </p>
                     <div class="social">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://m.facebook.com/p/lumimusicspace-100088209488757/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/rhapsodiemusicspace/"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
 
@@ -53,11 +50,13 @@
                     <h3>Contact</h3>
                     <div class="contact-details">
                         <i class="fa fa-location"></i>
-                        <p>FF-42, Procube Avenue, <br> NY, USA</p>
+                        <p>Rhapsodie.co music space</p>
                     </div>
                     <div class="contact-details">
+                    <a href="https://wa.me/6281381188625">
                         <i class="fa fa-phone"></i>
-                        <p>+1-8755856858</p>
+                        <p>+62 813-8118-8625</p>
+                        </a>
                     </div>
                 </div>
             </div>

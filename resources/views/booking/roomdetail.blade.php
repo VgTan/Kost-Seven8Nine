@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font & Style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -18,14 +17,16 @@
 
 <body>
     @include('header')
-    
+
     <div class="roomdetail-margin">
         <div class="roomdetail-container">
             <div class="roomdetail-header1">
                 <img src="/images/cabang/{{ $loc->img }}" alt="">
 
                 <div class="text-title">
-                    <h1>Need a place to learn<br />Or place to teach?</h1>
+                    <h1>Need a place to learn<br />Or place to teach? <br /><br />
+                        <a href="/{{$loc->site}}/{{$rooms->room_id}}/book" class="book-button">Book Now</a>
+                    </h1>
                 </div>
             </div>
             <div class="roomdetail-header-margin">
@@ -37,16 +38,14 @@
 
                             <div class="info-item">
                                 <p>
-                                    <i class="fa fa-arrows-alt"
-                                        style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
+                                    <i class="fa fa-arrows-alt" style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
                                     {{ $rooms->room_size }}
                                 </p>
                                 <p>
-                                    <i class="fa fa-check-square-o"
-                                        style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
+                                    <i class="fa fa-check-square-o" style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
                                     {{ $rooms->room_equipment }}
                                 </p>
-                                
+
                             </div>
                             <hr>
                             <ul class="nav nav-pills">
@@ -65,43 +64,37 @@
                                             <h5> Week of {{ $currentDateMD }}</h5>
                                         </div>
                                         <div class="day-schedule-container">
-                                        <div class="schedule">
-                                            <div class="left-column day-schedule">
-                                                <p class="day-name">Time</p>
-                                                @foreach($mon as $schedule)
-                                                @if($schedule->week == 'week 1')
-                                                <p class="leftcolumn-time">{{ $schedule->time }}</p>
-                                                @endif
-                                                @endforeach
-                                            </div>
-
-                                            @foreach(['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'] as $index =>
-                                            $day)
-                                            <div class="day-schedule">
-                                                <p class="day-name">{{ ucfirst($day) }}</p>
-                                                <div class="time-slots">
-                                                    @foreach(${$day} as $schedule)
-                                                    @if($schedule->status == 'ready' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
-                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
-                                                        data-time="{{ $schedule->time }}">
-                                                    </div>
-                                                    @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read disabled" data-day="{{ $day }}"
-                                                        data-date="{{ $dates1[$index] }}"
-                                                        data-time="{{ $schedule->time }}">
-                                                    </div>
-                                                    @elseif($schedule->status == 'expired' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read expired" data-day="{{ $day }}"
-                                                        data-date="{{ $dates1[$index] }}"
-                                                        data-time="{{ $schedule->time }}">
-                                                    </div>
+                                            <div class="schedule">
+                                                <div class="left-column day-schedule">
+                                                    <p class="day-name">Time</p>
+                                                    @foreach($mon as $schedule)
+                                                    @if($schedule->week == 'week 1')
+                                                    <p class="leftcolumn-time">{{ $schedule->time }}</p>
                                                     @endif
                                                     @endforeach
                                                 </div>
+
+                                                @foreach(['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'] as $index =>
+                                                $day)
+                                                <div class="day-schedule">
+                                                    <p class="day-name">{{ ucfirst($day) }}</p>
+                                                    <div class="time-slots">
+                                                        @foreach(${$day} as $schedule)
+                                                        @if($schedule->status == 'ready' && $schedule->week == 'week 1')
+                                                        <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}" data-day="{{ $day }}" data-date="{{ $dates1[$index] }}" data-time="{{ $schedule->time }}">
+                                                        </div>
+                                                        @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
+                                                        <div class="time-slot read disabled" data-day="{{ $day }}" data-date="{{ $dates1[$index] }}" data-time="{{ $schedule->time }}">
+                                                        </div>
+                                                        @elseif($schedule->status == 'expired' && $schedule->week == 'week 1')
+                                                        <div class="time-slot read expired" data-day="{{ $day }}" data-date="{{ $dates1[$index] }}" data-time="{{ $schedule->time }}">
+                                                        </div>
+                                                        @endif
+                                                        @endforeach
+                                                    </div>
+                                                </div>
+                                                @endforeach
                                             </div>
-                                            @endforeach
-                                        </div>
                                         </div>
                                     </div>
                                 </div>
@@ -123,8 +116,6 @@
                                     <div class="box">
                                         <h1>Special Price</h1>
                                         <h2>Start from 75K/30mins</h2>
-                                        <a href="/{{$loc->site}}/{{$rooms->room_id}}/book" class="book-button">Book
-                                            Now</a>
                                     </div>
                                 </div>
                             </div>

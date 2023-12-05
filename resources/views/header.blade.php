@@ -23,19 +23,22 @@
         <div class="nav-btn button-header">
             <div class="nav-links">
                 <ul>
-                    <li class="nav-link nav-link-header" style="--i: .6s">
+                    <li class="nav-link nav-link-header" style="--i: .3s">
                         <a href="/">Home</a>
                     </li>
-                    <li class="nav-link nav-link-header" style="--i: .6s">
-                        <a href="/aboutus">About Us</a>
+                    <li class="nav-link nav-link-header" style="--i: .4s">
+                        <a href="/token">Buy Token</a>
                     </li>
-                    <li class="nav-link nav-link-header" style="--i: 1.35s">
+                    <li class="nav-link nav-link-header" style="--i: .5s">
+                        <a href="/#eventhome">Event</a>
+                    </li>
+                    <li class="nav-link nav-link-header" style="--i: .6s">
                         <a href="/contactus">Contact Us</a>
                     </li>
                 </ul>
             </div>
             @auth
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: .7s">
                 <form class="search-container" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
                     <div class="search-wrapper">
                         <i class="ri-search-line"></i>
@@ -50,7 +53,7 @@
             </div>
             @endauth
             @guest
-            <div class="log-sign" style="--i: 1.8s">
+            <div class="log-sign" style="--i: .7s">
                 <form class="search-container" action="{{ route('findroom', ['room' => ':room']) }}" method="GET">
                     <div class="search-wrapper">
                         <i class="ri-search-line"></i>

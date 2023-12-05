@@ -58,10 +58,6 @@
                     students' as an on-site learning center.
                     This can be rent with hourly rent system and offer special prices for professionals to have classes.
                 </h3>
-                <h3>Rhapsodie.co Music Space helps the venue to get more
-                    traffic of daily visitors because it's placed in Mall as the quarter of hangout activities for
-                    family
-                    and kids market.</h3>
             </div>
             <img src="images/aboutus/learnmusic.jpg" />
         </div>

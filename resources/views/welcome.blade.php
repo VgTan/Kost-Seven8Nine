@@ -23,10 +23,10 @@
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img class="carousel-img" src="./images/building.jpg" alt="First slide">
+                <img class="carousel-img" src="./images/building1.jpg" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="carousel-img" src="./images/building1.jpg" alt="Second slide">
+                <img class="carousel-img" src="./images/building.jpg" alt="Second slide">
             </div>
             <div class="carousel-item">
                 <img class="carousel-img" src="./images/building2.jpg" alt="Third slide">
@@ -49,10 +49,10 @@
         <div class="blue-border-text">
             <h1 class="text-blue">Guitar</h1>
             <h1>Piano</h1>
-            <h1>Flute</h1>
+            <h1>Violin</h1>
             <h1>Drum</h1>
             <h1>Vocal</h1>
-            <h1>Much More</h1>
+            <h1>Keyboard</h1>
         </div>
     </div>
     <!-- CAROUSEL HEADING END -->
@@ -78,8 +78,6 @@
                                 music activity inclusively to everyone. This activity is apushing forward to develop
                                 children's growth with music by providing a place to learn individually or with
                                 professional.</p>
-                            <p>Rhapsodie.co Music Space helps the venue to get moretraffic of daily visitors because
-                                it's placed in Mall as thequarter of hangout activities for family and kids market.</p>
                             <div class="aboutus-icons">
                                 <div class="aboutus-row-icons">
                                     <div class="aboutus-icon-desc">
@@ -168,7 +166,7 @@
                             <li class="bottom-bar">60 Mins</li>
                             <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btns">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Buy Now</a></li>
                         </ul>
                     </div>
                     <div class="card active">
@@ -178,7 +176,7 @@
                             <li class="bottom-bar">30 Mins</li>
                             <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btn active-btn">Learn More</a></li>
+                            <li><a href="/token" class="price-btn active-btn">Buy Now</a></li>
                         </ul>
                     </div>
                     <div class="card shadow">
@@ -188,7 +186,7 @@
                             <li class="bottom-bar">180 Mins</li>
                             <li class="bottom-bar">Flexible Time (30 Mins Per Session)</li>
                             <li class="bottom-bar">Access To Every Rhapsodie.co Location</li>
-                            <li><a href="/token" class="price-btns">Learn More</a></li>
+                            <li><a href="/token" class="price-btns">Buy Now</a></li>
                         </ul>
                     </div>
                 </div>
@@ -196,7 +194,7 @@
             <!-- PRICE PLAN END -->
 
             <!-- EVENT START -->
-            <div class="eventlist">
+            <div class="eventlist" id="eventhome">
                 <div class="eventlist-title">
                     <h1>OUR NEWS AND EVENT</h1>
                     <h3>Come Join Our Adventure</h3>
@@ -234,6 +232,7 @@
 
 
             <!-- INSTAGRAM START -->
+
             <div class="contact-us">
                 <div class="contact-content">
                     <img class="logo-sub" src="./images/logo.png" alt="">
@@ -243,6 +242,7 @@
                     </p>
                 </div>
             </div>
+
             <!-- INSTAGRAM END -->
 
 

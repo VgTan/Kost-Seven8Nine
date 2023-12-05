@@ -119,6 +119,23 @@ footer{
     padding: 5px 0;
 }
 
+.col .social a{
+    font-size: 25px;
+}
+
+.col .contact-details a{
+    display: inline-flex;
+    color:#f2f2f2;
+    margin-bottom: 5px;
+    position: relative;
+    transition: 0.3s ease;
+}
+
+.col .contact-details a:hover{
+    transform: scale(1);
+    color: #268AC9;
+    text-decoration: none;
+}
 
 /********** Responsive Design ********/
 @media(max-width:900px)

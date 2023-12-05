@@ -1,9 +1,13 @@
+body {
+  display: block;
+  margin: 0px;
+}
+
 .policy-main {
-    margin: 70px;
+    margin: 20px 70px 50px 70px;
   }
   
   .policy-container {
-    padding-top: 0px;
     margin: 0;
     padding: 0;
   }
