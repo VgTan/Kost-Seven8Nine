@@ -171,7 +171,9 @@
             <!-- SCHEDULE END -->
 
             <!-- TRANSACTION START -->
+
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                @if(!$transactions->isEmpty())
                 <div class="profile-container">
                     <table class="profile-table">
                         <tr class="profile-header-row">
@@ -179,22 +181,38 @@
                             <td class="profile-cell profile-detail-cell">Amount</td>
                             <td class="profile-cell profile-status-cell">Payment Status</td>
                         </tr>
-                        @foreach($transactions as $trans)
-                        <tr class="profile-row">
-                            <td class="profile-cell profile-date-cell" data-label="Job Id">
-                                {{ date_format($trans->created_at, 'M, d Y') }}</td>
-                            <td class="profile-cell profile-detail-cell" data-label="Customer Name">
-                                <div class="bundle">
-                                    <p>{{ $trans->bundle }}</p>
-                                    <p>{{ $trans->price }}</p>
-                                </div>
-                            </td>
-                            <td class="profile-cell profile-status-cell" data-label="Payment Status">
-                                {{ $trans->status }}</td>
-                        </tr>
+                        <form action="{{ route('buytoken') }}" method="POST">
+                            @csrf
+                            @foreach($transactions as $trans)
+                            <tr class="profile-row">
+                                <td class="profile-cell profile-date-cell" data-label="Job Id">
+                                    {{ date_format($trans->created_at, 'M, d Y') }}</td>
+                                    <input type="text" value="{{ $trans->id }}" name="id" hidden>
+                                    <input type="text" value="{{ $trans->bundle }}" name="bundle" hidden>
+                                    <input type="text" value="{{ $trans->price }}" name="price" hidden>
+                                <td class="profile-cell profile-detail-cell" data-label="Customer Name">
+                                    <div class="bundle">
+                                        <p>{{ $trans->bundle }}</p>
+                                        <p>{{ $trans->price }}</p>
+                                    </div>
+                                </td>
+
+                                <td class="profile-cell profile-status-cell" data-label="Payment Status">
+                                    {{ $trans->status }}
+                                    @if($trans->status == 'Unpaid')
+                                    <button type="submit">Pay</button>
+                                    @endif
+                                </td>
+                            </tr>
+                        </form>
+
                         @endforeach
                     </table>
                 </div>
+                @else
+                <div class="">No Transaction Available</div>
+                @endif
+
             </div>
         </div>
         <div class="logout-button">
