@@ -230,6 +230,12 @@ td.remove {
     padding: 10px;
 }
 
+.user-total-token {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     .container {
         padding: 100px 0;

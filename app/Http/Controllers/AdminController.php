@@ -417,6 +417,22 @@ class AdminController extends Controller
     }
 
     public function edit_user($user_id) {
-        return view('admin.edituser');
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+    
+        $user = User::where('id', $user_id)->first();
+        return view('admin.edituser', compact('user'));
+    }
+
+    public function editprocess($user_id, Request $request) {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+
+        $request->validate([
+            'token' => 'required'
+        ]);
+
+        $user = User::where('id', $user_id)->first();
+        $user->update(['token', $request->token]);
     }
 }

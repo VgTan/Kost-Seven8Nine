@@ -154,7 +154,7 @@
         for (i = 1; i < tr.length; i++) {
             var found = false;
 
-            for (j = 1; j < tr[i].cells.length; j++) {
+            for (j = 0; j < tr[i].cells.length; j++) {
                 td = tr[i].cells[j];
                 if (td) {
                     txtValue = td.textContent || td.innerText;
@@ -165,6 +165,7 @@
                     }
                 }
             }
+
             if (found) {
                 tr[i].style.display = "";
             } else {

@@ -127,6 +127,8 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/book/log', 'book_log')->name('');
 
     Route::get('/{user_id}/edit', 'edit_user')->name('edit_user');
+    Route::post('/{user_id}/edit/process', 'edit_process')->name('editprocess');
+
 });
 
 

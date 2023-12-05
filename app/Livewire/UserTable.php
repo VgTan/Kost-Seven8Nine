@@ -20,7 +20,7 @@ class UserTable extends Component
     public function render()
     {
         $users = User::where('name', 'like', '%' . $this->search . '%')
-        ->orWhere('email', 'like', '%' . $this->search . '%')->paginate(2);
+        ->orWhere('email', 'like', '%' . $this->search . '%')->paginate(20);
         return view('livewire.user-table', compact('users'));
     }
 }

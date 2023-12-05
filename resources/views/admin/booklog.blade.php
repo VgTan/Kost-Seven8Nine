@@ -26,8 +26,8 @@
                 </div> -->
                 @foreach($branchBooks as $branch)
                 <div class="room-count">
-                    <p>{{ COUNT($branch) }}</p>
-                    <span>{{ $branch->branch }} Book List(s)</span>
+                    <p>{{ number_format((75000 * COUNT($branch)), 0, '', '.') }}</p>
+                    <span>Rupiah ({{ $branch->branch }})</span>
                 </div>
                 @endforeach
 
@@ -154,7 +154,7 @@
         for (i = 1; i < tr.length; i++) {
             var found = false;
 
-            for (j = 1; j < tr[i].cells.length; j++) {
+            for (j = 0; j < tr[i].cells.length; j++) {
                 td = tr[i].cells[j];
                 if (td) {
                     txtValue = td.textContent || td.innerText;

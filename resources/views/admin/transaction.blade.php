@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rhapsodie</title>
     <link rel="stylesheet" href="/css/check.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        crossorigin="anonymous">
 </head>
 
 <body>
@@ -88,13 +89,13 @@
                             <form action="{{ route('remove') }}" method="get">
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                <button type="submit"><i class="fa-solid fa-trash"></i></button>
+                                    <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </form>
                             <form action="{{ route('acc') }}" method="get">
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
-                                <button type="submit"><i class="fa-solid fa-check-to-slot"></i></button>
+                                    <button type="submit"><i class="fa-solid fa-check-to-slot"></i></button>
                                 </td>
                             </form>
                         </tr>
@@ -106,73 +107,73 @@
         </div>
     </div>
     <script>
-        function applyTimeFilter() {
-            var table, rows, switching, i, x, y, shouldSwitch;
-            table = document.querySelector(".user-table");
-            switching = true;
+    function applyTimeFilter() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.querySelector(".user-table");
+        switching = true;
 
-            var sortOrder = document.getElementById("timeFilter").value === "newest" ? -1 : 1;
+        var sortOrder = document.getElementById("timeFilter").value === "newest" ? -1 : 1;
 
-            while (switching) {
-                switching = false;
-                rows = table.rows;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
 
-                for (i = 1; i < rows.length - 1; i++) {
-                    shouldSwitch = false;
-                    x = rows[i].querySelector(".input-content");
-                    y = rows[i + 1].querySelector(".input-content");
+            for (i = 1; i < rows.length - 1; i++) {
+                shouldSwitch = false;
+                x = rows[i].querySelector(".input-content");
+                y = rows[i + 1].querySelector(".input-content");
 
-                    var dateX = new Date(x.textContent);
-                    var dateY = new Date(y.textContent);
+                var dateX = new Date(x.textContent);
+                var dateY = new Date(y.textContent);
 
-                    if (sortOrder === -1 ? dateX < dateY : dateX > dateY) {
-                        shouldSwitch = true;
+                if (sortOrder === -1 ? dateX < dateY : dateX > dateY) {
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+
+            if (shouldSwitch) {
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+            }
+        }
+        searchTable();
+    }
+
+    function searchTable() {
+        var input, filter, table, tr, td, i, j, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        table = document.querySelector(".user-table");
+        tr = table.getElementsByTagName("tr");
+
+        for (i = 1; i < tr.length; i++) {
+            var found = false;
+
+            for (j = 0; j < tr[i].cells.length; j++) {
+                td = tr[i].cells[j];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        found = true;
                         break;
                     }
                 }
-
-                if (shouldSwitch) {
-                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
-                    switching = true;
-                }
             }
-            searchTable();
-        }
 
-        function searchTable() {
-            var input, filter, table, tr, td, i, j, txtValue;
-            input = document.getElementById("searchInput");
-            filter = input.value.toUpperCase();
-            table = document.querySelector(".user-table");
-            tr = table.getElementsByTagName("tr");
-
-            for (i = 1; i < tr.length; i++) {
-                var found = false;
-
-                for (j = 1; j < tr[i].cells.length; j++) {
-                    td = tr[i].cells[j];
-                    if (td) {
-                        txtValue = td.textContent || td.innerText;
-
-                        if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                            found = true;
-                            break;
-                        }
-                    }
-                }
-
-                if (found) {
-                    tr[i].style.display = "";
-                } else {
-                    tr[i].style.display = "none";
-                }
+            if (found) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
             }
         }
+    }
 
-        function clearSearch() {
-            document.getElementById("searchInput").value = "";
-            searchTable();
-        }
+    function clearSearch() {
+        document.getElementById("searchInput").value = "";
+        searchTable();
+    }
     </script>
 </body>
 
