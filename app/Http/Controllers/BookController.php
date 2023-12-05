@@ -30,6 +30,7 @@ class BookController extends Controller
         $roomname = Room::where('id', $room)->first()->name;
         $branchloc = Branch::where('site', $site)->first();
         $currentDayNumber = date('N');
+
         // Calculate the number of days to Monday (the beginning of the week)
         $daysToMonday = (8 - $currentDayNumber) % 7;
         $daysToMonday2 = 7-((8 - $currentDayNumber) % 7);
@@ -38,18 +39,8 @@ class BookController extends Controller
         $currentDate = date('Y-m-d');
         $currentDateYM = date('F Y');
 
-        $branchrooms = BranchRoom::all();
-        $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
-            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
-            '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
-            '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
-            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
-            '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
-            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
-            '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
-            '20.30 - 21.00'];
-            
-        if($currentDayNumber == 7) {
+        // Calculate the dates for the next 7 days (Monday to Sunday)
+        if($currentDate == 7) {
             $dates1 = [
             $datemon = date('Y-m-d', strtotime("$currentDate +$daysToMonday days")),
             $datetues = date('Y-m-d', strtotime("$datemon +1 days")),
@@ -60,7 +51,7 @@ class BookController extends Controller
             $datesun = date('Y-m-d', strtotime("$datemon +6 days"))
             ];
             $dates2 = [
-                $datenextmon = date('Y-m-d', strtotime("$datemon +7 days")),
+                $datenextmon = date('Y-m-d', strtotime("$currentDate +$daysToMonday+7 days")),
                 $datenexttues = date('Y-m-d', strtotime("$datenextmon +1 days")),
                 $datenextwed = date('Y-m-d', strtotime("$datenextmon +2 days")),
                 $datenextthur = date('Y-m-d', strtotime("$datenextmon +3 days")),
@@ -69,6 +60,17 @@ class BookController extends Controller
                 $datenextsun = date('Y-m-d', strtotime("$datenextmon +6 days"))
             ];
         } else {
+            $branchrooms = BranchRoom::all();
+            $day = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+            $time = ['10.00 - 10.30', '10.30 - 11.00', '11.00 - 11.30',
+            '11.30 - 12.00', '12.00 - 12.30', '12.30 - 13.00',
+            '13.00 - 13.30', '13.30 - 14.00', '14.00 - 14.30',
+            '14.30 - 15.00', '15.00 - 15.30', '15.30 - 16.00', 
+            '16.00 - 16.30', '16.30 - 17.00', '17.00 - 17.30',
+            '17.30 - 18.00', '18.00 - 18.30', '18.30 - 19.00', 
+            '19.00 - 19.30', '19.30 - 20.00', '20.00 - 20.30',
+            '20.30 - 21.00'];
+            
             $dates1 = [
                 $datemon = date('Y-m-d', strtotime("$currentDate + $daysToMonday days")),
                 $datetues = date('Y-m-d', strtotime("$datemon +1 days")),

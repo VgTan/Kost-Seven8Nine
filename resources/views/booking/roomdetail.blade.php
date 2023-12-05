@@ -46,13 +46,12 @@
                                         style="font-size:24px;margin-right:10px;color:#E6AD76"></i>
                                     {{ $rooms->room_equipment }}
                                 </p>
-
+                                
                             </div>
                             <hr>
                             <ul class="nav nav-pills">
                                 <li class="active"><a data-toggle="pill" href="#home">Description</a></li>
-                                <li><a data-toggle="pill" href="#menu1"> <i class="fa fa-calendar-check-o"
-                                            aria-hidden="true"></i> Schedule</a></li>
+                                <li><a data-toggle="pill" href="#menu1"> <i class="fa fa-calendar-check-o" aria-hidden="true"></i> Schedule</a></li>
                             </ul>
                             <div class="tab-content-room">
                                 <div id="home" class="tab-pane fade in active">
@@ -63,12 +62,9 @@
                                     <h4>SCHEDULE</h4>
                                     <div class="schedule-container">
                                         <div class="schedule-title-roomdetails">
-                                            @if($currentDayNumber != 7)
                                             <h5> Week of {{ $currentDateMD }}</h5>
-                                            @else
-                                            <h5> Week of {{ $tomorrow }}</h5>
-                                            @endif
                                         </div>
+                                        <div class="day-schedule-container">
                                         <div class="schedule">
                                             <div class="left-column day-schedule">
                                                 <p class="day-name">Time</p>
@@ -86,8 +82,8 @@
                                                 <div class="time-slots">
                                                     @foreach(${$day} as $schedule)
                                                     @if($schedule->status == 'ready' && $schedule->week == 'week 1')
-                                                    <div class="time-slot read ready" data-day="{{ $day }}"
-                                                        data-date="{{ $dates1[$index] }}"
+                                                    <div class="time-slot read {{ $schedule->status == 'ready' ? 'ready' : ($schedule->status == 'booked' ? 'disabled' : 'expired') }}"
+                                                        data-day="{{ $day }}" data-date="{{ $dates1[$index] }}"
                                                         data-time="{{ $schedule->time }}">
                                                     </div>
                                                     @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
@@ -105,6 +101,7 @@
                                                 </div>
                                             </div>
                                             @endforeach
+                                        </div>
                                         </div>
                                     </div>
                                 </div>

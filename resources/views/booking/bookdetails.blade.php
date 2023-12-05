@@ -8,17 +8,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Rhapsodie</title>
     <script src="https://kit.fontawesome.com/ba19abdbd6.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/bookdetails.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Rhapsodie</title>
-    <script src="https://kit.fontawesome.com/ba19abdbd6.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <form action="{{ route('booking') }}" method="post">
         @csrf
 
-        <div id="container">
+        <div id="container" class="container-bookdetails">
 
             <div class="product-details">
 

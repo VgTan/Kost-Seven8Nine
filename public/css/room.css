@@ -1,9 +1,3 @@
-body {
-    min-height: 100vh;
-    top: 0;
-    overflow-x: hidden;
-}
-
 .branch-section {
     margin: 0;
     padding: 0;
@@ -12,6 +6,7 @@ body {
     top: 0;
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
 }
 
 .base-branch {
