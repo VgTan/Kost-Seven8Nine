@@ -4,6 +4,7 @@ body {
     padding: 0;
     margin: 0;
     height: auto;
+    overflow-x: hidden;
 }
 
 p {
@@ -482,6 +483,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding-left: 0px;
 }
 
 .price-ul li {
@@ -796,8 +798,9 @@ a {
     .aboutus-icons {
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: center;
         margin: 40px 0 0 0;
+        gap: 10px;
     }
 
     .text-title2 h1 {
@@ -924,7 +927,7 @@ a {
         font-family: 'Poppins', sans-serif;
     }
     .aboutus-row-icons {
-        width: 50%;
+        width: 40%;
     }
 }
 

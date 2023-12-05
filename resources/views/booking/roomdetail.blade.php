@@ -63,6 +63,7 @@
                                         <div class="schedule-title-roomdetails">
                                             <h5> Week of {{ $currentDateMD }}</h5>
                                         </div>
+                                        <div class="day-schedule-container">
                                         <div class="schedule">
                                             <div class="left-column day-schedule">
                                                 <p class="day-name">Time</p>
@@ -99,6 +100,7 @@
                                                 </div>
                                             </div>
                                             @endforeach
+                                        </div>
                                         </div>
                                     </div>
                                 </div>
