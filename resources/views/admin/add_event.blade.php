@@ -24,7 +24,7 @@
                         <div class="icon2"><i class="fa-solid fa-images"></i></div>
                         <span class="drop-title2">Drop files here</span>
                         or
-                        <input id="image" class="" type="file" name="img" accept=".jpg, .jpeg, .png" value="" multiple />
+                        <input required id="image" class="" type="file" name="img" accept=".jpg, .jpeg, .png" value="" multiple />
                     </label>
                 </div>
 
@@ -32,31 +32,31 @@
                     <br />
                     <label for="name" class="in"><b>Event Name</b></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="name" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input required type="text" class="form-control" name="name" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <br />
 
                     <label for="desc" class="in"><b>Event Short Description</b></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="desc" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input required type="text" class="form-control" name="desc" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <br />
 
                     <label for="location" class="in"><b>Event Location</b></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="location" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input required type="text" class="form-control" name="location" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <br />
 
                     <label for="date" class="in"><b>Event Date</b></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="date" id="" placeholder="e.g. 18 s/d 30 Agustus 2023" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input required type="text" class="form-control" name="date" id="" placeholder="e.g. 18 s/d 30 Agustus 2023" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <br />
 
                     <label for="link" class="in"><b>Link Instagram Feed ["https/..."]</b></label>
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="link" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input required type="text" class="form-control" name="link" id="" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <br />
                     <div class="tombol">
