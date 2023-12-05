@@ -64,7 +64,7 @@ Route::get('/signup', [AuthController::class, 'signupPage'])->name('signupPage')
 Route::post('/newuser', [AuthController::class, 'signup'])->name('signup');
 Route::get('/email/verify', function () {
     return view('auth.verify-email');
-})->middleware('auth')->name('verification.notice');
+})->name('verification.notice');
 
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 

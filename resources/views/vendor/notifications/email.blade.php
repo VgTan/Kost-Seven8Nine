@@ -207,7 +207,7 @@
                         <td>
                           <p class="sub">If you're having trouble clicking the button, copy and paste the URL below into your web browser.
                           </p>
-                          <p class="sub"><a href="{{ $actionUrl }}">[{{ $displayableActionUrl }}]({{ $actionUrl }})</a></p>
+                          <p class="sub"><a href="{{ $actionUrl }}">[{{ $displayableActionUrl }}]</a></p>
                         </td>
                       </tr>
                     </table>
