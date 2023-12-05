@@ -12,8 +12,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin-top: 100px;
-    margin-bottom: 100px;
 }
 
 .trans-container {
@@ -279,10 +277,5 @@ p.token  {
     .token-bundle {
         text-align: end;
         width: 100%;
-    }
-
-    .container-anu{
-        margin-top: 150px;
-        margin-bottom: 150px;
     }
 }
