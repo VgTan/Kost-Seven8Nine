@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Auth;
 
 class BookController extends Controller
 {
+    public function __construct() {
+        $this->middleware(['auth', 'verified']);
+    }
     public function page($site, $room){
         if(!Auth::check()) return redirect('/login');
         $user = User::find(Auth::user()->id);

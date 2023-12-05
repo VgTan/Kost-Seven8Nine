@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Auth;
 
 class RoomController extends Controller
 {
-    public function __construct() {
-        $this->middleware(['auth', 'verified']);
-    }
-    
     public function room($site){
         $branch = Branch::where('site', $site)->get();
         
