@@ -307,8 +307,21 @@ label .imgName {
         flex-wrap: wrap;
         justify-content: center;
     }
+
+    .input_box .name {
+        width: 80%;
+    }
+
   }
 
+  @media screen and (max-width: 400px){
+    .token-container{
+        padding-top: 20px;
+    }
+    .input_box .name {
+        width: 60%;
+    }
+  }
 
   .alert-success {
     color: #155724;
