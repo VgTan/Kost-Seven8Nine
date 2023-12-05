@@ -406,7 +406,7 @@ class BookController extends Controller
         $user->save();
         
         Mail::send(['text' => 'mail'], ['token' => $token], function ($msg) use ($user, $token) {
-            $msg->to($user->email)->subject('Booking Confirmation - Payment Proof Attached');
+            $msg->to("customerrelation.lumi@gmail.com")->subject('Booking Confirmation - Payment Proof Attached');
             $msg->attach(public_path('/images/proof/' . $token->proof));
             // $msg->action('')
             $msg->from('no.reply@gmail.com');

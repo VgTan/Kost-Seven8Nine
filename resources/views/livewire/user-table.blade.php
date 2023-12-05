@@ -11,12 +11,12 @@
                 <th>Gender</th>
                 <th>Email</th>
                 <th>Address</th>
-                <th></th>
+                <th>Total Booking</th>
                 <th></th>
             </tr>
             @foreach($users as $user)
+            @if($user->status == 'user')
             <tr class="table-content">
-
                 <td class="input-content">
                     <input type="checkbox">
                     <input class="id" type="text" name="user_id" value="{{ $user->id }}" disabled>
@@ -34,15 +34,19 @@
                     {{ $user->email }}
                 </td>
                 <td>
+                    {{ COUNT(App\Models\BookList::where('user_id', $user->id)->get()) }}
+                </td>
+                <td>
                     {{ $user->address }}
                 </td>
                 <td class="edit">
                     <a href=""><i class="fa-solid fa-pen"></i></a>
                 </td>
-                <td class="remove">
+                <!-- <td class="remove">
                     <a href=""><i class="fa-solid fa-trash-can"></i></a>
-                </td>
+                </td> -->
             </tr>
+            @endif
             @endforeach
         </table>
         {{ $users->links() }}

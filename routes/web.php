@@ -122,6 +122,9 @@ Route::controller(AdminController::class)->group(function () {
     Route::get('/admin/contactus', 'contactus')->name('conadmin');
     Route::get('/addschedule', 'add_schedule')->name('add');
     Route::get('/{site}/{room}/admin', 'edit_schedule')->name('');
+
+    Route::get('/transaction/log', 'trans_log')->name('');
+    Route::get('/book/log', 'book_log')->name('');
 });
 
 

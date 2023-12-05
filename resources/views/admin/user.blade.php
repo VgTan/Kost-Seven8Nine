@@ -32,10 +32,8 @@
                     <span>User(s)</span>
                 </div>
             </div>
-            <div class="user">
-                
-                    @livewire('user-table')
-            
+            <div class="user">         
+                @livewire('user-table')
             </div>
         </div>
     </div>

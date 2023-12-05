@@ -17,9 +17,9 @@ use Session;
 class AdminController extends Controller
 {
     public function user() {
-    if(!Auth::check()) return redirect('/');
+        if(!Auth::check()) return redirect('/');
         $user = User::find(Auth::user()->id);
-    if($user->status != 'admin' ) return redirect('/');
+        if($user->status != 'admin' ) return redirect('/');
         $user = User::all();
         $branch = Branch::all();
         $branchroom = BranchRoom::all();
@@ -387,5 +387,32 @@ class AdminController extends Controller
         
         $contact = Contact::all();
         return view('admin.admin_contactus', compact('contact'));
+    }
+
+    public function trans_log() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+        $user = User::all();
+        $token = Token::all();
+
+        return view('admin.transactionlog', compact('user', 'token'));
+    }
+
+    public function book_log() {
+        $user = User::find(Auth::user()->id);
+        if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
+    
+        $user = User::all();
+        $book = BookList::all();
+        $branches = Branch::all();
+
+        $branchBooks = [];
+
+        foreach ($branches as $branch) {
+            $branchBooks[$branch->id] = BookList::where('branch', $branch->name)->get();
+            // dd($branchBooks[$branch->id]);
+            $branchBooks[$branch->id]->branch = $branch->name;
+        }
+        return view('admin.booklog', compact('user', 'book', 'branchBooks', 'branches'));
     }
 }
