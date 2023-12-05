@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\UserController;
@@ -56,6 +57,7 @@ Route::get('/contactus', function () {
 //     return view('book');
 // });
 
+Route::get('/', [HomeController::class, 'home']);
 
 // Route::post('/signup-process', [UserController::class, 'signup'])->name('signup');
 Route::get('/signup', [AuthController::class, 'signupPage'])->name('signupPage');
@@ -88,7 +90,6 @@ Route::controller(ProfileController::class)->group(function () {
 });
 
 Route::controller(RoomController::class)->group(function () {
-    Route::get('/', 'home');
     Route::get('/{room}/all', 'findroom')->name('findroom');
     Route::get('/room/{site}', 'room')->name('room');
     Route::get('/{site}/{room}/details', 'room_details')->name('');

@@ -14,18 +14,6 @@ use Illuminate\Support\Facades\Auth;
 
 class RoomController extends Controller
 {
-    public function home() {
-        if(Auth::check()){
-            $user = User::find(Auth::user()->id);
-            if($user->status == 'admin') return redirect()->route('dashboard');   
-        }
-        
-        $room = Branch::all();
-        $event = Event::orderBy('created_at', 'desc')->take(3)->get();
-        $home = TRUE;
-        return view('welcome', compact('room', 'event', 'home'));
-    }
-
     public function __construct() {
         $this->middleware(['auth', 'verified']);
     }
