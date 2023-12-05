@@ -165,7 +165,6 @@
                     }
                 }
             }
-
             if (found) {
                 tr[i].style.display = "";
             } else {

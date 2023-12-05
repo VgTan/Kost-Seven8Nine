@@ -40,7 +40,7 @@
                     {{ $user->address }}
                 </td>
                 <td class="edit">
-                    <a href=""><i class="fa-solid fa-pen"></i></a>
+                    <a href="/{{ $user->id }}/edit"><i class="fa-solid fa-pen"></i></a>
                 </td>
                 <!-- <td class="remove">
                     <a href=""><i class="fa-solid fa-trash-can"></i></a>

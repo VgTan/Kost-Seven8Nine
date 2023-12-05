@@ -125,6 +125,8 @@ Route::controller(AdminController::class)->group(function () {
 
     Route::get('/transaction/log', 'trans_log')->name('');
     Route::get('/book/log', 'book_log')->name('');
+
+    Route::get('/{user_id}/edit', 'edit_user')->name('edit_user');
 });
 
 

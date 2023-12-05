@@ -415,4 +415,8 @@ class AdminController extends Controller
         }
         return view('admin.booklog', compact('user', 'book', 'branchBooks', 'branches'));
     }
+
+    public function edit_user($user_id) {
+        return view('admin.edituser');
+    }
 }
