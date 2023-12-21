@@ -42,7 +42,7 @@
                             </p>
                             <div class="{{ strtolower($day) }}">
                                 @foreach(${$day} as $schedule)
-                                @if($schedule->status == 'ready')
+                                @if($schedule->status == 'ready' && $schedule->week == 'week 1')
                                 <div class="checkbox-wrapper-16">
                                     <label class="checkbox-wrapper">
                                         <!-- Hidden input for day -->
@@ -54,7 +54,7 @@
                                         </span>
                                     </label>
                                 </div>
-                                @elseif($schedule->status == 'booked')
+                                @elseif($schedule->status == 'booked' && $schedule->week == 'week 1')
                                 <div class="checkbox-wrapper-disabled">
                                     <label class="checkbox-wrapper">
                                         <p class="checkbox-input disabled" value="{{ $schedule->time }}" disabled>
@@ -64,7 +64,7 @@
                                         </span>
                                     </label>
                                 </div>
-                                @else
+                                @elseif($schedule->status == 'expired' && $schedule->week == 'week 1')
                                 <div class="checkbox-wrapper-expired">
                                     <label class="checkbox-wrapper">
                                         <p class="checkbox-input expired" value="{{ $schedule->time }}" disabled>

@@ -16,7 +16,14 @@ class ProfileController extends Controller
             return back();
         }
         $user = User::find(Auth::user()->id);
+        $currentDate = date('Y-m-d');
         $booklist = BookList::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
+        if(!$booklist->isEmpty()) {
+            foreach($booklist as $date)
+            if($date->date < $currentDate) {
+                $date->status = 'expired';
+            }
+        }
         $transactions = Token::where('user_id', $user->id)->orderBy('created_at', 'desc')->get();
         return view('page.profile', compact('user', 'booklist', 'transactions'));        
     }

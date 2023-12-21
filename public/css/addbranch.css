@@ -24,7 +24,7 @@ form {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
     padding: 0px 40px 40px 40px;
     border-radius: 10px;
-    height: 600px;
+    /* height: 600px; */
 }
 
 .branchinfo {

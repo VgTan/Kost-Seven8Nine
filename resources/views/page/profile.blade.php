@@ -134,6 +134,7 @@
             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                 @if(!$booklist->isEmpty())
                 @foreach($booklist->unique('date') as $datedetail)
+                @if($datedetail->status == 'in progress')
                 <div class="schedule-date">
                     @foreach($booklist->where('date', $datedetail->date)->unique('branch') as $book)
                     <div class="course">
@@ -173,6 +174,7 @@
                     </div>
                     @endforeach
                 </div>
+                @endif
                 @endforeach
                 @else
                 <p>You haven't booked a room</p>
@@ -185,6 +187,7 @@
             <!-- TRANSACTION START -->
 
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+
                 @if(!$transactions->isEmpty())
                 <div class="profile-container">
                     <table class="profile-table">
@@ -196,6 +199,7 @@
                         <form action="{{ route('buytoken') }}" method="POST">
                             @csrf
                             @foreach($transactions as $trans)
+                            @if($trans->user_id == $user->id)
                             <tr class="profile-row">
                                 <td class="profile-cell profile-date-cell" data-label="Job Id">
                                     {{ date_format($trans->created_at, 'M, d Y') }}
@@ -271,6 +275,7 @@
                                     @endif
                                 </td>
                             </tr>
+                            @endif
                             @endforeach
 
                         </form>

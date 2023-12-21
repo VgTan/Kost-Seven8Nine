@@ -35,24 +35,54 @@ class AdminController extends Controller
     public function add_cabang(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
-        $cabang = new Branch();
-        $cabang->name = $request->name;
-        $cabang->site = $request->site;
-        $cabang->location = $request->location;
-        if ($request->img) {
-            $file = $request->file('img');
-        
-            if (!file_exists('images/cabang/')) {
-                mkdir('images/cabang/', 0777, true);
+        $val = $request->validate([
+            'name' => 'required',
+            'site' => 'required',
+            'location' => 'required',
+            'desc' => 'required',
+            'equipment' => 'required',
+            'img1' => 'required',
+            'img' => 'required',
+        ]);
+        if($val) {
+            if(Branch::where('site', $request->site)->first()) {
+                return back()->with('siteada', 'site has already exist');
             }
-            $fileName = $file->getClientOriginalName();
-            $file->move('images/cabang/', $fileName);
+            $cabang = new Branch();
+            $cabang->name = $request->name;
+            $cabang->site = $request->site;
+            $cabang->location = $request->location;
+            $cabang->branch_desc = $request->desc;
+            $cabang->branch_equipment = $request->equipment;
+            if ($request->img) {
+                $file = $request->file('img');
+            
+                if (!file_exists('images/cabang/')) {
+                    mkdir('images/cabang/', 0777, true);
+                }
+                $fileName = $file->getClientOriginalName();
+                $file->move('images/cabang/', $fileName);
 
-            // Simpan nama file ke dalam database atau di tempat yang sesuai
-            $cabang->img = $fileName;
+                // Simpan nama file ke dalam database atau di tempat yang sesuai
+                $cabang->img1 = $fileName;
+                $cabang->img = $fileName;
+            }
+            if ($request->img1) {
+                $file1 = $request->file('img1');
+            
+                if (!file_exists('images/cabang/')) {
+                    mkdir('images/cabang/', 0777, true);
+                }
+                $fileName1 = $file1->getClientOriginalName();
+                $file1->move('images/cabang/', $fileName1);
+
+                // Simpan nama file ke dalam database atau di tempat yang sesuai
+                $cabang->img1 = $fileName1;
+                $cabang->img = $fileName;
+            }
+            $cabang->save();
+            return back()->with('success', 'Branch Added');
         }
-        $cabang->save();
-        return back();
     }
 
     public function event() {
@@ -147,6 +177,7 @@ class AdminController extends Controller
                     $schedule->day = $days;
                     $schedule->date = '-';
                     $schedule->time = $times;
+                    $schedule->week = 'week1';
                     // dd($schedule);
                     $schedule->save();
                 }
@@ -303,14 +334,16 @@ class AdminController extends Controller
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $user = User::all();
-        $token = Token::all();
+        // $token = Token::all();
+        $token = Token::where('status', 'Pending')->get();
         return view("admin.transaction", compact('user', 'token'));
     }
 
     public function remove(Request $request) {
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
-        $user = Token::where('id', $request->id)->forceDelete();
+        $token = Token::where('id', $request->id)->first();
+        $token->delete();
         return back();
     }
 
@@ -393,7 +426,8 @@ class AdminController extends Controller
         $user = User::find(Auth::user()->id);
         if(!Auth::check() || $user->status != 'admin' ) return redirect('/');
         $user = User::all();
-        $token = Token::all();
+        $token = Token::where('status', 'Paid')->get();
+        // $token = Token::all();
 
         return view('admin.transactionlog', compact('user', 'token'));
     }

@@ -134,6 +134,7 @@ class RoomController extends Controller
                             $existingScheduleWeek1->update([
                                 'day' => $days,
                                 'date' => $dates1[$index],
+                                'status' => 'ready'
                             ]);
                         } else {
                             $schedule1 = new Schedule();
@@ -142,6 +143,7 @@ class RoomController extends Controller
                             $schedule1->day = $days;
                             $schedule1->date = $dates1[$index];
                             $schedule1->time = $times;
+                            $schedule1->status = 'ready';
                             $schedule1->save();
                         }
             
@@ -149,6 +151,7 @@ class RoomController extends Controller
                             $existingScheduleWeek2->update([
                                 'day' => $days,
                                 'date' => $dates2[$index],
+                                'status' => 'ready'
                             ]);
                         } else {
                             $schedule2 = new Schedule();
@@ -157,6 +160,7 @@ class RoomController extends Controller
                             $schedule2->day = $days;
                             $schedule2->date = $dates2[$index];
                             $schedule2->time = $times;
+                            $schedule2->status = 'ready';
                             $schedule2->save();
                         }
                     }
@@ -170,7 +174,7 @@ class RoomController extends Controller
         for ($i = 0; $i < $daysToMonday2 + 1; $i++) {
             $dayIndex = $i % $daysCount;
             $expired = Schedule::where('day', $days[$dayIndex])
-                ->where('status', 'ready')
+                // ->where('status', 'ready')
                 ->where('date', '<=', $currentDate)
                 ->get();
             foreach($expired as $ex) {

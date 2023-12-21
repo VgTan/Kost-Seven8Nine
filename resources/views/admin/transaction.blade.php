@@ -87,12 +87,14 @@
                                 </a>
                             </td>
                             <form action="{{ route('remove') }}" method="get">
+                                @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
                                     <button type="submit"><i class="fa-solid fa-trash"></i></button>
                                 </td>
                             </form>
                             <form action="{{ route('acc') }}" method="get">
+                                @csrf
                                 <input class="hidden" name="id" type="text" value="{{ $user->id }}">
                                 <td>
                                     <button type="submit"><i class="fa-solid fa-check-to-slot"></i></button>
