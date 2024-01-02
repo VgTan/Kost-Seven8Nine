@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.wrapper {
+    background-color: #fff;
+    width: 75%;
+    padding: 25px;
+    margin: 25px auto;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+.wrapper h2 {
+    background-color: #fcfcfc;
+    color: #268AC9;
+    font-size: 24px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px dashed #268AC9;
+}
+
+.wrapper h4 {
+    padding-bottom: 5px;
+    color: #268AC9;
+    font-size: 20px;
+}
+
+.input_group {
+    margin-bottom: 8px;
+    width: 100%;
+    position: relative;
+    flex-direction: row;
+    padding: 5px 0;
+}
+
+.input_box {
+    width: 100%;
+    /* padding-right: 30px; */
+    position: relative;
+    margin: 8px 8px;
+}
+
+.input_box:last-child {
+    margin-right: 0;
+}
+
+.input_box .name {
+    padding: 14px 10px 14px 50px;
+    width: 87%;
+    background-color: #fcfcfc;
+    border: 1px solid #0003;
+    outline: none;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 3px;
+    color: #333;
+    margin-left: 10px;
+    line-height: 10px;
+}
+
+.input_box .name:focus,
+.dob:focus {
+    -webkit-box-shadow: 0 0 3px 1px #268AC9;
+    -moz-box-shadow: 0 0 3px 1px #268AC9;
+    box-shadow: 0 0 3ku px 1px #268AC9;
+    border: 1px solid #268AC9;
+}
+
+.input_box .icon {
+    width: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    color: #333;
+    background-color: #f1f1f1;
+    border-radius: 2px 0 0 2px;
+    transition: 0.3s;
+    font-size: 20px;
+    pointer-events: none;
+    border: 1px solid #00000003;
+    border-right: none;
+}
+
+.name:focus+.icon {
+    background-color: #268AC9;
+    color: #fff;
+    border-right: 1px solid #268AC9;
+    border: none;
+    transition: 1s;
+}
+
+.dob {
+    width: 30%;
+    padding: 14px;
+    text-align: center;
+    background-color: #fcfcfc;
+    transition: 0.3s;
+    outline: none;
+    border: 1px solid #c0bfbf;
+    border-radius: 3px;
+}
+
+.radio {
+    display: none;
+}
+
+.input_box label {
+    width: 30%;
+    padding: 13px;
+    background-color: #fcfcfc;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #c0bfbf;
+}
+
+.input_box label:first-of-type {
+    border-top-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    border-right: none;
+}
+
+.input_box label:last-of-type {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.radio:checked+label {
+    background-color: #268AC9;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.input_box button {
+    width: 100%;
+    background-color: #268AC9;
+    border: none;
+    color: #fff;
+    padding: 15px;
+    border-right: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+}
+
+.input_box button:hover {
+    cursor: pointer;
+    background-color: #E6AD76;
+}
+
+/* ini bawah css buat yg box2 token */
+
+.token-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 90px;
+    width: 100%;
+}
+
+.container {
+    width: 400px;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1),
+        0 5px 12px -2px rgba(0, 0, 0, 0.1),
+        0 18px 36px -6px rgba(0, 0, 0, 0.1);
+}
+
+.container .title {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.radio-token{
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.container form .category {
+    margin-top: 10px;
+    padding-top: 20px;
+    display: flex;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+}
+
+.category {
+    align-items: center;
+    gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+
+.category label {
+    height: 130px;
+    width: 120px;
+    padding: 20px;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px;
+}
+
+#basic-1:checked~.category .basic1token,
+#basic-2:checked~.category .basic2token,
+#basic-3:checked~.category .basic3token,
+#flexi-1:checked~.category .flexi1token,
+#flexi-2:checked~.category .flexi2token,
+#flexi-3:checked~.category .flexi3token,
+#flexi-4:checked~.category .flexi4token {
+    box-shadow: 0px 0px 0px 1px #6064b6;
+}
+
+#basic-1:checked~.category .basic1token .check,
+#basic-2:checked~.category .basic2token .check,
+#basic-3:checked~.category .basic3token .check,
+#flexi-1:checked~.category .flexi1token .check,
+#flexi-2:checked~.category .flexi2token .check,
+#flexi-3:checked~.category .flexi3token .check,
+#flexi-4:checked~.category .flexi4token .check {
+    display: block;
+}
+
+.imgName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+label .imgName {
+    gap: 10px;
+    font-weight: bold;
+}
+
+.imgName span {
+    line-height: 25px;
+    font-size: 18px;
+}
+
+.check {
+    display: none;
+    position: absolute;
+    top: -4px;
+    right: -4px;
+}
+
+.check i {
+    font-size: 18px;
+}
+
+.input_box p {
+    padding-bottom: 10px;
+    color: #268AC9;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.file-input {
+    width: 40%;
+    border: 1px dashed #268AC9;
+    color: #333;
+    padding: 15px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+/* Responsive untuk layar kecil */
+@media screen and (max-width: 600px) {
+    .wrapper {
+      width: 90%;
+    }
+  
+    .category label {
+      width: 100%;
+    }
+  }
+
+
+  .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+.alert {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 1rem;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+}

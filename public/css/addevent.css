@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Istok+Web&family=Poppins:wght@400;500;600&display=swap');
+
+.event_container {
+    width: 100%;
+    height: 100%;
+    padding: 100px;
+}
+
+* {
+
+    /* box-sizing: border-box; */
+    font-family: "Poppins", sans-serif;
+  }
+
+  form {
+    color: black;
+  }
+
+
+.event_wrap{
+    margin: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    padding: 0px 40px 40px 40px;
+    border-radius: 10px;
+    height: 800px;
+}
+
+.eventinfo{
+    width: 100%;
+}
+
+#event.active {
+    border: 2px dashed #000000;
+}
+
+
+/* .form-desc img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+} */
+
+
+.icon2 {
+    color: #000AFF;
+    font-size: 45px;
+    margin: 10px 0;
+}
+
+.button{
+    border: none;
+    border-radius: 10px;
+    background-color: #000AFF;
+    color: #ffffff;
+    outline: none;
+    cursor: pointer;
+}
+
+.in{
+    color: #363740;
+    font-size: 20px;
+}
+
+.addevent h1{
+    text-align: center;
+    color: #232D42;
+    margin-bottom: 30px;
+    margin-top: 100px;
+}
+
+.event-desc input[type=file]::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #268AC9;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+  }
+
+  .drop-event {
+    margin-top: 40px;
+    flex-direction: column;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    border-radius: 10px;
+    border: 2px dashed #000AFF;
+    color: #444;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+  }
+  
+  .drop-event:hover {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-event:hover .drop-title2 {
+    color: #222;
+  }
+  
+  .drop-title2 {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+  }
+
+  .drop-event.drag-active {
+    background: #eee;
+    border-color: #111;
+  }
+  
+  .drop-event.drag-active .drop-title2 {
+    color: #222;
+}
+
+.event_desc{
+    width: 100%;
+    max-height: 100%;
+    margin-right: 50px;
+}
+
+.event_desc input{
+    position: relative;
+    left: 30px;
+}
+
+@media (max-width: 914px) {
+    .addevent {
+        margin-top: 120px;
+    }
+    .event_wrap{
+        margin: 20px 20px 20px 20px;
+        height: 1200px;
+        flex-direction: column;
+    }
+
+    .event_desc {
+        width: 100%;
+        margin: 0;
+    }
+    .eventinfo label{
+        font-size: 15px;
+        display: block;
+    }
+    .eventinfo {
+        margin-bottom: 50px;
+    }
+    .tombol {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .event_desc input[type=file]::file-selector-button {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .event_desc input {
+        position: relative;
+        left: 100px;
+    }
+}

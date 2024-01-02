@@ -1,0 +1,731 @@
+.book-margin {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: center;
+  overflow: hidden;
+  padding: 10px 0 50px 0;
+}
+
+.book-maincontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 40px 0 40px;
+  margin-top: 50px;
+}
+
+.book-margin-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 120px;
+}
+
+.book-margin-container .currentdate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.book-margin-info {
+  flex-direction: column;
+  width: 40%;
+  height: 85%;
+  background-color: #90d3fc53;
+  color: black;
+}
+
+.book-userinfo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 50px;
+}
+
+.userinfo-name {
+  margin-right: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userinfo-name img {
+  width: 70px;
+}
+
+.userinfo-token h2,
+p {
+  line-height: 35px;
+}
+
+.userinfo-token h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.userinfo-howto {
+  margin-top: 20px;
+  padding: 50px;
+}
+
+.userinfo-howto h2 {
+  margin-bottom: 50px;
+  font-size: 20px;
+}
+
+.userinfo-howto h3 {
+  font-size: 20px;
+}
+
+.book-title {
+  background-color: #268AC9;
+  width: 60%;
+  padding: 45px;
+  padding-left: 7%;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  line-height: 40px;
+}
+
+.book-title h1 {
+  font-weight: bold;
+}
+
+.day {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.schedule {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: white;
+  position: relative;
+}
+
+.schedule-container {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.day-schedule {
+  background-color: white;
+  padding: 10px 0 0 10px;
+}
+
+.day-number {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-weight: bolder;
+}
+
+.day-name {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  white-space: nowrap;
+  min-width: 80px;
+}
+
+.currentdate {
+  border-top: 1px solid #49494950;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.currentdate p {
+  margin: 15px;
+}
+
+.mon,
+.tues,
+.wed,
+.thur,
+.fri,
+.sat,
+.sun {
+  text-align: center;
+  display: grid;
+  justify-content: center;
+}
+
+.mon p,
+.tues p,
+.wed p,
+.thur p,
+.fri p,
+.sat p,
+.sun p {
+  font-weight: bold;
+}
+
+.checkbox-wrapper-16 *,
+.checkbox-wrapper-16 *:after,
+.checkbox-wrapper-16 *:before {
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper-16 .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked+.checkbox-tile {
+  border-color: #268AC9;
+  background-color: #268AC9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked+.checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+  background-color: #268AC9;
+  border-color: #268AC9;
+}
+
+.checkbox-wrapper-16 .checkbox-input:checked+.checkbox-tile .checkbox-icon,
+.checkbox-wrapper-16 .checkbox-input:checked+.checkbox-tile .checkbox-label {
+  color: white;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus+.checkbox-tile {
+  border-color: #268AC9;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 0 0 4px #b5c9fc;
+}
+
+.checkbox-wrapper-16 .checkbox-input:focus+.checkbox-tile:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  min-height: 2.8rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 0px 6px 15px 0;
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover {
+  border-color: #268AC9;
+
+}
+
+.checkbox-wrapper-16 .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-16 .checkbox-icon {
+  transition: 0.375s ease;
+  color: #494949;
+}
+
+.checkbox-wrapper-16 .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper-16 .checkbox-label {
+  color: #707070;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+.checkbox-wrapper-disabled *,
+.checkbox-wrapper-disabled *:after,
+.checkbox-wrapper-disabled *:before {
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper-disabled .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-wrapper-disabled .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  min-height: 2.8rem;
+  border-radius: 0.5rem;
+  border: 2px solid #dc9b5e;
+  background-color: #E6AD76;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  position: relative;
+  margin: 0px 6px 15px 0;
+}
+
+/* .checkbox-wrapper-disabled .checkbox-tile:hover {
+  border-color: #268AC9;
+  
+} */
+.checkbox-wrapper-disabled .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-disabled .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper-disabled .checkbox-label {
+  color: #ffffff;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+.checkbox-wrapper-expired *,
+.checkbox-wrapper-expired *:after,
+.checkbox-wrapper-expired *:before {
+  box-sizing: border-box;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.checkbox-wrapper-expired .checkbox-input {
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.checkbox-wrapper-expired .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  min-height: 2.8rem;
+  border-radius: 0.5rem;
+  border: 2px solid #8e8e8e;
+  background-color: #ababab;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  position: relative;
+  margin: 0px 6px 15px 0;
+}
+
+/* .checkbox-wrapper-expired .checkbox-tile:hover {
+  border-color: #268AC9;
+  
+} */
+.checkbox-wrapper-expired .checkbox-tile:hover:before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.checkbox-wrapper-expired .checkbox-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.checkbox-wrapper-expired .checkbox-label {
+  color: #ffffff;
+  transition: 0.375s ease;
+  text-align: center;
+}
+
+
+.check-list {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.check-list li {
+  position: relative;
+  list-style-type: none;
+  padding-left: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.check-list li:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -8px;
+  width: 8px;
+  height: 16px;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  border-color: #dc9b5e;
+  transform-origin: bottom left;
+  transform: rotate(45deg);
+}
+
+.button-book {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-book a {
+  margin-top: 40px;
+  background-color: #cecccc;
+  padding: 10px 80px;
+  color: black;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.book-button {
+  margin-top: 40px;
+  background-color: #E6AD76;
+  padding: 10px 80px;
+  color: black;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.book-button:hover {
+  color: white;
+  background-color: #dc9b5e;
+}
+
+.button-book a:hover {
+  color: white;
+  background-color: #707070;
+}
+
+.userinfo-howto h3 {
+  margin-bottom: 1rem;
+}
+
+#nav-profile-tab,
+#nav-home-tab {
+  color: #000000;
+}
+
+.userinfo-howto h3 {
+  margin-bottom: 1rem;
+}
+
+#nav-profile-tab,
+#nav-home-tab {
+  color: #000000;
+}
+
+@media screen and (max-width: 1000px) {
+  .schedule {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .book-userinfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+  }
+
+  .userinfo-howto {
+    margin-top: 0px;
+    padding: 10px 50px;
+  }
+
+  .userinfo-name {
+    margin-right: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .userinfo-token {
+    width: 100%;
+  }
+
+  .userinfo-howto h3 {
+    font-size: 1.5rem;
+  }
+
+  .check-list li {
+    margin-bottom: 2rem;
+  }
+
+  .book-maincontainer {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .book-title {
+    background-color: #268AC9;
+    width: 60%;
+    padding: 20px 20px 20px 45px;
+    padding-left: 7%;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    line-height: 35px;
+  }
+
+  .book-title h1 {
+    font-size: 2rem;
+  }
+
+  .currentdate p {
+    margin: 15px 10px;
+  }
+
+  .userinfo-howto {
+    margin-top: 0px;
+    padding: 10px 30px;
+  }
+
+  .currentdate {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .button-book a {
+    padding: 10px 50px;
+  }
+
+  .book-button {
+    padding: 10px 50px;
+  }
+
+  .book-maincontainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px 0 30px;
+    margin-top: 30px;
+  }
+
+  .book-userinfo {
+    padding: 20px;
+  }
+
+  .userinfo-howto h2 {
+    margin-bottom: 50px;
+    font-size: 1.7rem;
+  }
+
+  .check-list li {
+    margin-bottom: 1.8rem;
+  }
+
+  .check-list {
+    margin: 0;
+    padding-left: 0rem;
+  }
+
+  .userinfo-howto h3 {
+    font-size: 1.3rem;
+  }
+
+  .userinfo-token h2,
+  p {
+    line-height: 25px;
+  }
+
+  .userinfo-token h2 {
+    font-size: 1.7rem;
+  }
+
+  .book-title {
+    background-color: #268AC9;
+    width: 70%;
+    padding: 20px 20px 20px 45px;
+    padding-left: 7%;
+    color: white;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    line-height: 35px;
+  }
+
+  .check-list li:before {
+    top: 0px;
+  }
+
+  .check-list li {
+    position: relative;
+    list-style-type: none;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .book-margin {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .book-margin-info {
+    flex-direction: column;
+    width: 80%;
+    height: 85%;
+    margin: 20px 0;
+  }
+
+  .userinfo-name {
+    margin-right: 20px;
+    width: 60%;
+  }
+
+  .userinfo-howto h2 {
+    margin-bottom: 35px;
+    font-size: 1.7rem;
+  }
+
+  .check-list li {
+    margin-bottom: 1.5rem;
+  }
+
+  .userinfo-howto h3 {
+    margin-bottom: 1.5rem;
+  }
+
+  .book-margin-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .book-title {
+    background-color: #268AC9;
+    width: 100%;
+    padding: 20px 20px 20px 45px;
+    padding-left: 7%;
+    color: white;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    line-height: 35px;
+  }
+
+  .schedule-container {
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  .schedule {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    background-color: white;
+  }
+
+  .mon,
+  .tues,
+  .wed,
+  .thur,
+  .fri,
+  .sat,
+  .sun {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    height: 45px;
+  }
+
+  .day-schedule {
+    background-color: #f3efefa1;
+    padding: 10px;
+  }
+
+  .checkbox-wrapper-16 {
+    width: 115px;
+}
+
+.checkbox-wrapper-16 .checkbox-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 6rem;
+  min-height: 2.8rem;
+  border: 2px solid #b5bfd9;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.15s ease;
+  cursor: pointer;
+  position: relative;
+  margin: 0px 0px 10px 0;
+}
+
+.book-maincontainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px 0 30px;
+  margin-top: 10px;
+}
+
+}
+
+@media screen and (max-width: 280px) {
+  .userinfo-name {
+    margin-right: 10px;
+  }
+
+  .currentdate {
+    font-size: 0.7rem;
+  }
+
+  .button-book a,
+  .book-button {
+    padding: 10px 30px;
+  }
+
+}

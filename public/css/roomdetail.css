@@ -1,0 +1,606 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=IBM+Plex+Serif:wght@100&family=Nanum+Myeongjo:wght@800&display=swap');
+
+.roomdetail-margin {
+    display: flex;
+    justify-content: center;
+}
+
+.roomdetail-header1{
+    object-fit: contain;
+    height: 500px;
+    margin-bottom: 250px;
+}
+
+.roomdetail-header1 img{
+    width: 100%;
+    height: 650px;
+    border-radius: 15px;
+    margin-top: 30px;
+    object-fit: cover;
+    filter: brightness(0.4);
+}
+
+.text-title h1{
+    position: absolute;
+    font-size: 5.5rem;
+    font-weight: bold;
+    color: white;
+    top: 35%;
+    left: 8%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-abs {
+    width: 70%;
+    position: absolute;
+    bottom: -7%;
+    left: 15%;
+    right: 15%;
+}
+
+.roomdetail-margin{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 90px;
+}
+
+.roomdetail-container{
+    width: 93%;
+    display: flex;
+    flex-direction: column;
+}
+
+.roomdetail-header-margin {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.container-roomdetail-info {
+    width: 93%;
+}
+
+.roomdetail-header {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: start;
+}
+
+.roomdetail-textinfo{
+    margin-right: 30px;
+    flex: 1;
+    padding: 20px 50px;
+}
+
+.roomdetail-textinfo h1{
+    color: #013F6B;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.roomdetail-textinfo h2{
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    width: 70%;
+}
+
+.roomdetail-textinfo h3{
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-family: 'Istok Web', sans-serif;
+    color: #67748E;
+}
+
+.roomdetail-textinfo h4{
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #013F6B;
+    font-family: 'Poppins', sans-serif;
+}
+
+.roomdetail-textinfo hr{
+    border: 2px solid orange;
+    border-radius: 5px;
+}
+
+.roomdetail-info hr{
+    border: 2px solid orange;
+    border-radius: 5px;
+    width: 47%;
+}
+
+.roomdetail-info{
+    margin-top: 5px;
+}
+
+.roomdetail-header img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.roomdetail-image {
+    height: 100%;
+    width: 45%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-wrap: wrap;
+}
+
+.roomdetail-image img {
+    max-height: 580px;
+    object-fit: cover;
+}
+
+.roomdetail-imginfo{
+    margin-bottom: 20px;
+}
+
+.roomdetail-imginfo img{
+    width: 300px;
+    height: 200px;
+}
+
+.roomdetail-info h4{
+    font-size: 1rem;
+    margin-top: 40px;
+    color: #013F6B;
+    margin-bottom: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box {
+    width: 300px;
+    height: 250px;
+    border: 5px solid #E6AD76;
+    padding: 30px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    float: right;
+}
+
+.box h1, .box h2, .box a {
+    margin: 10px 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.box h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    margin-bottom: 0;
+}
+
+.box h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #E6AD76;
+    text-align: center;
+}
+
+.box a {
+    background-color: #E6AD76;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.7s; 
+    width: 150px;
+    align-self: center; 
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.box a:hover {
+    background-color: rgb(185, 124, 66);
+}
+
+.text-title{
+    margin-top: 100px;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.roomdetail-infolocation {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.roomdetail-infolocation h4 {
+    font-size: 1.4rem;
+    margin-top: 20px;
+    color: #013F6B;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.roomdetail-infolocation iframe{
+    box-shadow: 0 0 15px #E6AD76;
+}
+
+.roomdetail-infolocation iframe{
+    width: 450px;
+    height: 250px;
+    margin-left: 15px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center; 
+}
+
+.info-item p {
+    margin: 0; 
+    margin-right: 20px;
+    font-family: 'Istok Web', sans-serif;
+}
+
+.button-back {
+    margin-top: auto;
+    margin-bottom: 40px;
+}
+
+.button-back a{
+    padding: 10px 80px;
+    color: black;
+    font-weight: bold;
+    transition-duration: 0.4s;
+    border: 2px solid #cecccc;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    width: 15%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.button-back a:hover{
+    color: white;
+    background-color: #707070;
+}
+
+/* CSS TIMETABLE */
+
+.schedule-container {
+    max-width: 650px;
+    height: 100%;
+    margin-top: 30px;
+}
+
+.schedule {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+    background-color: white;
+}
+
+.day-schedule-container{
+    max-width: 600px;
+    overflow-y: auto;
+}
+
+.day-schedule {
+    padding: 8px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.day-name {
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+}
+
+.schedule-title-roomdetails {
+    background-color: #268AC9;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.schedule-title-roomdetails h5{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.time-slots {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.time-slot {
+    padding: 10px;
+    height: 100%;
+    background-color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.time-slots .time-slot:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+
+.time-slot.ready {
+    background-color: #e3e2e2;
+    color: white;
+}
+
+.time-slot.disabled {
+    background-color: #E6AD76 !important;
+    cursor: not-allowed;
+}
+
+.time-slot.expired {
+    background-color: #858585 !important;
+    cursor: not-allowed;
+}
+
+.left-column {
+    display: flex;
+    flex-direction: column;
+    grid-column: 1;
+    width: 100px;
+}
+
+.leftcolumn-time {
+    font-size: 11px;
+    padding: 5px;
+}
+
+.left-column .day-name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.tab-content-room {
+    overflow: hidden;
+}
+
+.tab-content-room h3 {
+    font-size: 2rem;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    line-height: 30px;
+}
+
+.tab-content-room h4 {
+    font-size: 2rem;
+    margin-top: 40px;
+    color: #013F6B;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tab-pane {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.tab-pane.active {
+    display: block;
+    height: auto;
+    visibility: visible;
+}
+
+@media screen and (max-width: 1024px) {
+    .roomdetail-header1 img {
+        width: 90%;
+        height: 450px;
+        border-radius: 15px;
+        margin-top: 30px;
+        object-fit: cover;
+        filter: brightness(0.4);
+    }
+
+    .roomdetail-header1 {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .text-title h1 {
+        font-size: 3.5rem;
+        top: 20%;
+    }
+
+    .container-abs {
+        width: 90%;
+    }
+
+    .roomdetail-container {
+        width: 100%;
+    }
+
+    .roomdetail-header {
+        flex-direction: column-reverse;
+    }
+
+    .roomdetail-image {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .roomdetail-textinfo {
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .roomdetail-textinfo h1 {
+        font-size: 3rem;
+        text-align: center;
+    }
+
+    .roomdetail-textinfo h2 {
+        font-size: 1.1rem;
+        width: 100%;
+    }
+
+    .roomdetail-header img,
+    .roomdetail-image img {
+        width: 50%;
+        height: 300px;
+        object-fit: cover;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .roomdetail-info {
+        margin-top: 5px;
+        width: 50%;
+        height: 300px;
+        padding: 10px;
+    }
+
+    .box {
+        width: 100%;
+        margin: 10px 0;
+        height: 100%;
+    }
+
+    .box a {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .roomdetail-header1 {
+        object-fit: contain;
+        height: 300px;
+        margin-bottom: 100px;
+    }
+
+    .roomdetail-header1 img {
+        width: 90%;
+        height: 350px;
+    }
+
+    .text-title h1 {
+        position: absolute;
+        font-size: 2.8rem;
+        font-weight: bold;
+        color: white;
+        top: 15%;
+        left: 8%;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .roomdetail-header img,
+    .roomdetail-image img {
+        width: 50%;
+        height: 250px;
+        object-fit: cover;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .roomdetail-info {
+        margin-top: 5px;
+        width: 50%;
+        height: 250px;
+        padding: 10px;
+    }
+
+    .box h1 {
+        font-size: 15px;
+    }
+
+    .box h2 {
+        font-size: 20px;
+    }
+
+    .box {
+        padding: 20px;
+    }
+
+    .box a {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+    .roomdetail-infolocation iframe {
+        width: 90%;
+        height: 250px;
+        margin-left: 15px;
+        margin-right: 15px;
+        object-fit: cover;
+    }
+
+    .roomdetail-infolocation {
+        margin-top: 30px;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .roomdetail-textinfo h1 {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+    .tab-content-room h3 {
+        font-size: 1.5rem;
+    }
+    .roomdetail-textinfo {
+        margin-right: 0;
+        width: 100%;
+        padding: 15px;
+    }
+
+    .time-slots {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 437px) {
+    .roomdetail-image {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        flex-direction: column;
+    }
+    .roomdetail-header img,
+    .roomdetail-image img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .roomdetail-info {
+        margin-top: 0px;
+        width: 100%;
+        height: 220px;
+        padding: 10px;
+    }
+
+    .roomdetail-infolocation iframe {
+        width: 100%;
+        height: 250px;
+        margin-left: 0px;
+        margin-right: 15px;
+        object-fit: cover;
+    }
+
+}
